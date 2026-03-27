@@ -1,0 +1,18 @@
+---
+title: "Google Cloud Storage (GCS) Configuration - OLake Parquet Writer"
+description: "Configure Google Cloud Storage as destination for OLake Parquet writer using S3-compatible API. Setup GCS bucket and credentials."
+---
+
+```json title="destination.json"
+{
+  "type": "PARQUET",
+  "writer": {
+    "s3_bucket": "olake-s3-test",
+    "s3_region": "ap-south-1",
+    "s3_access_key": "xxxxxxxxxxxxxxxxxxxx",
+    "s3_secret_key": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "s3_endpoint": "https://storage.googleapis.com",
+    "s3_path": "/data"
+  }
+}
+```

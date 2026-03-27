@@ -1,0 +1,1062 @@
+<!doctype html><html lang=en dir=ltr class="blog-wrapper blog-post-page plugin-blog plugin-id-olake-blog" data-has-hydrated=false><head><meta charset=UTF-8><meta name=generator content="Docusaurus v3.9.2"><title data-rh=true>Building a Data Lakehouse with Apache Iceberg + ClickHouse + OLake | Fastest Open Source Data Replication Tool</title><meta data-rh=true name=viewport content="width=device-width, initial-scale=1.0"/><meta data-rh=true property=og:locale content=en /><meta data-rh=true name=docusaurus_locale content=en /><meta data-rh=true name=docusaurus_tag content=default /><meta data-rh=true name=docsearch:language content=en /><meta data-rh=true name=docsearch:docusaurus_tag content=default /><meta data-rh=true name=OLake content="ETL tool, ELT tool, open source"/><meta data-rh=true name=twitter:card content=summary_large_image /><meta data-rh=true name=twitter:site content=@olake.io /><meta data-rh=true name=msvalidate.01 content=C36AD97FE1CEDCD4041338A807D6BC4C /><meta data-rh=true property=og:url content=https://olake.io/blog/build-data-lakehouse-iceberg-clickhouse-olake /><meta data-rh=true property=og:image:type content=image/webp /><meta data-rh=true property=og:image:secure_url content=https://olake.io/img/logo/olake-blue.webp /><meta data-rh=true property=og:image:width content=1200 /><meta data-rh=true property=og:image:height content=630 /><meta data-rh=true property=og:image:alt content=OLake /><meta data-rh=true name=twitter:creator content=@cappybaradeploy /><meta data-rh=true name=twitter:title content="Building a Data Lakehouse with Apache Iceberg + ClickHouse + OLake"/><meta data-rh=true name=twitter:description content="Learn how to build a complete data lakehouse using Apache Iceberg, ClickHouse, OLake and MinIO for real-time CDC, scalable storage, and fast analytics. Step-by-step guide with Docker setup."/><meta data-rh=true name=twitter:image:alt content=OLake /><meta data-rh=true name=twitter:label1 content="Written by"/><meta data-rh=true name=twitter:data1 content="Sandeep Devarapalli"/><meta data-rh=true name=twitter:label2 content="Time to read"/><meta data-rh=true name=twitter:data2 content=33.22 /><meta data-rh=true property=og:title content="Building a Data Lakehouse with Apache Iceberg + ClickHouse + OLake | Fastest Open Source Data Replication Tool"/><meta data-rh=true name=description content="Learn how to build a complete data lakehouse using Apache Iceberg, ClickHouse, OLake and MinIO for real-time CDC, scalable storage, and fast analytics. Step-by-step guide with Docker setup."/><meta data-rh=true property=og:description content="Learn how to build a complete data lakehouse using Apache Iceberg, ClickHouse, OLake and MinIO for real-time CDC, scalable storage, and fast analytics. Step-by-step guide with Docker setup."/><meta data-rh=true property=og:image content=https://olake.io/img/blog/cover/build-data-lakehouse-iceberg-clickhouse-olake-cover.webp /><meta data-rh=true name=twitter:image content=https://olake.io/img/blog/cover/build-data-lakehouse-iceberg-clickhouse-olake-cover.webp /><meta data-rh=true property=og:type content=article /><meta data-rh=true property=article:published_time content=2025-12-10T00:00:00.000Z /><meta data-rh=true property=article:tag content="Apache Iceberg,ClickHouse,Lakehouse"/><link data-rh=true rel=icon href=/img/logo/olake-blue.svg /><link data-rh=true rel=alternate href=https://olake.io/blog/build-data-lakehouse-iceberg-clickhouse-olake/ hreflang=en /><link data-rh=true rel=alternate href=https://olake.io/blog/build-data-lakehouse-iceberg-clickhouse-olake/ hreflang=x-default /><link data-rh=true rel=canonical href=https://olake.io/blog/build-data-lakehouse-iceberg-clickhouse-olake /><link data-rh=true rel=preconnect href=https://1E406NO1AX-dsn.algolia.net crossorigin=anonymous /><script data-rh=true type=application/ld+json>{"@context":"https://schema.org","@id":"https://olake.io/blog/build-data-lakehouse-iceberg-clickhouse-olake","@type":"BlogPosting","author":{"@type":"Person","description":"OLake Maintainer","email":"hello@olake.io","image":"/img/authors/sandeep.webp","name":"Sandeep Devarapalli"},"datePublished":"2025-12-10T00:00:00.000Z","description":"Learn how to build a complete data lakehouse using Apache Iceberg, ClickHouse, OLake and MinIO for real-time CDC, scalable storage, and fast analytics. Step-by-step guide with Docker setup.","headline":"Building a Data Lakehouse with Apache Iceberg + ClickHouse + OLake","image":{"@id":"https://olake.io/img/blog/cover/build-data-lakehouse-iceberg-clickhouse-olake-cover.webp","@type":"ImageObject","caption":"title image for the blog post: Building a Data Lakehouse with Apache Iceberg + ClickHouse + OLake","contentUrl":"https://olake.io/img/blog/cover/build-data-lakehouse-iceberg-clickhouse-olake-cover.webp","url":"https://olake.io/img/blog/cover/build-data-lakehouse-iceberg-clickhouse-olake-cover.webp"},"isPartOf":{"@id":"https://olake.io/blog","@type":"Blog","name":"Blogs on OLake"},"keywords":[],"mainEntityOfPage":"https://olake.io/blog/build-data-lakehouse-iceberg-clickhouse-olake","name":"Building a Data Lakehouse with Apache Iceberg + ClickHouse + OLake","url":"https://olake.io/blog/build-data-lakehouse-iceberg-clickhouse-olake"}</script><link rel=search type=application/opensearchdescription+xml title="Fastest Open Source Data Replication Tool" href=/opensearch.xml><link rel=alternate type=application/rss+xml href=/blog/rss.xml title="Fastest Open Source Data Replication Tool RSS Feed"><link rel=alternate type=application/atom+xml href=/blog/atom.xml title="Fastest Open Source Data Replication Tool Atom Feed"><link rel=alternate type=application/rss+xml href=/iceberg/rss.xml title="Fastest Open Source Data Replication Tool RSS Feed"><link rel=alternate type=application/atom+xml href=/iceberg/atom.xml title="Fastest Open Source Data Replication Tool Atom Feed"><link rel=alternate type=application/rss+xml href=/customer-stories/rss.xml title="Fastest Open Source Data Replication Tool RSS Feed"><link rel=alternate type=application/atom+xml href=/customer-stories/atom.xml title="Fastest Open Source Data Replication Tool Atom Feed"><script src=/font-loading-optimizer.js defer fetchpriority=low></script><script src=/suppress-resize-observer.js defer fetchpriority=high></script><script src=/ignore-resize-observer-error.js defer fetchpriority=high></script><script src=/message-listener.js defer fetchpriority=low></script><link rel=stylesheet href=/assets/css/styles.82467d32.css /><script src=/assets/js/runtime~main.19abef05.js defer></script><script src=/assets/js/main.61b64d86.js defer></script></head><body class=navigation-with-keyboard><svg style="display: none;"><defs>
+<symbol id=theme-svg-external-link viewBox="0 0 24 24"><path fill=currentColor d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{for(var[t,e]of new URLSearchParams(window.location.search).entries())if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id=__docusaurus><div role=region aria-label="Skip to main content"><a class=skipToContent_fXgn href=#__docusaurus_skipToContent_fallback>Skip to main content</a></div><nav aria-label=Main class="theme-layout-navbar navbar navbar--fixed-top"><div class=navbar__inner><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded=false class="navbar__toggle clean-btn" type=button><svg width=30 height=30 viewBox="0 0 30 30" aria-hidden=true><path stroke=currentColor stroke-linecap=round stroke-miterlimit=10 stroke-width=2 d="M4 7h22M4 15h22M4 23h22"/></svg></button><a class=navbar__brand href=/><div class=navbar__logo><img src=/img/logo/olake-blue-with-text.svg alt="OLake Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"/><img src=/img/logo/olake-blue-with-text.svg alt="OLake Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"/></div><b class="navbar__title text--truncate"></b></a><a class="navbar__item navbar__link" href=/docs/>Docs</a><a class="navbar__item navbar__link" href=/ai-lake/>Pricing</a><a aria-current=page class="navbar__item navbar__link navbar__link--active" href=/blog/>Blogs</a><div class="navbar__item dropdown dropdown--hoverable"><a href=# aria-haspopup=true aria-expanded=false role=button class=navbar__link>Iceberg</a><ul class=dropdown__menu><li><a class=dropdown__link href=/iceberg/>Iceberg Blogs</a><li><a class=dropdown__link href=/iceberg/query-engine/>Query Engine</a></ul></div><div class="navbar__item dropdown dropdown--hoverable"><a href=# aria-haspopup=true aria-expanded=false role=button class=navbar__link>Community</a><ul class=dropdown__menu><li><a class=dropdown__link href=/webinar/>Webinars & Events</a><li><a class=dropdown__link href=/community/>OLake Community</a><li><a class=dropdown__link href=/community/contributors/>Top Contributors</a><li><a class=dropdown__link href=/community/contributor-program/>Contributor's Program</a><li><a class=dropdown__link href=/community/gsoc/>GSoC</a></ul></div><a class="navbar__item navbar__link" href=/customer-stories/>Customer Stories</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href=https://join.slack.com/t/getolake/shared_invite/zt-2uyphqf69-KQxih9Gwd4GCQRD_XFcuyw target=_blank rel="noopener noreferrer" class="navbar__item navbar__link header-slack-link"></a><a href=https://github.com/datazip-inc/olake target=_blank rel="noopener noreferrer" class="navbar__item navbar__link header-github-link"></a><a class="navbar__item navbar__link dev-portal-signup dev-portal-link" href=/#olake-form-product>Talk to us</a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type=button disabled title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill=currentColor d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill=currentColor d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill=currentColor d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"/></svg></button></div><div class=navbarSearchContainer_Bca1><button type=button class="DocSearch DocSearch-Button" aria-label="Search (Meta+k)" aria-keyshortcuts=Meta+k><span class=DocSearch-Button-Container><svg width=20 height=20 class=DocSearch-Search-Icon viewBox="0 0 24 24" aria-hidden=true><circle cx=11 cy=11 r=8 stroke=currentColor fill=none stroke-width=1.4 /><path d="m21 21-4.3-4.3" stroke=currentColor fill=none stroke-linecap=round stroke-linejoin=round /></svg><span class=DocSearch-Button-Placeholder>Search</span></span><span class=DocSearch-Button-Keys></span></button></div></div></div><div role=presentation class=navbar-sidebar__backdrop></div></nav><div id=__docusaurus_skipToContent_fallback class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="fixed top-0 left-0 right-0 z-50 h-1 bg-gray-200 dark:bg-gray-800"><div class="h-full bg-gradient-to-r from-[#193ae6] to-blue-500 transition-all duration-300 ease-out" style=width:0%></div></div><div class="min-h-screen bg-gray-50 dark:bg-gray-950"><div class="lg:hidden bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800"><div class=" max-w-7xl mx-auto px-4 py-4"></div></div><div class="py-8 lg:py-12"><div class=" max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex gap-8 lg:gap-12"><article class="bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 overflow-hidden"><div class="px-6 sm:px-8 lg:px-12 py-8 lg:py-12"><nav class=mb-4 aria-label=Breadcrumb itemscope itemtype=https://schema.org/BreadcrumbList><ol class="flex items-center space-x-2 text-sm text-gray-600 dark:text-gray-400"><li class="flex items-center" itemprop=itemListElement itemscope itemtype=https://schema.org/ListItem><a class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-gray-600 dark:text-gray-400" itemprop=item aria-label=Home title=Home href=/><span class="flex items-center"><svg viewBox="0 0 24 24" class="w-4 h-4 text-gray-900 dark:text-gray-100" fill=currentColor><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z"/></svg></span></a><meta itemprop=name content=Home /><meta itemprop=position content=1 /><li class="flex items-center" itemprop=itemListElement itemscope itemtype=https://schema.org/ListItem><svg class="w-4 h-4 mx-2 text-gray-400" fill=currentColor viewBox="0 0 20 20" aria-hidden=true><path fill-rule=evenodd d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule=evenodd /></svg><a class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-gray-600 dark:text-gray-400" itemprop=item aria-label=Blog title=Blog href=/blog/><span class="flex items-center">Blog</span></a><meta itemprop=name content=Blog /><meta itemprop=position content=2 /><li class="flex items-center" itemprop=itemListElement itemscope itemtype=https://schema.org/ListItem><svg class="w-4 h-4 mx-2 text-gray-400" fill=currentColor viewBox="0 0 20 20" aria-hidden=true><path fill-rule=evenodd d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule=evenodd /></svg><a class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-gray-900 dark:text-gray-100 font-medium" itemprop=item aria-label="Building a Data Lakehouse with Apache Iceberg + ClickHouse + OLake" title="Building a Data Lakehouse with Apache Iceberg + ClickHouse + OLake" href=/blog/build-data-lakehouse-iceberg-clickhouse-olake/><span class="flex items-center">Building a Data Lakehouse with Apache Iceberg + ClickHouse + OLake</span></a><meta itemprop=name content="Building a Data Lakehouse with Apache Iceberg + ClickHouse + OLake"/><meta itemprop=position content=3 /></ol></nav><article class=""><header><h1 class=title_f1Hy>Building a Data Lakehouse with Apache Iceberg + ClickHouse + OLake</h1><div class="container_mt6G margin-vert--md"><time datetime=2025-12-10T00:00:00.000Z>December 10, 2025</time> · <!-- -->34 min read</div><div class="margin-top--md margin-bottom--sm row"><div class="col col--12 authorCol_Hf19"><div class="avatar margin-bottom--sm"><a class=avatar__photo-link href=/blog/authors/sandeep/><img class="avatar__photo authorImage_XqGP" src=/img/authors/sandeep.webp alt="Sandeep Devarapalli"/></a><div class="avatar__intro authorDetails_lV9A"><div class=avatar__name><a href=/blog/authors/sandeep/><span class=authorName_yefp translate=no>Sandeep Devarapalli</span></a></div><small class=authorTitle_nd0D title="OLake Maintainer">OLake Maintainer</small><div class=authorSocials_rSDt><a href=https://www.linkedin.com/in/sandeepdevarapalli/ target=_blank rel="noopener noreferrer" class=authorSocialLink_owbf title=LinkedIn><svg xmlns=http://www.w3.org/2000/svg width=1em height=1em preserveAspectRatio=xMidYMid viewBox="0 0 256 256" style=--dark:#0a66c2;--light:#ffffffe6 class="authorSocialIcon_XYv3 linkedinSvg_FCgI"><path d="M218.123 218.127h-37.931v-59.403c0-14.165-.253-32.4-19.728-32.4-19.756 0-22.779 15.434-22.779 31.369v60.43h-37.93V95.967h36.413v16.694h.51a39.907 39.907 0 0 1 35.928-19.733c38.445 0 45.533 25.288 45.533 58.186l-.016 67.013ZM56.955 79.27c-12.157.002-22.014-9.852-22.016-22.009-.002-12.157 9.851-22.014 22.008-22.016 12.157-.003 22.014 9.851 22.016 22.008A22.013 22.013 0 0 1 56.955 79.27m18.966 138.858H37.95V95.967h37.97v122.16ZM237.033.018H18.89C8.58-.098.125 8.161-.001 18.471v219.053c.122 10.315 8.576 18.582 18.89 18.474h218.144c10.336.128 18.823-8.139 18.966-18.474V18.454c-.147-10.33-8.635-18.588-18.966-18.453"/></svg></a></div></div></div></div></div></header><div id=__blog-post-container class=markdown><p><img decoding=async loading=lazy alt="Building a Data Lakehouse with Apache Iceberg + ClickHouse + OLake" src=/assets/images/build-data-lakehouse-iceberg-clickhouse-olake-cover-6425386e2b1b405d9a6bf6d6ab9cd3cb.webp width=1576 height=988 class=img_CujE /></p>
+<p>If you're serious about building a modern data architecture, you'll love this one. We'll put together a fully open-source lakehouse platform using Apache Iceberg, ClickHouse, OLake and MinIO — and you can spin it up on your laptop using Docker in a few steps.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=what-is-a-data-lakehouse>What is a data lakehouse?<a href=#what-is-a-data-lakehouse class=hash-link aria-label="Direct link to What is a data lakehouse?" title="Direct link to What is a data lakehouse?" translate=no>​</a></h2>
+<p>In short: it blends the flexibility of a data lake (large-scale object storage, schema-on-read) with the structure and performance of a data warehouse (transactions, fast queries, governance). With Iceberg as the table format, you get ACID semantics, schema evolution and time-travel out of the box. That means you can treat your object storage like a first-class table store, not just a dump of files.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=why-this-architecture-matters>Why this architecture matters<a href=#why-this-architecture-matters class=hash-link aria-label="Direct link to Why this architecture matters" title="Direct link to Why this architecture matters" translate=no>​</a></h2>
+<p>Here's the architecture we'll build:</p>
+<ul>
+<li class="">
+<p><strong>Source</strong>: MySQL – the operational database</p>
+</li>
+<li class="">
+<p><strong>Ingestion</strong>: OLake UI captures CDC (change-data-capture) from MySQL and writes into Iceberg tables stored in MinIO</p>
+</li>
+<li class="">
+<p><strong>Storage</strong>: MinIO serves as the S3-compatible object storage for both raw and curated Iceberg tables</p>
+</li>
+<li class="">
+<p><strong>Metadata</strong>: Iceberg REST catalog (e.g., via PostgreSQL) tracks snapshots, schemas and manifests</p>
+</li>
+<li class="">
+<p><strong>Query engine</strong>: ClickHouse connects to the Iceberg REST catalog (via its DataLakeCatalog/Iceberg engine), enabling real-time analytics on data sitting in object storage</p>
+</li>
+</ul>
+<p>This architecture lets you move data from MySQL → Iceberg (raw) → queryable immediately in ClickHouse — without heavy ETL stacks, Kafka or massive orchestration overhead.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=what-well-do>What we'll do<a href=#what-well-do class=hash-link aria-label="Direct link to What we'll do" title="Direct link to What we'll do" translate=no>​</a></h2>
+<ul>
+<li class="">
+<p>Set up OLake UI (as your orchestration hub for CDC pipelines)</p>
+</li>
+<li class="">
+<p>Launch the core services: MySQL, MinIO, Iceberg REST catalog, ClickHouse — all via a single <code>docker compose up -d</code> command</p>
+</li>
+<li class="">
+<p>In OLake UI: define a MySQL source (with CDC enabled), select MinIO/Iceberg as the destination, and activate a job (for example named <code>iceberg_job</code>) which will write into a namespace like <code>iceberg_job_demo_db</code> on MinIO</p>
+</li>
+<li class="">
+<p><strong>Map the Iceberg tables into ClickHouse using the Iceberg REST catalog and run analytics comparing raw Iceberg data with optimized Silver/Gold layers.</strong></p>
+</li>
+</ul>
+<hr/>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=table-of-contents>Table of Contents<a href=#table-of-contents class=hash-link aria-label="Direct link to Table of Contents" title="Direct link to Table of Contents" translate=no>​</a></h2>
+<ol>
+<li class=""><a href=#architecture-at-a-glance class="">Architecture at a Glance</a></li>
+<li class=""><a href=#setting-up-olake-ui---cdc-engine class="">Setting Up OLake UI - CDC Engine</a></li>
+<li class=""><a href=#clone-the-repo--understand-the-layout class="">Clone the Repo & Understand the Layout</a></li>
+<li class=""><a href=#bring-up-the-core-services class="">Bring Up the Core Services</a></li>
+<li class=""><a href=#minio-console---your-data-lake-dashboard class="">MinIO Console - Your Data Lake Dashboard</a></li>
+<li class=""><a href=#seed-mysql-with-demo-data class="">Seed MySQL with Demo Data</a></li>
+<li class=""><a href=#-sample-data-overview class="">📊 Sample Data Overview</a></li>
+<li class=""><a href=#inspect-mysql-data-before-syncing class="">Inspect MySQL Data Before Syncing</a></li>
+<li class=""><a href=#prepare-clickhouse-for-the-iceberg-rest-catalog class="">Prepare ClickHouse for the Iceberg REST Catalog</a></li>
+<li class=""><a href=#configure-olake-ui-step-by-step-guide class="">Configure OLake UI: Step-by-Step Guide</a></li>
+<li class=""><a href=#query-iceberg-tables-from-clickhouse class="">Query Iceberg Tables from ClickHouse</a></li>
+<li class=""><a href=#understanding-the-three-layer-architecture class="">Understanding the Three-Layer Architecture</a></li>
+<li class=""><a href=#raw-vs-optimized-analytics--performance-comparison class="">Raw vs Optimized Analytics & Performance Comparison</a></li>
+<li class=""><a href=#cleaning-up-the-environment class="">Cleaning Up the Environment</a></li>
+<li class=""><a href=#where-to-go-next class="">Where to Go Next</a></li>
+</ol>
+<hr/>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=architecture-at-a-glance>Architecture at a Glance<a href=#architecture-at-a-glance class=hash-link aria-label="Direct link to Architecture at a Glance" title="Direct link to Architecture at a Glance" translate=no>​</a></h2>
+<p>The following diagram illustrates the complete data flow from MySQL through OLake CDC, into MinIO as Iceberg tables, and finally into ClickHouse for analytics:</p>
+<p><img decoding=async loading=lazy alt="Data Lakehouse Architecture" src=/assets/images/architecture-4a660de51abd7e01f380f954f7dbe2a9.webp width=2036 height=502 class=img_CujE /></p>
+<p><strong>How the pieces work together</strong></p>
+<ol>
+<li class="">
+<p><strong>MySQL</strong> emits change events via binlog. OLake UI captures those CDC streams and lands them in MinIO as raw Iceberg tables under the namespace <code>iceberg_job_&lt;database></code>.</p>
+</li>
+<li class="">
+<p><strong>Iceberg REST Catalog</strong> keeps the table metadata (schemas, snapshots, manifests) in PostgreSQL while pointing all data files to MinIO's <code>warehouse</code> bucket.</p>
+</li>
+<li class="">
+<p><strong>ClickHouse</strong> connects to the REST catalog using the <code>DataLakeCatalog</code> engine, which lets it read the raw Iceberg tables, build an optimized Silver Iceberg table back in MinIO, and materialize Gold KPIs in local MergeTree storage.</p>
+</li>
+</ol>
+<p><strong>Key components</strong></p>
+<ul>
+<li class="">
+<p><strong>MySQL 8.0</strong> – Demo OLTP workload with GTID + binlog enabled for OLake CDC.</p>
+</li>
+<li class="">
+<p><strong>OLake UI (separate docker-compose)</strong> – Configures the source, destination, and <code>iceberg_job</code> pipeline that writes Iceberg tables to MinIO through the REST catalog.</p>
+</li>
+<li class="">
+<p><strong>MinIO</strong> – Acts as the S3-compatible warehouse holding both the raw namespace (<code>iceberg_job_demo_db</code>) and the curated Silver namespace (<code>demo_lakehouse_silver</code>).</p>
+</li>
+<li class="">
+<p><strong>Iceberg REST Catalog + PostgreSQL</strong> – Serves metadata to both OLake and ClickHouse, ensuring all engines see the same table definitions.</p>
+</li>
+<li class="">
+<p><strong>ClickHouse</strong> – Queries raw Iceberg via REST, writes the Silver Iceberg table back to MinIO, and stores Gold aggregates locally for sub-10ms dashboards.</p>
+</li>
+</ul>
+<hr/>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=setting-up-olake-ui---cdc-engine>Setting Up OLake UI - CDC Engine<a href=#setting-up-olake-ui---cdc-engine class=hash-link aria-label="Direct link to Setting Up OLake UI - CDC Engine" title="Direct link to Setting Up OLake UI - CDC Engine" translate=no>​</a></h2>
+<p>OLake has one of its unique offerings the OLake UI, which we will be using for our setup. This is a user-friendly control center for managing data pipelines without relying heavily on CLI commands. It allows you to configure sources, destinations, and jobs visually, making the setup more accessible and less error-prone. Many organizations actively use OLake UI to reduce manual CLI work, streamline CDC pipelines, and adopt a no-code-friendly approach.</p>
+<p>For our setup, we will be working with the OLake UI. We'll start by cloning the repository from GitHub and bringing it up using Docker Compose. Once the UI is running, it will serve as our control hub for creating and monitoring all CDC pipelines.</p>
+<p>Let's start by getting the interface running. Go ahead and create a folder named <code>olake-setup</code>. Inside this folder, create another folder called <code>olake-data</code>.</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#bfc7d5;--prism-background-color:#292d3e><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style=color:#bfc7d5;background-color:#292d3e><code class=codeBlockLines_e6Vv><span class=token-line style=color:#bfc7d5><span class="token plain">mkdir olake-setup</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">cd olake-setup</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">mkdir olake-data</span><br/></span></code></pre></div></div>
+<p>Clone the OLake UI repository:</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#bfc7d5;--prism-background-color:#292d3e><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style=color:#bfc7d5;background-color:#292d3e><code class=codeBlockLines_e6Vv><span class=token-line style=color:#bfc7d5><span class="token plain">git clone https://github.com/datazip-inc/olake-ui.git</span><br/></span></code></pre></div></div>
+<p>Now, here's the important part - open up the docker-compose file you would see a persistence path command there. We need to make sure the persistence path is set correctly. Otherwise, you'll lose all your configurations every time you restart the containers.</p>
+<p>Make sure to run this command in your terminal so it saves your file location for the host persistence path (while still in the <code>olake-setup</code> directory, before changing into <code>olake-ui</code>):</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#bfc7d5;--prism-background-color:#292d3e><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style=color:#bfc7d5;background-color:#292d3e><code class=codeBlockLines_e6Vv><span class=token-line style=color:#bfc7d5><span class="token plain">export PWD=$(pwd)</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">cd olake-ui</span><br/></span></code></pre></div></div>
+<p>The OLake UI docker-compose file uses <code>${PWD}/olake-data</code> as the host persistence path. This means all your OLake configurations, job states, and metadata will be saved to an olake-data folder in your current directory. Well, that's exactly what we want - persistent storage that survives container restarts!</p>
+<p>Now let's fire up the OLake UI:</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#bfc7d5;--prism-background-color:#292d3e><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style=color:#bfc7d5;background-color:#292d3e><code class=codeBlockLines_e6Vv><span class=token-line style=color:#bfc7d5><span class="token plain">docker compose up -d</span><br/></span></code></pre></div></div>
+<p>Once it's running, go ahead at <a href=http://localhost:8000 target=_blank rel="noopener noreferrer" class="">http://localhost:8000</a>, olake-ui and use these credentials:</p>
+<ul>
+<li class="">
+<p><strong>Username:</strong> <code>admin</code></p>
+</li>
+<li class="">
+<p><strong>Password:</strong> <code>password</code></p>
+</li>
+</ul>
+<p>You are greeted with Olake UI! The dashboard will show you job status tabs and an onboarding tutorial to help you get started.</p>
+<p><strong>Note:</strong> Keep this terminal window open or note the directory path. You'll need to come back to this OLake UI setup later when configuring your pipelines. For now, let's set up the rest of the infrastructure.</p>
+<hr/>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=clone-the-repo--understand-the-layout>Clone the Repo & Understand the Layout<a href=#clone-the-repo--understand-the-layout class=hash-link aria-label="Direct link to Clone the Repo & Understand the Layout" title="Direct link to Clone the Repo & Understand the Layout" translate=no>​</a></h2>
+<p>Now, let's set up the main lakehouse infrastructure. In a <strong>new terminal window</strong> (or navigate to a different directory), clone the main repository:</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#bfc7d5;--prism-background-color:#292d3e><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style=color:#bfc7d5;background-color:#292d3e><code class=codeBlockLines_e6Vv><span class=token-line style=color:#bfc7d5><span class="token plain">git clone https://github.com/sandeep-devarapalli/Apache-Iceberg-with-clickhouse-olake.git</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">cd Apache-Iceberg-with-clickhouse-olake</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">tree -F -L 1</span><br/></span></code></pre></div></div>
+<p>Directory highlights:</p>
+<ul>
+<li class="">
+<p><code>docker-compose.yml</code> – orchestrates core services (MySQL, MinIO, ClickHouse, Iceberg REST Catalog, helper clients). <strong>Note:</strong> This does NOT include OLake UI - we set that up separately above.</p>
+</li>
+<li class="">
+<p><code>mysql-init/</code> – DDL + seed data executed automatically for the demo schema.</p>
+</li>
+<li class="">
+<p><code>clickhouse-config/</code> – server + user configs that enable the Iceberg feature flags.</p>
+</li>
+<li class="">
+<p><code>scripts/</code> – SQL helpers (<code>mysql-integration.sql</code> now acts as an Iceberg REST smoke test, plus <code>iceberg-setup.sql</code> & <code>cross-database-analytics.sql</code>).</p>
+</li>
+</ul>
+<hr/>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=bring-up-the-core-services>Bring Up the Core Services<a href=#bring-up-the-core-services class=hash-link aria-label="Direct link to Bring Up the Core Services" title="Direct link to Bring Up the Core Services" translate=no>​</a></h2>
+<p>Start the core services (MySQL, MinIO, ClickHouse, and Iceberg REST Catalog). <strong>Note:</strong> OLake UI is already running separately from the previous step.</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#bfc7d5;--prism-background-color:#292d3e><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style=color:#bfc7d5;background-color:#292d3e><code class=codeBlockLines_e6Vv><span class=token-line style=color:#bfc7d5><span class="token plain">docker compose up -d</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">docker compose ps</span><br/></span></code></pre></div></div>
+<p><strong>What to expect:</strong></p>
+<ul>
+<li class="">
+<p>All services will start and become healthy within 1-2 minutes</p>
+</li>
+<li class="">
+<p>The <code>mc</code> container will create the <code>warehouse</code> and <code>olake-data</code> buckets and then exit with status 0 (this is normal - the container's job is done)</p>
+</li>
+<li class="">
+<p>The <code>init-test-table</code> container will create a test table (<code>test_olake.test_olake</code>) for OLake connection testing and then exit (this ensures OLake's test connection succeeds)</p>
+</li>
+<li class="">
+<p>You should see all core services (mysql, minio, postgres, iceberg-rest, clickhouse) showing "healthy" status</p>
+</li>
+<li class="">
+<p>The <code>olake-auto-connect</code> service will start and keep running to connect OLake test containers to the network</p>
+</li>
+</ul>
+<p><strong>Verification after startup:</strong></p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#bfc7d5;--prism-background-color:#292d3e><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style=color:#bfc7d5;background-color:#292d3e><code class=codeBlockLines_e6Vv><span class=token-line style=color:#bfc7d5><span class="token plain"># Verify REST Catalog is accessible</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">curl http://localhost:8181/v1/config</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain"># Should return: {"defaults":{},"overrides":{}}</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain" style=display:inline-block></span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain"># Check that buckets were created (check mc logs)</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">docker ps -a --filter "name=mc" --format "{{.ID}}" | head -1 | xargs -I {} docker logs {} 2>&1 | grep -E "(warehouse|complete)"</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain" style=display:inline-block></span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain"># Verify test table was created for OLake connection testing</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">docker logs init-test-table</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain"># Should show: "✅ Test table created successfully! OLake test connection should now work."</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain" style=display:inline-block></span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain"># Verify test table exists in REST catalog</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">curl -s http://localhost:8181/v1/namespaces/test_olake/tables | jq .</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain"># Should show: {"identifiers":[{"namespace":["test_olake"],"name":"test_olake"}]}</span><br/></span></code></pre></div></div>
+<table><thead><tr><th>Service<th>Purpose<th>Host Access<tbody><tr><td><code>mysql-server</code><td>Source OLTP DB<td><code>localhost:3307</code><tr><td><code>postgres</code><td>Iceberg REST catalog metadata storage<td><code>localhost:5432</code><tr><td><code>minio</code><td>S3-compatible storage<td>API <code>http://localhost:9090</code>, Console <code>http://localhost:9091</code><tr><td><code>mc</code><td>MinIO client for bucket initialization<td>Creates warehouse and olake-data buckets, then exits (this is expected)<tr><td><code>clickhouse-server</code><td>Query engine<td>HTTP <code>http://localhost:8123</code>, Native <code>localhost:19000</code><tr><td><code>clickhouse-client</code>, <code>mysql-client</code><td>Utility containers<td>used for scripts<tr><td><code>iceberg-rest</code><td>Iceberg REST catalog<td>REST API <code>http://localhost:8181</code><tr><td><code>olake-auto-connect</code><td>Network connector<td>Automatically connects OLake test containers to the Docker network</table>
+<p><strong>Note:</strong> OLake UI and its dependencies (PostgreSQL, Temporal, Elasticsearch) are running separately in the <code>olake-setup/olake-ui</code> directory we set up earlier. Access it at <code>http://localhost:8000</code>.</p>
+<hr/>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=minio-console---your-data-lake-dashboard>MinIO Console - Your Data Lake Dashboard<a href=#minio-console---your-data-lake-dashboard class=hash-link aria-label="Direct link to MinIO Console - Your Data Lake Dashboard" title="Direct link to MinIO Console - Your Data Lake Dashboard" translate=no>​</a></h2>
+<p>Once MinIO is running, you can access the MinIO Console to visually inspect your data lake:</p>
+<p><strong>Access the MinIO Console:</strong></p>
+<ul>
+<li class="">
+<p>URL: <code>http://localhost:9091</code></p>
+</li>
+<li class="">
+<p><strong>Username:</strong> <code>admin</code></p>
+</li>
+<li class="">
+<p><strong>Password:</strong> <code>password</code></p>
+</li>
+</ul>
+<p>The MinIO Console provides a web-based interface where you can:</p>
+<ul>
+<li class="">
+<p>Browse buckets and objects</p>
+</li>
+<li class="">
+<p>Monitor storage usage</p>
+</li>
+<li class="">
+<p>Verify that Iceberg tables are being written correctly</p>
+</li>
+<li class="">
+<p>Inspect the <code>warehouse</code> bucket structure</p>
+</li>
+</ul>
+<p>The <code>warehouse</code> and <code>olake-data</code> buckets are automatically created by the <code>mc</code> service in docker-compose.yml.</p>
+<p><strong>Note:</strong> The <code>mc</code> container exits after successfully creating the buckets (exit code 0) - this is expected behavior. You can verify the buckets exist by checking the MinIO Console (<code>http://localhost:9091</code>) or by checking the <code>mc</code> container logs. Once OLake starts writing data, you'll see directories for each table (e.g., <code>iceberg_job_demo_db/users/</code>, <code>iceberg_job_demo_db/products/</code>, etc.) containing Iceberg metadata and Parquet data files. The namespace format is <code>&lt;job_name>_&lt;database_name></code>.</p>
+<hr/>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=seed-mysql-with-demo-data>Seed MySQL with Demo Data<a href=#seed-mysql-with-demo-data class=hash-link aria-label="Direct link to Seed MySQL with Demo Data" title="Direct link to Seed MySQL with Demo Data" translate=no>​</a></h2>
+<p>The MySQL container automatically executes:</p>
+<ul>
+<li class="">
+<p><code>mysql-init/01-setup.sql</code> – creates the <code>demo_db</code> schema (<code>users</code>, <code>products</code>, <code>orders</code>, <code>user_sessions</code>) and automatically generates a large dataset for performance testing:</p>
+<ul>
+<li class="">
+<p><strong>~1000 users</strong> with realistic demographics across 13 countries</p>
+</li>
+<li class="">
+<p><strong>~200 products</strong> across 9 categories</p>
+</li>
+<li class="">
+<p><strong>~10,000 orders</strong> (approximately 10 orders per user)</p>
+</li>
+<li class="">
+<p><strong>~5,000 user sessions</strong> (approximately 5 sessions per user)</p>
+</li>
+</ul>
+</li>
+<li class="">
+<p><code>mysql-init/02-permissions.sql</code> – creates integration users:</p>
+<ul>
+<li class="">
+<p><code>olake / olake_pass</code> (CDC + replication privileges for OLake UI).</p>
+</li>
+<li class="">
+<p><code>demo_user / demo_password</code> (for manual testing and inspection).</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=-sample-data-overview>📊 Sample Data Overview<a href=#-sample-data-overview class=hash-link aria-label="Direct link to 📊 Sample Data Overview" title="Direct link to 📊 Sample Data Overview" translate=no>​</a></h3>
+<p>The demo includes realistic e-commerce data:</p>
+<p><strong>Tables:</strong></p>
+<ul>
+<li class="">
+<p><strong>users</strong> (1000+ users) - Customer information with demographics</p>
+</li>
+<li class="">
+<p><strong>products</strong> (200+ products) - Product catalog across multiple categories</p>
+</li>
+<li class="">
+<p><strong>orders</strong> (10,000+ orders) - Purchase history with various statuses</p>
+</li>
+<li class="">
+<p><strong>user_sessions</strong> (5,000+ sessions) - User activity tracking</p>
+</li>
+</ul>
+<p><strong>Geographic Distribution:</strong></p>
+<p>USA, Canada, UK, Germany, France, Spain, Japan, India, Australia, Norway, Brazil, Mexico, Singapore</p>
+<p><strong>Product Categories:</strong></p>
+<p>Electronics, Gaming, Software, Home, Health, Books, Education, Accessories, Furniture</p>
+<hr/>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=inspect-mysql-data-before-syncing>Inspect MySQL Data Before Syncing<a href=#inspect-mysql-data-before-syncing class=hash-link aria-label="Direct link to Inspect MySQL Data Before Syncing" title="Direct link to Inspect MySQL Data Before Syncing" translate=no>​</a></h2>
+<p>Before configuring OLake UI, you may want to inspect what data is available in MySQL.</p>
+<p><strong>Quick script (recommended):</strong></p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#bfc7d5;--prism-background-color:#292d3e><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style=color:#bfc7d5;background-color:#292d3e><code class=codeBlockLines_e6Vv><span class=token-line style=color:#bfc7d5><span class="token plain"># Run the helper script for a complete overview</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">./scripts/inspect-mysql-data.sh</span><br/></span></code></pre></div></div>
+<hr/>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=prepare-clickhouse-for-the-iceberg-rest-catalog>Prepare ClickHouse for the Iceberg REST Catalog<a href=#prepare-clickhouse-for-the-iceberg-rest-catalog class=hash-link aria-label="Direct link to Prepare ClickHouse for the Iceberg REST Catalog" title="Direct link to Prepare ClickHouse for the Iceberg REST Catalog" translate=no>​</a></h2>
+<p>ClickHouse ships with experimental Iceberg support disabled by default. The repo already enables the necessary flags inside <code>clickhouse-config/config.xml</code> and expects an Iceberg REST catalog provided by OLake.</p>
+<p><strong>Iceberg REST Catalog Details:</strong></p>
+<ul>
+<li class="">
+<p><strong>REST Catalog URI (for OLake UI)</strong>: <code>http://host.docker.internal:8181</code> (use this in OLake destination configuration)</p>
+</li>
+<li class="">
+<p><strong>REST Catalog URI (from host)</strong>: <code>http://localhost:8181</code> (for testing from your machine)</p>
+</li>
+<li class="">
+<p><strong>Full API endpoint</strong>: <code>http://localhost:8181/v1/config</code> (for health checks from host)</p>
+</li>
+<li class="">
+<p><strong>Namespace</strong>: <code>iceberg_job_demo_db</code> (format: <code>&lt;job_name>_&lt;database_name></code> - where OLake writes the raw Iceberg tables)</p>
+</li>
+<li class="">
+<p><strong>No authentication required</strong> (Iceberg REST catalog doesn't use auth by default)</p>
+</li>
+</ul>
+<p>The Iceberg REST catalog service (<code>iceberg-rest</code>) is included in docker-compose.yml and provides the REST API for Iceberg table metadata. It uses a <strong>PostgreSQL-backed catalog</strong> (the <code>postgres</code> service) for persistent metadata storage, ensuring catalog state survives container restarts. The actual Iceberg table data is stored in MinIO's <code>warehouse</code> bucket and persists independently.</p>
+<p>Once the container is healthy (check with <code>docker-compose ps</code>), you can proceed with the OLake pipeline steps.</p>
+<hr/>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=configure-olake-ui-step-by-step-guide>Configure OLake UI: Step-by-Step Guide<a href=#configure-olake-ui-step-by-step-guide class=hash-link aria-label="Direct link to Configure OLake UI: Step-by-Step Guide" title="Direct link to Configure OLake UI: Step-by-Step Guide" translate=no>​</a></h2>
+<p>OLake UI should already be running from the earlier setup step.</p>
+<p>Now let's configure OLake UI to replicate data from MySQL to Iceberg tables in MinIO. Open your browser and navigate to <code>http://localhost:8000</code>. You'll see the OLake UI login page.</p>
+<p><strong>Note:</strong> OLake UI runs in a separate Docker Compose setup and connects to the core services (MySQL, MinIO, etc.) via <code>host.docker.internal</code> or container IP addresses. The core services should be running from the previous step.</p>
+<p><strong>Step 1: Log in to OLake UI</strong></p>
+<ul>
+<li class="">
+<p>URL: <code>http://localhost:8000</code></p>
+</li>
+<li class="">
+<p>Username: <code>admin</code></p>
+</li>
+<li class="">
+<p>Password: <code>password</code></p>
+</li>
+</ul>
+<p>Once logged in, you'll see the OLake dashboard. We need to configure two things: a <strong>Source</strong> (MySQL) and a <strong>Destination</strong> (Iceberg on MinIO).</p>
+<p><strong>Step 2: Register the MySQL Source</strong></p>
+<ol>
+<li class="">
+<p>In the left sidebar, click on <strong>Sources</strong>, then click <strong>New Source</strong>.</p>
+</li>
+<li class="">
+<p>Select <strong>MySQL</strong> as the source type.</p>
+</li>
+<li class="">
+<p>Fill in the connection details:</p>
+<ul>
+<li class="">
+<p><strong>Name of your source</strong>: <code>mysql_source</code> (or a descriptive name of your choosing)</p>
+</li>
+<li class="">
+<p><strong>OLake Version</strong>: latest</p>
+</li>
+<li class="">
+<p><strong>Host</strong>: <code>host.docker.internal</code> (use this to access MySQL via host port mapping, or use <code>mysql</code> if OLake UI is on the same Docker network)</p>
+</li>
+<li class="">
+<p><strong>Port</strong>: <code>3307</code> (use the host port if using <code>host.docker.internal</code>, or <code>3306</code> if using Docker service name <code>mysql</code>)</p>
+</li>
+<li class="">
+<p><strong>Database</strong>: <code>demo_db</code></p>
+</li>
+<li class="">
+<p><strong>Username</strong>: <code>olake</code></p>
+</li>
+<li class="">
+<p><strong>Password</strong>: <code>olake_pass</code></p>
+</li>
+<li class="">
+<p><strong>Enable SSL</strong>: Leave this unchecked (set to <code>false</code>)</p>
+</li>
+<li class="">
+<p><strong>Sync Mode</strong>: <code>Full Refresh</code> (default)</p>
+</li>
+<li class="">
+<p><strong>Ingestion Mode</strong>: <code>Upsert</code> (default)</p>
+</li>
+</ul>
+</li>
+<li class="">
+<p>Click <strong>Next</strong> or <strong>Test Connection</strong> to verify the connection works.</p>
+</li>
+</ol>
+<p><img decoding=async loading=lazy alt="Source registered" src=/assets/images/source_registered-ea50b6e4c9239048d3b9d9cd53caa9b3.webp width=1338 height=1242 class=img_CujE /></p>
+<p>Great! Your MySQL source is now registered.</p>
+<p><strong>Step 3: Register the Iceberg Destination (MinIO) using OLake REST Catalog</strong></p>
+<ol>
+<li class="">
+<p>In the left sidebar, click on <strong>Destinations</strong>, then click <strong>New Destination</strong>.</p>
+</li>
+<li class="">
+<p>Select <strong>Apache Iceberg</strong> as the destination type.</p>
+<ul>
+<li class=""><strong>Name of your destination</strong>: <code>iceberg_destination</code> (or a descriptive name of your choosing)</li>
+</ul>
+</li>
+<li class="">
+<p>In the <strong>Catalog</strong> section:</p>
+<ul>
+<li class="">
+<p><strong>Catalog</strong>: Select <code>REST Catalog</code></p>
+</li>
+<li class="">
+<p><strong>REST Catalog URI</strong>: <code>http://host.docker.internal:8181</code> (use host.docker.internal to access services via host port mappings)</p>
+</li>
+<li class="">
+<p><strong>S3 Path</strong>: <code>s3://warehouse/</code> (this is the S3 path where Iceberg tables will be stored)</p>
+</li>
+<li class="">
+<p><strong>S3 Endpoint</strong>: <code>http://host.docker.internal:9090</code> (use host.docker.internal with host port 9090, which maps to MinIO's container port 9090)</p>
+</li>
+<li class="">
+<p><strong>AWS Access Key</strong>: <code>admin</code> (MinIO access key)</p>
+</li>
+<li class="">
+<p><strong>AWS Secret Key</strong>: <code>password</code> (MinIO secret key)</p>
+</li>
+<li class="">
+<p><strong>AWS Region</strong>: <code>us-east-1</code></p>
+</li>
+</ul>
+</li>
+<li class="">
+<p>Click <strong>Save</strong> or <strong>Create Destination</strong>.</p>
+</li>
+</ol>
+<p><img decoding=async loading=lazy alt="Save destination" src=/assets/images/save-destination-60fc19caf278406aab733c02f183690b.webp width=1328 height=1198 class=img_CujE /></p>
+<p>Perfect! Now OLake knows where to write the Iceberg tables.</p>
+<p>The destination is configured to use:</p>
+<ul>
+<li class="">
+<p><strong>Iceberg REST Catalog</strong> at <code>http://host.docker.internal:8181</code> for catalog metadata (accessed via host port mapping)</p>
+</li>
+<li class="">
+<p><strong>MinIO</strong> at <code>http://host.docker.internal:9090</code> as the S3-compatible storage backend (accessed via host port mapping - host port 9090 maps to MinIO's container port 9090)</p>
+</li>
+<li class="">
+<p><strong>S3 Bucket</strong>: <code>warehouse</code> (automatically created by the <code>mc</code> service)</p>
+</li>
+<li class="">
+<p><strong>Namespace</strong>: The namespace will be automatically created based on your job name and database (format: <code>&lt;job_name>_&lt;database_name></code>). For example, if your job is named <code>iceberg_job</code> and your MySQL database is <code>demo_db</code>, the namespace will be <code>iceberg_job_demo_db</code>.</p>
+</li>
+</ul>
+<p><strong>Step 4: Create and Configure the Pipeline</strong></p>
+<p>Now we'll create a pipeline that connects the MySQL source to the Iceberg destination. You can create a single multi-table pipeline (recommended for this demo)</p>
+<ol>
+<li class="">
+<p>In the left sidebar, click on <strong>Jobs</strong>, then click <strong>New Job</strong> or <strong>Create Job</strong>.</p>
+</li>
+<li class="">
+<p><strong>Name your job</strong>: <code>iceberg_job</code> (or any name you prefer - this will be used as part of the namespace)</p>
+</li>
+<li class="">
+<p>Select your MySQL source (the one you just created).</p>
+</li>
+<li class="">
+<p>Select your Iceberg destination (the one you just created).</p>
+</li>
+<li class="">
+<p>Configure per-table settings. For each table, set the partition strategy using Iceberg partition transforms:</p>
+<table><thead><tr><th>Table<th>Partition Regex<th>Primary Key<th>Use Case<tbody><tr><td><code>users</code><td><code>/{created_at, month}/{country, identity}</code><td><code>id</code><td>Monthly user analytics with geographic filtering<tr><td><code>products</code><td><code>/{category, identity}</code><td><code>id</code><td>Category-based product queries<tr><td><code>orders</code><td><code>/{order_date, month}/{status, identity}</code><td><code>id</code><td>Monthly order reporting by status<tr><td><code>user_sessions</code><td><code>/{login_time, day}</code><td><code>id</code><td>Daily session analytics</table>
+<p><strong>Understanding Iceberg Partition Transforms:</strong></p>
+<p>Iceberg partitioning groups rows that share common values at write-time, enabling efficient query pruning. When you filter on partition columns, Iceberg consults metadata to skip irrelevant data files entirely.</p>
+<p><strong>Transforms used in this demo:</strong></p>
+<ul>
+<li class="">
+<p><strong><code>month(created_at)</code></strong>: Extracts the month (1-12) from a timestamp. Ideal for monthly reporting and time-range queries.</p>
+</li>
+<li class="">
+<p><strong><code>day(login_time)</code></strong>: Returns the calendar day (1-31) from a timestamp. Perfect for daily dashboards and retention policies.</p>
+</li>
+<li class="">
+<p><strong><code>identity(country)</code></strong>: Writes the raw column value unchanged. Best for columns with few distinct values like country, status, or category.</p>
+</li>
+</ul>
+<p><strong>Why these partitions?</strong></p>
+<ul>
+<li class="">
+<p><strong><code>users</code> table</strong>: Partitioned by month and country enables efficient queries like "users created in January from USA" - Iceberg scans only the <code>created_at_month=1/country=USA/</code> directory.</p>
+</li>
+<li class="">
+<p><strong><code>products</code> table</strong>: Identity transform on category allows category-based analytics to skip irrelevant product types.</p>
+</li>
+<li class="">
+<p><strong><code>orders</code> table</strong>: Month + status partitioning optimizes queries like "orders in April with status 'shipped'" - scans only <code>order_date_month=4/status=shipped/</code> data.</p>
+</li>
+<li class="">
+<p><strong><code>user_sessions</code> table</strong>: Daily partitioning enables efficient time-range queries for session analytics and daily dashboards.</p>
+</li>
+</ul>
+<p><strong>How to configure in OLake UI:</strong></p>
+<ol>
+<li class="">
+<p>Select your table in the job configuration</p>
+</li>
+<li class="">
+<p>Keep <strong>Normalization</strong> enabled</p>
+</li>
+<li class="">
+<p>Select <strong>Partitioning</strong> in the right tab</p>
+</li>
+<li class="">
+<p>Enter the partition regex in the format: <code>/{field_name, transform}</code></p>
+</li>
+<li class="">
+<p>For hierarchical partitioning (multiple levels), use: <code>/{field1, transform1}/{field2, transform2}</code></p>
+</li>
+<li class="">
+<p>Set <strong>Sync Mode</strong>: <code>Full Refresh</code> (default)</p>
+</li>
+<li class="">
+<p>Set <strong>Ingestion Mode</strong>: <code>Upsert</code> (default)</p>
+</li>
+</ol>
+<p><img decoding=async loading=lazy alt="Ingestion mode" src=/assets/images/ingestion-mode-66728344e09dbc0094aad6e14d4c95f8.webp width=1878 height=1002 class=img_CujE /></p>
+<p><strong>Example:</strong> For the <code>users</code> table, enter: <code>/{created_at, month}/{country, identity}</code></p>
+<p><strong>Important Notes:</strong></p>
+<ul>
+<li class="">
+<p>Iceberg does not support redundant fields during partitioning. Avoid applying multiple time transforms to the same column (e.g., don't use both <code>year(ts)</code> and <code>month(ts)</code> on the same column).</p>
+</li>
+<li class="">
+<p>Start simple and evolve: You can add more partition fields later as your query patterns change. Iceberg maintains backward compatibility with old snapshots.</p>
+</li>
+<li class="">
+<p>Aim for 100-10,000 files per partition folder for optimal performance.</p>
+</li>
+</ul>
+</li>
+<li class="">
+<p>Click <strong>Save</strong>.</p>
+</li>
+</ol>
+<p><strong>Step 5: Start the Job and Watch It Run</strong></p>
+<ol>
+<li class="">
+<p>Find your job (named <code>iceberg_job</code>) in the Jobs list and click on it.</p>
+</li>
+<li class="">
+<p>Click <strong>Sync now</strong> under the <strong>Actions</strong> button.</p>
+</li>
+</ol>
+<p><img decoding=async loading=lazy alt="Sync now" src=/assets/images/sync-now-3e3cb3fbd77b3ff2019331c9fb2d26e3.webp width=1928 height=1032 class=img_CujE /></p>
+<p>That's it! OLake will now start syncing your MySQL data to Iceberg tables. Here's what happens behind the scenes:</p>
+<ul>
+<li class="">
+<p>OLake takes an initial snapshot of all data from MySQL (this may take 2-5 minutes with 10,000+ orders)</p>
+</li>
+<li class="">
+<p>It creates Iceberg tables in the namespace <code>iceberg_job_demo_db</code> (format: <code>&lt;job_name>_&lt;database_name></code>)</p>
+</li>
+<li class="">
+<p>Data gets written to MinIO as Parquet files organized by your partition strategy</p>
+</li>
+<li class="">
+<p>Once the initial sync completes, the job continues running to capture any new changes via CDC</p>
+</li>
+</ul>
+<p><strong>Watch the logs in real-time:</strong></p>
+<p>While the job is running, you can watch the progress in OLake UI. The logs will show messages like:</p>
+<ul>
+<li class="">
+<p>"Creating destination table [table_name] in Iceberg database [iceberg_job_demo_db]"</p>
+</li>
+<li class="">
+<p>"Successfully wrote X events for thread"</p>
+</li>
+<li class="">
+<p>"Successfully committed X data files"</p>
+</li>
+<li class="">
+<p>"Sync completed"</p>
+</li>
+</ul>
+<p>When you see "Sync completed" in the logs, the initial snapshot is done! The job will keep running to capture any future changes from MySQL.</p>
+<hr/>
+<p><strong>Verify Everything Worked</strong></p>
+<p>Once the sync completes, let's make sure all your data made it through correctly. You can verify in two ways:</p>
+<p><strong>1. Check the row counts in OLake UI:</strong></p>
+<p>Click on your job (<code>iceberg_job</code>) and check the monitoring/status tab. You should see approximately:</p>
+<ul>
+<li class="">
+<p>~1,010 users (committed as 167 data files)</p>
+</li>
+<li class="">
+<p>~115 products (committed as 9 data files)</p>
+</li>
+<li class="">
+<p>~10,115 orders (committed as 65 data files)</p>
+</li>
+<li class="">
+<p>~5,059 user sessions (committed as 30 data files)</p>
+</li>
+<li class="">
+<p><strong>Total: ~16,299 records</strong> synced successfully</p>
+</li>
+</ul>
+<p><img decoding=async loading=lazy alt="Verify logs" src=/assets/images/verify-logs-523b2ab02148f11ddae7bdc231578b4a.webp width=1942 height=1034 class=img_CujE /></p>
+<p><strong>2. Verify the Iceberg tables exist in MinIO:</strong></p>
+<p>The easiest way is through the MinIO Console:</p>
+<ol>
+<li class="">
+<p>Open <code>http://localhost:9091</code> in your browser</p>
+</li>
+<li class="">
+<p>Login with <code>admin</code> / <code>password</code></p>
+</li>
+<li class="">
+<p>Navigate to the <code>warehouse</code> bucket → <code>iceberg_job_demo_db/</code> namespace</p>
+</li>
+<li class="">
+<p>You should see four table directories: <code>users/</code>, <code>products/</code>, <code>orders/</code>, <code>user_sessions/</code></p>
+</li>
+</ol>
+<p><img decoding=async loading=lazy alt="Tables in MinIO" src=/assets/images/tables-in-minio-d2667ac7bc2c750cae2fec428be886f7.webp width=1942 height=634 class=img_CujE /></p>
+<p>Each table directory contains:</p>
+<ul>
+<li class="">
+<p><code>metadata/</code> folder with Iceberg metadata files (snapshots, manifests, schema)</p>
+</li>
+<li class="">
+<p><code>data/</code> folder with Parquet files organized by partition</p>
+</li>
+</ul>
+<p>For example, the <code>orders/</code> table will have partition folders like:</p>
+<ul>
+<li class="">
+<p><code>data/order_date_month=2024-11/status=pending/</code></p>
+</li>
+<li class="">
+<p><code>data/order_date_month=2024-11/status=shipped/</code></p>
+</li>
+<li class="">
+<p><code>data/order_date_month=2024-12/status=confirmed/</code></p>
+</li>
+</ul>
+<p><img decoding=async loading=lazy alt="Partition structure" src=/assets/images/partition-structure-6f552662d4ca8629d477f3b3fb2f20eb.webp width=1942 height=1052 class=img_CujE /></p>
+<p>This partition structure is what makes queries fast - when ClickHouse filters on partition columns, it only reads the relevant folders instead of scanning everything.</p>
+<p><strong>Alternative: Check via command line:</strong></p>
+<p>If you prefer the command line, you can use the MinIO client:</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#bfc7d5;--prism-background-color:#292d3e><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style=color:#bfc7d5;background-color:#292d3e><code class=codeBlockLines_e6Vv><span class=token-line style=color:#bfc7d5><span class="token plain"># List all tables in your namespace</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">docker run --rm --network apache-iceberg-with-clickhouse-olake_clickhouse_lakehouse-net \</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">  -e MC_HOST_minio=http://admin:password@minio:9090 \</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">  minio/mc ls minio/warehouse/iceberg_job_demo_db/</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain" style=display:inline-block></span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain"># Should show: orders/, products/, user_sessions/, users/</span><br/></span></code></pre></div></div>
+<p>Once you've verified the data is there, you're ready to query it with ClickHouse!</p>
+<hr/>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=query-iceberg-tables-from-clickhouse>Query Iceberg Tables from ClickHouse<a href=#query-iceberg-tables-from-clickhouse class=hash-link aria-label="Direct link to Query Iceberg Tables from ClickHouse" title="Direct link to Query Iceberg Tables from ClickHouse" translate=no>​</a></h2>
+<p>Now that OLake has written the Iceberg tables to MinIO, let's connect ClickHouse to query them. ClickHouse uses the <strong>DataLakeCatalog</strong> engine to connect to the Iceberg REST catalog.</p>
+<p><strong>How it works:</strong></p>
+<p>ClickHouse connects to the REST catalog by creating a <strong>database</strong> (not individual tables) using the <code>DataLakeCatalog</code> engine. This database provides access to all tables in the specified namespace, and you query them through the database connection.</p>
+<p><strong>Step-by-Step Setup:</strong></p>
+<p>We've broken down the setup into three separate scripts so you can verify each step:</p>
+<p><strong>Step 1: Query Raw Iceberg Tables</strong></p>
+<p>First, verify that ClickHouse can connect to and query the raw Iceberg tables written by OLake:</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#bfc7d5;--prism-background-color:#292d3e><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style=color:#bfc7d5;background-color:#292d3e><code class=codeBlockLines_e6Vv><span class=token-line style=color:#bfc7d5><span class="token plain">docker exec -it clickhouse-client clickhouse-client --host clickhouse --time --queries-file /scripts/iceberg-query-raw.sql</span><br/></span></code></pre></div></div>
+<p>This script will:</p>
+<ul>
+<li class="">
+<p>Create a database connection to the REST catalog using <code>DataLakeCatalog</code> engine</p>
+</li>
+<li class="">
+<p>List all available tables in the catalog</p>
+</li>
+<li class="">
+<p>Query the raw Iceberg tables (users, products, orders, user_sessions) and show row counts</p>
+</li>
+<li class="">
+<p>Display sample data to verify the connection works</p>
+</li>
+</ul>
+<p><strong>Important:</strong> The script uses <code>iceberg_job_demo_db</code> as the default namespace (matching the job name <code>iceberg_job</code> from our example). If you used a different job name, you'll need to update the <code>warehouse</code> setting in the script (<code>scripts/iceberg-query-raw.sql</code>) to match your actual namespace. The namespace format is <code>&lt;job_name>_&lt;database_name></code>.</p>
+<p><strong>Understanding the timing and caching:</strong></p>
+<p>When you run this script, you'll notice something interesting about the timing:</p>
+<ol>
+<li class="">
+<p><strong>First query (<code>SHOW TABLES</code>)</strong>: Takes 30-70 seconds</p>
+<ul>
+<li class="">
+<p>This is the initial setup where ClickHouse connects to the REST catalog</p>
+</li>
+<li class="">
+<p>It fetches metadata for all tables (schema, partitions, file locations)</p>
+</li>
+<li class="">
+<p>This metadata is cached in memory for the database connection</p>
+</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Subsequent queries in the same run</strong>: Very fast (0.001-0.018 seconds)</p>
+<ul>
+<li class="">
+<p>Once metadata is cached, queries are nearly instant</p>
+</li>
+<li class="">
+<p>ClickHouse uses the cached metadata to locate and read Parquet files</p>
+</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Why re-running the script takes 30-70 seconds again:</strong></p>
+<ul>
+<li class="">
+<p>The script includes <code>DROP DATABASE IF EXISTS</code> which destroys the database connection</p>
+</li>
+<li class="">
+<p>This clears the metadata cache, so the next run must fetch everything again</p>
+</li>
+<li class="">
+<p>This is intentional - it ensures a clean state for testing</p>
+</li>
+</ul>
+</li>
+</ol>
+<p><strong>To see caching in action:</strong></p>
+<p>If you want to experience the speed of cached queries, keep the database connection alive:</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#bfc7d5;--prism-background-color:#292d3e><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style=color:#bfc7d5;background-color:#292d3e><code class=codeBlockLines_e6Vv><span class=token-line style=color:#bfc7d5><span class="token plain"># Step 1: Run the script once (this creates the database and caches metadata)</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">docker exec -it clickhouse-client clickhouse-client --host clickhouse --queries-file /scripts/iceberg-query-raw.sql</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain" style=display:inline-block></span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain"># Step 2: Now run individual queries without dropping the database</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain"># These will be fast because the metadata is cached!</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">docker exec -it clickhouse-client clickhouse-client --host clickhouse --time --query "</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">USE demo_lakehouse_db;</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">SELECT COUNT(*) FROM \`iceberg_job_demo_db.users\`;</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">"</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain" style=display:inline-block></span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain"># You'll see this query completes in milliseconds (0.001-0.006 seconds)</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain"># because the database connection and metadata cache are still alive!</span><br/></span></code></pre></div></div>
+<p>You will see the response like:</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#bfc7d5;--prism-background-color:#292d3e><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style=color:#bfc7d5;background-color:#292d3e><code class=codeBlockLines_e6Vv><span class=token-line style=color:#bfc7d5><span class="token plain">0.001    &lt;- Execution time for "USE demo_lakehouse_db;" (1 millisecond)</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">1010     &lt;- Result of "SELECT COUNT(*) FROM `iceberg_job_demo_db.users`;"</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">0.008    &lt;- Execution time for the SELECT query (8 milliseconds)</span><br/></span></code></pre></div></div>
+<p><strong>What the delay means:</strong></p>
+<p>The 30-70 second delay for <code>SHOW TABLES</code> is normal and happens because:</p>
+<ul>
+<li class="">
+<p>ClickHouse establishes a connection to the REST catalog API (<code>http://iceberg-rest:8181/v1</code>)</p>
+</li>
+<li class="">
+<p>It makes API calls to fetch metadata for each table in the namespace</p>
+</li>
+<li class="">
+<p>This metadata includes table schemas, partition information, and S3 file locations</p>
+</li>
+<li class="">
+<p>All this metadata is then cached in memory for fast subsequent queries</p>
+</li>
+</ul>
+<p>This is a one-time cost per database connection. In production, you'd typically keep the database connection alive, so you'd only pay this cost once when the connection is first established.</p>
+<p><strong>Expected output from Step 1:</strong></p>
+<p>When you run Step 1, you should see output similar to this.</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#bfc7d5;--prism-background-color:#292d3e><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-text codeBlock_bY9V thin-scrollbar" style=color:#bfc7d5;background-color:#292d3e><code class=codeBlockLines_e6Vv><span class=token-line style=color:#bfc7d5><span class="token plain">0.001</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">0.000</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">0.000</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">0.001</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">0.002</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">0.001</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">=== Available tables in REST catalog ===</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">0.001</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">iceberg_job_demo_db.orders</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">iceberg_job_demo_db.products</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">iceberg_job_demo_db.user_sessions</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">iceberg_job_demo_db.users</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">test_olake.test_olake</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">65.507</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">=== Raw Iceberg Table Row Counts ===</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">0.001</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">Iceberg users rows	1010</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">0.006</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">Iceberg products rows	115</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">0.005</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">Iceberg orders rows	10115</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">0.004</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">Iceberg user_sessions rows	5059</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">0.004</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">=== Sample Data Verification ===</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">0.000</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">Sample users (first 5):</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">0.000</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">78	user_47	user_47@example.com	Canada</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">374	user_343	user_343@example.com	Canada</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">584	user_533	user_533@example.com	Canada</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">703	user_612	user_612@example.com	Canada</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">795	user_724	user_724@example.com	Canada</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">0.007</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">Sample orders by status:</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">0.000</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">pending	2033</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">shipped	2002</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">delivered	2009</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">cancelled	2031</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">confirmed	2040</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">0.018</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">=== Step 1 Complete: Raw tables are accessible ===</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">0.001</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">You can now proceed to Step 2: Create Silver Layer</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">0.001</span><br/></span></code></pre></div></div>
+<p><strong>Step 2: Create Silver Layer (Optimized Iceberg table in MinIO)</strong></p>
+<p>Before ClickHouse can write data to the silver table, you need to create the empty Iceberg table structure in the REST catalog. This is a one-time prerequisite:</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#bfc7d5;--prism-background-color:#292d3e><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style=color:#bfc7d5;background-color:#292d3e><code class=codeBlockLines_e6Vv><span class=token-line style=color:#bfc7d5><span class="token plain">./scripts/create-silver-iceberg-table.sh</span><br/></span></code></pre></div></div>
+<p>This script:</p>
+<ul>
+<li class="">
+<p>Ensures the <code>demo_lakehouse_silver</code> namespace exists</p>
+</li>
+<li class="">
+<p>Creates the empty <code>orders_curated</code> Iceberg table with the schema/partitioning that will be used by the silver layer</p>
+</li>
+</ul>
+<p>Now populate the silver table with curated data:</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#bfc7d5;--prism-background-color:#292d3e><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style=color:#bfc7d5;background-color:#292d3e><code class=codeBlockLines_e6Vv><span class=token-line style=color:#bfc7d5><span class="token plain">docker exec -it clickhouse-client clickhouse-client --host clickhouse --queries-file /scripts/iceberg-create-silver.sql</span><br/></span></code></pre></div></div>
+<p>This script will:</p>
+<ul>
+<li class="">
+<p>Attach ClickHouse to the empty Iceberg table you just created (via the named collection)</p>
+</li>
+<li class="">
+<p>Enable experimental Iceberg inserts</p>
+</li>
+<li class="">
+<p>Read from the raw Iceberg tables (<code>demo_lakehouse_db</code>)</p>
+</li>
+<li class="">
+<p>Populate the silver Iceberg table in MinIO (<code>demo_lakehouse_silver.orders_curated</code>) with curated data</p>
+</li>
+<li class="">
+<p>Show sample queries against the populated silver Iceberg table</p>
+</li>
+</ul>
+<p><strong>Expected output:</strong></p>
+<p>When you run this script, you should see output similar to this:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#bfc7d5;--prism-background-color:#292d3e><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-text codeBlock_bY9V thin-scrollbar" style=color:#bfc7d5;background-color:#292d3e><code class=codeBlockLines_e6Vv><span class=token-line style=color:#bfc7d5><span class="token plain">=== Creating Silver Layer in MinIO (Iceberg) ===</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">=== Inserting optimized data into silver Iceberg table ===</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">This reads raw Iceberg (MinIO) and writes a curated Iceberg table (MinIO)...</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">=== Silver Layer Created Successfully (Iceberg in MinIO) ===</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">Silver orders rows (Iceberg)	10115</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">=== Querying Silver Table ===</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">pending	2033	3898.21</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">shipped	2002	4030.08</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">delivered	2009	4013.35</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">cancelled	2031	3968.85</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">confirmed	2040	4150.1</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">=== Location Note ===</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">Silver layer is an Iceberg table stored in MinIO (demo_lakehouse_silver/orders_curated).</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">=== Step 2 Complete: Silver layer created in MinIO ===</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">You can now proceed to Step 3: Create Gold Layer</span><br/></span></code></pre></div></div>
+<p><strong>Understanding the output:</strong></p>
+<ul>
+<li class="">
+<p><strong>"Silver orders rows (Iceberg)	10115"</strong>: This confirms that all 10,115 orders from the raw layer were successfully written to the silver Iceberg table in MinIO. The data transformation (selecting specific columns, converting <code>order_date</code> to <code>order_month</code>, etc.) completed successfully.</p>
+</li>
+<li class="">
+<p><strong>The query results table</strong> shows order statistics grouped by status:</p>
+<ul>
+<li class="">
+<p><strong>First column</strong>: Order status (pending, shipped, delivered, cancelled, confirmed)</p>
+</li>
+<li class="">
+<p><strong>Second column</strong>: Count of orders per status (approximately 2,000 orders per status, totaling ~10,115)</p>
+</li>
+<li class="">
+<p><strong>Third column</strong>: Average order value per status (ranging from ~$3,900 to ~$4,150)</p>
+</li>
+</ul>
+</li>
+<li class="">
+<p><strong>"Silver layer is an Iceberg table stored in MinIO"</strong>: This confirms the silver table is stored as an Iceberg table in MinIO, making it accessible to any Iceberg-compatible engine (Spark, Dremio, Trino, etc.), not just ClickHouse.</p>
+</li>
+</ul>
+<p><strong>Why this is powerful:</strong></p>
+<ul>
+<li class="">
+<p><strong>End-to-end Iceberg</strong>: Both raw and silver layers live in MinIO as Iceberg tables</p>
+</li>
+<li class="">
+<p><strong>ClickHouse as an Iceberg writer</strong>: You can reuse the Iceberg tables across engines (Spark, Dremio, Trino, etc.)</p>
+</li>
+<li class="">
+<p><strong>Optimal layout</strong>: The silver table stores curated columns with identity partitions on <code>order_month</code> and <code>status</code></p>
+</li>
+<li class="">
+<p><strong>Data transformation</strong>: The silver layer contains only the columns needed for analytics, with optimized data types and partitioning for faster queries</p>
+</li>
+</ul>
+<p><strong>Step 3: Create Gold Layer (Pre-aggregated KPIs)</strong></p>
+<p>Finally, create the gold layer with pre-aggregated metrics stored locally in ClickHouse for fastest queries:</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#bfc7d5;--prism-background-color:#292d3e><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style=color:#bfc7d5;background-color:#292d3e><code class=codeBlockLines_e6Vv><span class=token-line style=color:#bfc7d5><span class="token plain">docker exec -it clickhouse-client clickhouse-client --host clickhouse --queries-file /scripts/iceberg-create-gold.sql</span><br/></span></code></pre></div></div>
+<p>This script will:</p>
+<ul>
+<li class="">
+<p>Create a local MergeTree table for pre-aggregated KPIs</p>
+</li>
+<li class="">
+<p>Aggregate data from the silver layer</p>
+</li>
+<li class="">
+<p>Display sample metrics</p>
+</li>
+</ul>
+<p><strong>Expected output:</strong></p>
+<p>When you run this script, you should see output similar to this:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#bfc7d5;--prism-background-color:#292d3e><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-text codeBlock_bY9V thin-scrollbar" style=color:#bfc7d5;background-color:#292d3e><code class=codeBlockLines_e6Vv><span class=token-line style=color:#bfc7d5><span class="token plain">=== Creating Gold Layer (Pre-aggregated KPIs) ===</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">=== Aggregating data from Silver layer (Iceberg in MinIO) ===</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">=== Gold Layer Created Successfully ===</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">Gold metrics rows	1818</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">=== Sample Gold Metrics ===</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">2025-11-23	cancelled	7	7	18799.46	2685.64</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">2025-11-23	confirmed	7	7	17735.85	2533.69</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">2025-11-23	delivered	13	15	33020.78	2201.39</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">2025-11-23	pending	7	7	33032.51	4718.93</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">2025-11-23	shipped	7	7	10386.81	1483.83</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">2025-11-22	cancelled	6	6	33598.61	5599.77</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">2025-11-22	confirmed	4	4	7718.21	1929.55</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">2025-11-22	delivered	4	4	10067.03	2516.76</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">2025-11-22	pending	4	4	16590.89	4147.72</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">2025-11-22	shipped	7	7	13980.62	1997.23</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">=== All Layers Summary ===</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">Raw Iceberg (MinIO): demo_lakehouse_db.`iceberg_job_demo_db.*`</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">Silver Iceberg (MinIO): default.silver_orders_iceberg</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">Gold Metrics (Local): default.ch_gold_order_metrics</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">=== Step 3 Complete: Gold layer created ===</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">All three layers are now ready for querying!</span><br/></span></code></pre></div></div>
+<p><strong>Understanding the output:</strong></p>
+<ul>
+<li class="">
+<p><strong>"Gold metrics rows	1818"</strong>: This confirms that 1,818 pre-aggregated metric rows were created. Each row represents a unique combination of <code>order_month</code> and <code>status</code>, with pre-computed KPIs (user count, order count, gross revenue, average order value). This is much smaller than the 10,115 raw orders because it's aggregated.</p>
+</li>
+<li class="">
+<p><strong>The sample gold metrics table</strong> shows pre-computed KPIs for different months and statuses:</p>
+<ul>
+<li class="">
+<p><strong>First column</strong>: <code>order_month</code> (Date) - The month of the orders</p>
+</li>
+<li class="">
+<p><strong>Second column</strong>: <code>status</code> - Order status (cancelled, confirmed, delivered, pending, shipped)</p>
+</li>
+<li class="">
+<p><strong>Third column</strong>: <code>user_count</code> - Number of unique customers for that month/status combination</p>
+</li>
+<li class="">
+<p><strong>Fourth column</strong>: <code>order_count</code> - Total number of orders for that month/status</p>
+</li>
+<li class="">
+<p><strong>Fifth column</strong>: <code>gross_revenue</code> - Total revenue (sum of all order amounts)</p>
+</li>
+<li class="">
+<p><strong>Sixth column</strong>: <code>avg_order_value</code> - Average order value (gross_revenue / order_count)</p>
+</li>
+</ul>
+</li>
+<li class="">
+<p><strong>"All Layers Summary"</strong>: This confirms all three layers are now accessible:</p>
+<ul>
+<li class="">
+<p><strong>Raw</strong>: Original Iceberg tables in MinIO (written by OLake)</p>
+</li>
+<li class="">
+<p><strong>Silver</strong>: Optimized Iceberg table in MinIO (written by ClickHouse)</p>
+</li>
+<li class="">
+<p><strong>Gold</strong>: Pre-aggregated metrics in ClickHouse local storage (fastest queries)</p>
+</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Why this is powerful</strong>: The gold layer enables instant dashboard queries. Instead of aggregating 10,115 orders every time, you can query pre-computed metrics in milliseconds. For example, to get "total revenue by status in November 2025", ClickHouse just reads the pre-aggregated rows instead of scanning and summing thousands of orders.</p>
+</li>
+</ul>
+<hr/>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=understanding-the-three-layer-architecture>Understanding the Three-Layer Architecture<a href=#understanding-the-three-layer-architecture class=hash-link aria-label="Direct link to Understanding the Three-Layer Architecture" title="Direct link to Understanding the Three-Layer Architecture" translate=no>​</a></h2>
+<p>The data architecture uses three layers for optimal performance:</p>
+<ol>
+<li class="">
+<p><strong>Raw Iceberg tables</strong> (in MinIO) - Written by OLake from MySQL</p>
+<ul>
+<li class="">
+<p>Namespace: <code>iceberg_job_demo_db</code> (format: <code>&lt;job_name>_&lt;database_name></code>)</p>
+</li>
+<li class="">
+<p>Unoptimized layout, all columns, original partitioning</p>
+</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Silver Iceberg tables</strong> (in MinIO) - Written by ClickHouse back to MinIO</p>
+<ul>
+<li class="">
+<p>Table: <code>default.silver_orders_iceberg</code> (ClickHouse table alias pointing to MinIO)</p>
+</li>
+<li class="">
+<p><strong>Actual data stored in</strong>: MinIO (<code>demo_lakehouse_silver/orders_curated</code>)</p>
+</li>
+<li class="">
+<p><strong>How it works</strong>: <code>silver_orders_iceberg</code> is a ClickHouse table definition (in the <code>default</code> database) that uses the <code>Iceberg</code> engine to reference the actual Iceberg table stored in MinIO. Think of it as a "view" or "alias" - the table definition lives in ClickHouse, but all the data is stored in MinIO as an Iceberg table.</p>
+</li>
+<li class="">
+<p>ClickHouse optimizes with curated columns, identity partitions, and Iceberg metadata</p>
+</li>
+<li class="">
+<p>Faster than raw because it's curated and still accessible to any Iceberg-compatible engine</p>
+</li>
+<li class="">
+<p>Loaded from raw Iceberg tables and optimized for common query patterns</p>
+</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Gold tables</strong> (in ClickHouse local storage) - Pre-aggregated KPIs</p>
+<ul>
+<li class="">
+<p><code>ch_gold_order_metrics</code> – a <code>MergeTree</code> table with pre-computed metrics</p>
+</li>
+<li class="">
+<p>Fastest queries, no computation needed</p>
+</li>
+</ul>
+</li>
+</ol>
+<p>The setup scripts create:</p>
+<ul>
+<li class="">
+<p><strong>Raw layer</strong>: Tables accessible via <code>demo_lakehouse_db</code> database (e.g., <code>`iceberg_job_demo_db.users`</code>) - stored in MinIO as Iceberg tables</p>
+</li>
+<li class="">
+<p><strong>Silver layer</strong>: <code>default.silver_orders_iceberg</code> – an optimized Iceberg table in MinIO (<code>demo_lakehouse_silver.orders_curated</code>) written by ClickHouse</p>
+</li>
+<li class="">
+<p><strong>Gold layer</strong>: <code>default.ch_gold_order_metrics</code> – a per-month, per-status aggregate in ClickHouse local storage</p>
+</li>
+</ul>
+<p><strong>Why this architecture matters:</strong></p>
+<ul>
+<li class="">
+<p><strong>Raw Iceberg</strong>: Proves ClickHouse can read OLake-managed data, but queries are slower due to unoptimized layout and network I/O from MinIO</p>
+</li>
+<li class="">
+<p><strong>Silver</strong>: ClickHouse writes an optimized Iceberg table back to MinIO with curated columns and identity partitions. Queries are faster than raw because of the optimized schema and partitioning, but still require network I/O to MinIO. The table is accessible to any Iceberg-compatible engine.</p>
+</li>
+<li class="">
+<p><strong>Gold</strong>: Pre-aggregated metrics in ClickHouse local storage provide instant dashboard queries with no computation needed and no network I/O</p>
+</li>
+</ul>
+<p><strong>What are the KPIs in the Gold table?</strong></p>
+<p>The <code>ch_gold_order_metrics</code> table contains pre-aggregated Key Performance Indicators (KPIs) per month and status:</p>
+<ul>
+<li class="">
+<p><strong><code>order_month</code></strong>: Month of the order (Date)</p>
+</li>
+<li class="">
+<p><strong><code>status</code></strong>: Order status (pending, confirmed, shipped, delivered, cancelled)</p>
+</li>
+<li class="">
+<p><strong><code>user_count</code></strong>: Number of unique customers (using <code>uniqExact</code>)</p>
+</li>
+<li class="">
+<p><strong><code>order_count</code></strong>: Total number of orders</p>
+</li>
+<li class="">
+<p><strong><code>gross_revenue</code></strong>: Total revenue (sum of <code>total_amount</code>)</p>
+</li>
+<li class="">
+<p><strong><code>avg_order_value</code></strong>: Average order value (gross_revenue / order_count)</p>
+</li>
+</ul>
+<p>These KPIs are pre-computed from the silver layer, enabling instant dashboard queries without recalculating aggregations.</p>
+<ol start=4>
+<li class=""><strong>Compare the layers with example queries:</strong></li>
+</ol>
+<p>ClickHouse provides a built-in Play interface for running queries in your browser:</p>
+<ol>
+<li class="">
+<p><strong>Open ClickHouse Play</strong>:</p>
+<ul>
+<li class="">
+<p>Navigate to: <code>http://localhost:8123/play?user=default</code></p>
+</li>
+<li class="">
+<p>This opens an interactive SQL query interface in your browser</p>
+</li>
+</ul>
+</li>
+</ol>
+<div class="language-sql codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#bfc7d5;--prism-background-color:#292d3e><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-sql codeBlock_bY9V thin-scrollbar" style=color:#bfc7d5;background-color:#292d3e><code class=codeBlockLines_e6Vv><span class=token-line style=color:#bfc7d5><span class="token comment" style="color:rgb(105, 112, 152);font-style:italic">-- Silver (ClickHouse-written Iceberg table in MinIO)</span><span class="token plain"></span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain"></span><span class="token keyword" style=font-style:italic>USE</span><span class="token plain"> </span><span class="token keyword" style=font-style:italic>default</span><span class="token punctuation" style="color:rgb(199, 146, 234)">;</span><span class="token plain"></span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain"></span><span class="token keyword" style=font-style:italic>SELECT</span><span class="token plain"> </span><span class="token keyword" style=font-style:italic>status</span><span class="token punctuation" style="color:rgb(199, 146, 234)">,</span><span class="token plain"> </span><span class="token function" style="color:rgb(130, 170, 255)">COUNT</span><span class="token punctuation" style="color:rgb(199, 146, 234)">(</span><span class="token operator" style="color:rgb(137, 221, 255)">*</span><span class="token punctuation" style="color:rgb(199, 146, 234)">)</span><span class="token plain"> </span><span class="token keyword" style=font-style:italic>AS</span><span class="token plain"> orders</span><span class="token punctuation" style="color:rgb(199, 146, 234)">,</span><span class="token plain"> </span><span class="token function" style="color:rgb(130, 170, 255)">AVG</span><span class="token punctuation" style="color:rgb(199, 146, 234)">(</span><span class="token plain">total_amount</span><span class="token punctuation" style="color:rgb(199, 146, 234)">)</span><span class="token plain"> </span><span class="token keyword" style=font-style:italic>AS</span><span class="token plain"> avg_value</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain"></span><span class="token keyword" style=font-style:italic>FROM</span><span class="token plain"> silver_orders_iceberg </span><span class="token keyword" style=font-style:italic>GROUP</span><span class="token plain"> </span><span class="token keyword" style=font-style:italic>BY</span><span class="token plain"> </span><span class="token keyword" style=font-style:italic>status</span><span class="token punctuation" style="color:rgb(199, 146, 234)">;</span><br/></span></code></pre></div></div>
+<p><img decoding=async loading=lazy alt="Silver ClickHouse query" src=/assets/images/silver-clickhouse-1c4a745c4a8a37937fb9919d6bc62c5e.webp width=1938 height=554 class=img_CujE /></p>
+<div class="language-sql codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#bfc7d5;--prism-background-color:#292d3e><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-sql codeBlock_bY9V thin-scrollbar" style=color:#bfc7d5;background-color:#292d3e><code class=codeBlockLines_e6Vv><span class=token-line style=color:#bfc7d5><span class="token comment" style="color:rgb(105, 112, 152);font-style:italic">-- Gold (pre-aggregated KPIs) - ClickHouse local storage</span><span class="token plain"></span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain"></span><span class="token keyword" style=font-style:italic>SELECT</span><span class="token plain"> </span><span class="token keyword" style=font-style:italic>status</span><span class="token punctuation" style="color:rgb(199, 146, 234)">,</span><span class="token plain"> </span><span class="token function" style="color:rgb(130, 170, 255)">SUM</span><span class="token punctuation" style="color:rgb(199, 146, 234)">(</span><span class="token plain">order_count</span><span class="token punctuation" style="color:rgb(199, 146, 234)">)</span><span class="token plain"> </span><span class="token keyword" style=font-style:italic>AS</span><span class="token plain"> orders</span><span class="token punctuation" style="color:rgb(199, 146, 234)">,</span><span class="token plain"> </span><span class="token function" style="color:rgb(130, 170, 255)">AVG</span><span class="token punctuation" style="color:rgb(199, 146, 234)">(</span><span class="token plain">avg_order_value</span><span class="token punctuation" style="color:rgb(199, 146, 234)">)</span><span class="token plain"> </span><span class="token keyword" style=font-style:italic>AS</span><span class="token plain"> avg_value</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain"></span><span class="token keyword" style=font-style:italic>FROM</span><span class="token plain"> ch_gold_order_metrics </span><span class="token keyword" style=font-style:italic>GROUP</span><span class="token plain"> </span><span class="token keyword" style=font-style:italic>BY</span><span class="token plain"> </span><span class="token keyword" style=font-style:italic>status</span><span class="token punctuation" style="color:rgb(199, 146, 234)">;</span><br/></span></code></pre></div></div>
+<p><img decoding=async loading=lazy alt="Gold ClickHouse query" src=/assets/images/gold-clickhouse-3636922a55c1f7c7048400bd941f9a11.webp width=1932 height=540 class=img_CujE /></p>
+<hr/>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=raw-vs-optimized-analytics--performance-comparison>Raw vs Optimized Analytics & Performance Comparison<a href=#raw-vs-optimized-analytics--performance-comparison class=hash-link aria-label="Direct link to Raw vs Optimized Analytics & Performance Comparison" title="Direct link to Raw vs Optimized Analytics & Performance Comparison" translate=no>​</a></h2>
+<p>Run the demonstration queries to compare the raw Iceberg tables (queried via the REST catalog) with the ClickHouse-managed Silver and Gold layers:</p>
+<p><strong>Comprehensive performance comparison with timing:</strong></p>
+<p>For a detailed performance analysis, use the dedicated performance comparison script that runs the same queries against all three layers:</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#bfc7d5;--prism-background-color:#292d3e><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style=color:#bfc7d5;background-color:#292d3e><code class=codeBlockLines_e6Vv><span class=token-line style=color:#bfc7d5><span class="token plain">docker exec -it clickhouse-client clickhouse-client --host clickhouse --queries-file /scripts/compare-query-performance.sql</span><br/></span></code></pre></div></div>
+<p>This script demonstrates:</p>
+<ul>
+<li class="">
+<p><strong>Query speed differences</strong> - Same queries run against raw, silver, and gold layers</p>
+</li>
+<li class="">
+<p><strong>Multiple query patterns</strong> - Simple aggregations, time-based queries, complex filtering, distinct counts</p>
+</li>
+<li class="">
+<p><strong>KPI explanations</strong> - What metrics are pre-computed in the gold table</p>
+</li>
+<li class="">
+<p><strong>Use case recommendations</strong> - When to use each layer</p>
+</li>
+</ul>
+<p><strong>What the sample output tells you:</strong></p>
+<ul>
+<li class="">
+<p><strong>Test 1 – Orders by Status:</strong> Raw and Silver layers show identical counts and averages (e.g., <code>2040</code> confirmed orders averaging <code>$4,150.10</code>), proving the silver Iceberg table matches the raw source byte-for-byte. Gold shows the same order counts but slightly different averages (e.g., <code>$4,061.22</code> for confirmed) because KPIs are pre-aggregated per month before aggregating again for the report—perfect for dashboard rollups.</p>
+</li>
+<li class="">
+<p><strong>Test 2 – Monthly Revenue Trends:</strong> All three layers trend together month by month. Raw/Silver totals are identical because both query individual orders; Gold values match within cents because they're computed from monthly aggregates stored in <code>ch_gold_order_metrics</code>, confirming your gold refresh captured every month/status combination.</p>
+</li>
+<li class="">
+<p><strong>Test 3 – High-Value Orders:</strong> Only Raw and Silver appear here (Gold doesn't keep per-order details). Both layers report the same counts (e.g., <code>840</code> shipped orders > $1,000) and identical max/avg values, so you can safely run complex filters against either layer depending on latency needs.</p>
+</li>
+<li class="">
+<p><strong>Test 4 – Unique Customers per Status:</strong> Raw and Silver again align exactly (e.g., <code>888</code> unique confirmed customers, <code>~2.3</code> orders/customer). Gold returns <code>user_count = order_count</code> because each row in the gold table already represents an aggregated <code>(month, status)</code> slice, so displaying distinct customers at the raw granularity isn't meaningful—this highlights why Gold is for KPI dashboards, not record-level exploration.</p>
+</li>
+</ul>
+<p><strong>To see actual query execution times</strong>, use the timing script:</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#bfc7d5;--prism-background-color:#292d3e><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style=color:#bfc7d5;background-color:#292d3e><code class=codeBlockLines_e6Vv><span class=token-line style=color:#bfc7d5><span class="token plain"># Run performance comparison with actual timing</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">./scripts/performance-with-timing.sh</span><br/></span></code></pre></div></div>
+<p>This script uses the <code>time</code> command to show real execution times for the same query against all three layers.</p>
+<p><strong>Sample output with 10K orders (what you should see):</strong></p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#bfc7d5;--prism-background-color:#292d3e><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-text codeBlock_bY9V thin-scrollbar" style=color:#bfc7d5;background-color:#292d3e><code class=codeBlockLines_e6Vv><span class=token-line style=color:#bfc7d5><span class="token plain">Layer     Orders (per status)   Avg order value   real/user/sys</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">Raw       2040 confirmed        $4,150.10         0.105s / 0.012s / 0.009s</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">Silver    2040 confirmed        $4,150.10         0.087s / 0.013s / 0.011s</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">Gold      2040 confirmed        $4,061.22         0.079s / 0.013s / 0.010s</span><br/></span></code></pre></div></div>
+<ul>
+<li class="">
+<p><strong>Row counts stay identical</strong> across Raw, Silver, and Gold (e.g., <code>2040</code> confirmed orders), proving the curated layers faithfully represent the raw Iceberg data.</p>
+</li>
+<li class="">
+<p><strong>Averages diverge slightly in Gold</strong> because <code>ch_gold_order_metrics</code> stores pre-aggregated per-month KPIs; when you average those again you get dashboard-friendly numbers (<code>$4,061.22</code> vs <code>$4,150.10</code>).</p>
+</li>
+<li class="">
+<p><strong>Latency shrinks layer by layer</strong>: Raw still hits the REST catalog and reads Parquet from MinIO, Silver benefits from ClickHouse's optimized Iceberg table definition, and Gold is pure MergeTree data in local storage—hence the progressively smaller <code>real</code> timings reported by the <code>time</code> command.</p>
+</li>
+</ul>
+<p><strong>Measured vs. expected performance (10,000+ orders):</strong></p>
+<table><thead><tr><th>Layer<th>Measured <code>real</code> time (sample run)<th>What to expect at scale<th>Why it behaves that way<tbody><tr><td>Raw Iceberg<td>~0.10s (after cache warm-up) but 2-5s on cold run<td>2-5 seconds<td>Still hits the REST catalog, pulls Parquet from MinIO, pays network + metadata setup cost.<tr><td>Silver (Iceberg in MinIO)<td>~0.08s<td>100-500ms<td>Uses ClickHouse's Iceberg engine with curated schema, identity partitions, and metadata already cached in ClickHouse.<tr><td>Gold (local MergeTree)<td>~0.07s<td>10-50ms<td>Reads pre-aggregated MergeTree rows from local disk, so almost no remote I/O or heavy computation.</table>
+<p><strong>Key learnings from the timing script:</strong></p>
+<ul>
+<li class="">
+<p><code>real</code> time is the wall-clock latency you feel; it shrinks as we eliminate remote I/O (Raw → Silver) and move to pre-aggregated local data (Gold).</p>
+</li>
+<li class="">
+<p><code>user/sys</code> time stays flat because the ClickHouse client does similar CPU work per query; the difference is how much external waiting happens.</p>
+</li>
+<li class="">
+<p>Silver tables are faster than raw because ClickHouse controls the file layout (identity partitions, curated columns) and keeps Iceberg metadata resident in memory.</p>
+</li>
+<li class="">
+<p>Gold tables sacrifice per-row detail but deliver instant KPIs since they store <code>(order_month, status)</code> aggregates directly in MergeTree.</p>
+</li>
+</ul>
+<p><strong>Highlights inside the script:</strong></p>
+<ul>
+<li class="">
+<p>Benchmarks the raw Iceberg scans (REST catalog + MinIO Parquet) against the Silver optimized Iceberg table.</p>
+</li>
+<li class="">
+<p>Compares Silver (ClickHouse-optimized Iceberg in MinIO) with Gold (pre-aggregated MergeTree) to show latency improvements.</p>
+</li>
+<li class="">
+<p>Reads pre-aggregated KPIs out of the Gold table so you can see the dashboard-ready metrics and how little time they take to compute.</p>
+</li>
+</ul>
+<hr/>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=cleaning-up-the-environment>Cleaning Up the Environment<a href=#cleaning-up-the-environment class=hash-link aria-label="Direct link to Cleaning Up the Environment" title="Direct link to Cleaning Up the Environment" translate=no>​</a></h2>
+<p>When you're done exploring, shut everything down cleanly so Docker resources don't linger:</p>
+<p>Need a completely fresh start (wipes data, buckets, Postgres catalog, etc.)? Use <code>docker compose down -v</code> inside the OLake UI repo, <code>docker-compose down -v</code> in this repo, and optionally <code>docker network prune</code> to clean up dangling networks.</p>
+<hr/>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=where-to-go-next>Where to Go Next<a href=#where-to-go-next class=hash-link aria-label="Direct link to Where to Go Next" title="Direct link to Where to Go Next" translate=no>​</a></h2>
+<ul>
+<li class="">
+<p><strong>Scale Up:</strong> Point additional OLTP sources (PostgreSQL, SQL Server, Mongo CDC) into OLake while reusing the same Iceberg destination and ClickHouse readers.</p>
+</li>
+<li class="">
+<p><strong>Optimize:</strong> Automate silver/gold refreshes via cron or OLake webhooks, and add MergeTree materialized views for queries that still need sub-second response.</p>
+</li>
+<li class="">
+<p><strong>Visualize:</strong> Connect Superset, Grafana, or Hex directly to ClickHouse; use raw/silver for exploratory stories and gold for executive dashboards that must always be instant.</p>
+</li>
+<li class="">
+<p><strong>Experiment:</strong> Test ClickHouse's <code>iceberg()</code> table function, Spark-on-Iceberg, or Trino to prove the same MinIO warehouse serves multiple engines without extra copies.</p>
+</li>
+<li class="">
+<p><strong>Production-Ready:</strong> Add MinIO lifecycle policies, bucket versioning, encryption, or replicate to real S3 to mimic production storage guarantees.</p>
+</li>
+<li class="">
+<p><strong>Monitor:</strong> Track pipeline SLAs by scraping OLake job metrics, ClickHouse system tables, and MinIO health—set alerts when sync lag grows or catalog health checks fail.</p>
+</li>
+</ul>
+<p><strong>The beauty of OLake is its simplicity</strong> - what used to require complex Debezium configurations now takes just a few clicks through the UI. You've built a complete data lakehouse that combines the best of data lakes and data warehouses!</p>
+<p>Enjoy building your data lakehouse with ClickHouse and OLake!</p>
+<div class="bg-white dark:bg-black/70 rounded-2xl p-8 max-w-3xl w-full shadow-lg text-center transition-colors"><h2 class="text-4xl font-bold mb-4 text-gray-800 dark:text-white">OLake</h2><p class="text-lg font-light text-gray-700 dark:text-gray-300 mb-8">Achieve 5x speed data replication to Lakehouse format with OLake, our open source platform for efficient, quick and scalable big data ingestion for real-time analytics.<div class="flex flex-col md:flex-row justify-center gap-4"><a href=https://calendly.com/d/ckr6-g82-p9y/olake_discussion target=_blank rel="noopener noreferrer" class="inline-flex items-center justify-center text-lg font-medium text-white bg-black dark:bg-white dark:text-black rounded-full px-6 py-3 transition transform hover:-translate-y-1 hover:opacity-90 min-w-[150px]"><svg stroke=currentColor fill=currentColor stroke-width=0 viewBox="0 0 512 512" class="mr-2 text-white dark:text-black" height=1em width=1em xmlns=http://www.w3.org/2000/svg><path d=M432,320H400a16,16,0,0,0-16,16V448H64V128H208a16,16,0,0,0,16-16V80a16,16,0,0,0-16-16H48A48,48,0,0,0,0,112V464a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V336A16,16,0,0,0,432,320ZM488,0h-128c-21.37,0-32.05,25.91-17,41l35.73,35.73L135,320.37a24,24,0,0,0,0,34L157.67,377a24,24,0,0,0,34,0L435.28,133.32,471,169c15,15,41,4.5,41-17V24A24,24,0,0,0,488,0Z /></svg><span class="text-white text-xs dark:text-black">Schedule a meet</span></a><a href=https://olake.io/#olake-form-product target=_blank rel="noopener noreferrer" class="inline-flex items-center justify-center text-lg font-medium text-white bg-black dark:bg-white dark:text-black rounded-full px-6 py-3 transition transform hover:-translate-y-1 hover:opacity-90 min-w-[150px]"><svg stroke=currentColor fill=currentColor stroke-width=0 viewBox="0 0 512 512" class="mr-2 text-white dark:text-black" height=1em width=1em xmlns=http://www.w3.org/2000/svg><path d=M432,320H400a16,16,0,0,0-16,16V448H64V128H208a16,16,0,0,0,16-16V80a16,16,0,0,0-16-16H48A48,48,0,0,0,0,112V464a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V336A16,16,0,0,0,432,320ZM488,0h-128c-21.37,0-32.05,25.91-17,41l35.73,35.73L135,320.37a24,24,0,0,0,0,34L157.67,377a24,24,0,0,0,34,0L435.28,133.32,471,169c15,15,41,4.5,41-17V24A24,24,0,0,0,488,0Z /></svg><span class="text-white text-xs  dark:text-black">Signup</span></a><a href=https://github.com/datazip-inc/olake target=_blank rel="noopener noreferrer" class="inline-flex items-center justify-center text-lg font-medium text-white bg-black dark:bg-white dark:text-black rounded-full px-6 py-3 transition transform hover:-translate-y-1 hover:opacity-90 min-w-[150px]"><svg stroke=currentColor fill=currentColor stroke-width=0 viewBox="0 0 496 512" class="mr-2 text-white dark:text-black" height=1em width=1em xmlns=http://www.w3.org/2000/svg><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg><span class="text-white text-xs dark:text-black">Explore OLake GitHub</span></a></div><div class="mt-6 text-sm text-gray-600 dark:text-gray-400">Contact us at <strong>hello@olake.io</strong></div></div></div><footer class=docusaurus-mt-lg><div class="row margin-top--sm theme-blog-footer-edit-meta-row"><div class=col><b>Tags:</b><ul class="tags_jXut padding--none margin-left--sm"><li class=tag_QGVx><a rel=tag title="Blogs on the topic Apache Iceberg" class="tag_zVej tagRegular_sFm0" href=/blog/tags/iceberg/>Apache Iceberg</a><li class=tag_QGVx><a rel=tag title="Blogs on the topic ClickHouse Query Engine" class="tag_zVej tagRegular_sFm0" href=/blog/tags/clickhouse/>ClickHouse</a><li class=tag_QGVx><a rel=tag title="Blogs on the topic Lakehouse Architecture" class="tag_zVej tagRegular_sFm0" href=/blog/tags/lakehouse/>Lakehouse</a></ul></div></div><div class="row margin-top--sm theme-blog-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href=https://github.com/datazip-inc/olake-docs/tree/master/blog/2025-12-10-build-data-lakehouse-iceberg-clickhouse-olake.mdx target=_blank rel="noopener noreferrer" class=theme-edit-this-page><svg fill=currentColor height=20 width=20 viewBox="0 0 40 40" class=iconEdit_Z9Sw aria-hidden=true><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"/></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Blog post page navigation"><a class="pagination-nav__link pagination-nav__link--prev" href=/blog/olake-arrow-based-iceberg-ingestion/><div class=pagination-nav__sublabel>Newer post</div><div class=pagination-nav__label>OLake — now an Arrow-based Iceberg Ingestion Tool</div></a><a class="pagination-nav__link pagination-nav__link--next" href=/blog/iceberg-variant-geospatial-types/><div class=pagination-nav__sublabel>Older post</div><div class=pagination-nav__label>Beyond Structured Tables: Variant and Geospatial Data in Apache Iceberg v3</div></a></nav></div></article><aside class="hidden lg:block w-72 flex-shrink-0"><div class="sticky top-24 space-y-6"><div class="bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-800 shadow-sm"><div class="px-5 py-4 border-b border-gray-100 dark:border-gray-800"><h3 class="text-sm font-semibold text-gray-900 dark:text-gray-100 flex items-center"><svg class="w-4 h-4 mr-2 text-gray-400" fill=none stroke=currentColor viewBox="0 0 24 24"><path stroke-linecap=round stroke-linejoin=round stroke-width=2 d="M4 6h16M4 10h16M4 14h16M4 18h16"/></svg>Contents</h3></div><div class="px-3 py-4 max-h-96 overflow-y-auto"><nav><div><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href=#what-is-a-data-lakehouse class="table-of-contents__link toc-highlight">What is a data lakehouse?</a><li><a href=#why-this-architecture-matters class="table-of-contents__link toc-highlight">Why this architecture matters</a><li><a href=#what-well-do class="table-of-contents__link toc-highlight">What we'll do</a><li><a href=#table-of-contents class="table-of-contents__link toc-highlight">Table of Contents</a><li><a href=#architecture-at-a-glance class="table-of-contents__link toc-highlight">Architecture at a Glance</a><li><a href=#setting-up-olake-ui---cdc-engine class="table-of-contents__link toc-highlight">Setting Up OLake UI - CDC Engine</a><li><a href=#clone-the-repo--understand-the-layout class="table-of-contents__link toc-highlight">Clone the Repo & Understand the Layout</a><li><a href=#bring-up-the-core-services class="table-of-contents__link toc-highlight">Bring Up the Core Services</a><li><a href=#minio-console---your-data-lake-dashboard class="table-of-contents__link toc-highlight">MinIO Console - Your Data Lake Dashboard</a><li><a href=#seed-mysql-with-demo-data class="table-of-contents__link toc-highlight">Seed MySQL with Demo Data</a><ul><li><a href=#-sample-data-overview class="table-of-contents__link toc-highlight">📊 Sample Data Overview</a></ul><li><a href=#inspect-mysql-data-before-syncing class="table-of-contents__link toc-highlight">Inspect MySQL Data Before Syncing</a><li><a href=#prepare-clickhouse-for-the-iceberg-rest-catalog class="table-of-contents__link toc-highlight">Prepare ClickHouse for the Iceberg REST Catalog</a><li><a href=#configure-olake-ui-step-by-step-guide class="table-of-contents__link toc-highlight">Configure OLake UI: Step-by-Step Guide</a><li><a href=#query-iceberg-tables-from-clickhouse class="table-of-contents__link toc-highlight">Query Iceberg Tables from ClickHouse</a><li><a href=#understanding-the-three-layer-architecture class="table-of-contents__link toc-highlight">Understanding the Three-Layer Architecture</a><li><a href=#raw-vs-optimized-analytics--performance-comparison class="table-of-contents__link toc-highlight">Raw vs Optimized Analytics & Performance Comparison</a><li><a href=#cleaning-up-the-environment class="table-of-contents__link toc-highlight">Cleaning Up the Environment</a><li><a href=#where-to-go-next class="table-of-contents__link toc-highlight">Where to Go Next</a></ul></div></div></nav></div></div><div class="bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-800 shadow-sm p-5"><div class=space-y-3><div class="flex items-center justify-between"><span class="text-sm font-medium text-gray-700 dark:text-gray-300">Reading Progress</span><span class="text-sm font-mono text-gray-500 dark:text-gray-400">0<!-- -->%</span></div><div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2"><div class="bg-gradient-to-r from-[#193ae6] to-blue-500 h-2 rounded-full transition-all duration-300" style=width:0%></div></div><div class="text-xs text-gray-500 dark:text-gray-400">Just getting started...</div></div></div><div class="bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-800 shadow-sm p-5"><h4 class="font-medium text-gray-900 dark:text-gray-100 mb-4 text-sm flex items-center"><svg class="w-4 h-4 mr-2 text-gray-400" fill=none stroke=currentColor viewBox="0 0 24 24"><path stroke-linecap=round stroke-linejoin=round stroke-width=2 d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z"/></svg>Share this article</h4><div class=space-y-3><div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-3 border border-gray-200 dark:border-gray-700"><div class="text-xs text-gray-500 dark:text-gray-400 mb-1">Article URL:</div><div class="text-xs text-gray-700 dark:text-gray-300 break-all font-mono"></div></div><button class="w-full flex items-center justify-center px-4 py-2.5 rounded-lg font-medium transition-all duration-200 bg-[#193ae6] hover:bg-blue-700 text-white"><svg class="w-4 h-4 mr-2" fill=none stroke=currentColor viewBox="0 0 24 24"><path stroke-linecap=round stroke-linejoin=round stroke-width=2 d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>Copy URL</button></div></div></div></aside></div></div></div></div></div><footer class="relative h-[62vh] overflow-hidden bg-neutral-100 py-8 dark:bg-gray-900 md:h-[72vh] xl:py-12 2xl:h-[62vh]"><div aria-hidden=true class="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-[36%] select-none bg-[linear-gradient(180deg,#EAEAEA_27.62%,rgba(255,255,255,0)_70.27%)] font-space text-[clamp(133px,25vw,420px)] font-medium leading-[1.2] opacity-80 dark:bg-[linear-gradient(180deg,rgba(50,50,50,1)_27.62%,rgba(50,50,50,0)_70.27%)] xl:translate-y-[36%] xl:bg-[linear-gradient(180deg,#EAEAEA_27.62%,rgba(255,255,255,0)_70.27%)] xl:text-[clamp(200px,30vw,572px)] xl:dark:bg-[linear-gradient(180deg,rgba(50,50,50,1)_27.62%,rgba(50,50,50,0)_70.27%)]" style=-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text>OLake</div><div class="container relative z-10 mx-auto px-4 xl:px-0"><div class=xl:hidden><div class=mb-4><a class="font-space text-xs font-medium leading-tight text-blue-600 dark:text-blue-400" href=/>OLake</a><h2 class="mt-2 font-space text-3xl font-normal leading-tight text-gray-800 dark:text-white">Fastest <span class=font-medium>Data Replication</span></h2></div><div class="mb-6 flex space-x-3"><a href=https://www.linkedin.com/company/datazipio/ aria-label=LinkedIn class="flex items-center justify-center" target=_blank rel="noopener noreferrer"><svg stroke=currentColor fill=currentColor stroke-width=0 viewBox="0 0 256 256" class="my-1 size-2.5 text-gray-700 dark:text-white md:size-3" aria-hidden=true height=1em width=1em xmlns=http://www.w3.org/2000/svg><path d=M216,24H40A16,16,0,0,0,24,40V216a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V40A16,16,0,0,0,216,24Zm0,192H40V40H216V216ZM96,112v64a8,8,0,0,1-16,0V112a8,8,0,0,1,16,0Zm88,28v36a8,8,0,0,1-16,0V140a20,20,0,0,0-40,0v36a8,8,0,0,1-16,0V112a8,8,0,0,1,15.79-1.78A36,36,0,0,1,184,140ZM100,84A12,12,0,1,1,88,72,12,12,0,0,1,100,84Z /></svg></a><a href=https://www.youtube.com/@olakeio aria-label=YouTube class="flex items-center justify-center" target=_blank rel="noopener noreferrer"><svg stroke=currentColor fill=currentColor stroke-width=0 viewBox="0 0 256 256" class="my-1 size-2.5 text-gray-700 dark:text-white md:size-3" aria-hidden=true height=1em width=1em xmlns=http://www.w3.org/2000/svg><path d=M164.44,121.34l-48-32A8,8,0,0,0,104,96v64a8,8,0,0,0,12.44,6.66l48-32a8,8,0,0,0,0-13.32ZM120,145.05V111l25.58,17ZM234.33,69.52a24,24,0,0,0-14.49-16.4C185.56,39.88,131,40,128,40s-57.56-.12-91.84,13.12a24,24,0,0,0-14.49,16.4C19.08,79.5,16,97.74,16,128s3.08,48.5,5.67,58.48a24,24,0,0,0,14.49,16.41C69,215.56,120.4,216,127.34,216h1.32c6.94,0,58.37-.44,91.18-13.11a24,24,0,0,0,14.49-16.41c2.59-10,5.67-28.22,5.67-58.48S236.92,79.5,234.33,69.52Zm-15.49,113a8,8,0,0,1-4.77,5.49c-31.65,12.22-85.48,12-86,12H128c-.54,0-54.33.2-86-12a8,8,0,0,1-4.77-5.49C34.8,173.39,32,156.57,32,128s2.8-45.39,5.16-54.47A8,8,0,0,1,41.93,68c30.52-11.79,81.66-12,85.85-12h.27c.54,0,54.38-.18,86,12a8,8,0,0,1,4.77,5.49C221.2,82.61,224,99.43,224,128S221.2,173.39,218.84,182.47Z /></svg></a><a href=https://olake.io/slack aria-label=Slack class="flex items-center justify-center" target=_blank rel="noopener noreferrer"><svg stroke=currentColor fill=currentColor stroke-width=0 viewBox="0 0 256 256" class="my-1 size-2.5 text-gray-700 dark:text-white md:size-3" aria-hidden=true height=1em width=1em xmlns=http://www.w3.org/2000/svg><path d=M221.13,128A32,32,0,0,0,184,76.31V56a32,32,0,0,0-56-21.13A32,32,0,0,0,76.31,72H56a32,32,0,0,0-21.13,56A32,32,0,0,0,72,179.69V200a32,32,0,0,0,56,21.13A32,32,0,0,0,179.69,184H200a32,32,0,0,0,21.13-56ZM72,152a16,16,0,1,1-16-16H72Zm48,48a16,16,0,0,1-32,0V152a16,16,0,0,1,16-16h16Zm0-80H56a16,16,0,0,1,0-32h48a16,16,0,0,1,16,16Zm0-48H104a16,16,0,1,1,16-16Zm16-16a16,16,0,0,1,32,0v48a16,16,0,0,1-16,16H136Zm16,160a16,16,0,0,1-16-16V184h16a16,16,0,0,1,0,32Zm48-48H152a16,16,0,0,1-16-16V136h64a16,16,0,0,1,0,32Zm0-48H184V104a16,16,0,1,1,16,16Z /></svg></a><a href=https://reddit.com/r/olake aria-label=Reddit class="flex items-center justify-center" target=_blank rel="noopener noreferrer"><svg stroke=currentColor fill=currentColor stroke-width=0 viewBox="0 0 256 256" class="my-1 size-2.5 text-gray-700 dark:text-white md:size-3" aria-hidden=true height=1em width=1em xmlns=http://www.w3.org/2000/svg><path d=M248,104a32,32,0,0,0-52.94-24.19c-16.75-8.9-36.76-14.28-57.66-15.53l5.19-31.17,17.72,2.72a24,24,0,1,0,2.87-15.74l-26-4a8,8,0,0,0-9.11,6.59L121.2,64.16c-21.84.94-42.82,6.38-60.26,15.65a32,32,0,0,0-42.59,47.74A59,59,0,0,0,16,144c0,21.93,12,42.35,33.91,57.49C70.88,216,98.61,224,128,224s57.12-8,78.09-22.51C228,186.35,240,165.93,240,144a59,59,0,0,0-2.35-16.45A32.16,32.16,0,0,0,248,104ZM184,24a8,8,0,1,1-8,8A8,8,0,0,1,184,24Zm40.13,93.78a8,8,0,0,0-3.29,10A43.58,43.58,0,0,1,224,144c0,16.53-9.59,32.27-27,44.33C178.67,201,154.17,208,128,208s-50.67-7-69-19.67C41.59,176.27,32,160.53,32,144a43.75,43.75,0,0,1,3.14-16.17,8,8,0,0,0-3.27-10A16,16,0,1,1,52.94,94.59a8,8,0,0,0,10.45,2.23l.36-.22C81.45,85.9,104.25,80,128,80h0c23.73,0,46.53,5.9,64.23,16.6l.42.25a8,8,0,0,0,10.39-2.26,16,16,0,1,1,21.07,23.19ZM88,144a16,16,0,1,1,16-16A16,16,0,0,1,88,144Zm96-16a16,16,0,1,1-16-16A16,16,0,0,1,184,128Zm-16.93,44.25a8,8,0,0,1-3.32,10.82,76.18,76.18,0,0,1-71.5,0,8,8,0,1,1,7.5-14.14,60.18,60.18,0,0,0,56.5,0A8,8,0,0,1,167.07,172.25Z /></svg></a><a href=https://x.com/_olake aria-label="X (Twitter)" class="flex items-center justify-center" target=_blank rel="noopener noreferrer"><svg stroke=currentColor fill=currentColor stroke-width=0 viewBox="0 0 256 256" class="my-1 size-2.5 text-gray-700 dark:text-white md:size-3" aria-hidden=true height=1em width=1em xmlns=http://www.w3.org/2000/svg><path d=M214.75,211.71l-62.6-98.38,61.77-67.95a8,8,0,0,0-11.84-10.76L143.24,99.34,102.75,35.71A8,8,0,0,0,96,32H48a8,8,0,0,0-6.75,12.3l62.6,98.37-61.77,68a8,8,0,1,0,11.84,10.76l58.84-64.72,40.49,63.63A8,8,0,0,0,160,224h48a8,8,0,0,0,6.75-12.29ZM164.39,208,62.57,48h29L193.43,208Z /></svg></a></div><div class="grid grid-cols-3 gap-4"><div class=font-sans><h3 class="mb-2 text-[8px] font-normal uppercase leading-normal tracking-wider text-brand-black dark:text-white md:text-xs">COMPANY</h3><ul class="list-none space-y-0.5 p-0"><li><a class="font-sans text-[8px] leading-3 tracking-[0.01em] text-brand-gray-450 transition-colors hover:text-blue-500 dark:text-gray-300 md:text-xs" href=/about-us/>About us</a><li><a class="font-sans text-[8px] leading-3 tracking-[0.01em] text-brand-gray-450 transition-colors hover:text-blue-500 dark:text-gray-300 md:text-xs" href=/contact/>Contact us</a><li><a class="font-sans text-[8px] leading-3 tracking-[0.01em] text-brand-gray-450 transition-colors hover:text-blue-500 dark:text-gray-300 md:text-xs" href=/branding/>Branding</a><li><a class="font-sans text-[8px] leading-3 tracking-[0.01em] text-brand-gray-450 transition-colors hover:text-blue-500 dark:text-gray-300 md:text-xs" href=/terms-of-use/>Terms of Use</a><li><a class="font-sans text-[8px] leading-3 tracking-[0.01em] text-brand-gray-450 transition-colors hover:text-blue-500 dark:text-gray-300 md:text-xs" href=/privacy-policy/>Privacy Policy</a></ul></div><div class=font-sans><h3 class="mb-2 text-[8px] font-normal uppercase leading-normal tracking-wider text-brand-black dark:text-white md:text-xs">RESOURCES</h3><ul class="list-none space-y-0.5 p-0"><li><a class="font-sans text-[8px] leading-3 tracking-[0.01em] text-brand-gray-450 transition-colors hover:text-blue-500 dark:text-gray-300 md:text-xs" href=/blog/>Blogs</a><li><a class="font-sans text-[8px] leading-3 tracking-[0.01em] text-brand-gray-450 transition-colors hover:text-blue-500 dark:text-gray-300 md:text-xs" href=/docs/>Docs</a><li><a class="font-sans text-[8px] leading-3 tracking-[0.01em] text-brand-gray-450 transition-colors hover:text-blue-500 dark:text-gray-300 md:text-xs" href=/search/>Search</a></ul></div><div class=font-sans><h3 class="mb-2 text-[8px] font-normal uppercase leading-normal tracking-wider text-brand-black dark:text-white md:text-xs">TOP READS</h3><ul class="list-none space-y-0.5 p-0"><li><a class="font-sans text-[8px] leading-3 tracking-[0.01em] text-brand-gray-450 transition-colors hover:text-blue-500 dark:text-gray-300 md:text-xs" href=/blog/issues-debezium-kafka/>Issues with Debezium</a><li><a class="font-sans text-[8px] leading-3 tracking-[0.01em] text-brand-gray-450 transition-colors hover:text-blue-500 dark:text-gray-300 md:text-xs" href=/blog/olake-architecture/>OLake Architecture</a></ul></div></div></div><div class="hidden xl:block"><div class="grid grid-cols-2 gap-8 xl:grid-cols-10"><div class="col-span-1 xl:col-span-7"><div class=mb-6><a class="text-2xl font-medium text-blue-600 dark:text-blue-400" href=/>OLake</a><h2 class="mb-6 mt-6 text-[56px] font-extralight text-gray-800 dark:text-white">Fastest <span class=font-medium>Data Replication</span></h2></div><div class="flex space-x-4"><a href=https://www.linkedin.com/company/datazipio/ aria-label=LinkedIn class="flex h-10 w-10 items-center justify-center" target=_blank rel="noopener noreferrer"><svg stroke=currentColor fill=currentColor stroke-width=0 viewBox="0 0 256 256" class="h-5 w-5 text-gray-700 dark:text-white" aria-hidden=true height=1em width=1em xmlns=http://www.w3.org/2000/svg><path d=M216,24H40A16,16,0,0,0,24,40V216a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V40A16,16,0,0,0,216,24Zm0,192H40V40H216V216ZM96,112v64a8,8,0,0,1-16,0V112a8,8,0,0,1,16,0Zm88,28v36a8,8,0,0,1-16,0V140a20,20,0,0,0-40,0v36a8,8,0,0,1-16,0V112a8,8,0,0,1,15.79-1.78A36,36,0,0,1,184,140ZM100,84A12,12,0,1,1,88,72,12,12,0,0,1,100,84Z /></svg></a><a href=https://www.youtube.com/@olakeio aria-label=YouTube class="flex h-10 w-10 items-center justify-center" target=_blank rel="noopener noreferrer"><svg stroke=currentColor fill=currentColor stroke-width=0 viewBox="0 0 256 256" class="h-5 w-5 text-gray-700 dark:text-white" aria-hidden=true height=1em width=1em xmlns=http://www.w3.org/2000/svg><path d=M164.44,121.34l-48-32A8,8,0,0,0,104,96v64a8,8,0,0,0,12.44,6.66l48-32a8,8,0,0,0,0-13.32ZM120,145.05V111l25.58,17ZM234.33,69.52a24,24,0,0,0-14.49-16.4C185.56,39.88,131,40,128,40s-57.56-.12-91.84,13.12a24,24,0,0,0-14.49,16.4C19.08,79.5,16,97.74,16,128s3.08,48.5,5.67,58.48a24,24,0,0,0,14.49,16.41C69,215.56,120.4,216,127.34,216h1.32c6.94,0,58.37-.44,91.18-13.11a24,24,0,0,0,14.49-16.41c2.59-10,5.67-28.22,5.67-58.48S236.92,79.5,234.33,69.52Zm-15.49,113a8,8,0,0,1-4.77,5.49c-31.65,12.22-85.48,12-86,12H128c-.54,0-54.33.2-86-12a8,8,0,0,1-4.77-5.49C34.8,173.39,32,156.57,32,128s2.8-45.39,5.16-54.47A8,8,0,0,1,41.93,68c30.52-11.79,81.66-12,85.85-12h.27c.54,0,54.38-.18,86,12a8,8,0,0,1,4.77,5.49C221.2,82.61,224,99.43,224,128S221.2,173.39,218.84,182.47Z /></svg></a><a href=https://olake.io/slack aria-label=Slack class="flex h-10 w-10 items-center justify-center" target=_blank rel="noopener noreferrer"><svg stroke=currentColor fill=currentColor stroke-width=0 viewBox="0 0 256 256" class="h-5 w-5 text-gray-700 dark:text-white" aria-hidden=true height=1em width=1em xmlns=http://www.w3.org/2000/svg><path d=M221.13,128A32,32,0,0,0,184,76.31V56a32,32,0,0,0-56-21.13A32,32,0,0,0,76.31,72H56a32,32,0,0,0-21.13,56A32,32,0,0,0,72,179.69V200a32,32,0,0,0,56,21.13A32,32,0,0,0,179.69,184H200a32,32,0,0,0,21.13-56ZM72,152a16,16,0,1,1-16-16H72Zm48,48a16,16,0,0,1-32,0V152a16,16,0,0,1,16-16h16Zm0-80H56a16,16,0,0,1,0-32h48a16,16,0,0,1,16,16Zm0-48H104a16,16,0,1,1,16-16Zm16-16a16,16,0,0,1,32,0v48a16,16,0,0,1-16,16H136Zm16,160a16,16,0,0,1-16-16V184h16a16,16,0,0,1,0,32Zm48-48H152a16,16,0,0,1-16-16V136h64a16,16,0,0,1,0,32Zm0-48H184V104a16,16,0,1,1,16,16Z /></svg></a><a href=https://reddit.com/r/olake aria-label=Reddit class="flex h-10 w-10 items-center justify-center" target=_blank rel="noopener noreferrer"><svg stroke=currentColor fill=currentColor stroke-width=0 viewBox="0 0 256 256" class="h-5 w-5 text-gray-700 dark:text-white" aria-hidden=true height=1em width=1em xmlns=http://www.w3.org/2000/svg><path d=M248,104a32,32,0,0,0-52.94-24.19c-16.75-8.9-36.76-14.28-57.66-15.53l5.19-31.17,17.72,2.72a24,24,0,1,0,2.87-15.74l-26-4a8,8,0,0,0-9.11,6.59L121.2,64.16c-21.84.94-42.82,6.38-60.26,15.65a32,32,0,0,0-42.59,47.74A59,59,0,0,0,16,144c0,21.93,12,42.35,33.91,57.49C70.88,216,98.61,224,128,224s57.12-8,78.09-22.51C228,186.35,240,165.93,240,144a59,59,0,0,0-2.35-16.45A32.16,32.16,0,0,0,248,104ZM184,24a8,8,0,1,1-8,8A8,8,0,0,1,184,24Zm40.13,93.78a8,8,0,0,0-3.29,10A43.58,43.58,0,0,1,224,144c0,16.53-9.59,32.27-27,44.33C178.67,201,154.17,208,128,208s-50.67-7-69-19.67C41.59,176.27,32,160.53,32,144a43.75,43.75,0,0,1,3.14-16.17,8,8,0,0,0-3.27-10A16,16,0,1,1,52.94,94.59a8,8,0,0,0,10.45,2.23l.36-.22C81.45,85.9,104.25,80,128,80h0c23.73,0,46.53,5.9,64.23,16.6l.42.25a8,8,0,0,0,10.39-2.26,16,16,0,1,1,21.07,23.19ZM88,144a16,16,0,1,1,16-16A16,16,0,0,1,88,144Zm96-16a16,16,0,1,1-16-16A16,16,0,0,1,184,128Zm-16.93,44.25a8,8,0,0,1-3.32,10.82,76.18,76.18,0,0,1-71.5,0,8,8,0,1,1,7.5-14.14,60.18,60.18,0,0,0,56.5,0A8,8,0,0,1,167.07,172.25Z /></svg></a><a href=https://x.com/_olake aria-label="X (Twitter)" class="flex h-10 w-10 items-center justify-center" target=_blank rel="noopener noreferrer"><svg stroke=currentColor fill=currentColor stroke-width=0 viewBox="0 0 256 256" class="h-5 w-5 text-gray-700 dark:text-white" aria-hidden=true height=1em width=1em xmlns=http://www.w3.org/2000/svg><path d=M214.75,211.71l-62.6-98.38,61.77-67.95a8,8,0,0,0-11.84-10.76L143.24,99.34,102.75,35.71A8,8,0,0,0,96,32H48a8,8,0,0,0-6.75,12.3l62.6,98.37-61.77,68a8,8,0,1,0,11.84,10.76l58.84-64.72,40.49,63.63A8,8,0,0,0,160,224h48a8,8,0,0,0,6.75-12.29ZM164.39,208,62.57,48h29L193.43,208Z /></svg></a></div></div><div class="col-span-1 font-sans"><h3 class="mb-4 text-base font-normal tracking-wider text-brand-black dark:text-white">COMPANY</h3><ul class="list-none space-y-3 p-0"><li><a class="text-brand-gray-450 transition-colors hover:text-blue-500 dark:text-gray-300" href=/about-us/>About us</a><li><a class="text-brand-gray-450 transition-colors hover:text-blue-500 dark:text-gray-300" href=/contact/>Contact us</a><li><a class="text-brand-gray-450 transition-colors hover:text-blue-500 dark:text-gray-300" href=/branding/>Branding</a><li><a class="text-brand-gray-450 transition-colors hover:text-blue-500 dark:text-gray-300" href=/terms-of-use/>Terms of Use</a><li><a class="text-brand-gray-450 transition-colors hover:text-blue-500 dark:text-gray-300" href=/privacy-policy/>Privacy Policy</a></ul></div><div class="col-span-1 font-sans"><h3 class="mb-4 text-base font-normal tracking-wider text-brand-black dark:text-white">RESOURCES</h3><ul class="list-none space-y-3 p-0"><li><a class="text-brand-gray-450 transition-colors hover:text-blue-500 dark:text-gray-300" href=/blog/>Blogs</a><li><a class="text-brand-gray-450 transition-colors hover:text-blue-500 dark:text-gray-300" href=/docs/>Docs</a><li><a class="text-brand-gray-450 transition-colors hover:text-blue-500 dark:text-gray-300" href=/search/>Search</a></ul></div><div class="col-span-1 font-sans"><h3 class="mb-4 text-base font-normal tracking-wider text-brand-black dark:text-white">TOP READS</h3><ul class="list-none space-y-3 p-0"><li><a class="text-brand-gray-450 transition-colors hover:text-blue-500 dark:text-gray-300" href=/blog/issues-debezium-kafka/>Issues with Debezium</a><li><a class="text-brand-gray-450 transition-colors hover:text-blue-500 dark:text-gray-300" href=/blog/olake-architecture/>OLake Architecture</a></ul></div></div></div></div><div class="absolute bottom-8 left-12 hidden text-brand-gray-450 xl:block">By Datazip</div></footer></div></body>

@@ -1,0 +1,18 @@
+---
+title: "AWS Glue Catalog Iceberg Writer Configuration - OLake"
+description: "Configure AWS Glue Data Catalog for OLake Iceberg writer. Setup Glue catalog, S3 storage, and IAM credentials for Iceberg tables."
+---
+
+```json title="destination.json"
+{
+    "type": "ICEBERG",
+    "writer": {
+      "catalog_type": "glue",
+      "catalog_name": "olake_iceberg",
+      "iceberg_s3_path": "s3://<BUCKET_NAME>/",
+      "aws_region": "<AWS_REGION>",
+      "aws_access_key": "XXX",
+      "aws_secret_key": "XXX"
+    }
+}
+```

@@ -1,0 +1,58 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.docSidebar.category.Benchmarks": {
+    "message": "Benchmarks",
+    "description": "The label for category 'Benchmarks' in sidebar 'docSidebar'"
+  },
+  "sidebar.docSidebar.category.Getting Started": {
+    "message": "Getting Started",
+    "description": "The label for category 'Getting Started' in sidebar 'docSidebar'"
+  },
+  "sidebar.docSidebar.category.Create Your First Job Pipeline": {
+    "message": "Create Your First Job Pipeline",
+    "description": "The label for category 'Create Your First Job Pipeline' in sidebar 'docSidebar'"
+  },
+  "sidebar.docSidebar.category.Install": {
+    "message": "Install",
+    "description": "The label for category 'Install' in sidebar 'docSidebar'"
+  },
+  "sidebar.docSidebar.category.Docker Compose (UI)": {
+    "message": "Docker Compose (UI)",
+    "description": "The label for category 'Docker Compose (UI)' in sidebar 'docSidebar'"
+  },
+  "sidebar.docSidebar.category.Sources": {
+    "message": "Sources",
+    "description": "The label for category 'Sources' in sidebar 'docSidebar'"
+  },
+  "sidebar.docSidebar.category.Destinations": {
+    "message": "Destinations",
+    "description": "The label for category 'Destinations' in sidebar 'docSidebar'"
+  },
+  "sidebar.docSidebar.category.Apache Iceberg": {
+    "message": "Apache Iceberg",
+    "description": "The label for category 'Apache Iceberg' in sidebar 'docSidebar'"
+  },
+  "sidebar.docSidebar.category.Catalogs": {
+    "message": "Catalogs",
+    "description": "The label for category 'Catalogs' in sidebar 'docSidebar'"
+  },
+  "sidebar.docSidebar.category.Parquet Writer": {
+    "message": "Parquet Writer",
+    "description": "The label for category 'Parquet Writer' in sidebar 'docSidebar'"
+  },
+  "sidebar.docSidebar.category.Terminologies": {
+    "message": "Terminologies",
+    "description": "The label for category 'Terminologies' in sidebar 'docSidebar'"
+  },
+  "sidebar.docSidebar.category.Setting up a Development Environment": {
+    "message": "Setting up a Development Environment",
+    "description": "The label for category 'Setting up a Development Environment' in sidebar 'docSidebar'"
+  },
+  "sidebar.docSidebar.category.Versions": {
+    "message": "Versions",
+    "description": "The label for category 'Versions' in sidebar 'docSidebar'"
+  }
+}

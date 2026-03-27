@@ -1,0 +1,3646 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://olake.io/</loc>
+    <lastmod>2026-03-27</lastmod>
+    <image:image>
+      <image:loc>https://olake.io/img/authors/aakash.webp</image:loc>
+      <image:title>Aakash</image:title>
+      <image:caption>Author image: Aakash</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/authors/aditi.webp</image:loc>
+      <image:title>Aditi</image:title>
+      <image:caption>Author image: Aditi</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/authors/akshat.webp</image:loc>
+      <image:title>Akshat</image:title>
+      <image:caption>Author image: Akshat</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/authors/akshay.webp</image:loc>
+      <image:title>Akshay</image:title>
+      <image:caption>Author image: Akshay</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/authors/alex-merced.webp</image:loc>
+      <image:title>Alex Merced</image:title>
+      <image:caption>Author image: Alex Merced</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/authors/amit.webp</image:loc>
+      <image:title>Amit</image:title>
+      <image:caption>Author image: Amit</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/authors/andrew-madson.webp</image:loc>
+      <image:title>Andrew Madson</image:title>
+      <image:caption>Author image: Andrew Madson</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/authors/ankit.webp</image:loc>
+      <image:title>Ankit</image:title>
+      <image:caption>Author image: Ankit</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/authors/anshika.webp</image:loc>
+      <image:title>Anshika</image:title>
+      <image:caption>Author image: Anshika</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/authors/arsham.webp</image:loc>
+      <image:title>Arsham</image:title>
+      <image:caption>Author image: Arsham</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/authors/author.webp</image:loc>
+      <image:title>Author</image:title>
+      <image:caption>Author image: Author</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/authors/badal.webp</image:loc>
+      <image:title>Badal</image:title>
+      <image:caption>Author image: Badal</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/authors/duke.webp</image:loc>
+      <image:title>Duke</image:title>
+      <image:caption>Author image: Duke</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/authors/harsha.webp</image:loc>
+      <image:title>Harsha</image:title>
+      <image:caption>Author image: Harsha</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/authors/hasan.webp</image:loc>
+      <image:title>Hasan</image:title>
+      <image:caption>Author image: Hasan</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/authors/jacopo.webp</image:loc>
+      <image:title>Jacopo</image:title>
+      <image:caption>Author image: Jacopo</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/authors/jyoti.webp</image:loc>
+      <image:title>Jyoti</image:title>
+      <image:caption>Author image: Jyoti</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/authors/merlyn.webp</image:loc>
+      <image:title>Merlyn</image:title>
+      <image:caption>Author image: Merlyn</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/authors/mitali.webp</image:loc>
+      <image:title>Mitali</image:title>
+      <image:caption>Author image: Mitali</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/authors/nayan.jpg</image:loc>
+      <image:title>Nayan</image:title>
+      <image:caption>Author image: Nayan</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/authors/nayan.webp</image:loc>
+      <image:title>Nayan</image:title>
+      <image:caption>Author image: Nayan</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/authors/pavan.webp</image:loc>
+      <image:title>Pavan</image:title>
+      <image:caption>Author image: Pavan</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/authors/presto.webp</image:loc>
+      <image:title>Presto</image:title>
+      <image:caption>Author image: Presto</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/authors/priyansh.webp</image:loc>
+      <image:title>Priyansh</image:title>
+      <image:caption>Author image: Priyansh</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/authors/rajesh.webp</image:loc>
+      <image:title>Rajesh</image:title>
+      <image:caption>Author image: Rajesh</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/authors/riya.webp</image:loc>
+      <image:title>Riya</image:title>
+      <image:caption>Author image: Riya</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/authors/rohan.webp</image:loc>
+      <image:title>Rohan</image:title>
+      <image:caption>Author image: Rohan</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/authors/sachin.webp</image:loc>
+      <image:title>Sachin</image:title>
+      <image:caption>Author image: Sachin</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/authors/sandeep.webp</image:loc>
+      <image:title>Sandeep</image:title>
+      <image:caption>Author image: Sandeep</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/authors/saurabh.webp</image:loc>
+      <image:title>Saurabh</image:title>
+      <image:caption>Author image: Saurabh</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/authors/schitiz.webp</image:loc>
+      <image:title>Schitiz</image:title>
+      <image:caption>Author image: Schitiz</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/authors/shivji.webp</image:loc>
+      <image:title>Shivji</image:title>
+      <image:caption>Author image: Shivji</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/authors/shruti-mantri.webp</image:loc>
+      <image:title>Shruti Mantri</image:title>
+      <image:caption>Author image: Shruti Mantri</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/authors/shubham.webp</image:loc>
+      <image:title>Shubham</image:title>
+      <image:caption>Author image: Shubham</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/authors/tulsi.webp</image:loc>
+      <image:title>Tulsi</image:title>
+      <image:caption>Author image: Tulsi</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/authors/utkarsh-srivastava.webp</image:loc>
+      <image:title>Utkarsh Srivastava</image:title>
+      <image:caption>Author image: Utkarsh Srivastava</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/authors/vaibhav.webp</image:loc>
+      <image:title>Vaibhav</image:title>
+      <image:caption>Author image: Vaibhav</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/authors/varun-saraogi.webp</image:loc>
+      <image:title>Varun Saraogi</image:title>
+      <image:caption>Author image: Varun Saraogi</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/authors/varun.webp</image:loc>
+      <image:title>Varun</image:title>
+      <image:caption>Author image: Varun</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/authors/vikash.webp</image:loc>
+      <image:title>Vikash</image:title>
+      <image:caption>Author image: Vikash</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/authors/viktor.webp</image:loc>
+      <image:title>Viktor</image:title>
+      <image:caption>Author image: Viktor</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/authors/vishal.webp</image:loc>
+      <image:title>Vishal</image:title>
+      <image:caption>Author image: Vishal</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/authors/yonatan.webp</image:loc>
+      <image:title>Yonatan</image:title>
+      <image:caption>Author image: Yonatan</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/logo/airbyte.svg</image:loc>
+      <image:title>Airbyte</image:title>
+      <image:caption>OLake logo: Airbyte</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/logo/arrowleft.svg</image:loc>
+      <image:title>Arrowleft</image:title>
+      <image:caption>OLake logo: Arrowleft</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/logo/arrowright.svg</image:loc>
+      <image:title>Arrowright</image:title>
+      <image:caption>OLake logo: Arrowright</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/logo/azure-adls.webp</image:loc>
+      <image:title>Azure Adls</image:title>
+      <image:caption>OLake logo: Azure Adls</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/logo/cli.svg</image:loc>
+      <image:title>Cli</image:title>
+      <image:caption>OLake logo: Cli</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/logo/close.svg</image:loc>
+      <image:title>Close</image:title>
+      <image:caption>OLake logo: Close</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/logo/contact.svg</image:loc>
+      <image:title>Contact</image:title>
+      <image:caption>OLake logo: Contact</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/logo/debezium.svg</image:loc>
+      <image:title>Debezium</image:title>
+      <image:caption>OLake logo: Debezium</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/logo/gcs.webp</image:loc>
+      <image:title>Gcs</image:title>
+      <image:caption>OLake logo: Gcs</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/logo/github-dark.svg</image:loc>
+      <image:title>Github Dark</image:title>
+      <image:caption>OLake logo: Github Dark</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/logo/github-light.svg</image:loc>
+      <image:title>Github Light</image:title>
+      <image:caption>OLake logo: Github Light</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/logo/gitHub.svg</image:loc>
+      <image:title>GitHub</image:title>
+      <image:caption>OLake logo: GitHub</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/logo/glue.svg</image:loc>
+      <image:title>Glue</image:title>
+      <image:caption>OLake logo: Glue</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/logo/glue.webp</image:loc>
+      <image:title>Glue</image:title>
+      <image:caption>OLake logo: Glue</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/logo/go.svg</image:loc>
+      <image:title>Go</image:title>
+      <image:caption>OLake logo: Go</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/logo/gravitino.svg</image:loc>
+      <image:title>Gravitino</image:title>
+      <image:caption>OLake logo: Gravitino</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/logo/hive.webp</image:loc>
+      <image:title>Hive</image:title>
+      <image:caption>OLake logo: Hive</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/logo/iceberg.webp</image:loc>
+      <image:title>Iceberg</image:title>
+      <image:caption>OLake logo: Iceberg</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/logo/java.svg</image:loc>
+      <image:title>Java</image:title>
+      <image:caption>OLake logo: Java</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/logo/jdbc.webp</image:loc>
+      <image:title>Jdbc</image:title>
+      <image:caption>OLake logo: Jdbc</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/logo/kafka.svg</image:loc>
+      <image:title>Kafka</image:title>
+      <image:caption>OLake logo: Kafka</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/logo/kafka.webp</image:loc>
+      <image:title>Kafka</image:title>
+      <image:caption>OLake logo: Kafka</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/logo/lakekeeper.webp</image:loc>
+      <image:title>Lakekeeper</image:title>
+      <image:caption>OLake logo: Lakekeeper</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/logo/linkedin.svg</image:loc>
+      <image:title>Linkedin</image:title>
+      <image:caption>OLake logo: Linkedin</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/logo/local.webp</image:loc>
+      <image:title>Local</image:title>
+      <image:caption>OLake logo: Local</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/logo/metastore.webp</image:loc>
+      <image:title>Metastore</image:title>
+      <image:caption>OLake logo: Metastore</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/logo/mongodb.webp</image:loc>
+      <image:title>Mongodb</image:title>
+      <image:caption>OLake logo: Mongodb</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/logo/mysql.webp</image:loc>
+      <image:title>Mysql</image:title>
+      <image:caption>OLake logo: Mysql</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/logo/nessie.webp</image:loc>
+      <image:title>Nessie</image:title>
+      <image:caption>OLake logo: Nessie</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/logo/olake-above-black-with-text.svg</image:loc>
+      <image:title>Olake Above Black With Text</image:title>
+      <image:caption>OLake logo: Olake Above Black With Text</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/logo/olake-above-black-with-text.webp</image:loc>
+      <image:title>Olake Above Black With Text</image:title>
+      <image:caption>OLake logo: Olake Above Black With Text</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/logo/olake-above-blue-with-text.svg</image:loc>
+      <image:title>Olake Above Blue With Text</image:title>
+      <image:caption>OLake logo: Olake Above Blue With Text</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/logo/olake-above-blue-with-text.webp</image:loc>
+      <image:title>Olake Above Blue With Text</image:title>
+      <image:caption>OLake logo: Olake Above Blue With Text</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/logo/olake-above-white-with-text.svg</image:loc>
+      <image:title>Olake Above White With Text</image:title>
+      <image:caption>OLake logo: Olake Above White With Text</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/logo/olake-above-white-with-text.webp</image:loc>
+      <image:title>Olake Above White With Text</image:title>
+      <image:caption>OLake logo: Olake Above White With Text</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/logo/olake-black-with-text.png</image:loc>
+      <image:title>Olake Black With Text</image:title>
+      <image:caption>OLake logo: Olake Black With Text</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/logo/olake-black-with-text.svg</image:loc>
+      <image:title>Olake Black With Text</image:title>
+      <image:caption>OLake logo: Olake Black With Text</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/logo/olake-black-with-text.webp</image:loc>
+      <image:title>Olake Black With Text</image:title>
+      <image:caption>OLake logo: Olake Black With Text</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/logo/olake-black.png</image:loc>
+      <image:title>Olake Black</image:title>
+      <image:caption>OLake logo: Olake Black</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/logo/olake-black.svg</image:loc>
+      <image:title>Olake Black</image:title>
+      <image:caption>OLake logo: Olake Black</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/logo/olake-black.webp</image:loc>
+      <image:title>Olake Black</image:title>
+      <image:caption>OLake logo: Olake Black</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/logo/olake-blue-with-text.png</image:loc>
+      <image:title>Olake Blue With Text</image:title>
+      <image:caption>OLake logo: Olake Blue With Text</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/logo/olake-blue-with-text.svg</image:loc>
+      <image:title>Olake Blue With Text</image:title>
+      <image:caption>OLake logo: Olake Blue With Text</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/logo/olake-blue-with-text.webp</image:loc>
+      <image:title>Olake Blue With Text</image:title>
+      <image:caption>OLake logo: Olake Blue With Text</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/logo/olake-blue.png</image:loc>
+      <image:title>Olake Blue</image:title>
+      <image:caption>OLake logo: Olake Blue</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/logo/olake-blue.svg</image:loc>
+      <image:title>Olake Blue</image:title>
+      <image:caption>OLake logo: Olake Blue</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/logo/olake-blue.webp</image:loc>
+      <image:title>Olake Blue</image:title>
+      <image:caption>OLake logo: Olake Blue</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/logo/olake-white-with-text.png</image:loc>
+      <image:title>Olake White With Text</image:title>
+      <image:caption>OLake logo: Olake White With Text</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/logo/olake-white-with-text.svg</image:loc>
+      <image:title>Olake White With Text</image:title>
+      <image:caption>OLake logo: Olake White With Text</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/logo/olake-white-with-text.webp</image:loc>
+      <image:title>Olake White With Text</image:title>
+      <image:caption>OLake logo: Olake White With Text</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/logo/olake-white.png</image:loc>
+      <image:title>Olake White</image:title>
+      <image:caption>OLake logo: Olake White</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/logo/olake-white.svg</image:loc>
+      <image:title>Olake White</image:title>
+      <image:caption>OLake logo: Olake White</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/logo/olake-white.webp</image:loc>
+      <image:title>Olake White</image:title>
+      <image:caption>OLake logo: Olake White</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/logo/oracle.webp</image:loc>
+      <image:title>Oracle</image:title>
+      <image:caption>OLake logo: Oracle</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/logo/polaris.webp</image:loc>
+      <image:title>Polaris</image:title>
+      <image:caption>OLake logo: Polaris</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/logo/postgres.webp</image:loc>
+      <image:title>Postgres</image:title>
+      <image:caption>OLake logo: Postgres</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/logo/purview.webp</image:loc>
+      <image:title>Purview</image:title>
+      <image:caption>OLake logo: Purview</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/logo/rest.webp</image:loc>
+      <image:title>Rest</image:title>
+      <image:caption>OLake logo: Rest</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/logo/s3.webp</image:loc>
+      <image:title>S3</image:title>
+      <image:caption>OLake logo: S3</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/logo/slack.svg</image:loc>
+      <image:title>Slack</image:title>
+      <image:caption>OLake logo: Slack</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/logo/ThumbsDown.svg</image:loc>
+      <image:title>ThumbsDown</image:title>
+      <image:caption>OLake logo: ThumbsDown</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/logo/ThumbsUp.svg</image:loc>
+      <image:title>ThumbsUp</image:title>
+      <image:caption>OLake logo: ThumbsUp</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/logo/unity.webp</image:loc>
+      <image:title>Unity</image:title>
+      <image:caption>OLake logo: Unity</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/logo/x.svg</image:loc>
+      <image:title>X</image:title>
+      <image:caption>OLake logo: X</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/logo/youtube.svg</image:loc>
+      <image:title>Youtube</image:title>
+      <image:caption>OLake logo: Youtube</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://olake.io/blog</loc>
+    <lastmod>2026-03-27</lastmod>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2023/03/troubleshooting-common-issues-and-solutions-to-mongodb-etl-errors-1.webp</image:loc>
+      <image:title>Troubleshooting Common Issues And Solutions To Mongodb Etl Errors 1</image:title>
+      <image:caption>Blog image: Troubleshooting Common Issues And Solutions To Mongodb Etl Errors 1</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2024/09/how-to-set-up-postgresql-cdc-on-aws-rds-1.webp</image:loc>
+      <image:title>How To Set Up Postgresql Cdc On Aws Rds 1</image:title>
+      <image:caption>Blog image: How To Set Up Postgresql Cdc On Aws Rds 1</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2024/09/how-to-set-up-postgresql-cdc-on-aws-rds-2.webp</image:loc>
+      <image:title>How To Set Up Postgresql Cdc On Aws Rds 2</image:title>
+      <image:caption>Blog image: How To Set Up Postgresql Cdc On Aws Rds 2</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2024/09/how-to-set-up-postgresql-cdc-on-aws-rds-3.webp</image:loc>
+      <image:title>How To Set Up Postgresql Cdc On Aws Rds 3</image:title>
+      <image:caption>Blog image: How To Set Up Postgresql Cdc On Aws Rds 3</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2024/09/how-to-set-up-postgresql-cdc-on-aws-rds-4.webp</image:loc>
+      <image:title>How To Set Up Postgresql Cdc On Aws Rds 4</image:title>
+      <image:caption>Blog image: How To Set Up Postgresql Cdc On Aws Rds 4</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2024/09/mongodb-etl-challenges-1.webp</image:loc>
+      <image:title>Mongodb Etl Challenges 1</image:title>
+      <image:caption>Blog image: Mongodb Etl Challenges 1</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2024/09/mongodb-etl-challenges-2.webp</image:loc>
+      <image:title>Mongodb Etl Challenges 2</image:title>
+      <image:caption>Blog image: Mongodb Etl Challenges 2</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2024/09/mongodb-etl-challenges-3.webp</image:loc>
+      <image:title>Mongodb Etl Challenges 3</image:title>
+      <image:caption>Blog image: Mongodb Etl Challenges 3</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2024/09/mongodb-etl-challenges-4.webp</image:loc>
+      <image:title>Mongodb Etl Challenges 4</image:title>
+      <image:caption>Blog image: Mongodb Etl Challenges 4</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2024/09/mongodb-etl-challenges-5.webp</image:loc>
+      <image:title>Mongodb Etl Challenges 5</image:title>
+      <image:caption>Blog image: Mongodb Etl Challenges 5</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2024/09/querying-json-in-snowflake-1.webp</image:loc>
+      <image:title>Querying Json In Snowflake 1</image:title>
+      <image:caption>Blog image: Querying Json In Snowflake 1</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2024/09/querying-json-in-snowflake-10.webp</image:loc>
+      <image:title>Querying Json In Snowflake 10</image:title>
+      <image:caption>Blog image: Querying Json In Snowflake 10</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2024/09/querying-json-in-snowflake-11.webp</image:loc>
+      <image:title>Querying Json In Snowflake 11</image:title>
+      <image:caption>Blog image: Querying Json In Snowflake 11</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2024/09/querying-json-in-snowflake-12.webp</image:loc>
+      <image:title>Querying Json In Snowflake 12</image:title>
+      <image:caption>Blog image: Querying Json In Snowflake 12</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2024/09/querying-json-in-snowflake-13.webp</image:loc>
+      <image:title>Querying Json In Snowflake 13</image:title>
+      <image:caption>Blog image: Querying Json In Snowflake 13</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2024/09/querying-json-in-snowflake-14.webp</image:loc>
+      <image:title>Querying Json In Snowflake 14</image:title>
+      <image:caption>Blog image: Querying Json In Snowflake 14</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2024/09/querying-json-in-snowflake-15.webp</image:loc>
+      <image:title>Querying Json In Snowflake 15</image:title>
+      <image:caption>Blog image: Querying Json In Snowflake 15</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2024/09/querying-json-in-snowflake-16.webp</image:loc>
+      <image:title>Querying Json In Snowflake 16</image:title>
+      <image:caption>Blog image: Querying Json In Snowflake 16</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2024/09/querying-json-in-snowflake-17.webp</image:loc>
+      <image:title>Querying Json In Snowflake 17</image:title>
+      <image:caption>Blog image: Querying Json In Snowflake 17</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2024/09/querying-json-in-snowflake-18.webp</image:loc>
+      <image:title>Querying Json In Snowflake 18</image:title>
+      <image:caption>Blog image: Querying Json In Snowflake 18</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2024/09/querying-json-in-snowflake-19.webp</image:loc>
+      <image:title>Querying Json In Snowflake 19</image:title>
+      <image:caption>Blog image: Querying Json In Snowflake 19</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2024/09/querying-json-in-snowflake-2.webp</image:loc>
+      <image:title>Querying Json In Snowflake 2</image:title>
+      <image:caption>Blog image: Querying Json In Snowflake 2</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2024/09/querying-json-in-snowflake-20.webp</image:loc>
+      <image:title>Querying Json In Snowflake 20</image:title>
+      <image:caption>Blog image: Querying Json In Snowflake 20</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2024/09/querying-json-in-snowflake-21.webp</image:loc>
+      <image:title>Querying Json In Snowflake 21</image:title>
+      <image:caption>Blog image: Querying Json In Snowflake 21</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2024/09/querying-json-in-snowflake-22.webp</image:loc>
+      <image:title>Querying Json In Snowflake 22</image:title>
+      <image:caption>Blog image: Querying Json In Snowflake 22</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2024/09/querying-json-in-snowflake-23.webp</image:loc>
+      <image:title>Querying Json In Snowflake 23</image:title>
+      <image:caption>Blog image: Querying Json In Snowflake 23</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2024/09/querying-json-in-snowflake-24.webp</image:loc>
+      <image:title>Querying Json In Snowflake 24</image:title>
+      <image:caption>Blog image: Querying Json In Snowflake 24</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2024/09/querying-json-in-snowflake-25.webp</image:loc>
+      <image:title>Querying Json In Snowflake 25</image:title>
+      <image:caption>Blog image: Querying Json In Snowflake 25</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2024/09/querying-json-in-snowflake-26.webp</image:loc>
+      <image:title>Querying Json In Snowflake 26</image:title>
+      <image:caption>Blog image: Querying Json In Snowflake 26</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2024/09/querying-json-in-snowflake-27.webp</image:loc>
+      <image:title>Querying Json In Snowflake 27</image:title>
+      <image:caption>Blog image: Querying Json In Snowflake 27</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2024/09/querying-json-in-snowflake-28.webp</image:loc>
+      <image:title>Querying Json In Snowflake 28</image:title>
+      <image:caption>Blog image: Querying Json In Snowflake 28</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2024/09/querying-json-in-snowflake-29.webp</image:loc>
+      <image:title>Querying Json In Snowflake 29</image:title>
+      <image:caption>Blog image: Querying Json In Snowflake 29</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2024/09/querying-json-in-snowflake-3.webp</image:loc>
+      <image:title>Querying Json In Snowflake 3</image:title>
+      <image:caption>Blog image: Querying Json In Snowflake 3</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2024/09/querying-json-in-snowflake-30.webp</image:loc>
+      <image:title>Querying Json In Snowflake 30</image:title>
+      <image:caption>Blog image: Querying Json In Snowflake 30</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2024/09/querying-json-in-snowflake-31.webp</image:loc>
+      <image:title>Querying Json In Snowflake 31</image:title>
+      <image:caption>Blog image: Querying Json In Snowflake 31</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2024/09/querying-json-in-snowflake-32.webp</image:loc>
+      <image:title>Querying Json In Snowflake 32</image:title>
+      <image:caption>Blog image: Querying Json In Snowflake 32</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2024/09/querying-json-in-snowflake-33.webp</image:loc>
+      <image:title>Querying Json In Snowflake 33</image:title>
+      <image:caption>Blog image: Querying Json In Snowflake 33</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2024/09/querying-json-in-snowflake-4.webp</image:loc>
+      <image:title>Querying Json In Snowflake 4</image:title>
+      <image:caption>Blog image: Querying Json In Snowflake 4</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2024/09/querying-json-in-snowflake-5.webp</image:loc>
+      <image:title>Querying Json In Snowflake 5</image:title>
+      <image:caption>Blog image: Querying Json In Snowflake 5</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2024/09/querying-json-in-snowflake-6.webp</image:loc>
+      <image:title>Querying Json In Snowflake 6</image:title>
+      <image:caption>Blog image: Querying Json In Snowflake 6</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2024/09/querying-json-in-snowflake-7.webp</image:loc>
+      <image:title>Querying Json In Snowflake 7</image:title>
+      <image:caption>Blog image: Querying Json In Snowflake 7</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2024/09/querying-json-in-snowflake-8.webp</image:loc>
+      <image:title>Querying Json In Snowflake 8</image:title>
+      <image:caption>Blog image: Querying Json In Snowflake 8</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2024/09/querying-json-in-snowflake-9.webp</image:loc>
+      <image:title>Querying Json In Snowflake 9</image:title>
+      <image:caption>Blog image: Querying Json In Snowflake 9</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2024/10/handling-changing-data-type-1.webp</image:loc>
+      <image:title>Handling Changing Data Type 1</image:title>
+      <image:caption>Blog image: Handling Changing Data Type 1</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2024/10/handling-changing-data-type-10.webp</image:loc>
+      <image:title>Handling Changing Data Type 10</image:title>
+      <image:caption>Blog image: Handling Changing Data Type 10</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2024/10/handling-changing-data-type-11.webp</image:loc>
+      <image:title>Handling Changing Data Type 11</image:title>
+      <image:caption>Blog image: Handling Changing Data Type 11</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2024/10/handling-changing-data-type-12.webp</image:loc>
+      <image:title>Handling Changing Data Type 12</image:title>
+      <image:caption>Blog image: Handling Changing Data Type 12</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2024/10/handling-changing-data-type-13.webp</image:loc>
+      <image:title>Handling Changing Data Type 13</image:title>
+      <image:caption>Blog image: Handling Changing Data Type 13</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2024/10/handling-changing-data-type-14.webp</image:loc>
+      <image:title>Handling Changing Data Type 14</image:title>
+      <image:caption>Blog image: Handling Changing Data Type 14</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2024/10/handling-changing-data-type-2.webp</image:loc>
+      <image:title>Handling Changing Data Type 2</image:title>
+      <image:caption>Blog image: Handling Changing Data Type 2</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2024/10/handling-changing-data-type-3.webp</image:loc>
+      <image:title>Handling Changing Data Type 3</image:title>
+      <image:caption>Blog image: Handling Changing Data Type 3</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2024/10/handling-changing-data-type-4.webp</image:loc>
+      <image:title>Handling Changing Data Type 4</image:title>
+      <image:caption>Blog image: Handling Changing Data Type 4</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2024/10/handling-changing-data-type-5.webp</image:loc>
+      <image:title>Handling Changing Data Type 5</image:title>
+      <image:caption>Blog image: Handling Changing Data Type 5</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2024/10/handling-changing-data-type-6.webp</image:loc>
+      <image:title>Handling Changing Data Type 6</image:title>
+      <image:caption>Blog image: Handling Changing Data Type 6</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2024/10/handling-changing-data-type-7.webp</image:loc>
+      <image:title>Handling Changing Data Type 7</image:title>
+      <image:caption>Blog image: Handling Changing Data Type 7</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2024/10/handling-changing-data-type-8.webp</image:loc>
+      <image:title>Handling Changing Data Type 8</image:title>
+      <image:caption>Blog image: Handling Changing Data Type 8</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2024/10/handling-changing-data-type-9.webp</image:loc>
+      <image:title>Handling Changing Data Type 9</image:title>
+      <image:caption>Blog image: Handling Changing Data Type 9</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2024/11/debezium-vs-olake-1.webp</image:loc>
+      <image:title>Debezium Vs Olake 1</image:title>
+      <image:caption>Blog image: Debezium Vs Olake 1</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2024/11/flatten-array-1.webp</image:loc>
+      <image:title>Flatten Array 1</image:title>
+      <image:caption>Blog image: Flatten Array 1</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2024/11/flatten-array-10.webp</image:loc>
+      <image:title>Flatten Array 10</image:title>
+      <image:caption>Blog image: Flatten Array 10</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2024/11/flatten-array-11.webp</image:loc>
+      <image:title>Flatten Array 11</image:title>
+      <image:caption>Blog image: Flatten Array 11</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2024/11/flatten-array-12.webp</image:loc>
+      <image:title>Flatten Array 12</image:title>
+      <image:caption>Blog image: Flatten Array 12</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2024/11/flatten-array-13.webp</image:loc>
+      <image:title>Flatten Array 13</image:title>
+      <image:caption>Blog image: Flatten Array 13</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2024/11/flatten-array-14.webp</image:loc>
+      <image:title>Flatten Array 14</image:title>
+      <image:caption>Blog image: Flatten Array 14</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2024/11/flatten-array-15.webp</image:loc>
+      <image:title>Flatten Array 15</image:title>
+      <image:caption>Blog image: Flatten Array 15</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2024/11/flatten-array-16.webp</image:loc>
+      <image:title>Flatten Array 16</image:title>
+      <image:caption>Blog image: Flatten Array 16</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2024/11/flatten-array-17.webp</image:loc>
+      <image:title>Flatten Array 17</image:title>
+      <image:caption>Blog image: Flatten Array 17</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2024/11/flatten-array-18.webp</image:loc>
+      <image:title>Flatten Array 18</image:title>
+      <image:caption>Blog image: Flatten Array 18</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2024/11/flatten-array-19.webp</image:loc>
+      <image:title>Flatten Array 19</image:title>
+      <image:caption>Blog image: Flatten Array 19</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2024/11/flatten-array-2.webp</image:loc>
+      <image:title>Flatten Array 2</image:title>
+      <image:caption>Blog image: Flatten Array 2</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2024/11/flatten-array-20.webp</image:loc>
+      <image:title>Flatten Array 20</image:title>
+      <image:caption>Blog image: Flatten Array 20</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2024/11/flatten-array-21.webp</image:loc>
+      <image:title>Flatten Array 21</image:title>
+      <image:caption>Blog image: Flatten Array 21</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2024/11/flatten-array-22.webp</image:loc>
+      <image:title>Flatten Array 22</image:title>
+      <image:caption>Blog image: Flatten Array 22</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2024/11/flatten-array-23.webp</image:loc>
+      <image:title>Flatten Array 23</image:title>
+      <image:caption>Blog image: Flatten Array 23</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2024/11/flatten-array-24.webp</image:loc>
+      <image:title>Flatten Array 24</image:title>
+      <image:caption>Blog image: Flatten Array 24</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2024/11/flatten-array-3.webp</image:loc>
+      <image:title>Flatten Array 3</image:title>
+      <image:caption>Blog image: Flatten Array 3</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2024/11/flatten-array-4.webp</image:loc>
+      <image:title>Flatten Array 4</image:title>
+      <image:caption>Blog image: Flatten Array 4</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2024/11/flatten-array-5.webp</image:loc>
+      <image:title>Flatten Array 5</image:title>
+      <image:caption>Blog image: Flatten Array 5</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2024/11/flatten-array-6.webp</image:loc>
+      <image:title>Flatten Array 6</image:title>
+      <image:caption>Blog image: Flatten Array 6</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2024/11/flatten-array-7.webp</image:loc>
+      <image:title>Flatten Array 7</image:title>
+      <image:caption>Blog image: Flatten Array 7</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2024/11/flatten-array-8.webp</image:loc>
+      <image:title>Flatten Array 8</image:title>
+      <image:caption>Blog image: Flatten Array 8</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2024/11/flatten-array-9.webp</image:loc>
+      <image:title>Flatten Array 9</image:title>
+      <image:caption>Blog image: Flatten Array 9</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2024/11/issues-debezium-kafka-1.webp</image:loc>
+      <image:title>Issues Debezium Kafka 1</image:title>
+      <image:caption>Blog image: Issues Debezium Kafka 1</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2024/11/issues-debezium-kafka-2.webp</image:loc>
+      <image:title>Issues Debezium Kafka 2</image:title>
+      <image:caption>Blog image: Issues Debezium Kafka 2</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2024/11/issues-debezium-kafka-3.webp</image:loc>
+      <image:title>Issues Debezium Kafka 3</image:title>
+      <image:caption>Blog image: Issues Debezium Kafka 3</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2024/11/mongodb-cdc-using-debezium-and-kafka-1.webp</image:loc>
+      <image:title>Mongodb Cdc Using Debezium And Kafka 1</image:title>
+      <image:caption>Blog image: Mongodb Cdc Using Debezium And Kafka 1</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/01/olake-architecture-1.webp</image:loc>
+      <image:title>Olake Architecture 1</image:title>
+      <image:caption>Blog image: Olake Architecture 1</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/02/mor-vs-cow-1.webp</image:loc>
+      <image:title>Mor Vs Cow 1</image:title>
+      <image:caption>Blog image: Mor Vs Cow 1</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/02/mor-vs-cow-2.webp</image:loc>
+      <image:title>Mor Vs Cow 2</image:title>
+      <image:caption>Blog image: Mor Vs Cow 2</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/04/component-interaction-diagram-drivers-and-writer.webp</image:loc>
+      <image:title>Component Interaction Diagram Drivers And Writer</image:title>
+      <image:caption>Blog image: Component Interaction Diagram Drivers And Writer</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/04/how-to-set-up-postgresql-cdc-on-aws-rds-1.webp</image:loc>
+      <image:title>How To Set Up Postgresql Cdc On Aws Rds 1</image:title>
+      <image:caption>Blog image: How To Set Up Postgresql Cdc On Aws Rds 1</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/04/how-to-set-up-postgresql-cdc-on-aws-rds-2.webp</image:loc>
+      <image:title>How To Set Up Postgresql Cdc On Aws Rds 2</image:title>
+      <image:caption>Blog image: How To Set Up Postgresql Cdc On Aws Rds 2</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/04/how-to-set-up-postgresql-cdc-on-aws-rds-3.webp</image:loc>
+      <image:title>How To Set Up Postgresql Cdc On Aws Rds 3</image:title>
+      <image:caption>Blog image: How To Set Up Postgresql Cdc On Aws Rds 3</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/04/how-to-set-up-postgresql-cdc-on-aws-rds-4.webp</image:loc>
+      <image:title>How To Set Up Postgresql Cdc On Aws Rds 4</image:title>
+      <image:caption>Blog image: How To Set Up Postgresql Cdc On Aws Rds 4</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/04/how-to-set-up-postgresql-cdc-on-aws-rds-5.webp</image:loc>
+      <image:title>How To Set Up Postgresql Cdc On Aws Rds 5</image:title>
+      <image:caption>Blog image: How To Set Up Postgresql Cdc On Aws Rds 5</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/04/mongodb-chunking-strategies.webp</image:loc>
+      <image:title>Mongodb Chunking Strategies</image:title>
+      <image:caption>Blog image: Mongodb Chunking Strategies</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/04/mysql-chunking-strategies.webp</image:loc>
+      <image:title>Mysql Chunking Strategies</image:title>
+      <image:caption>Blog image: Mysql Chunking Strategies</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/04/olake-advanced-concurrency-features.webp</image:loc>
+      <image:title>Olake Advanced Concurrency Features</image:title>
+      <image:caption>Blog image: Olake Advanced Concurrency Features</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/04/olake-airflow-1.webp</image:loc>
+      <image:title>Olake Airflow 1</image:title>
+      <image:caption>Blog image: Olake Airflow 1</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/04/olake-airflow-2.webp</image:loc>
+      <image:title>Olake Airflow 2</image:title>
+      <image:caption>Blog image: Olake Airflow 2</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/04/olake-architecture-deep-dive-olake-highlevel-architecture.webp</image:loc>
+      <image:title>Olake Architecture Deep Dive Olake Highlevel Architecture</image:title>
+      <image:caption>Blog image: Olake Architecture Deep Dive Olake Highlevel Architecture</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/04/olake-core-concurrency-architecture.webp</image:loc>
+      <image:title>Olake Core Concurrency Architecture</image:title>
+      <image:caption>Blog image: Olake Core Concurrency Architecture</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/04/olake-core-framework.webp</image:loc>
+      <image:title>Olake Core Framework</image:title>
+      <image:caption>Blog image: Olake Core Framework</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/04/olake-parallel-processing-implementation.webp</image:loc>
+      <image:title>Olake Parallel Processing Implementation</image:title>
+      <image:caption>Blog image: Olake Parallel Processing Implementation</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/04/olake-performance-optimizations.webp</image:loc>
+      <image:title>Olake Performance Optimizations</image:title>
+      <image:caption>Blog image: Olake Performance Optimizations</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/04/olake-state-management.webp</image:loc>
+      <image:title>Olake State Management</image:title>
+      <image:caption>Blog image: Olake State Management</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/04/olake-sync-mode-concurrency-models.webp</image:loc>
+      <image:title>Olake Sync Mode Concurrency Models</image:title>
+      <image:caption>Blog image: Olake Sync Mode Concurrency Models</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/04/postgres-to-iceberg-using-glue-1.webp</image:loc>
+      <image:title>Postgres To Iceberg Using Glue 1</image:title>
+      <image:caption>Blog image: Postgres To Iceberg Using Glue 1</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/04/postgres-to-iceberg-using-glue-2.webp</image:loc>
+      <image:title>Postgres To Iceberg Using Glue 2</image:title>
+      <image:caption>Blog image: Postgres To Iceberg Using Glue 2</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/04/postgres-to-iceberg-using-glue-3.webp</image:loc>
+      <image:title>Postgres To Iceberg Using Glue 3</image:title>
+      <image:caption>Blog image: Postgres To Iceberg Using Glue 3</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/04/postgresql-chunking-strategies.webp</image:loc>
+      <image:title>Postgresql Chunking Strategies</image:title>
+      <image:caption>Blog image: Postgresql Chunking Strategies</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/05/hive-partitioning-vs-iceberg-partitioning-1.webp</image:loc>
+      <image:title>Hive Partitioning Vs Iceberg Partitioning 1</image:title>
+      <image:caption>Blog image: Hive Partitioning Vs Iceberg Partitioning 1</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/05/hive-partitioning-vs-iceberg-partitioning-2.webp</image:loc>
+      <image:title>Hive Partitioning Vs Iceberg Partitioning 2</image:title>
+      <image:caption>Blog image: Hive Partitioning Vs Iceberg Partitioning 2</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/05/hive-partitioning-vs-iceberg-partitioning-3.webp</image:loc>
+      <image:title>Hive Partitioning Vs Iceberg Partitioning 3</image:title>
+      <image:caption>Blog image: Hive Partitioning Vs Iceberg Partitioning 3</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/05/olake-airflow-on-ec2-1.webp</image:loc>
+      <image:title>Olake Airflow On Ec2 1</image:title>
+      <image:caption>Blog image: Olake Airflow On Ec2 1</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/05/olake-airflow-on-ec2-2.webp</image:loc>
+      <image:title>Olake Airflow On Ec2 2</image:title>
+      <image:caption>Blog image: Olake Airflow On Ec2 2</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/05/olake-airflow-on-ec2-3.webp</image:loc>
+      <image:title>Olake Airflow On Ec2 3</image:title>
+      <image:caption>Blog image: Olake Airflow On Ec2 3</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/05/olake-glue-snowflake-1.webp</image:loc>
+      <image:title>Olake Glue Snowflake 1</image:title>
+      <image:caption>Blog image: Olake Glue Snowflake 1</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/05/olake-glue-snowflake-2.webp</image:loc>
+      <image:title>Olake Glue Snowflake 2</image:title>
+      <image:caption>Blog image: Olake Glue Snowflake 2</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/05/olake-glue-snowflake-3.webp</image:loc>
+      <image:title>Olake Glue Snowflake 3</image:title>
+      <image:caption>Blog image: Olake Glue Snowflake 3</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/05/olake-iceberg-athena-1.webp</image:loc>
+      <image:title>Olake Iceberg Athena 1</image:title>
+      <image:caption>Blog image: Olake Iceberg Athena 1</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/05/olake-iceberg-athena-2.webp</image:loc>
+      <image:title>Olake Iceberg Athena 2</image:title>
+      <image:caption>Blog image: Olake Iceberg Athena 2</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/05/olake-iceberg-trino-1.webp</image:loc>
+      <image:title>Olake Iceberg Trino 1</image:title>
+      <image:caption>Blog image: Olake Iceberg Trino 1</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/05/olake-iceberg-trino-2.webp</image:loc>
+      <image:title>Olake Iceberg Trino 2</image:title>
+      <image:caption>Blog image: Olake Iceberg Trino 2</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/05/what-makes-olake-fast-1.webp</image:loc>
+      <image:title>What Makes Olake Fast 1</image:title>
+      <image:caption>Blog image: What Makes Olake Fast 1</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/05/what-makes-olake-fast-2.webp</image:loc>
+      <image:title>What Makes Olake Fast 2</image:title>
+      <image:caption>Blog image: What Makes Olake Fast 2</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/06/iceberg-partitioning-and-writing-strategies-1.webp</image:loc>
+      <image:title>Iceberg Partitioning And Writing Strategies 1</image:title>
+      <image:caption>Blog image: Iceberg Partitioning And Writing Strategies 1</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/06/iceberg-partitioning-and-writing-strategies-2.webp</image:loc>
+      <image:title>Iceberg Partitioning And Writing Strategies 2</image:title>
+      <image:caption>Blog image: Iceberg Partitioning And Writing Strategies 2</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/06/iceberg-partitioning-and-writing-strategies-3.webp</image:loc>
+      <image:title>Iceberg Partitioning And Writing Strategies 3</image:title>
+      <image:caption>Blog image: Iceberg Partitioning And Writing Strategies 3</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/06/iceberg-partitioning-and-writing-strategies-4.webp</image:loc>
+      <image:title>Iceberg Partitioning And Writing Strategies 4</image:title>
+      <image:caption>Blog image: Iceberg Partitioning And Writing Strategies 4</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/06/iceberg-partitioning-and-writing-strategies-5.webp</image:loc>
+      <image:title>Iceberg Partitioning And Writing Strategies 5</image:title>
+      <image:caption>Blog image: Iceberg Partitioning And Writing Strategies 5</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/07/mesh-iceberg-trino-olake-lakekeeper.webp</image:loc>
+      <image:title>Mesh Iceberg Trino Olake Lakekeeper</image:title>
+      <image:caption>Blog image: Mesh Iceberg Trino Olake Lakekeeper</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/07/olake-lakekeeper.webp</image:loc>
+      <image:title>Olake Lakekeeper</image:title>
+      <image:caption>Blog image: Olake Lakekeeper</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/07/trino-logo.webp</image:loc>
+      <image:title>Trino Logo</image:title>
+      <image:caption>Blog image: Trino Logo</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/08/architecture-comparison.webp</image:loc>
+      <image:title>Architecture Comparison</image:title>
+      <image:caption>Blog image: Architecture Comparison</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/08/cloud-service-image.webp</image:loc>
+      <image:title>Cloud Service Image</image:title>
+      <image:caption>Blog image: Cloud Service Image</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/08/iceberg-delta-comparison.webp</image:loc>
+      <image:title>Iceberg Delta Comparison</image:title>
+      <image:caption>Blog image: Iceberg Delta Comparison</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/08/partitioning-chart.webp</image:loc>
+      <image:title>Partitioning Chart</image:title>
+      <image:caption>Blog image: Partitioning Chart</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/08/Screenshot 2025-07-31 161330.webp</image:loc>
+      <image:title>Screenshot 2025 07 31 161330</image:title>
+      <image:caption>Blog image: Screenshot 2025 07 31 161330</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/09/data-ingestion-pipeline.webp</image:loc>
+      <image:title>Data Ingestion Pipeline</image:title>
+      <image:caption>Blog image: Data Ingestion Pipeline</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/09/regex-pattern.webp</image:loc>
+      <image:title>Regex Pattern</image:title>
+      <image:caption>Blog image: Regex Pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/09/sql-mongodb-BSON.webp</image:loc>
+      <image:title>Sql Mongodb BSON</image:title>
+      <image:caption>Blog image: Sql Mongodb BSON</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/09/where-clause.webp</image:loc>
+      <image:title>Where Clause</image:title>
+      <image:caption>Blog image: Where Clause</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/09/where-clause2.webp</image:loc>
+      <image:title>Where Clause2</image:title>
+      <image:caption>Blog image: Where Clause2</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/10/1610f02c-cc9a-49f0-9988-47b8dba7bfba.webp</image:loc>
+      <image:title>1610f02c Cc9a 49f0 9988 47b8dba7bfba</image:title>
+      <image:caption>Blog image: 1610f02c Cc9a 49f0 9988 47b8dba7bfba</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/10/bauplan_olake_architecture.webp</image:loc>
+      <image:title>Bauplan Olake Architecture</image:title>
+      <image:caption>Blog image: Bauplan Olake Architecture</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/10/databricks_architecture.svg</image:loc>
+      <image:title>Databricks Architecture</image:title>
+      <image:caption>Blog image: Databricks Architecture</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/10/databricks-vs-iceberg.webp</image:loc>
+      <image:title>Databricks Vs Iceberg</image:title>
+      <image:caption>Blog image: Databricks Vs Iceberg</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/10/dataflow.webp</image:loc>
+      <image:title>Dataflow</image:title>
+      <image:caption>Blog image: Dataflow</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/10/delta_dump_cpu.png</image:loc>
+      <image:title>Delta Dump Cpu</image:title>
+      <image:caption>Blog image: Delta Dump Cpu</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/10/delta_dump_memory.png</image:loc>
+      <image:title>Delta Dump Memory</image:title>
+      <image:caption>Blog image: Delta Dump Memory</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/10/delta_tpch_memory.png</image:loc>
+      <image:title>Delta Tpch Memory</image:title>
+      <image:caption>Blog image: Delta Tpch Memory</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/10/docker-compose1.webp</image:loc>
+      <image:title>Docker Compose1</image:title>
+      <image:caption>Blog image: Docker Compose1</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/10/docker-compose2.webp</image:loc>
+      <image:title>Docker Compose2</image:title>
+      <image:caption>Blog image: Docker Compose2</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/10/erd.webp</image:loc>
+      <image:title>Erd</image:title>
+      <image:caption>Blog image: Erd</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/10/exaclidraw.webp</image:loc>
+      <image:title>Exaclidraw</image:title>
+      <image:caption>Blog image: Exaclidraw</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/10/folder-structure.webp</image:loc>
+      <image:title>Folder Structure</image:title>
+      <image:caption>Blog image: Folder Structure</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/10/how-olake-becomes-7x-faster-1.webp</image:loc>
+      <image:title>How Olake Becomes 7x Faster 1</image:title>
+      <image:caption>Blog image: How Olake Becomes 7x Faster 1</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/10/how-olake-becomes-7x-faster-2.webp</image:loc>
+      <image:title>How Olake Becomes 7x Faster 2</image:title>
+      <image:caption>Blog image: How Olake Becomes 7x Faster 2</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/10/how-olake-becomes-7x-faster-3.webp</image:loc>
+      <image:title>How Olake Becomes 7x Faster 3</image:title>
+      <image:caption>Blog image: How Olake Becomes 7x Faster 3</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/10/how-olake-becomes-7x-faster-4.webp</image:loc>
+      <image:title>How Olake Becomes 7x Faster 4</image:title>
+      <image:caption>Blog image: How Olake Becomes 7x Faster 4</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/10/how-olake-becomes-7x-faster-5.webp</image:loc>
+      <image:title>How Olake Becomes 7x Faster 5</image:title>
+      <image:caption>Blog image: How Olake Becomes 7x Faster 5</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/10/how-olake-becomes-7x-faster-6.webp</image:loc>
+      <image:title>How Olake Becomes 7x Faster 6</image:title>
+      <image:caption>Blog image: How Olake Becomes 7x Faster 6</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/10/iceberg_architecture.svg</image:loc>
+      <image:title>Iceberg Architecture</image:title>
+      <image:caption>Blog image: Iceberg Architecture</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/10/iceberg_tpch_memory.png</image:loc>
+      <image:title>Iceberg Tpch Memory</image:title>
+      <image:caption>Blog image: Iceberg Tpch Memory</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/10/minioui.webp</image:loc>
+      <image:title>Minioui</image:title>
+      <image:caption>Blog image: Minioui</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/10/olake_bauplan_cover.webp</image:loc>
+      <image:title>Olake Bauplan Cover</image:title>
+      <image:caption>Blog image: Olake Bauplan Cover</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/10/olake_bauplan_output.png</image:loc>
+      <image:title>Olake Bauplan Output</image:title>
+      <image:caption>Blog image: Olake Bauplan Output</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/10/olake_bauplan_source.png</image:loc>
+      <image:title>Olake Bauplan Source</image:title>
+      <image:caption>Blog image: Olake Bauplan Source</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/10/olake_lakekeper_dest.png</image:loc>
+      <image:title>Olake Lakekeper Dest</image:title>
+      <image:caption>Blog image: Olake Lakekeper Dest</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/10/olake-login.webp</image:loc>
+      <image:title>Olake Login</image:title>
+      <image:caption>Blog image: Olake Login</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/10/olakeui.webp</image:loc>
+      <image:title>Olakeui</image:title>
+      <image:caption>Blog image: Olakeui</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/10/olakeuik8s.webp</image:loc>
+      <image:title>Olakeuik8s</image:title>
+      <image:caption>Blog image: Olakeuik8s</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/10/prestoimage.webp</image:loc>
+      <image:title>Prestoimage</image:title>
+      <image:caption>Blog image: Prestoimage</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/10/query_by_cat.png</image:loc>
+      <image:title>Query By Cat</image:title>
+      <image:caption>Blog image: Query By Cat</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/10/tpch_query_result.png</image:loc>
+      <image:title>Tpch Query Result</image:title>
+      <image:caption>Blog image: Tpch Query Result</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/11/active-deleted-rows.webp</image:loc>
+      <image:title>Active Deleted Rows</image:title>
+      <image:caption>Blog image: Active Deleted Rows</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/11/architecture.webp</image:loc>
+      <image:title>Architecture</image:title>
+      <image:caption>Blog image: Architecture</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/11/comparsion-formats.webp</image:loc>
+      <image:title>Comparsion Formats</image:title>
+      <image:caption>Blog image: Comparsion Formats</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/11/cow-mor.webp</image:loc>
+      <image:title>Cow Mor</image:title>
+      <image:caption>Blog image: Cow Mor</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/11/deletionvectors.webp</image:loc>
+      <image:title>Deletionvectors</image:title>
+      <image:caption>Blog image: Deletionvectors</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/11/delta-lake-transaction.webp</image:loc>
+      <image:title>Delta Lake Transaction</image:title>
+      <image:caption>Blog image: Delta Lake Transaction</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/11/evolution.webp</image:loc>
+      <image:title>Evolution</image:title>
+      <image:caption>Blog image: Evolution</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/11/kafka_blog_cover.jpg</image:loc>
+      <image:title>Kafka Blog Cover</image:title>
+      <image:caption>Blog image: Kafka Blog Cover</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/11/kafka_blog_cover.webp</image:loc>
+      <image:title>Kafka Blog Cover</image:title>
+      <image:caption>Blog image: Kafka Blog Cover</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/11/kafka-arch.png</image:loc>
+      <image:title>Kafka Arch</image:title>
+      <image:caption>Blog image: Kafka Arch</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/11/kafka-to-iceberg-olake-driver.webp</image:loc>
+      <image:title>Kafka To Iceberg Olake Driver</image:title>
+      <image:caption>Blog image: Kafka To Iceberg Olake Driver</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/12/dest_config_cow.webp</image:loc>
+      <image:title>Dest Config Cow</image:title>
+      <image:caption>Blog image: Dest Config Cow</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/12/lakehouse-image.webp</image:loc>
+      <image:title>Lakehouse Image</image:title>
+      <image:caption>Blog image: Lakehouse Image</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/12/snowflake_cow.webp</image:loc>
+      <image:title>Snowflake Cow</image:title>
+      <image:caption>Blog image: Snowflake Cow</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/12/snowflake_mor_cow.webp</image:loc>
+      <image:title>Snowflake Mor Cow</image:title>
+      <image:caption>Blog image: Snowflake Mor Cow</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/12/source_config_cow.webp</image:loc>
+      <image:title>Source Config Cow</image:title>
+      <image:caption>Blog image: Source Config Cow</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/12/step-3-image.webp</image:loc>
+      <image:title>Step 3 Image</image:title>
+      <image:caption>Blog image: Step 3 Image</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/12/step-4.webp</image:loc>
+      <image:title>Step 4</image:title>
+      <image:caption>Blog image: Step 4</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/12/step-5-1.webp</image:loc>
+      <image:title>Step 5 1</image:title>
+      <image:caption>Blog image: Step 5 1</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/12/step-5-2.webp</image:loc>
+      <image:title>Step 5 2</image:title>
+      <image:caption>Blog image: Step 5 2</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/12/step-7.webp</image:loc>
+      <image:title>Step 7</image:title>
+      <image:caption>Blog image: Step 7</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/12/stp-6-1.webp</image:loc>
+      <image:title>Stp 6 1</image:title>
+      <image:caption>Blog image: Stp 6 1</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/12/streams_cow.webp</image:loc>
+      <image:title>Streams Cow</image:title>
+      <image:caption>Blog image: Streams Cow</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/13/binlog-events.webp</image:loc>
+      <image:title>Binlog Events</image:title>
+      <image:caption>Blog image: Binlog Events</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/13/comparison.webp</image:loc>
+      <image:title>Comparison</image:title>
+      <image:caption>Blog image: Comparison</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/13/step-3.webp</image:loc>
+      <image:title>Step 3</image:title>
+      <image:caption>Blog image: Step 3</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/13/step-4.webp</image:loc>
+      <image:title>Step 4</image:title>
+      <image:caption>Blog image: Step 4</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/13/step-5-1.webp</image:loc>
+      <image:title>Step 5 1</image:title>
+      <image:caption>Blog image: Step 5 1</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/13/step-5-2.webp</image:loc>
+      <image:title>Step 5 2</image:title>
+      <image:caption>Blog image: Step 5 2</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/13/step-6-1.webp</image:loc>
+      <image:title>Step 6 1</image:title>
+      <image:caption>Blog image: Step 6 1</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/13/step-6-2.webp</image:loc>
+      <image:title>Step 6 2</image:title>
+      <image:caption>Blog image: Step 6 2</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/13/step-6-3.webp</image:loc>
+      <image:title>Step 6 3</image:title>
+      <image:caption>Blog image: Step 6 3</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/13/step-7.webp</image:loc>
+      <image:title>Step 7</image:title>
+      <image:caption>Blog image: Step 7</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/13/step-by-step.png.webp</image:loc>
+      <image:title>Step By Step.Png</image:title>
+      <image:caption>Blog image: Step By Step.Png</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/13/step-by-step.webp</image:loc>
+      <image:title>Step By Step</image:title>
+      <image:caption>Blog image: Step By Step</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/14/analytics-image.webp</image:loc>
+      <image:title>Analytics Image</image:title>
+      <image:caption>Blog image: Analytics Image</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/14/architecture.webp</image:loc>
+      <image:title>Architecture</image:title>
+      <image:caption>Blog image: Architecture</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/14/change-streams.webp</image:loc>
+      <image:title>Change Streams</image:title>
+      <image:caption>Blog image: Change Streams</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/14/step-3.webp</image:loc>
+      <image:title>Step 3</image:title>
+      <image:caption>Blog image: Step 3</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/14/step-4.webp</image:loc>
+      <image:title>Step 4</image:title>
+      <image:caption>Blog image: Step 4</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/14/step-5-1.webp</image:loc>
+      <image:title>Step 5 1</image:title>
+      <image:caption>Blog image: Step 5 1</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/14/step-5-2.webp</image:loc>
+      <image:title>Step 5 2</image:title>
+      <image:caption>Blog image: Step 5 2</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/14/step-6-1.webp</image:loc>
+      <image:title>Step 6 1</image:title>
+      <image:caption>Blog image: Step 6 1</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/14/step-6-2.webp</image:loc>
+      <image:title>Step 6 2</image:title>
+      <image:caption>Blog image: Step 6 2</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/14/step-7.webp</image:loc>
+      <image:title>Step 7</image:title>
+      <image:caption>Blog image: Step 7</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/14/step6-3.webp</image:loc>
+      <image:title>Step6 3</image:title>
+      <image:caption>Blog image: Step6 3</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/15/acid-image.webp</image:loc>
+      <image:title>Acid Image</image:title>
+      <image:caption>Blog image: Acid Image</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/15/hive-architecture.webp</image:loc>
+      <image:title>Hive Architecture</image:title>
+      <image:caption>Blog image: Hive Architecture</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/15/iceberg-netlfix.webp</image:loc>
+      <image:title>Iceberg Netlfix</image:title>
+      <image:caption>Blog image: Iceberg Netlfix</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/15/parition.webp</image:loc>
+      <image:title>Parition</image:title>
+      <image:caption>Blog image: Parition</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/15/performance.webp</image:loc>
+      <image:title>Performance</image:title>
+      <image:caption>Blog image: Performance</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/15/the-architecture-of-an-apache-iceberg-table-apache-iceberg-101.webp</image:loc>
+      <image:title>The Architecture Of An Apache Iceberg Table Apache Iceberg 101</image:title>
+      <image:caption>Blog image: The Architecture Of An Apache Iceberg Table Apache Iceberg 101</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/17/catalogs-differ.webp</image:loc>
+      <image:title>Catalogs Differ</image:title>
+      <image:caption>Blog image: Catalogs Differ</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/17/concurrent-writes.webp</image:loc>
+      <image:title>Concurrent Writes</image:title>
+      <image:caption>Blog image: Concurrent Writes</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/17/snapshot-file-diagram.webp</image:loc>
+      <image:title>Snapshot File Diagram</image:title>
+      <image:caption>Blog image: Snapshot File Diagram</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/17/snapshot-lineage.webp</image:loc>
+      <image:title>Snapshot Lineage</image:title>
+      <image:caption>Blog image: Snapshot Lineage</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/18/audit.webp</image:loc>
+      <image:title>Audit</image:title>
+      <image:caption>Blog image: Audit</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/18/check-customers-image.webp</image:loc>
+      <image:title>Check Customers Image</image:title>
+      <image:caption>Blog image: Check Customers Image</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/18/docker-logs-polaris-image.webp</image:loc>
+      <image:title>Docker Logs Polaris Image</image:title>
+      <image:caption>Blog image: Docker Logs Polaris Image</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/18/exchange-bearer-image.webp</image:loc>
+      <image:title>Exchange Bearer Image</image:title>
+      <image:caption>Blog image: Exchange Bearer Image</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/18/histoircal-analysis.webp</image:loc>
+      <image:title>Histoircal Analysis</image:title>
+      <image:caption>Blog image: Histoircal Analysis</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/18/olake-ui-create-destination.webp</image:loc>
+      <image:title>Olake Ui Create Destination</image:title>
+      <image:caption>Blog image: Olake Ui Create Destination</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/18/olake-ui-create-source.webp</image:loc>
+      <image:title>Olake Ui Create Source</image:title>
+      <image:caption>Blog image: Olake Ui Create Source</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/18/olake-ui-select-streams.webp</image:loc>
+      <image:title>Olake Ui Select Streams</image:title>
+      <image:caption>Blog image: Olake Ui Select Streams</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/18/ordders-table-image.webp</image:loc>
+      <image:title>Ordders Table Image</image:title>
+      <image:caption>Blog image: Ordders Table Image</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/18/pieices-mesh.webp</image:loc>
+      <image:title>Pieices Mesh</image:title>
+      <image:caption>Blog image: Pieices Mesh</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/18/s3-image.webp</image:loc>
+      <image:title>S3 Image</image:title>
+      <image:caption>Blog image: S3 Image</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/18/select-lakehouse-customers.webp</image:loc>
+      <image:title>Select Lakehouse Customers</image:title>
+      <image:caption>Blog image: Select Lakehouse Customers</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/18/trino-query-one.webp</image:loc>
+      <image:title>Trino Query One</image:title>
+      <image:caption>Blog image: Trino Query One</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/18/trino-query-three.webp</image:loc>
+      <image:title>Trino Query Three</image:title>
+      <image:caption>Blog image: Trino Query Three</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/18/trino-query-two.webp</image:loc>
+      <image:title>Trino Query Two</image:title>
+      <image:caption>Blog image: Trino Query Two</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/19/apache-iceberg-architecture.webp</image:loc>
+      <image:title>Apache Iceberg Architecture</image:title>
+      <image:caption>Blog image: Apache Iceberg Architecture</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/19/column-based-storage.webp</image:loc>
+      <image:title>Column Based Storage</image:title>
+      <image:caption>Blog image: Column Based Storage</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/19/row-based-storage.webp</image:loc>
+      <image:title>Row Based Storage</image:title>
+      <image:caption>Blog image: Row Based Storage</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/20/dores-query-select-table.webp</image:loc>
+      <image:title>Dores Query Select Table</image:title>
+      <image:caption>Blog image: Dores Query Select Table</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/20/doris-destination-config.webp</image:loc>
+      <image:title>Doris Destination Config</image:title>
+      <image:caption>Blog image: Doris Destination Config</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/20/olake-iceberg-doris-banner.webp</image:loc>
+      <image:title>Olake Iceberg Doris Banner</image:title>
+      <image:caption>Blog image: Olake Iceberg Doris Banner</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/20/olake-iceberg-dors-architecture.webp</image:loc>
+      <image:title>Olake Iceberg Dors Architecture</image:title>
+      <image:caption>Blog image: Olake Iceberg Dors Architecture</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/20/start-all.sh.webp</image:loc>
+      <image:title>Start All.Sh</image:title>
+      <image:caption>Blog image: Start All.Sh</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/21/architecture.webp</image:loc>
+      <image:title>Architecture</image:title>
+      <image:caption>Blog image: Architecture</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/21/comparison.webp</image:loc>
+      <image:title>Comparison</image:title>
+      <image:caption>Blog image: Comparison</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/21/data-lake-vs-lakehouse-cover.webp</image:loc>
+      <image:title>Data Lake Vs Lakehouse Cover</image:title>
+      <image:caption>Blog image: Data Lake Vs Lakehouse Cover</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/21/datalkehosue-tldr.webp</image:loc>
+      <image:title>Datalkehosue Tldr</image:title>
+      <image:caption>Blog image: Datalkehosue Tldr</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/21/historical.webp</image:loc>
+      <image:title>Historical</image:title>
+      <image:caption>Blog image: Historical</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/21/migration.webp</image:loc>
+      <image:title>Migration</image:title>
+      <image:caption>Blog image: Migration</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/21/optimization-apples.webp</image:loc>
+      <image:title>Optimization Apples</image:title>
+      <image:caption>Blog image: Optimization Apples</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/21/storgae-hygience.webp</image:loc>
+      <image:title>Storgae Hygience</image:title>
+      <image:caption>Blog image: Storgae Hygience</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/21/time-travel.webp</image:loc>
+      <image:title>Time Travel</image:title>
+      <image:caption>Blog image: Time Travel</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/21/transactional.webp</image:loc>
+      <image:title>Transactional</image:title>
+      <image:caption>Blog image: Transactional</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/22/data-warehouse-architecture-warehouse.webp</image:loc>
+      <image:title>Data Warehouse Architecture Warehouse</image:title>
+      <image:caption>Blog image: Data Warehouse Architecture Warehouse</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/22/data-warehouse-lakehouse.webp</image:loc>
+      <image:title>Data Warehouse Lakehouse</image:title>
+      <image:caption>Blog image: Data Warehouse Lakehouse</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/22/enterprise-data.webp</image:loc>
+      <image:title>Enterprise Data</image:title>
+      <image:caption>Blog image: Enterprise Data</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/22/lakehouse-architecture.webp</image:loc>
+      <image:title>Lakehouse Architecture</image:title>
+      <image:caption>Blog image: Lakehouse Architecture</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/22/parquet-format.webp</image:loc>
+      <image:title>Parquet Format</image:title>
+      <image:caption>Blog image: Parquet Format</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/22/proprietary-storage.webp</image:loc>
+      <image:title>Proprietary Storage</image:title>
+      <image:caption>Blog image: Proprietary Storage</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/22/schema-evolution.webp</image:loc>
+      <image:title>Schema Evolution</image:title>
+      <image:caption>Blog image: Schema Evolution</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/22/security-models.webp</image:loc>
+      <image:title>Security Models</image:title>
+      <image:caption>Blog image: Security Models</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/22/warehouse-defined.webp</image:loc>
+      <image:title>Warehouse Defined</image:title>
+      <image:caption>Blog image: Warehouse Defined</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/23/catalogs-engine-agnostic.webp</image:loc>
+      <image:title>Catalogs Engine Agnostic</image:title>
+      <image:caption>Blog image: Catalogs Engine Agnostic</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/23/iceberg-architecture-acid.webp</image:loc>
+      <image:title>Iceberg Architecture Acid</image:title>
+      <image:caption>Blog image: Iceberg Architecture Acid</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/23/iceberg-format-v4.webp</image:loc>
+      <image:title>Iceberg Format V4</image:title>
+      <image:caption>Blog image: Iceberg Format V4</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/23/migrating-legacy-hadoop.webp</image:loc>
+      <image:title>Migrating Legacy Hadoop</image:title>
+      <image:caption>Blog image: Migrating Legacy Hadoop</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/23/time-travel.webp</image:loc>
+      <image:title>Time Travel</image:title>
+      <image:caption>Blog image: Time Travel</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/23/traditional-hive-hidden.webp</image:loc>
+      <image:title>Traditional Hive Hidden</image:title>
+      <image:caption>Blog image: Traditional Hive Hidden</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/24/code-snippet-1.webp</image:loc>
+      <image:title>Code Snippet 1</image:title>
+      <image:caption>Blog image: Code Snippet 1</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/24/code-snippet-2.webp</image:loc>
+      <image:title>Code Snippet 2</image:title>
+      <image:caption>Blog image: Code Snippet 2</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/24/geometry-collection.webp</image:loc>
+      <image:title>Geometry Collection</image:title>
+      <image:caption>Blog image: Geometry Collection</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/24/geospatial-expressions.webp</image:loc>
+      <image:title>Geospatial Expressions</image:title>
+      <image:caption>Blog image: Geospatial Expressions</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/24/geospatial-sort.webp</image:loc>
+      <image:title>Geospatial Sort</image:title>
+      <image:caption>Blog image: Geospatial Sort</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/24/geospatial.webp</image:loc>
+      <image:title>Geospatial</image:title>
+      <image:caption>Blog image: Geospatial</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/24/partition-expressions.webp</image:loc>
+      <image:title>Partition Expressions</image:title>
+      <image:caption>Blog image: Partition Expressions</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/24/universal-data-format.webp</image:loc>
+      <image:title>Universal Data Format</image:title>
+      <image:caption>Blog image: Universal Data Format</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/24/variant-datatype.webp</image:loc>
+      <image:title>Variant Datatype</image:title>
+      <image:caption>Blog image: Variant Datatype</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/25/architecture.webp</image:loc>
+      <image:title>Architecture</image:title>
+      <image:caption>Blog image: Architecture</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/25/gold-clickhouse.webp</image:loc>
+      <image:title>Gold Clickhouse</image:title>
+      <image:caption>Blog image: Gold Clickhouse</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/25/ingestion-mode.webp</image:loc>
+      <image:title>Ingestion Mode</image:title>
+      <image:caption>Blog image: Ingestion Mode</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/25/partition-structure.webp</image:loc>
+      <image:title>Partition Structure</image:title>
+      <image:caption>Blog image: Partition Structure</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/25/save-destination.webp</image:loc>
+      <image:title>Save Destination</image:title>
+      <image:caption>Blog image: Save Destination</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/25/silver-clickhouse.webp</image:loc>
+      <image:title>Silver Clickhouse</image:title>
+      <image:caption>Blog image: Silver Clickhouse</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/25/source_registered.webp</image:loc>
+      <image:title>Source Registered</image:title>
+      <image:caption>Blog image: Source Registered</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/25/sync-now.webp</image:loc>
+      <image:title>Sync Now</image:title>
+      <image:caption>Blog image: Sync Now</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/25/tables-in-minio.webp</image:loc>
+      <image:title>Tables In Minio</image:title>
+      <image:caption>Blog image: Tables In Minio</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/25/verify-logs.webp</image:loc>
+      <image:title>Verify Logs</image:title>
+      <image:caption>Blog image: Verify Logs</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/26/arrow_olake.webp</image:loc>
+      <image:title>Arrow Olake</image:title>
+      <image:caption>Blog image: Arrow Olake</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/26/arrow-record-batch.webp</image:loc>
+      <image:title>Arrow Record Batch</image:title>
+      <image:caption>Blog image: Arrow Record Batch</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/26/olake-arrow-writer-architecture.webp</image:loc>
+      <image:title>Olake Arrow Writer Architecture</image:title>
+      <image:caption>Blog image: Olake Arrow Writer Architecture</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/26/rolling-writer.webp</image:loc>
+      <image:title>Rolling Writer</image:title>
+      <image:caption>Blog image: Rolling Writer</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2025/26/sequence-number.webp</image:loc>
+      <image:title>Sequence Number</image:title>
+      <image:caption>Blog image: Sequence Number</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2026/1/amoro_arch.webp</image:loc>
+      <image:title>Amoro Arch</image:title>
+      <image:caption>Blog image: Amoro Arch</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2026/1/incremental_rolling_compaction.webp</image:loc>
+      <image:title>Incremental Rolling Compaction</image:title>
+      <image:caption>Blog image: Incremental Rolling Compaction</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2026/1/incremental_stratagies-flowchart.webp</image:loc>
+      <image:title>Incremental Stratagies Flowchart</image:title>
+      <image:caption>Blog image: Incremental Stratagies Flowchart</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2026/1/writer_side_mitigation.webp</image:loc>
+      <image:title>Writer Side Mitigation</image:title>
+      <image:caption>Blog image: Writer Side Mitigation</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2026/2/db2-working-image.webp</image:loc>
+      <image:title>Db2 Working Image</image:title>
+      <image:caption>Blog image: Db2 Working Image</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2026/2/introspecting_table_health.webp</image:loc>
+      <image:title>Introspecting Table Health</image:title>
+      <image:caption>Blog image: Introspecting Table Health</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2026/2/monitoring_partition_evolution.webp</image:loc>
+      <image:title>Monitoring Partition Evolution</image:title>
+      <image:caption>Blog image: Monitoring Partition Evolution</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2026/2/pull_based_monitoring.webp</image:loc>
+      <image:title>Pull Based Monitoring</image:title>
+      <image:caption>Blog image: Pull Based Monitoring</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2026/2/push_based_monitoring.webp</image:loc>
+      <image:title>Push Based Monitoring</image:title>
+      <image:caption>Blog image: Push Based Monitoring</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2026/3/core-challenges-flow-chart.webp</image:loc>
+      <image:title>Core Challenges Flow Chart</image:title>
+      <image:caption>Blog image: Core Challenges Flow Chart</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2026/3/data-flow-image.webp</image:loc>
+      <image:title>Data Flow Image</image:title>
+      <image:caption>Blog image: Data Flow Image</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2026/3/incremental-sync-image.webp</image:loc>
+      <image:title>Incremental Sync Image</image:title>
+      <image:caption>Blog image: Incremental Sync Image</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2026/3/ordering-and-deduplication.webp</image:loc>
+      <image:title>Ordering And Deduplication</image:title>
+      <image:caption>Blog image: Ordering And Deduplication</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2026/3/pattern1-direct-materialization.webp</image:loc>
+      <image:title>Pattern1 Direct Materialization</image:title>
+      <image:caption>Blog image: Pattern1 Direct Materialization</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2026/3/pattern2-row-change-log.webp</image:loc>
+      <image:title>Pattern2 Row Change Log</image:title>
+      <image:caption>Blog image: Pattern2 Row Change Log</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2026/3/pattern3-hybrid-medallion-approach.webp</image:loc>
+      <image:title>Pattern3 Hybrid Medallion Approach</image:title>
+      <image:caption>Blog image: Pattern3 Hybrid Medallion Approach</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2026/3/pattern4-continuous-compaction.webp</image:loc>
+      <image:title>Pattern4 Continuous Compaction</image:title>
+      <image:caption>Blog image: Pattern4 Continuous Compaction</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2026/3/s3-flowchart.webp</image:loc>
+      <image:title>S3 Flowchart</image:title>
+      <image:caption>Blog image: S3 Flowchart</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2026/4/after-compact-mem.webp</image:loc>
+      <image:title>After Compact Mem</image:title>
+      <image:caption>Blog image: After Compact Mem</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2026/4/after-compaction-128.webp</image:loc>
+      <image:title>After Compaction 128</image:title>
+      <image:caption>Blog image: After Compaction 128</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2026/4/after-compaction-count.webp</image:loc>
+      <image:title>After Compaction Count</image:title>
+      <image:caption>Blog image: After Compaction Count</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2026/4/after-memory-allocated.webp</image:loc>
+      <image:title>After Memory Allocated</image:title>
+      <image:caption>Blog image: After Memory Allocated</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2026/4/after-memory-allocation.webp</image:loc>
+      <image:title>After Memory Allocation</image:title>
+      <image:caption>Blog image: After Memory Allocation</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2026/4/before-compact-mem.webp</image:loc>
+      <image:title>Before Compact Mem</image:title>
+      <image:caption>Blog image: Before Compact Mem</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2026/4/before-compaction-count.webp</image:loc>
+      <image:title>Before Compaction Count</image:title>
+      <image:caption>Blog image: Before Compaction Count</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2026/4/before-memory-allocation.webp</image:loc>
+      <image:title>Before Memory Allocation</image:title>
+      <image:caption>Blog image: Before Memory Allocation</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2026/4/compaction-blog-img.webp</image:loc>
+      <image:title>Compaction Blog Img</image:title>
+      <image:caption>Blog image: Compaction Blog Img</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2026/4/compaction-node-count.webp</image:loc>
+      <image:title>Compaction Node Count</image:title>
+      <image:caption>Blog image: Compaction Node Count</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/2026/4/mssql-overview-image.webp</image:loc>
+      <image:title>Mssql Overview Image</image:title>
+      <image:caption>Blog image: Mssql Overview Image</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/cover/architect-guide-cdc-apache-iceberg-cover.webp</image:loc>
+      <image:title>Architect Guide Cdc Apache Iceberg Cover</image:title>
+      <image:caption>Blog image: Architect Guide Cdc Apache Iceberg Cover</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/cover/beyond-strcutred-tables.webp</image:loc>
+      <image:title>Beyond Strcutred Tables</image:title>
+      <image:caption>Blog image: Beyond Strcutred Tables</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/cover/binlogs-cover.webp</image:loc>
+      <image:title>Binlogs Cover</image:title>
+      <image:caption>Blog image: Binlogs Cover</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/cover/build-data-lakehouse-iceberg-clickhouse-olake-cover.webp</image:loc>
+      <image:title>Build Data Lakehouse Iceberg Clickhouse Olake Cover</image:title>
+      <image:caption>Blog image: Build Data Lakehouse Iceberg Clickhouse Olake Cover</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/cover/compaction_blog_cover_image.webp</image:loc>
+      <image:title>Compaction Blog Cover Image</image:title>
+      <image:caption>Blog image: Compaction Blog Cover Image</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/cover/cover-image-iceberg-features.webp</image:loc>
+      <image:title>Cover Image Iceberg Features</image:title>
+      <image:caption>Blog image: Cover Image Iceberg Features</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/cover/data-lake-vs-delta-lake-cover.webp</image:loc>
+      <image:title>Data Lake Vs Delta Lake Cover</image:title>
+      <image:caption>Blog image: Data Lake Vs Delta Lake Cover</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/cover/data-lakehouse-cover.webp</image:loc>
+      <image:title>Data Lakehouse Cover</image:title>
+      <image:caption>Blog image: Data Lakehouse Cover</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/cover/data-partitioning-in-s3-cover.webp</image:loc>
+      <image:title>Data Partitioning In S3 Cover</image:title>
+      <image:caption>Blog image: Data Partitioning In S3 Cover</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/cover/databricks-vs-iceberg.webp</image:loc>
+      <image:title>Databricks Vs Iceberg</image:title>
+      <image:caption>Blog image: Databricks Vs Iceberg</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/cover/db2-luw-to-lakehouse-cover.webp</image:loc>
+      <image:title>Db2 Luw To Lakehouse Cover</image:title>
+      <image:caption>Blog image: Db2 Luw To Lakehouse Cover</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/cover/debezium-vs-olake-cover.webp</image:loc>
+      <image:title>Debezium Vs Olake Cover</image:title>
+      <image:caption>Blog image: Debezium Vs Olake Cover</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/cover/deletion-formats.webp</image:loc>
+      <image:title>Deletion Formats</image:title>
+      <image:caption>Blog image: Deletion Formats</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/cover/filter-ingestion-cover.webp</image:loc>
+      <image:title>Filter Ingestion Cover</image:title>
+      <image:caption>Blog image: Filter Ingestion Cover</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/cover/flatten-array-cover.webp</image:loc>
+      <image:title>Flatten Array Cover</image:title>
+      <image:caption>Blog image: Flatten Array Cover</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/cover/handling-changing-data-type-during-semi-structured-data-ingestion-cover.webp</image:loc>
+      <image:title>Handling Changing Data Type During Semi Structured Data Ingestion Cover</image:title>
+      <image:caption>Blog image: Handling Changing Data Type During Semi Structured Data Ingestion Cover</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/cover/hive-partitioning-vs-iceberg-partitioning-cover.webp</image:loc>
+      <image:title>Hive Partitioning Vs Iceberg Partitioning Cover</image:title>
+      <image:caption>Blog image: Hive Partitioning Vs Iceberg Partitioning Cover</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/cover/hive-vs-iceberg.webp</image:loc>
+      <image:title>Hive Vs Iceberg</image:title>
+      <image:caption>Blog image: Hive Vs Iceberg</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/cover/how-olake-becomes-7x-faster-cover.webp</image:loc>
+      <image:title>How Olake Becomes 7x Faster Cover</image:title>
+      <image:caption>Blog image: How Olake Becomes 7x Faster Cover</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/cover/how-to-set-up-postgresql-cdc-on-aws-rds-cover.webp</image:loc>
+      <image:title>How To Set Up Postgresql Cdc On Aws Rds Cover</image:title>
+      <image:caption>Blog image: How To Set Up Postgresql Cdc On Aws Rds Cover</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/cover/iceberg-delta-comparison-cover.webp</image:loc>
+      <image:title>Iceberg Delta Comparison Cover</image:title>
+      <image:caption>Blog image: Iceberg Delta Comparison Cover</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/cover/ICEBERG-metadata.webp</image:loc>
+      <image:title>ICEBERG Metadata</image:title>
+      <image:caption>Blog image: ICEBERG Metadata</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/cover/iceberg-observability-cover.webp</image:loc>
+      <image:title>Iceberg Observability Cover</image:title>
+      <image:caption>Blog image: Iceberg Observability Cover</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/cover/iceberg-partitioning-and-writing-strategies-cover.webp</image:loc>
+      <image:title>Iceberg Partitioning And Writing Strategies Cover</image:title>
+      <image:caption>Blog image: Iceberg Partitioning And Writing Strategies Cover</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/cover/issues-debezium-kafka-cover.webp</image:loc>
+      <image:title>Issues Debezium Kafka Cover</image:title>
+      <image:caption>Blog image: Issues Debezium Kafka Cover</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/cover/json-vs-bson-vs-jsonb-cover.webp</image:loc>
+      <image:title>Json Vs Bson Vs Jsonb Cover</image:title>
+      <image:caption>Blog image: Json Vs Bson Vs Jsonb Cover</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/cover/mongodb-cdc-using-debezium-and-kafka-cover.webp</image:loc>
+      <image:title>Mongodb Cdc Using Debezium And Kafka Cover</image:title>
+      <image:caption>Blog image: Mongodb Cdc Using Debezium And Kafka Cover</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/cover/mongodb-etl-challenges-cover.webp</image:loc>
+      <image:title>Mongodb Etl Challenges Cover</image:title>
+      <image:caption>Blog image: Mongodb Etl Challenges Cover</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/cover/mongodb-synchronization-strategies-cover.webp</image:loc>
+      <image:title>Mongodb Synchronization Strategies Cover</image:title>
+      <image:caption>Blog image: Mongodb Synchronization Strategies Cover</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/cover/mor-vs-cow-cover.webp</image:loc>
+      <image:title>Mor Vs Cow Cover</image:title>
+      <image:caption>Blog image: Mor Vs Cow Cover</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/cover/move-to-iceberg-cover.webp</image:loc>
+      <image:title>Move To Iceberg Cover</image:title>
+      <image:caption>Blog image: Move To Iceberg Cover</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/cover/mssql-connector-cover-image.webp</image:loc>
+      <image:title>Mssql Connector Cover Image</image:title>
+      <image:caption>Blog image: Mssql Connector Cover Image</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/cover/next-gen-lakehouse-cover.webp</image:loc>
+      <image:title>Next Gen Lakehouse Cover</image:title>
+      <image:caption>Blog image: Next Gen Lakehouse Cover</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/cover/olake-airflow-cover.webp</image:loc>
+      <image:title>Olake Airflow Cover</image:title>
+      <image:caption>Blog image: Olake Airflow Cover</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/cover/olake-airflow-on-ec2-cover.webp</image:loc>
+      <image:title>Olake Airflow On Ec2 Cover</image:title>
+      <image:caption>Blog image: Olake Airflow On Ec2 Cover</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/cover/olake-architecture-cover.webp</image:loc>
+      <image:title>Olake Architecture Cover</image:title>
+      <image:caption>Blog image: Olake Architecture Cover</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/cover/olake-architecture-deep-dive-cover.webp</image:loc>
+      <image:title>Olake Architecture Deep Dive Cover</image:title>
+      <image:caption>Blog image: Olake Architecture Deep Dive Cover</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/cover/olake-glue-snowflake-cover.webp</image:loc>
+      <image:title>Olake Glue Snowflake Cover</image:title>
+      <image:caption>Blog image: Olake Glue Snowflake Cover</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/cover/olake-iceberg-athena-cover.webp</image:loc>
+      <image:title>Olake Iceberg Athena Cover</image:title>
+      <image:caption>Blog image: Olake Iceberg Athena Cover</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/cover/olake-iceberg-trino-cover.webp</image:loc>
+      <image:title>Olake Iceberg Trino Cover</image:title>
+      <image:caption>Blog image: Olake Iceberg Trino Cover</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/cover/olake-on-kubernetes.webp</image:loc>
+      <image:title>Olake On Kubernetes</image:title>
+      <image:caption>Blog image: Olake On Kubernetes</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/cover/open-data-lakehouse-cover.webp</image:loc>
+      <image:title>Open Data Lakehouse Cover</image:title>
+      <image:caption>Blog image: Open Data Lakehouse Cover</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/cover/paimon-vs-iceberg-cover.webp</image:loc>
+      <image:title>Paimon Vs Iceberg Cover</image:title>
+      <image:caption>Blog image: Paimon Vs Iceberg Cover</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/cover/parquet-vs-iceberg.webp</image:loc>
+      <image:title>Parquet Vs Iceberg</image:title>
+      <image:caption>Blog image: Parquet Vs Iceberg</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/cover/pipeline-on-olake.webp</image:loc>
+      <image:title>Pipeline On Olake</image:title>
+      <image:caption>Blog image: Pipeline On Olake</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/cover/polaris-blog.webp</image:loc>
+      <image:title>Polaris Blog</image:title>
+      <image:caption>Blog image: Polaris Blog</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/cover/postgres-apache-iceberg.webp</image:loc>
+      <image:title>Postgres Apache Iceberg</image:title>
+      <image:caption>Blog image: Postgres Apache Iceberg</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/cover/postgres-to-iceberg-using-glue-cover.webp</image:loc>
+      <image:title>Postgres To Iceberg Using Glue Cover</image:title>
+      <image:caption>Blog image: Postgres To Iceberg Using Glue Cover</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/cover/querying-json-in-snowflake-cover.webp</image:loc>
+      <image:title>Querying Json In Snowflake Cover</image:title>
+      <image:caption>Blog image: Querying Json In Snowflake Cover</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/cover/s3-connector-cover-image.webp</image:loc>
+      <image:title>S3 Connector Cover Image</image:title>
+      <image:caption>Blog image: S3 Connector Cover Image</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/cover/setup-mongodb.webp</image:loc>
+      <image:title>Setup Mongodb</image:title>
+      <image:caption>Blog image: Setup Mongodb</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/cover/setup-sql-iceberg.webp</image:loc>
+      <image:title>Setup Sql Iceberg</image:title>
+      <image:caption>Blog image: Setup Sql Iceberg</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/cover/troubleshooting-common-issues-and-solutions-to-mongodb-etl-errors-cover.webp</image:loc>
+      <image:title>Troubleshooting Common Issues And Solutions To Mongodb Etl Errors Cover</image:title>
+      <image:caption>Blog image: Troubleshooting Common Issues And Solutions To Mongodb Etl Errors Cover</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/cover/warehouse-lakehouse.webp</image:loc>
+      <image:title>Warehouse Lakehouse</image:title>
+      <image:caption>Blog image: Warehouse Lakehouse</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/cover/what-makes-olake-fast-cover.webp</image:loc>
+      <image:title>What Makes Olake Fast Cover</image:title>
+      <image:caption>Blog image: What Makes Olake Fast Cover</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/blog/cover/why-iceberg-cover.webp</image:loc>
+      <image:title>Why Iceberg Cover</image:title>
+      <image:caption>Blog image: Why Iceberg Cover</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://olake.io/docs</loc>
+    <lastmod>2026-03-27</lastmod>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/adls/azure_dest.png</image:loc>
+      <image:title>Azure Dest</image:title>
+      <image:caption>Documentation image: Azure Dest</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/adls/azure-adls-1.webp</image:loc>
+      <image:title>Azure Adls 1</image:title>
+      <image:caption>Documentation image: Azure Adls 1</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/adls/azure-adls-2.webp</image:loc>
+      <image:title>Azure Adls 2</image:title>
+      <image:caption>Documentation image: Azure Adls 2</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/adls/azure-adls-3.webp</image:loc>
+      <image:title>Azure Adls 3</image:title>
+      <image:caption>Documentation image: Azure Adls 3</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/adls/azure-adls-4.webp</image:loc>
+      <image:title>Azure Adls 4</image:title>
+      <image:caption>Documentation image: Azure Adls 4</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/adls/azure-adls-5.webp</image:loc>
+      <image:title>Azure Adls 5</image:title>
+      <image:caption>Documentation image: Azure Adls 5</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/adls/azure-adls-6.webp</image:loc>
+      <image:title>Azure Adls 6</image:title>
+      <image:caption>Documentation image: Azure Adls 6</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/airflow/airflow-1.webp</image:loc>
+      <image:title>Airflow 1</image:title>
+      <image:caption>Documentation image: Airflow 1</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/airflow/airflow-2.webp</image:loc>
+      <image:title>Airflow 2</image:title>
+      <image:caption>Documentation image: Airflow 2</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/architecture.webp</image:loc>
+      <image:title>Architecture</image:title>
+      <image:caption>Documentation image: Architecture</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/cdc/mysql/azure-mysql-parameters.webp</image:loc>
+      <image:title>Azure Mysql Parameters</image:title>
+      <image:caption>Documentation image: Azure Mysql Parameters</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/cdc/mysql/gcp-mysql-flags.webp</image:loc>
+      <image:title>Gcp Mysql Flags</image:title>
+      <image:caption>Documentation image: Gcp Mysql Flags</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/cdc/mysql/mysql-aurora-pg-1.webp</image:loc>
+      <image:title>Mysql Aurora Pg 1</image:title>
+      <image:caption>Documentation image: Mysql Aurora Pg 1</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/cdc/mysql/mysql-aurora-pg-2.webp</image:loc>
+      <image:title>Mysql Aurora Pg 2</image:title>
+      <image:caption>Documentation image: Mysql Aurora Pg 2</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/cdc/mysql/mysql-aurora-pg-3.webp</image:loc>
+      <image:title>Mysql Aurora Pg 3</image:title>
+      <image:caption>Documentation image: Mysql Aurora Pg 3</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/cdc/mysql/mysql-aurora-pg-4.webp</image:loc>
+      <image:title>Mysql Aurora Pg 4</image:title>
+      <image:caption>Documentation image: Mysql Aurora Pg 4</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/cdc/mysql/mysql-rds-pg-1.webp</image:loc>
+      <image:title>Mysql Rds Pg 1</image:title>
+      <image:caption>Documentation image: Mysql Rds Pg 1</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/cdc/mysql/mysql-rds-pg-2.webp</image:loc>
+      <image:title>Mysql Rds Pg 2</image:title>
+      <image:caption>Documentation image: Mysql Rds Pg 2</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/cdc/postgres/azure-server-parameters.webp</image:loc>
+      <image:title>Azure Server Parameters</image:title>
+      <image:caption>Documentation image: Azure Server Parameters</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/cdc/postgres/gcp-logical-decoding.webp</image:loc>
+      <image:title>Gcp Logical Decoding</image:title>
+      <image:caption>Documentation image: Gcp Logical Decoding</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/cdc/postgres/gcp-network-config.webp</image:loc>
+      <image:title>Gcp Network Config</image:title>
+      <image:caption>Documentation image: Gcp Network Config</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/cdc/postgres/postgres-aurora-pg-1.webp</image:loc>
+      <image:title>Postgres Aurora Pg 1</image:title>
+      <image:caption>Documentation image: Postgres Aurora Pg 1</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/cdc/postgres/postgres-aurora-pg-2.webp</image:loc>
+      <image:title>Postgres Aurora Pg 2</image:title>
+      <image:caption>Documentation image: Postgres Aurora Pg 2</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/cdc/postgres/postgres-network-settings-azure.webp</image:loc>
+      <image:title>Postgres Network Settings Azure</image:title>
+      <image:caption>Documentation image: Postgres Network Settings Azure</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/cdc/postgres/postgres-rds-pg-1.webp</image:loc>
+      <image:title>Postgres Rds Pg 1</image:title>
+      <image:caption>Documentation image: Postgres Rds Pg 1</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/cdc/postgres/postgres-rds-pg-2.webp</image:loc>
+      <image:title>Postgres Rds Pg 2</image:title>
+      <image:caption>Documentation image: Postgres Rds Pg 2</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/destination/olake-destination-associated-job-1.webp</image:loc>
+      <image:title>Olake Destination Associated Job 1</image:title>
+      <image:caption>Documentation image: Olake Destination Associated Job 1</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/destination/olake-destination-delete-1.webp</image:loc>
+      <image:title>Olake Destination Delete 1</image:title>
+      <image:caption>Documentation image: Olake Destination Delete 1</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/destination/olake-destination-delete-2.webp</image:loc>
+      <image:title>Olake Destination Delete 2</image:title>
+      <image:caption>Documentation image: Olake Destination Delete 2</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/destination/olake-destination-edit-1.webp</image:loc>
+      <image:title>Olake Destination Edit 1</image:title>
+      <image:caption>Documentation image: Olake Destination Edit 1</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/destination/olake-destination-edit-2.webp</image:loc>
+      <image:title>Olake Destination Edit 2</image:title>
+      <image:caption>Documentation image: Olake Destination Edit 2</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/destination/olake-destination-iceberg copy.webp</image:loc>
+      <image:title>Olake Destination Iceberg Copy</image:title>
+      <image:caption>Documentation image: Olake Destination Iceberg Copy</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/destination/olake-destination-iceberg.webp</image:loc>
+      <image:title>Olake Destination Iceberg</image:title>
+      <image:caption>Documentation image: Olake Destination Iceberg</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/destination/olake-destination-s3.webp</image:loc>
+      <image:title>Olake Destination S3</image:title>
+      <image:caption>Documentation image: Olake Destination S3</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/discover-and-sync-low.gif</image:loc>
+      <image:title>Discover And Sync Low</image:title>
+      <image:caption>Documentation image: Discover And Sync Low</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/docker-compose-low.gif</image:loc>
+      <image:title>Docker Compose Low</image:title>
+      <image:caption>Documentation image: Docker Compose Low</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/docker/docker-compose-1.webp</image:loc>
+      <image:title>Docker Compose 1</image:title>
+      <image:caption>Documentation image: Docker Compose 1</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/docker/docker-compose-2.webp</image:loc>
+      <image:title>Docker Compose 2</image:title>
+      <image:caption>Documentation image: Docker Compose 2</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/docker/docker-compose-3.webp</image:loc>
+      <image:title>Docker Compose 3</image:title>
+      <image:caption>Documentation image: Docker Compose 3</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/docker/docker-compose-4.webp</image:loc>
+      <image:title>Docker Compose 4</image:title>
+      <image:caption>Documentation image: Docker Compose 4</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/features/logs-console.webp</image:loc>
+      <image:title>Logs Console</image:title>
+      <image:caption>Documentation image: Logs Console</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/features/olake-logs.webp</image:loc>
+      <image:title>Olake Logs</image:title>
+      <image:caption>Documentation image: Olake Logs</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/getting-started/alerts-and-notifications/alert-example.png</image:loc>
+      <image:title>Alert Example</image:title>
+      <image:caption>Documentation image: Alert Example</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/getting-started/alerts-and-notifications/system-settings.png</image:loc>
+      <image:title>System Settings</image:title>
+      <image:caption>Documentation image: System Settings</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/getting-started/catalog.webp</image:loc>
+      <image:title>Catalog</image:title>
+      <image:caption>Documentation image: Catalog</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/getting-started/create-your-first-job/clear_dest_imag.png</image:loc>
+      <image:title>Clear Dest Imag</image:title>
+      <image:caption>Documentation image: Clear Dest Imag</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/getting-started/create-your-first-job/cli-discover-logs-end.webp</image:loc>
+      <image:title>Cli Discover Logs End</image:title>
+      <image:caption>Documentation image: Cli Discover Logs End</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/getting-started/create-your-first-job/cli-discover-logs-start.webp</image:loc>
+      <image:title>Cli Discover Logs Start</image:title>
+      <image:caption>Documentation image: Cli Discover Logs Start</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/getting-started/create-your-first-job/cli-s3-data.webp</image:loc>
+      <image:title>Cli S3 Data</image:title>
+      <image:caption>Documentation image: Cli S3 Data</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/getting-started/create-your-first-job/cli-sync-logs-end.webp</image:loc>
+      <image:title>Cli Sync Logs End</image:title>
+      <image:caption>Documentation image: Cli Sync Logs End</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/getting-started/create-your-first-job/cli-sync-logs-start.webp</image:loc>
+      <image:title>Cli Sync Logs Start</image:title>
+      <image:caption>Documentation image: Cli Sync Logs Start</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/getting-started/create-your-first-job/configure_dest.png</image:loc>
+      <image:title>Configure Dest</image:title>
+      <image:caption>Documentation image: Configure Dest</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/getting-started/create-your-first-job/dest_config.png</image:loc>
+      <image:title>Dest Config</image:title>
+      <image:caption>Documentation image: Dest Config</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/getting-started/create-your-first-job/job-create.webp</image:loc>
+      <image:title>Job Create</image:title>
+      <image:caption>Documentation image: Job Create</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/getting-started/create-your-first-job/job-creation-success.webp</image:loc>
+      <image:title>Job Creation Success</image:title>
+      <image:caption>Documentation image: Job Creation Success</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/getting-started/create-your-first-job/job-data-filter.webp</image:loc>
+      <image:title>Job Data Filter</image:title>
+      <image:caption>Documentation image: Job Data Filter</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/getting-started/create-your-first-job/job-data-s3.webp</image:loc>
+      <image:title>Job Data S3</image:title>
+      <image:caption>Documentation image: Job Data S3</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/getting-started/create-your-first-job/job-dest-catalog.webp</image:loc>
+      <image:title>Job Dest Catalog</image:title>
+      <image:caption>Documentation image: Job Dest Catalog</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/getting-started/create-your-first-job/job-dest-config.webp</image:loc>
+      <image:title>Job Dest Config</image:title>
+      <image:caption>Documentation image: Job Dest Config</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/getting-started/create-your-first-job/job-dest-connector.webp</image:loc>
+      <image:title>Job Dest Connector</image:title>
+      <image:caption>Documentation image: Job Dest Connector</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/getting-started/create-your-first-job/job-edit-destination.webp</image:loc>
+      <image:title>Job Edit Destination</image:title>
+      <image:caption>Documentation image: Job Edit Destination</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/getting-started/create-your-first-job/job-edit-streams-page.webp</image:loc>
+      <image:title>Job Edit Streams Page</image:title>
+      <image:caption>Documentation image: Job Edit Streams Page</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/getting-started/create-your-first-job/job-resume.webp</image:loc>
+      <image:title>Job Resume</image:title>
+      <image:caption>Documentation image: Job Resume</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/getting-started/create-your-first-job/job-running.webp</image:loc>
+      <image:title>Job Running</image:title>
+      <image:caption>Documentation image: Job Running</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/getting-started/create-your-first-job/job-schedule.webp</image:loc>
+      <image:title>Job Schedule</image:title>
+      <image:caption>Documentation image: Job Schedule</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/getting-started/create-your-first-job/job-settings.webp</image:loc>
+      <image:title>Job Settings</image:title>
+      <image:caption>Documentation image: Job Settings</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/getting-started/create-your-first-job/job-source-config.webp</image:loc>
+      <image:title>Job Source Config</image:title>
+      <image:caption>Documentation image: Job Source Config</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/getting-started/create-your-first-job/job-source-connector.webp</image:loc>
+      <image:title>Job Source Connector</image:title>
+      <image:caption>Documentation image: Job Source Connector</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/getting-started/create-your-first-job/job-stream-edit.webp</image:loc>
+      <image:title>Job Stream Edit</image:title>
+      <image:caption>Documentation image: Job Stream Edit</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/getting-started/create-your-first-job/job-stream-partition.webp</image:loc>
+      <image:title>Job Stream Partition</image:title>
+      <image:caption>Documentation image: Job Stream Partition</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/getting-started/create-your-first-job/job-stream-select.webp</image:loc>
+      <image:title>Job Stream Select</image:title>
+      <image:caption>Documentation image: Job Stream Select</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/getting-started/create-your-first-job/job-streams-destination-db.webp</image:loc>
+      <image:title>Job Streams Destination Db</image:title>
+      <image:caption>Documentation image: Job Streams Destination Db</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/getting-started/create-your-first-job/job-streams.webp</image:loc>
+      <image:title>Job Streams</image:title>
+      <image:caption>Documentation image: Job Streams</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/getting-started/create-your-first-job/job-success.webp</image:loc>
+      <image:title>Job Success</image:title>
+      <image:caption>Documentation image: Job Success</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/getting-started/create-your-first-job/job-sync-now.webp</image:loc>
+      <image:title>Job Sync Now</image:title>
+      <image:caption>Documentation image: Job Sync Now</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/getting-started/create-your-first-job/logs-page.webp</image:loc>
+      <image:title>Logs Page</image:title>
+      <image:caption>Documentation image: Logs Page</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/getting-started/create-your-first-job/max-discover-thread.webp</image:loc>
+      <image:title>Max Discover Thread</image:title>
+      <image:caption>Documentation image: Max Discover Thread</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/getting-started/create-your-first-job/view-logs.webp</image:loc>
+      <image:title>View Logs</image:title>
+      <image:caption>Documentation image: View Logs</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/getting-started/debug.webp</image:loc>
+      <image:title>Debug</image:title>
+      <image:caption>Documentation image: Debug</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/getting-started/dir-structure-local.webp</image:loc>
+      <image:title>Dir Structure Local</image:title>
+      <image:caption>Documentation image: Dir Structure Local</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/getting-started/full-sync.webp</image:loc>
+      <image:title>Full Sync</image:title>
+      <image:caption>Documentation image: Full Sync</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/getting-started/json-parquet.webp</image:loc>
+      <image:title>Json Parquet</image:title>
+      <image:caption>Documentation image: Json Parquet</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/getting-started/normalized-logs.webp</image:loc>
+      <image:title>Normalized Logs</image:title>
+      <image:caption>Documentation image: Normalized Logs</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/getting-started/normalized-parquet.webp</image:loc>
+      <image:title>Normalized Parquet</image:title>
+      <image:caption>Documentation image: Normalized Parquet</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/getting-started/playground/destination-config.webp</image:loc>
+      <image:title>Destination Config</image:title>
+      <image:caption>Documentation image: Destination Config</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/getting-started/playground/pressto-ui.webp</image:loc>
+      <image:title>Pressto Ui</image:title>
+      <image:caption>Documentation image: Pressto Ui</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/getting-started/playground/presto-query.webp</image:loc>
+      <image:title>Presto Query</image:title>
+      <image:caption>Documentation image: Presto Query</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/getting-started/playground/source-config.webp</image:loc>
+      <image:title>Source Config</image:title>
+      <image:caption>Documentation image: Source Config</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/getting-started/playground/spark-query.webp</image:loc>
+      <image:title>Spark Query</image:title>
+      <image:caption>Documentation image: Spark Query</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/getting-started/playground/trino-query.webp</image:loc>
+      <image:title>Trino Query</image:title>
+      <image:caption>Documentation image: Trino Query</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/getting-started/pwd.webp</image:loc>
+      <image:title>Pwd</image:title>
+      <image:caption>Documentation image: Pwd</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/getting-started/state-command-run.webp</image:loc>
+      <image:title>State Command Run</image:title>
+      <image:caption>Documentation image: State Command Run</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/iceberg/catalog/glue/aws_glue_catalog.png</image:loc>
+      <image:title>Aws Glue Catalog</image:title>
+      <image:caption>Documentation image: Aws Glue Catalog</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/iceberg/catalog/glue/glue_catalog_img.webp</image:loc>
+      <image:title>Glue Catalog Img</image:title>
+      <image:caption>Documentation image: Glue Catalog Img</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/iceberg/catalog/glue/glue-catalog-olake-ui-setup-destination.webp</image:loc>
+      <image:title>Glue Catalog Olake Ui Setup Destination</image:title>
+      <image:caption>Documentation image: Glue Catalog Olake Ui Setup Destination</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/iceberg/catalog/glue/glue-config.webp</image:loc>
+      <image:title>Glue Config</image:title>
+      <image:caption>Documentation image: Glue Config</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/iceberg/catalog/rest/rest_generic_ui.webp</image:loc>
+      <image:title>Rest Generic Ui</image:title>
+      <image:caption>Documentation image: Rest Generic Ui</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/iceberg/catalog/rest/rest_generic.png</image:loc>
+      <image:title>Rest Generic</image:title>
+      <image:caption>Documentation image: Rest Generic</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/iceberg/catalog/rest/rest_lakekeeper_dest_config.png</image:loc>
+      <image:title>Rest Lakekeeper Dest Config</image:title>
+      <image:caption>Documentation image: Rest Lakekeeper Dest Config</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/iceberg/catalog/rest/rest_lakekeeper_ui.webp</image:loc>
+      <image:title>Rest Lakekeeper Ui</image:title>
+      <image:caption>Documentation image: Rest Lakekeeper Ui</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/iceberg/catalog/rest/rest_lakekeeper.png</image:loc>
+      <image:title>Rest Lakekeeper</image:title>
+      <image:caption>Documentation image: Rest Lakekeeper</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/iceberg/catalog/rest/rest_nessie_ui.webp</image:loc>
+      <image:title>Rest Nessie Ui</image:title>
+      <image:caption>Documentation image: Rest Nessie Ui</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/iceberg/catalog/rest/rest_nessie.png</image:loc>
+      <image:title>Rest Nessie</image:title>
+      <image:caption>Documentation image: Rest Nessie</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/iceberg/catalog/rest/rest_polaris_ui.webp</image:loc>
+      <image:title>Rest Polaris Ui</image:title>
+      <image:caption>Documentation image: Rest Polaris Ui</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/iceberg/catalog/rest/rest_polaris.png</image:loc>
+      <image:title>Rest Polaris</image:title>
+      <image:caption>Documentation image: Rest Polaris</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/iceberg/catalog/rest/rest_s3_tables.png</image:loc>
+      <image:title>Rest S3 Tables</image:title>
+      <image:caption>Documentation image: Rest S3 Tables</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/iceberg/catalog/rest/rest_s3tables_ui.webp</image:loc>
+      <image:title>Rest S3tables Ui</image:title>
+      <image:caption>Documentation image: Rest S3tables Ui</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/iceberg/catalog/rest/rest-config.webp</image:loc>
+      <image:title>Rest Config</image:title>
+      <image:caption>Documentation image: Rest Config</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/iceberg/catalog/rest/rest-generic-config.webp</image:loc>
+      <image:title>Rest Generic Config</image:title>
+      <image:caption>Documentation image: Rest Generic Config</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/iceberg/catalog/rest/rest-nessie-config.webp</image:loc>
+      <image:title>Rest Nessie Config</image:title>
+      <image:caption>Documentation image: Rest Nessie Config</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/iceberg/catalog/rest/rest-polaris-config.webp</image:loc>
+      <image:title>Rest Polaris Config</image:title>
+      <image:caption>Documentation image: Rest Polaris Config</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/iceberg/catalog/rest/rest-s3tables-config.webp</image:loc>
+      <image:title>Rest S3tables Config</image:title>
+      <image:caption>Documentation image: Rest S3tables Config</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/iceberg/catalog/unity/unity-catalog-create-external-location.webp</image:loc>
+      <image:title>Unity Catalog Create External Location</image:title>
+      <image:caption>Documentation image: Unity Catalog Create External Location</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/iceberg/catalog/unity/unity-catalog-create-schema.webp</image:loc>
+      <image:title>Unity Catalog Create Schema</image:title>
+      <image:caption>Documentation image: Unity Catalog Create Schema</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/iceberg/catalog/unity/unity-catalog-grant-permissions.webp</image:loc>
+      <image:title>Unity Catalog Grant Permissions</image:title>
+      <image:caption>Documentation image: Unity Catalog Grant Permissions</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/iceberg/catalog/unity/unity-catalog-metastore-access.webp</image:loc>
+      <image:title>Unity Catalog Metastore Access</image:title>
+      <image:caption>Documentation image: Unity Catalog Metastore Access</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/iceberg/catalog/unity/unity-catalog-metastore-settings.webp</image:loc>
+      <image:title>Unity Catalog Metastore Settings</image:title>
+      <image:caption>Documentation image: Unity Catalog Metastore Settings</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/iceberg/catalog/unity/unity-catalog-personal-access-tokens.webp</image:loc>
+      <image:title>Unity Catalog Personal Access Tokens</image:title>
+      <image:caption>Documentation image: Unity Catalog Personal Access Tokens</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/iceberg/catalog/unity/unity-olake-dest.webp</image:loc>
+      <image:title>Unity Olake Dest</image:title>
+      <image:caption>Documentation image: Unity Olake Dest</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/iceberg/hive-gcp-dataproc.webp</image:loc>
+      <image:title>Hive Gcp Dataproc</image:title>
+      <image:caption>Documentation image: Hive Gcp Dataproc</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/iceberg/hive/hive_dest.png</image:loc>
+      <image:title>Hive Dest</image:title>
+      <image:caption>Documentation image: Hive Dest</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/iceberg/hive/hive_ui.webp</image:loc>
+      <image:title>Hive Ui</image:title>
+      <image:caption>Documentation image: Hive Ui</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/iceberg/hive/hive-catalog-olake-ui-setup-destination.webp</image:loc>
+      <image:title>Hive Catalog Olake Ui Setup Destination</image:title>
+      <image:caption>Documentation image: Hive Catalog Olake Ui Setup Destination</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/iceberg/iceberg-sync.webp</image:loc>
+      <image:title>Iceberg Sync</image:title>
+      <image:caption>Documentation image: Iceberg Sync</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/iceberg/jdbc/jdbc_dest.png</image:loc>
+      <image:title>Jdbc Dest</image:title>
+      <image:caption>Documentation image: Jdbc Dest</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/iceberg/jdbc/jdbc_ui.webp</image:loc>
+      <image:title>Jdbc Ui</image:title>
+      <image:caption>Documentation image: Jdbc Ui</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/iceberg/jdbc/jdbc-catalog-olake-ui-setup-destination.webp</image:loc>
+      <image:title>Jdbc Catalog Olake Ui Setup Destination</image:title>
+      <image:caption>Documentation image: Jdbc Catalog Olake Ui Setup Destination</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/iceberg/partitioning-olake-ui.webp</image:loc>
+      <image:title>Partitioning Olake Ui</image:title>
+      <image:caption>Documentation image: Partitioning Olake Ui</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/iceberg/spark-1.webp</image:loc>
+      <image:title>Spark 1</image:title>
+      <image:caption>Documentation image: Spark 1</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/iceberg/spark-2.webp</image:loc>
+      <image:title>Spark 2</image:title>
+      <image:caption>Documentation image: Spark 2</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/iceberg/spark-3.webp</image:loc>
+      <image:title>Spark 3</image:title>
+      <image:caption>Documentation image: Spark 3</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/install/aws-secrets-manager.webp</image:loc>
+      <image:title>Aws Secrets Manager</image:title>
+      <image:caption>Documentation image: Aws Secrets Manager</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/install/docker-hub-access-token.webp</image:loc>
+      <image:title>Docker Hub Access Token</image:title>
+      <image:caption>Documentation image: Docker Hub Access Token</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/install/ecr-pull-through-cache.webp</image:loc>
+      <image:title>Ecr Pull Through Cache</image:title>
+      <image:caption>Documentation image: Ecr Pull Through Cache</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/install/offline-env-generic/01_docker-image-pull.png</image:loc>
+      <image:title>01 Docker Image Pull</image:title>
+      <image:caption>Documentation image: 01 Docker Image Pull</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/install/offline-env-generic/02_docker-image-save.png</image:loc>
+      <image:title>02 Docker Image Save</image:title>
+      <image:caption>Documentation image: 02 Docker Image Save</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/install/offline-env-generic/03_docker-image-scp.png</image:loc>
+      <image:title>03 Docker Image Scp</image:title>
+      <image:caption>Documentation image: 03 Docker Image Scp</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/install/offline-env-generic/04_docker-image-tars.png</image:loc>
+      <image:title>04 Docker Image Tars</image:title>
+      <image:caption>Documentation image: 04 Docker Image Tars</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/install/offline-env-generic/05_docker-image-load.png</image:loc>
+      <image:title>05 Docker Image Load</image:title>
+      <image:caption>Documentation image: 05 Docker Image Load</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/install/offline-env-generic/06_docker-image-list.png</image:loc>
+      <image:title>06 Docker Image List</image:title>
+      <image:caption>Documentation image: 06 Docker Image List</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/install/olake-cli-binary/binary-file.webp</image:loc>
+      <image:title>Binary File</image:title>
+      <image:caption>Documentation image: Binary File</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/install/olake-cli-binary/buildSh.webp</image:loc>
+      <image:title>BuildSh</image:title>
+      <image:caption>Documentation image: BuildSh</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/install/olake-cli-binary/creating-binary.gif</image:loc>
+      <image:title>Creating Binary</image:title>
+      <image:caption>Documentation image: Creating Binary</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/install/olake-cli-binary/olake-repo.webp</image:loc>
+      <image:title>Olake Repo</image:title>
+      <image:caption>Documentation image: Olake Repo</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/install/olake-cli-docker/docker-source-images.webp</image:loc>
+      <image:title>Docker Source Images</image:title>
+      <image:caption>Documentation image: Docker Source Images</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/install/olake-cli-docker/docker-source-pull.webp</image:loc>
+      <image:title>Docker Source Pull</image:title>
+      <image:caption>Documentation image: Docker Source Pull</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/install/vpc-endpoints.webp</image:loc>
+      <image:title>Vpc Endpoints</image:title>
+      <image:caption>Documentation image: Vpc Endpoints</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/jobs/olake-job-0.webp</image:loc>
+      <image:title>Olake Job 0</image:title>
+      <image:caption>Documentation image: Olake Job 0</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/jobs/olake-job-1.webp</image:loc>
+      <image:title>Olake Job 1</image:title>
+      <image:caption>Documentation image: Olake Job 1</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/jobs/olake-job-10.webp</image:loc>
+      <image:title>Olake Job 10</image:title>
+      <image:caption>Documentation image: Olake Job 10</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/jobs/olake-job-11.webp</image:loc>
+      <image:title>Olake Job 11</image:title>
+      <image:caption>Documentation image: Olake Job 11</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/jobs/olake-job-12.webp</image:loc>
+      <image:title>Olake Job 12</image:title>
+      <image:caption>Documentation image: Olake Job 12</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/jobs/olake-job-13.webp</image:loc>
+      <image:title>Olake Job 13</image:title>
+      <image:caption>Documentation image: Olake Job 13</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/jobs/olake-job-14.webp</image:loc>
+      <image:title>Olake Job 14</image:title>
+      <image:caption>Documentation image: Olake Job 14</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/jobs/olake-job-15.webp</image:loc>
+      <image:title>Olake Job 15</image:title>
+      <image:caption>Documentation image: Olake Job 15</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/jobs/olake-job-16.webp</image:loc>
+      <image:title>Olake Job 16</image:title>
+      <image:caption>Documentation image: Olake Job 16</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/jobs/olake-job-2.webp</image:loc>
+      <image:title>Olake Job 2</image:title>
+      <image:caption>Documentation image: Olake Job 2</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/jobs/olake-job-3.webp</image:loc>
+      <image:title>Olake Job 3</image:title>
+      <image:caption>Documentation image: Olake Job 3</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/jobs/olake-job-4.webp</image:loc>
+      <image:title>Olake Job 4</image:title>
+      <image:caption>Documentation image: Olake Job 4</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/jobs/olake-job-5.webp</image:loc>
+      <image:title>Olake Job 5</image:title>
+      <image:caption>Documentation image: Olake Job 5</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/jobs/olake-job-6.webp</image:loc>
+      <image:title>Olake Job 6</image:title>
+      <image:caption>Documentation image: Olake Job 6</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/jobs/olake-job-7.webp</image:loc>
+      <image:title>Olake Job 7</image:title>
+      <image:caption>Documentation image: Olake Job 7</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/jobs/olake-job-8.webp</image:loc>
+      <image:title>Olake Job 8</image:title>
+      <image:caption>Documentation image: Olake Job 8</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/jobs/olake-job-9.webp</image:loc>
+      <image:title>Olake Job 9</image:title>
+      <image:caption>Documentation image: Olake Job 9</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/jobs/olake-job.webp</image:loc>
+      <image:title>Olake Job</image:title>
+      <image:caption>Documentation image: Olake Job</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/playground/olake_iceberg_presto2.png</image:loc>
+      <image:title>Olake Iceberg Presto2</image:title>
+      <image:caption>Documentation image: Olake Iceberg Presto2</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/playground/olake-iceberg-presto-1.webp</image:loc>
+      <image:title>Olake Iceberg Presto 1</image:title>
+      <image:caption>Documentation image: Olake Iceberg Presto 1</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/playground/olake-iceberg-presto-2.webp</image:loc>
+      <image:title>Olake Iceberg Presto 2</image:title>
+      <image:caption>Documentation image: Olake Iceberg Presto 2</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/playground/olake-iceberg-presto-3.webp</image:loc>
+      <image:title>Olake Iceberg Presto 3</image:title>
+      <image:caption>Documentation image: Olake Iceberg Presto 3</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/playground/olake-iceberg-presto-4.webp</image:loc>
+      <image:title>Olake Iceberg Presto 4</image:title>
+      <image:caption>Documentation image: Olake Iceberg Presto 4</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/playground/olake-iceberg-presto-5.webp</image:loc>
+      <image:title>Olake Iceberg Presto 5</image:title>
+      <image:caption>Documentation image: Olake Iceberg Presto 5</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/playground/olake-iceberg-presto-6.webp</image:loc>
+      <image:title>Olake Iceberg Presto 6</image:title>
+      <image:caption>Documentation image: Olake Iceberg Presto 6</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/playground/olake-iceberg-presto-7.webp</image:loc>
+      <image:title>Olake Iceberg Presto 7</image:title>
+      <image:caption>Documentation image: Olake Iceberg Presto 7</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/playground/olake-iceberg-presto-8.webp</image:loc>
+      <image:title>Olake Iceberg Presto 8</image:title>
+      <image:caption>Documentation image: Olake Iceberg Presto 8</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/playground/olake-iceberg-presto-9.webp</image:loc>
+      <image:title>Olake Iceberg Presto 9</image:title>
+      <image:caption>Documentation image: Olake Iceberg Presto 9</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/playground/presto_query.webp</image:loc>
+      <image:title>Presto Query</image:title>
+      <image:caption>Documentation image: Presto Query</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/playground/prestoweb.webp</image:loc>
+      <image:title>Prestoweb</image:title>
+      <image:caption>Documentation image: Prestoweb</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/s3/aws-s3-config.webp</image:loc>
+      <image:title>Aws S3 Config</image:title>
+      <image:caption>Documentation image: Aws S3 Config</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/s3/GCS-HMAC-Keys.webp</image:loc>
+      <image:title>GCS HMAC Keys</image:title>
+      <image:caption>Documentation image: GCS HMAC Keys</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/s3/GCS-service-acc.webp</image:loc>
+      <image:title>GCS Service Acc</image:title>
+      <image:caption>Documentation image: GCS Service Acc</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/s3/olake-s3-bucket.webp</image:loc>
+      <image:title>Olake S3 Bucket</image:title>
+      <image:caption>Documentation image: Olake S3 Bucket</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/s3/s3-default-vs-parsed.webp</image:loc>
+      <image:title>S3 Default Vs Parsed</image:title>
+      <image:caption>Documentation image: S3 Default Vs Parsed</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/s3/s3-destination.webp</image:loc>
+      <image:title>S3 Destination</image:title>
+      <image:caption>Documentation image: S3 Destination</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/s3/s3-minio-config.webp</image:loc>
+      <image:title>S3 Minio Config</image:title>
+      <image:caption>Documentation image: S3 Minio Config</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/s3/s3-partition-config.webp</image:loc>
+      <image:title>S3 Partition Config</image:title>
+      <image:caption>Documentation image: S3 Partition Config</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/s3/s3-partition-gcs.webp</image:loc>
+      <image:title>S3 Partition Gcs</image:title>
+      <image:caption>Documentation image: S3 Partition Gcs</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/s3/s3-regex-1.webp</image:loc>
+      <image:title>S3 Regex 1</image:title>
+      <image:caption>Documentation image: S3 Regex 1</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/sources/db2/source-config.webp</image:loc>
+      <image:title>Source Config</image:title>
+      <image:caption>Documentation image: Source Config</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/sources/kafka/kafka-config.png</image:loc>
+      <image:title>Kafka Config</image:title>
+      <image:caption>Documentation image: Kafka Config</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/sources/kafka/kafka-config.webp</image:loc>
+      <image:title>Kafka Config</image:title>
+      <image:caption>Documentation image: Kafka Config</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/sources/mongodb/mongodb-ui-setup.webp</image:loc>
+      <image:title>Mongodb Ui Setup</image:title>
+      <image:caption>Documentation image: Mongodb Ui Setup</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/sources/mongodb/source-config.webp</image:loc>
+      <image:title>Source Config</image:title>
+      <image:caption>Documentation image: Source Config</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/sources/mssql/source-config.webp</image:loc>
+      <image:title>Source Config</image:title>
+      <image:caption>Documentation image: Source Config</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/sources/mysql/mysql-config.webp</image:loc>
+      <image:title>Mysql Config</image:title>
+      <image:caption>Documentation image: Mysql Config</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/sources/olake-source-associated-job-1.webp</image:loc>
+      <image:title>Olake Source Associated Job 1</image:title>
+      <image:caption>Documentation image: Olake Source Associated Job 1</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/sources/olake-source-delete-1.webp</image:loc>
+      <image:title>Olake Source Delete 1</image:title>
+      <image:caption>Documentation image: Olake Source Delete 1</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/sources/olake-source-delete-2.webp</image:loc>
+      <image:title>Olake Source Delete 2</image:title>
+      <image:caption>Documentation image: Olake Source Delete 2</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/sources/olake-source-edit-1.webp</image:loc>
+      <image:title>Olake Source Edit 1</image:title>
+      <image:caption>Documentation image: Olake Source Edit 1</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/sources/olake-source-edit-2.webp</image:loc>
+      <image:title>Olake Source Edit 2</image:title>
+      <image:caption>Documentation image: Olake Source Edit 2</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/sources/olake-source-mongodb.webp</image:loc>
+      <image:title>Olake Source Mongodb</image:title>
+      <image:caption>Documentation image: Olake Source Mongodb</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/sources/olake-source-mysql.webp</image:loc>
+      <image:title>Olake Source Mysql</image:title>
+      <image:caption>Documentation image: Olake Source Mysql</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/sources/olake-source-oracle-timeout.webp</image:loc>
+      <image:title>Olake Source Oracle Timeout</image:title>
+      <image:caption>Documentation image: Olake Source Oracle Timeout</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/sources/olake-source-postgres.webp</image:loc>
+      <image:title>Olake Source Postgres</image:title>
+      <image:caption>Documentation image: Olake Source Postgres</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/sources/oracle/oracle-config.webp</image:loc>
+      <image:title>Oracle Config</image:title>
+      <image:caption>Documentation image: Oracle Config</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/sources/oracle/test-connection-failed.webp</image:loc>
+      <image:title>Test Connection Failed</image:title>
+      <image:caption>Documentation image: Test Connection Failed</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/sources/oracle/timeout-olakeui.webp</image:loc>
+      <image:title>Timeout Olakeui</image:title>
+      <image:caption>Documentation image: Timeout Olakeui</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/sources/postgres/postgres-config.webp</image:loc>
+      <image:title>Postgres Config</image:title>
+      <image:caption>Documentation image: Postgres Config</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/sources/s3/source_config.webp</image:loc>
+      <image:title>Source Config</image:title>
+      <image:caption>Documentation image: Source Config</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/terminologies/all_append_upsert.png</image:loc>
+      <image:title>All Append Upsert</image:title>
+      <image:caption>Documentation image: All Append Upsert</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/terminologies/column-selection.png</image:loc>
+      <image:title>Column Selection</image:title>
+      <image:caption>Documentation image: Column Selection</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/terminologies/column-selection.webp</image:loc>
+      <image:title>Column Selection</image:title>
+      <image:caption>Documentation image: Column Selection</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/terminologies/complete_1.webp</image:loc>
+      <image:title>Complete 1</image:title>
+      <image:caption>Documentation image: Complete 1</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/terminologies/complete_2.webp</image:loc>
+      <image:title>Complete 2</image:title>
+      <image:caption>Documentation image: Complete 2</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/terminologies/custom.webp</image:loc>
+      <image:title>Custom</image:title>
+      <image:caption>Documentation image: Custom</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/terminologies/data-filter.webp</image:loc>
+      <image:title>Data Filter</image:title>
+      <image:caption>Documentation image: Data Filter</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/terminologies/destination_db.webp</image:loc>
+      <image:title>Destination Db</image:title>
+      <image:caption>Documentation image: Destination Db</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/terminologies/dynamic.webp</image:loc>
+      <image:title>Dynamic</image:title>
+      <image:caption>Documentation image: Dynamic</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/terminologies/each_stream.webp</image:loc>
+      <image:title>Each Stream</image:title>
+      <image:caption>Documentation image: Each Stream</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/terminologies/ingest_section.png</image:loc>
+      <image:title>Ingest Section</image:title>
+      <image:caption>Documentation image: Ingest Section</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/terminologies/job-config.webp</image:loc>
+      <image:title>Job Config</image:title>
+      <image:caption>Documentation image: Job Config</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/terminologies/norm-off.gif</image:loc>
+      <image:title>Norm Off</image:title>
+      <image:caption>Documentation image: Norm Off</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/terminologies/norm-on.gif</image:loc>
+      <image:title>Norm On</image:title>
+      <image:caption>Documentation image: Norm On</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/terminologies/normalization.webp</image:loc>
+      <image:title>Normalization</image:title>
+      <image:caption>Documentation image: Normalization</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/terminologies/partition-output.webp</image:loc>
+      <image:title>Partition Output</image:title>
+      <image:caption>Documentation image: Partition Output</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/terminologies/partition.webp</image:loc>
+      <image:title>Partition</image:title>
+      <image:caption>Documentation image: Partition</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/terminologies/saving_changes.webp</image:loc>
+      <image:title>Saving Changes</image:title>
+      <image:caption>Documentation image: Saving Changes</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/terminologies/schema.webp</image:loc>
+      <image:title>Schema</image:title>
+      <image:caption>Documentation image: Schema</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/terminologies/ssh_config.webp</image:loc>
+      <image:title>Ssh Config</image:title>
+      <image:caption>Documentation image: Ssh Config</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://olake.io/img/docs/terminologies/sync-modes.webp</image:loc>
+      <image:title>Sync Modes</image:title>
+      <image:caption>Documentation image: Sync Modes</image:caption>
+    </image:image>
+  </url>
+</urlset>

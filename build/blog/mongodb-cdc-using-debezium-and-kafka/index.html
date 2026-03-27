@@ -1,0 +1,1130 @@
+<!doctype html><html lang=en dir=ltr class="blog-wrapper blog-post-page plugin-blog plugin-id-olake-blog" data-has-hydrated=false><head><meta charset=UTF-8><meta name=generator content="Docusaurus v3.9.2"><title data-rh=true>MongoDB CDC with Debezium & Kafka | Real-Time Data Streaming | Fastest Open Source Data Replication Tool</title><meta data-rh=true name=viewport content="width=device-width, initial-scale=1.0"/><meta data-rh=true property=og:locale content=en /><meta data-rh=true name=docusaurus_locale content=en /><meta data-rh=true name=docusaurus_tag content=default /><meta data-rh=true name=docsearch:language content=en /><meta data-rh=true name=docsearch:docusaurus_tag content=default /><meta data-rh=true name=OLake content="ETL tool, ELT tool, open source"/><meta data-rh=true name=twitter:card content=summary_large_image /><meta data-rh=true name=twitter:site content=@olake.io /><meta data-rh=true name=msvalidate.01 content=C36AD97FE1CEDCD4041338A807D6BC4C /><meta data-rh=true property=og:url content=https://olake.io/blog/mongodb-cdc-using-debezium-and-kafka /><meta data-rh=true property=og:image:type content=image/webp /><meta data-rh=true property=og:image:secure_url content=https://olake.io/img/logo/olake-blue.webp /><meta data-rh=true property=og:image:width content=1200 /><meta data-rh=true property=og:image:height content=630 /><meta data-rh=true property=og:image:alt content=OLake /><meta data-rh=true name=twitter:creator content=@cappybaradeploy /><meta data-rh=true name=twitter:title content="MongoDB CDC with Debezium & Kafka | Real-Time Data Streaming"/><meta data-rh=true name=twitter:description content="Learn how Debezium and Kafka enable real-time Change Data Capture (CDC) from MongoDB for efficient, scalable data integration pipelines."/><meta data-rh=true name=twitter:image:alt content=OLake /><meta data-rh=true name=twitter:label1 content="Written by"/><meta data-rh=true name=twitter:data1 content="Priyansh Khodiyar"/><meta data-rh=true name=twitter:label2 content="Time to read"/><meta data-rh=true name=twitter:data2 content=30.87 /><meta data-rh=true property=og:title content="MongoDB CDC with Debezium & Kafka | Real-Time Data Streaming | Fastest Open Source Data Replication Tool"/><meta data-rh=true name=description content="Learn how Debezium and Kafka enable real-time Change Data Capture (CDC) from MongoDB for efficient, scalable data integration pipelines."/><meta data-rh=true property=og:description content="Learn how Debezium and Kafka enable real-time Change Data Capture (CDC) from MongoDB for efficient, scalable data integration pipelines."/><meta data-rh=true property=og:image content=https://olake.io/img/blog/cover/mongodb-cdc-using-debezium-and-kafka-cover.webp /><meta data-rh=true name=twitter:image content=https://olake.io/img/blog/cover/mongodb-cdc-using-debezium-and-kafka-cover.webp /><meta data-rh=true property=og:type content=article /><meta data-rh=true property=article:published_time content=2024-11-11T00:00:00.000Z /><meta data-rh=true property=article:tag content=MongoDB,Debezium,Kafka /><link data-rh=true rel=icon href=/img/logo/olake-blue.svg /><link data-rh=true rel=alternate href=https://olake.io/blog/mongodb-cdc-using-debezium-and-kafka/ hreflang=en /><link data-rh=true rel=alternate href=https://olake.io/blog/mongodb-cdc-using-debezium-and-kafka/ hreflang=x-default /><link data-rh=true rel=canonical href=https://olake.io/blog/mongodb-cdc-using-debezium-and-kafka /><link data-rh=true rel=preconnect href=https://1E406NO1AX-dsn.algolia.net crossorigin=anonymous /><script data-rh=true type=application/ld+json>{"@context":"https://schema.org","@id":"https://olake.io/blog/mongodb-cdc-using-debezium-and-kafka","@type":"BlogPosting","author":{"@type":"Person","description":"Ex OLake Devrel","email":"hello@olake.io","image":"/img/authors/priyansh.webp","name":"Priyansh Khodiyar"},"datePublished":"2024-11-11T00:00:00.000Z","description":"Learn how Debezium and Kafka enable real-time Change Data Capture (CDC) from MongoDB for efficient, scalable data integration pipelines.","headline":"MongoDB CDC with Debezium & Kafka | Real-Time Data Streaming","image":{"@id":"https://olake.io/img/blog/cover/mongodb-cdc-using-debezium-and-kafka-cover.webp","@type":"ImageObject","caption":"title image for the blog post: MongoDB CDC with Debezium & Kafka | Real-Time Data Streaming","contentUrl":"https://olake.io/img/blog/cover/mongodb-cdc-using-debezium-and-kafka-cover.webp","url":"https://olake.io/img/blog/cover/mongodb-cdc-using-debezium-and-kafka-cover.webp"},"isPartOf":{"@id":"https://olake.io/blog","@type":"Blog","name":"Blogs on OLake"},"keywords":[],"mainEntityOfPage":"https://olake.io/blog/mongodb-cdc-using-debezium-and-kafka","name":"MongoDB CDC with Debezium & Kafka | Real-Time Data Streaming","url":"https://olake.io/blog/mongodb-cdc-using-debezium-and-kafka"}</script><link rel=search type=application/opensearchdescription+xml title="Fastest Open Source Data Replication Tool" href=/opensearch.xml><link rel=alternate type=application/rss+xml href=/blog/rss.xml title="Fastest Open Source Data Replication Tool RSS Feed"><link rel=alternate type=application/atom+xml href=/blog/atom.xml title="Fastest Open Source Data Replication Tool Atom Feed"><link rel=alternate type=application/rss+xml href=/iceberg/rss.xml title="Fastest Open Source Data Replication Tool RSS Feed"><link rel=alternate type=application/atom+xml href=/iceberg/atom.xml title="Fastest Open Source Data Replication Tool Atom Feed"><link rel=alternate type=application/rss+xml href=/customer-stories/rss.xml title="Fastest Open Source Data Replication Tool RSS Feed"><link rel=alternate type=application/atom+xml href=/customer-stories/atom.xml title="Fastest Open Source Data Replication Tool Atom Feed"><script src=/font-loading-optimizer.js defer fetchpriority=low></script><script src=/suppress-resize-observer.js defer fetchpriority=high></script><script src=/ignore-resize-observer-error.js defer fetchpriority=high></script><script src=/message-listener.js defer fetchpriority=low></script><link rel=stylesheet href=/assets/css/styles.82467d32.css /><script src=/assets/js/runtime~main.19abef05.js defer></script><script src=/assets/js/main.61b64d86.js defer></script></head><body class=navigation-with-keyboard><svg style="display: none;"><defs>
+<symbol id=theme-svg-external-link viewBox="0 0 24 24"><path fill=currentColor d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{for(var[t,e]of new URLSearchParams(window.location.search).entries())if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id=__docusaurus><div role=region aria-label="Skip to main content"><a class=skipToContent_fXgn href=#__docusaurus_skipToContent_fallback>Skip to main content</a></div><nav aria-label=Main class="theme-layout-navbar navbar navbar--fixed-top"><div class=navbar__inner><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded=false class="navbar__toggle clean-btn" type=button><svg width=30 height=30 viewBox="0 0 30 30" aria-hidden=true><path stroke=currentColor stroke-linecap=round stroke-miterlimit=10 stroke-width=2 d="M4 7h22M4 15h22M4 23h22"/></svg></button><a class=navbar__brand href=/><div class=navbar__logo><img src=/img/logo/olake-blue-with-text.svg alt="OLake Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"/><img src=/img/logo/olake-blue-with-text.svg alt="OLake Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"/></div><b class="navbar__title text--truncate"></b></a><a class="navbar__item navbar__link" href=/docs/>Docs</a><a class="navbar__item navbar__link" href=/ai-lake/>Pricing</a><a aria-current=page class="navbar__item navbar__link navbar__link--active" href=/blog/>Blogs</a><div class="navbar__item dropdown dropdown--hoverable"><a href=# aria-haspopup=true aria-expanded=false role=button class=navbar__link>Iceberg</a><ul class=dropdown__menu><li><a class=dropdown__link href=/iceberg/>Iceberg Blogs</a><li><a class=dropdown__link href=/iceberg/query-engine/>Query Engine</a></ul></div><div class="navbar__item dropdown dropdown--hoverable"><a href=# aria-haspopup=true aria-expanded=false role=button class=navbar__link>Community</a><ul class=dropdown__menu><li><a class=dropdown__link href=/webinar/>Webinars & Events</a><li><a class=dropdown__link href=/community/>OLake Community</a><li><a class=dropdown__link href=/community/contributors/>Top Contributors</a><li><a class=dropdown__link href=/community/contributor-program/>Contributor's Program</a><li><a class=dropdown__link href=/community/gsoc/>GSoC</a></ul></div><a class="navbar__item navbar__link" href=/customer-stories/>Customer Stories</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href=https://join.slack.com/t/getolake/shared_invite/zt-2uyphqf69-KQxih9Gwd4GCQRD_XFcuyw target=_blank rel="noopener noreferrer" class="navbar__item navbar__link header-slack-link"></a><a href=https://github.com/datazip-inc/olake target=_blank rel="noopener noreferrer" class="navbar__item navbar__link header-github-link"></a><a class="navbar__item navbar__link dev-portal-signup dev-portal-link" href=/#olake-form-product>Talk to us</a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type=button disabled title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill=currentColor d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill=currentColor d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill=currentColor d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"/></svg></button></div><div class=navbarSearchContainer_Bca1><button type=button class="DocSearch DocSearch-Button" aria-label="Search (Meta+k)" aria-keyshortcuts=Meta+k><span class=DocSearch-Button-Container><svg width=20 height=20 class=DocSearch-Search-Icon viewBox="0 0 24 24" aria-hidden=true><circle cx=11 cy=11 r=8 stroke=currentColor fill=none stroke-width=1.4 /><path d="m21 21-4.3-4.3" stroke=currentColor fill=none stroke-linecap=round stroke-linejoin=round /></svg><span class=DocSearch-Button-Placeholder>Search</span></span><span class=DocSearch-Button-Keys></span></button></div></div></div><div role=presentation class=navbar-sidebar__backdrop></div></nav><div id=__docusaurus_skipToContent_fallback class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="fixed top-0 left-0 right-0 z-50 h-1 bg-gray-200 dark:bg-gray-800"><div class="h-full bg-gradient-to-r from-[#193ae6] to-blue-500 transition-all duration-300 ease-out" style=width:0%></div></div><div class="min-h-screen bg-gray-50 dark:bg-gray-950"><div class="lg:hidden bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800"><div class=" max-w-7xl mx-auto px-4 py-4"></div></div><div class="py-8 lg:py-12"><div class=" max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex gap-8 lg:gap-12"><article class="bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 overflow-hidden"><div class="px-6 sm:px-8 lg:px-12 py-8 lg:py-12"><nav class=mb-4 aria-label=Breadcrumb itemscope itemtype=https://schema.org/BreadcrumbList><ol class="flex items-center space-x-2 text-sm text-gray-600 dark:text-gray-400"><li class="flex items-center" itemprop=itemListElement itemscope itemtype=https://schema.org/ListItem><a class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-gray-600 dark:text-gray-400" itemprop=item aria-label=Home title=Home href=/><span class="flex items-center"><svg viewBox="0 0 24 24" class="w-4 h-4 text-gray-900 dark:text-gray-100" fill=currentColor><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z"/></svg></span></a><meta itemprop=name content=Home /><meta itemprop=position content=1 /><li class="flex items-center" itemprop=itemListElement itemscope itemtype=https://schema.org/ListItem><svg class="w-4 h-4 mx-2 text-gray-400" fill=currentColor viewBox="0 0 20 20" aria-hidden=true><path fill-rule=evenodd d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule=evenodd /></svg><a class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-gray-600 dark:text-gray-400" itemprop=item aria-label=Blog title=Blog href=/blog/><span class="flex items-center">Blog</span></a><meta itemprop=name content=Blog /><meta itemprop=position content=2 /><li class="flex items-center" itemprop=itemListElement itemscope itemtype=https://schema.org/ListItem><svg class="w-4 h-4 mx-2 text-gray-400" fill=currentColor viewBox="0 0 20 20" aria-hidden=true><path fill-rule=evenodd d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule=evenodd /></svg><a class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-gray-900 dark:text-gray-100 font-medium" itemprop=item aria-label="MongoDB CDC with Debezium & Kafka | Real-Time Data Streaming" title="MongoDB CDC with Debezium & Kafka | Real-Time Data Streaming" href=/blog/mongodb-cdc-using-debezium-and-kafka/><span class="flex items-center">MongoDB CDC with Debezium & Kafka | Real-Time Data Streaming</span></a><meta itemprop=name content="MongoDB CDC with Debezium & Kafka | Real-Time Data Streaming"/><meta itemprop=position content=3 /></ol></nav><article class=""><header><h1 class=title_f1Hy>MongoDB CDC with Debezium & Kafka | Real-Time Data Streaming</h1><div class="container_mt6G margin-vert--md"><time datetime=2024-11-11T00:00:00.000Z>November 11, 2024</time> · <!-- -->31 min read</div><div class="margin-top--md margin-bottom--sm row"><div class="col col--12 authorCol_Hf19"><div class="avatar margin-bottom--sm"><a class=avatar__photo-link href=/blog/authors/priyansh/><img class="avatar__photo authorImage_XqGP" src=/img/authors/priyansh.webp alt="Priyansh Khodiyar"/></a><div class="avatar__intro authorDetails_lV9A"><div class=avatar__name><a href=/blog/authors/priyansh/><span class=authorName_yefp translate=no>Priyansh Khodiyar</span></a></div><small class=authorTitle_nd0D title="Ex OLake Devrel">Ex OLake Devrel</small><div class=authorSocials_rSDt><a href=https://www.linkedin.com/in/zriyansh/ target=_blank rel="noopener noreferrer" class=authorSocialLink_owbf title=LinkedIn><svg xmlns=http://www.w3.org/2000/svg width=1em height=1em preserveAspectRatio=xMidYMid viewBox="0 0 256 256" style=--dark:#0a66c2;--light:#ffffffe6 class="authorSocialIcon_XYv3 linkedinSvg_FCgI"><path d="M218.123 218.127h-37.931v-59.403c0-14.165-.253-32.4-19.728-32.4-19.756 0-22.779 15.434-22.779 31.369v60.43h-37.93V95.967h36.413v16.694h.51a39.907 39.907 0 0 1 35.928-19.733c38.445 0 45.533 25.288 45.533 58.186l-.016 67.013ZM56.955 79.27c-12.157.002-22.014-9.852-22.016-22.009-.002-12.157 9.851-22.014 22.008-22.016 12.157-.003 22.014 9.851 22.016 22.008A22.013 22.013 0 0 1 56.955 79.27m18.966 138.858H37.95V95.967h37.97v122.16ZM237.033.018H18.89C8.58-.098.125 8.161-.001 18.471v219.053c.122 10.315 8.576 18.582 18.89 18.474h218.144c10.336.128 18.823-8.139 18.966-18.474V18.454c-.147-10.33-8.635-18.588-18.966-18.453"/></svg></a></div></div></div></div></div></header><div id=__blog-post-container class=markdown><p><img decoding=async loading=lazy alt="MongoDB CDC to lakehouse: Debezium and Kafka Connect stream changes from MongoDB into a lakehouse architecture" src=/assets/images/mongodb-cdc-using-debezium-and-kafka-cover-2e31f379f017580667e02aa242bd0102.webp width=1635 height=904 class=img_CujE /></p>
+<p>If you're into the world of data replication or streaming and wondering how to move your MongoDB data into a data warehouse or lakehouse, this article might shed some light into in’s and out’s of considering Debezium.</p>
+<p>Let's look out over <strong>Debezium</strong> and <strong>Apache Kafka</strong>, and see how they can be helpful for Change Data Capture (CDC). Grab your favorite beverage, and let’s break this down in a way that makes total sense.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=understanding-change-data-capture-cdc>Understanding Change Data Capture (CDC)<a href=#understanding-change-data-capture-cdc class=hash-link aria-label="Direct link to Understanding Change Data Capture (CDC)" title="Direct link to Understanding Change Data Capture (CDC)" translate=no>​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=what-is-cdc>What is CDC?<a href=#what-is-cdc class=hash-link aria-label="Direct link to What is CDC?" title="Direct link to What is CDC?" translate=no>​</a></h3>
+<p>Alright, let’s start with the basics. <strong>Change Data Capture (CDC)</strong> is like having an attentive assistant that watches your database for any changes—whether it's adding new records, updating existing ones, or deleting stuff.</p>
+<p>Instead of periodically checking (which can be inefficient and slow), CDC <strong>captures</strong> these changes <strong>in real-time</strong> and makes them available for other systems to use. Think of it as a live news feed of your database’s activity.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=why-should-you-care-about-cdc>Why Should You Care About CDC?<a href=#why-should-you-care-about-cdc class=hash-link aria-label="Direct link to Why Should You Care About CDC?" title="Direct link to Why Should You Care About CDC?" translate=no>​</a></h3>
+<p>Imagine you're running an online store. Every time someone makes a purchase, you want that data to instantly reflect in your analytics dashboard, inventory system, and maybe even trigger some marketing emails.</p>
+<p>Without CDC, you’d have to batch process these changes, leading to delays and potential inconsistencies. CDC makes sure that every change is captured and propagated immediately, keeping everything in sync. One of the main challenges without CDC is you need to have a proper bookmark column using which you can track new incremental records and also there is no way to track deletes.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=different-flavours-of-cdc>Different Flavours of CDC<a href=#different-flavours-of-cdc class=hash-link aria-label="Direct link to Different Flavours of CDC" title="Direct link to Different Flavours of CDC" translate=no>​</a></h3>
+<p>CDC isn't one-size-fits-all. There are various methods to implement it, each with its own pros and cons:</p>
+<ul>
+<li class="">
+<p><strong>Log-Based CDC</strong>: This method reads the database’s transaction logs (like the <code>oplog</code> in MongoDB). It’s efficient because it leverages the database’s internal mechanisms to track changes.</p>
+</li>
+<li class="">
+<p><strong>Trigger-Based CDC</strong>: Here, you set up database triggers that activate on data changes. While straightforward, it can add overhead to your database operations.</p>
+</li>
+<li class="">
+<p><strong>Timestamp-Based CDC</strong>: This involves periodically checking records’ timestamps to find changes. It’s simpler but can miss changes or require complex logic to handle deletions.</p>
+</li>
+<li class="">
+<p><strong>Query-Based CDC</strong>: Similar to timestamp-based but relies on specific queries to detect changes. It’s the least efficient and most error-prone.</p>
+</li>
+</ul>
+<p>For our purposes, <strong>log-based CDC</strong> is the star of the show because of its real-time capabilities and minimal performance impact.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=real-world-applications>Real-World Applications<a href=#real-world-applications class=hash-link aria-label="Direct link to Real-World Applications" title="Direct link to Real-World Applications" translate=no>​</a></h3>
+<p>CDC is everywhere once you realize its potential:</p>
+<ul>
+<li class="">
+<p><strong>Data Warehousing</strong>: Keep your data warehouse updated with the latest transactional data without lag.</p>
+</li>
+<li class="">
+<p><strong>Microservices</strong>: Ensure that different microservices have consistent and up-to-date data.</p>
+</li>
+<li class="">
+<p><strong>Event-Driven Architectures</strong>: Trigger events based on data changes to drive workflows or notifications.</p>
+</li>
+</ul>
+<p>In essence, CDC is the backbone of modern, responsive data architectures.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=introduction-to-debezium-and-kafka>Introduction to Debezium and Kafka<a href=#introduction-to-debezium-and-kafka class=hash-link aria-label="Direct link to Introduction to Debezium and Kafka" title="Direct link to Introduction to Debezium and Kafka" translate=no>​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=what-is-debezium>What is Debezium?<a href=#what-is-debezium class=hash-link aria-label="Direct link to What is Debezium?" title="Direct link to What is Debezium?" translate=no>​</a></h3>
+<p>Enter <strong>Debezium</strong>, an open-source CDC platform that plays really well with databases and streaming platforms like Kafka. Think of Debezium as the bridge that watches your database’s transaction logs and translates those changes into events that Kafka can understand and distribute. It’s like having a translator who converts your database’s whispers into a loudspeaker broadcast.</p>
+<p>Debezium Architecture:</p>
+<p><img decoding=async loading=lazy alt="MySQL and PostgreSQL stream changes via Debezium into Kafka, with sink connectors delivering to Elastic, Infinispan, and data warehouses" src=/assets/images/mongodb-cdc-using-debezium-and-kafka-1-e45c9196736bb97b2b92dba898b81ce9.webp width=1712 height=389 class=img_CujE /></p>
+<p><em>image source: debezium official docs</em></p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=what-is-kafka>What is Kafka?<a href=#what-is-kafka class=hash-link aria-label="Direct link to What is Kafka?" title="Direct link to What is Kafka?" translate=no>​</a></h3>
+<p>Now, let’s talk about Apache Kafka. If you’re not familiar, Kafka is this great distributed event streaming platform. Picture it as a high-throughput messaging system where producers send messages (events) to topics, and consumers read from those topics.</p>
+<p>It’s designed for speed, scalability, and reliability, making it perfect for handling real-time data streams.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=how-debezium-and-kafka-work-together>How Debezium and Kafka work Together<a href=#how-debezium-and-kafka-work-together class=hash-link aria-label="Direct link to How Debezium and Kafka work Together" title="Direct link to How Debezium and Kafka work Together" translate=no>​</a></h3>
+<p>When you combine Debezium with Kafka, you get a powerful setup:</p>
+<ol>
+<li class="">
+<p><strong>Debezium Monitors Your Database</strong>: It hooks into MongoDB’s <code>oplog</code> (operation log) and keeps an eye on every change happening in your database.</p>
+</li>
+<li class="">
+<p><strong>Debezium Converts Changes to Events</strong>: Every insert, update, or delete operation is transformed into a Kafka event. These events contain all the necessary information about what changed and how.</p>
+</li>
+<li class="">
+<p><strong>Kafka Distributes the Events</strong>: Kafka takes these events and streams them to various consumers—be it your data warehouse/lakes, analytics tools, or other microservices.</p>
+</li>
+</ol>
+<p>This combo ensures that your data changes are captured in real-time and are instantly available wherever you need them, well not always (we will discuss why this might not be the best approach below).</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=why-use-debezium-and-kafka-together>Why Use Debezium and Kafka Together?<a href=#why-use-debezium-and-kafka-together class=hash-link aria-label="Direct link to Why Use Debezium and Kafka Together?" title="Direct link to Why Use Debezium and Kafka Together?" translate=no>​</a></h3>
+<ul>
+<li class="">
+<p><strong>Scalability</strong>: Both Debezium (built on top of kafka connect to capture changes from databases and stream them into Apache Kafka) and Kafka are built to scale horizontally. Whether you’re dealing with a few changes a minute or thousands per second, they can handle it most of the time.</p>
+</li>
+<li class="">
+<p><strong>Flexibility</strong>: You can route your data changes to multiple destinations simultaneously. Need to update your data warehouse and trigger a notification system? No problem.</p>
+</li>
+<li class="">
+<p><strong>Reliability</strong>: Kafka’s robust architecture ensures that your events are stored durably and can be replayed if needed. Debezium ensures that no change misses out.</p>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=how-debezium-captures-changes-from-mongodb>How Debezium Captures Changes from MongoDB<a href=#how-debezium-captures-changes-from-mongodb class=hash-link aria-label="Direct link to How Debezium Captures Changes from MongoDB" title="Direct link to How Debezium Captures Changes from MongoDB" translate=no>​</a></h2>
+<p>There are a few ways to do this, but the best way is to read from:</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=1-directly-oplogs>1. Directly oplogs<a href=#1-directly-oplogs class=hash-link aria-label="Direct link to 1. Directly oplogs" title="Direct link to 1. Directly oplogs" translate=no>​</a></h3>
+<p>Alright, let’s get into the nitty-gritty of how <strong>Debezium</strong> actually takes out changes in <strong>MongoDB</strong>. MongoDB has this feature called the <strong>oplog</strong>. Think of the oplog as MongoDB’s diary where it records every single write operation—whether it's an insert, update, or delete. This is crucial for replication and, of course, for tools like Debezium to tap into.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=2-via-change-streams-based-on-oplogs-only>2. Via Change streams (based on oplogs only)<a href=#2-via-change-streams-based-on-oplogs-only class=hash-link aria-label="Direct link to 2. Via Change streams (based on oplogs only)" title="Direct link to 2. Via Change streams (based on oplogs only)" translate=no>​</a></h3>
+<p>But there’s more! MongoDB also offers <strong>Change Streams</strong>, which provide a real-time feed of these changes. Essentially, Change Streams leverage the oplog under the hood to push changes as they happen, making it a good fit for CDC.</p>
+<p>The primary distinction is that the connector does not directly read from the oplog. Instead, it relies on MongoDB's change streams feature to capture and decode oplog data.</p>
+<p>We will discuss about change streams in further sections.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=how-debezium-uses-the-oplog>How Debezium Uses the Oplog?<a href=#how-debezium-uses-the-oplog class=hash-link aria-label="Direct link to How Debezium Uses the Oplog?" title="Direct link to How Debezium Uses the Oplog?" translate=no>​</a></h3>
+<p>So, how does Debezium make use of the oplog? Here’s the breakdown:</p>
+<ol>
+<li class="">
+<p><strong>Connecting to the Oplog</strong>: Debezium connects to the MongoDB replica set’s oplog (or sharded cluster’s). Would not work on standalone deployment of MongoDB.</p>
+</li>
+<li class="">
+<p><strong>Using a Cursor to Track Position</strong>: Debezium employs a cursor to keep track of where it left off in the oplog. Imagine it as bookmarking the last read entry so that if something goes wrong or if it restarts, it knows exactly where to pick up without missing a beat.</p>
+</li>
+<li class="">
+<p><strong>Reading New Entries</strong>: As new operations get logged in the oplog, Debezium reads them in real-time. It’s like having a vigilant librarian who immediately notes down every new book that comes into the library.</p>
+</li>
+<li class="">
+<p><strong>Transforming to Events</strong>: These oplog entries are then transformed into structured events. Each event contains details about what changed, including the operation type (insert, update, delete), the affected document, and metadata like timestamps.</p>
+</li>
+</ol>
+<p>Below is the change event structure:</p>
+<p><code>{ "schema": { ... }, "payload": { ... }, "schema": { ... }, "payload": { ... }, }</code></p>
+<p><strong>Key - Schema (schema)</strong></p>
+<ul>
+<li class="">
+<p><strong>Description</strong>: Defines the structure of the event key.</p>
+</li>
+<li class="">
+<p><strong>Purpose</strong>: Specifies how the key data is organized, helping consumers understand the key's structure.</p>
+</li>
+</ul>
+<p><strong>Key - Payload (payload)</strong></p>
+<ul>
+<li class="">
+<p><strong>Description</strong>: Contains the actual key data. Part of the event key.</p>
+</li>
+<li class="">
+<p><strong>Purpose</strong>: Identifies the specific document that was changed (e.g., the document's unique <code>ID</code>).</p>
+</li>
+</ul>
+<p><strong>Value - Schema (schema)</strong></p>
+<ul>
+<li class="">
+<p><strong>Description</strong>: Defines the structure of the event value.</p>
+</li>
+<li class="">
+<p><strong>Purpose</strong>: Describes how the change data is organized, including any nested fields.</p>
+</li>
+</ul>
+<p><strong>Value - Payload (payload)</strong></p>
+<ul>
+<li class="">
+<p><strong>Description</strong>: Contains the actual data of the changed document. Part of event value.</p>
+</li>
+<li class="">
+<p><strong>Purpose</strong>: Provides the details of the change, such as the inserted, updated, or deleted fields and their new values.</p>
+</li>
+</ul>
+<ol start=5>
+<li class=""><strong>Publishing to Kafka</strong>: Finally, these events are published to specific Kafka topics. Each collection in MongoDB typically maps to its own Kafka topic, making it super organized and easy to manage downstream.</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=things-to-note-about-oplog-configuration>Things to note about <code>oplog</code> configuration:<a href=#things-to-note-about-oplog-configuration class=hash-link aria-label="Direct link to things-to-note-about-oplog-configuration" title="Direct link to things-to-note-about-oplog-configuration" translate=no>​</a></h3>
+<ul>
+<li class="">
+<p>The oplog is a capped collection with a fixed size. When it reaches its maximum capacity, it overwrites the oldest entries.</p>
+</li>
+<li class="">
+<p>If the connector is stopped and later restarted, it will try to resume streaming from the last recorded oplog position and the marker for that is maintained by something called a cursor (talked in detail below).</p>
+</li>
+<li class="">
+<p>If the oplog has overwritten that last position, the connector may fail to restart, showing an "invalid resume token" error.</p>
+</li>
+<li class="">
+<p>The snapshot.mode setting in the connector determines the behavior upon restart. If set to "<code>initial</code>," the connector may fail and require a new setup to resume capturing changes. This means that you have to resync/re-snapshot the data if it fails ONLY because of losing the CDC cursor.</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=the-role-of-change-streams>The Role of Change Streams<a href=#the-role-of-change-streams class=hash-link aria-label="Direct link to The Role of Change Streams" title="Direct link to The Role of Change Streams" translate=no>​</a></h3>
+<p>While Debezium primarily relies on the oplog for capturing changes, it’s worth mentioning <strong>Change Streams</strong>. Change Streams provide a more abstracted and user-friendly way to access the oplog data without dealing directly with the complexities of the oplog format.</p>
+<p>However, under the hood, Debezium is still interacting with the oplog (via change streams) to fetch these changes.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=mongodb-replication-basics>MongoDB Replication Basics<a href=#mongodb-replication-basics class=hash-link aria-label="Direct link to MongoDB Replication Basics" title="Direct link to MongoDB Replication Basics" translate=no>​</a></h3>
+<p>MongoDB uses a replication mechanism to ensure your data is safe and always available. Here’s a simple breakdown:</p>
+<ul>
+<li class="">
+<p><strong>Replica Set:</strong></p>
+<ul>
+<li class="">
+<p>A group of MongoDB servers that all hold copies of the same data.</p>
+</li>
+<li class="">
+<p>The oplog here is a special MongoDB collection (<a href=http://oplog.rs target=_blank rel="noopener noreferrer" class="">oplog.rs</a> in replica sets) that records all insert, update, and delete operations</p>
+</li>
+<li class="">
+<p><strong>Primary Server:</strong> The main server where all writes happen.</p>
+</li>
+<li class="">
+<p><strong>Secondary Servers:</strong> These servers copy the data from the primary to keep everything in sync.</p>
+</li>
+</ul>
+</li>
+<li class="">
+<p><strong>How Replication Works:</strong></p>
+<ul>
+<li class="">
+<p>The primary server records every change in its <strong>oplog</strong>.</p>
+</li>
+<li class="">
+<p>Secondary servers read the primary’s oplog and apply those changes to their own data.</p>
+</li>
+<li class="">
+<p>If you add a new server to the replica set, it first copies all the existing data and then keeps up with the latest changes by reading the oplog.</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=will-debezium-sync-my-new-collection--table>Will Debezium sync my new collection / table?<a href=#will-debezium-sync-my-new-collection--table class=hash-link aria-label="Direct link to Will Debezium sync my new collection / table?" title="Direct link to Will Debezium sync my new collection / table?" translate=no>​</a></h3>
+<p>In case there is a new collection/table that needs to be synced, under normal circumstances Debezium syncs incremental changes only, but if there is a possibility that the initial snapshot has become stale, lost, or incomplete, there is an option to trigger ‘ad-hoc snapshot’.</p>
+<p>When you start an ad hoc snapshot for an existing collection, the connector adds data to the existing topic for that collection. If the topic was previously deleted, Debezium can automatically create a new one, provided automatic topic creation is enabled.</p>
+<p>Modify the connector configuration if you have added a new table.</p>
+<div class="language-json codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#bfc7d5;--prism-background-color:#292d3e><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-json codeBlock_bY9V thin-scrollbar" style=color:#bfc7d5;background-color:#292d3e><code class=codeBlockLines_e6Vv><span class=token-line style=color:#bfc7d5><span class="token punctuation" style="color:rgb(199, 146, 234)">{</span><span class="token plain"></span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">  </span><span class="token property">"type"</span><span class="token operator" style="color:rgb(137, 221, 255)">:</span><span class="token plain"> </span><span class="token string" style="color:rgb(195, 232, 141)">"incremental"</span><span class="token punctuation" style="color:rgb(199, 146, 234)">,</span><span class="token plain"> </span><span class="token comment" style="color:rgb(105, 112, 152);font-style:italic">// or “blocking”</span><span class="token plain"></span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">  </span><span class="token property">"data-collections"</span><span class="token operator" style="color:rgb(137, 221, 255)">:</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(199, 146, 234)">[</span><span class="token plain"></span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">    </span><span class="token string" style="color:rgb(195, 232, 141)">"Sales_db.orders"</span><span class="token punctuation" style="color:rgb(199, 146, 234)">,</span><span class="token plain">  </span><span class="token comment" style="color:rgb(105, 112, 152);font-style:italic">// format database.collection</span><span class="token plain"></span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">    </span><span class="token string" style="color:rgb(195, 232, 141)">"sales_db.customers"</span><span class="token punctuation" style="color:rgb(199, 146, 234)">,</span><span class="token plain"></span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">    </span><span class="token string" style="color:rgb(195, 232, 141)">"inventory_db.products"</span><span class="token plain"></span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">  </span><span class="token punctuation" style="color:rgb(199, 146, 234)">]</span><span class="token plain"></span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain"></span><span class="token punctuation" style="color:rgb(199, 146, 234)">}</span><br/></span></code></pre></div></div>
+<p><em>Example of an ad hoc execute-snapshot signal record.</em></p>
+<p><em><strong>Value</strong></em>: "<code>blocking</code>": Specifies that a <em><strong>blocking snapshot</strong></em> <em>should be performed. This type of snapshot ensures that all CDC operations are paused until the snapshot is fully captured, providing a consistent state of the data.</em></p>
+<p><em>In other words, “A blocking snapshot behaves just like an initial snapshot, except that you can trigger it at run time.”</em></p>
+<p><em><strong>Value</strong></em>: "<code>incremental</code>": Start an ad hoc incremental snapshot by sending an execute-snapshot signal to the signaling collection or a Kafka signaling topic. Debezium will then partition each collection into key-based chunks and sequentially perform the snapshot for each chunk.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=how-change-streams-work-with-debezium>How Change Streams work with Debezium?<a href=#how-change-streams-work-with-debezium class=hash-link aria-label="Direct link to How Change Streams work with Debezium?" title="Direct link to How Change Streams work with Debezium?" translate=no>​</a></h3>
+<p>Debezium can use <strong>Change Streams</strong> to monitor and capture changes in MongoDB without directly accessing the oplog. Here’s how it works:</p>
+<ul>
+<li class="">
+<p><strong>Change Streams:</strong></p>
+<ul>
+<li class="">
+<p>MongoDB’s Change Streams provide a real-time feed of changes happening in your collections.</p>
+</li>
+<li class="">
+<p>Debezium listens to these change streams to get updates on data modifications.</p>
+</li>
+</ul>
+</li>
+<li class="">
+<p><strong>How ?</strong></p>
+<ul>
+<li class="">
+<p><strong>Initial Setup:</strong></p>
+<ul>
+<li class="">
+<p>When Debezium first connects, it starts the initial snapshot of the database.</p>
+</li>
+<li class="">
+<p>It then takes a snapshot of the current state of the database.</p>
+</li>
+<li class="">
+<p>After the snapshot, Debezium starts listening to the change stream from where it left off.</p>
+</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Continuous Monitoring:</strong></p>
+<ul>
+<li class="">
+<p>As changes occur in MongoDB, Change Streams send these updates to Debezium.</p>
+</li>
+<li class="">
+<p>Debezium records the position of each change to ensure nothing is missed.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=handling-connector-operations>Handling Connector Operations<a href=#handling-connector-operations class=hash-link aria-label="Direct link to Handling Connector Operations" title="Direct link to Handling Connector Operations" translate=no>​</a></h3>
+<p>Debezium’s MongoDB connector is designed to be quite resilient and reliable. Here’s how it manages different scenarios:</p>
+<ul>
+<li class="">
+<p><strong>Resuming After a Stop:</strong></p>
+<ul>
+<li class="">
+<p>If the connector stops for any reason, it remembers the last change it processed.</p>
+</li>
+<li class="">
+<p>When it restarts, it picks up right where it left off, ensuring no data is lost.</p>
+</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Managing Oplog Size:</strong></p>
+<ul>
+<li class="">
+<p>The oplog has a limited size, so if Debezium is stopped for too long, some changes might be removed.</p>
+</li>
+<li class="">
+<p>In such cases, Debezium takes another snapshot and resumes streaming from the latest changes.</p>
+</li>
+<li class="">
+<p><strong>Note</strong>: This might take a long time if the initial snapshot size is of too big of a collection.</p>
+</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Handling Replica Set Changes:</strong></p>
+<ul>
+<li class="">
+<p><strong>Primary Election:</strong> If the primary server changes (<em>due to a failure or maintenance</em>), Debezium automatically connects to the new primary and continues streaming changes.</p>
+</li>
+<li class="">
+<p><strong>Network Issues:</strong> If there are network problems, Debezium tries to reconnect using a smart retry strategy (called <em>exponential backoff</em>) to avoid overloading the network.</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=types-of-cdc-involved---log-based-cdc-is-the-way-to-go>Types of CDC Involved - Log-Based CDC is the way to go!<a href=#types-of-cdc-involved---log-based-cdc-is-the-way-to-go class=hash-link aria-label="Direct link to Types of CDC Involved - Log-Based CDC is the way to go!" title="Direct link to Types of CDC Involved - Log-Based CDC is the way to go!" translate=no>​</a></h2>
+<p>As we touched on earlier, Debezium uses <strong>log-based CDC</strong> with MongoDB. Why? Because log-based CDC is efficient and has minimal performance impact on your database.</p>
+<p>By reading directly from the oplog (internally), Debezium avoids the need for intrusive mechanisms like triggers or constant polling, which can be resource-heavy and slower.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=how-cursors-keep-everything-in-sync>How Cursors Keep Everything in Sync<a href=#how-cursors-keep-everything-in-sync class=hash-link aria-label="Direct link to How Cursors Keep Everything in Sync" title="Direct link to How Cursors Keep Everything in Sync" translate=no>​</a></h3>
+<p>Let’s talk about <strong>cursors</strong> for a moment. In the context of Debezium and MongoDB, a cursor is a pointer that keeps track of the current position in the <code>oplog</code>.</p>
+<p>A cursor is returned whenever you query a collection. It points to the first document in the result and moves forward as you fetch more documents. They often have a <strong>hexadecimal ID</strong> that identifies them uniquely (e.g., <code>5d2b9f4c8a22</code>).</p>
+<p>Example:</p>
+<div class="language-python codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#bfc7d5;--prism-background-color:#292d3e><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-python codeBlock_bY9V thin-scrollbar" style=color:#bfc7d5;background-color:#292d3e><code class=codeBlockLines_e6Vv><span class=token-line style=color:#bfc7d5><span class="token plain">const cursor </span><span class="token operator" style="color:rgb(137, 221, 255)">=</span><span class="token plain"> db</span><span class="token punctuation" style="color:rgb(199, 146, 234)">.</span><span class="token plain">collection</span><span class="token punctuation" style="color:rgb(199, 146, 234)">(</span><span class="token string" style="color:rgb(195, 232, 141)">'products'</span><span class="token punctuation" style="color:rgb(199, 146, 234)">)</span><span class="token punctuation" style="color:rgb(199, 146, 234)">.</span><span class="token plain">find</span><span class="token punctuation" style="color:rgb(199, 146, 234)">(</span><span class="token punctuation" style="color:rgb(199, 146, 234)">{</span><span class="token plain"> price</span><span class="token punctuation" style="color:rgb(199, 146, 234)">:</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(199, 146, 234)">{</span><span class="token plain"> $gt</span><span class="token punctuation" style="color:rgb(199, 146, 234)">:</span><span class="token plain"> </span><span class="token number" style="color:rgb(247, 140, 108)">100</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(199, 146, 234)">}</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(199, 146, 234)">}</span><span class="token punctuation" style="color:rgb(199, 146, 234)">)</span><span class="token punctuation" style="color:rgb(199, 146, 234)">;</span><span class="token plain"></span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">cursor</span><span class="token punctuation" style="color:rgb(199, 146, 234)">.</span><span class="token plain">forEach</span><span class="token punctuation" style="color:rgb(199, 146, 234)">(</span><span class="token plain">doc </span><span class="token operator" style="color:rgb(137, 221, 255)">=</span><span class="token operator" style="color:rgb(137, 221, 255)">></span><span class="token plain"> console</span><span class="token punctuation" style="color:rgb(199, 146, 234)">.</span><span class="token plain">log</span><span class="token punctuation" style="color:rgb(199, 146, 234)">(</span><span class="token plain">doc</span><span class="token punctuation" style="color:rgb(199, 146, 234)">)</span><span class="token punctuation" style="color:rgb(199, 146, 234)">)</span><span class="token punctuation" style="color:rgb(199, 146, 234)">;</span><br/></span></code></pre></div></div>
+<p>Here, cursor is an iterator over the documents in products that match the query. MongoDB uses a unique <strong>ID or token</strong> internally to keep track of the cursor’s position.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=nature-and-structure-of-the-mongodb-cursor-in-cdc>Nature and Structure of the MongoDB Cursor in CDC<a href=#nature-and-structure-of-the-mongodb-cursor-in-cdc class=hash-link aria-label="Direct link to Nature and Structure of the MongoDB Cursor in CDC" title="Direct link to Nature and Structure of the MongoDB Cursor in CDC" translate=no>​</a></h3>
+<ul>
+<li class="">
+<p><strong>BSON Timestamps</strong>: In MongoDB CDC with Debezium, the cursor is often represented as a <strong>BSON timestamp</strong> (combining a Unix timestamp and an increment value) that uniquely identifies each entry in the oplog.</p>
+<ul>
+<li class="">
+<p>Example of an oplog position: <code>{ ts: Timestamp(1635458412, 1) }</code></p>
+</li>
+<li class="">
+<p><strong>ts</strong>: Represents the timestamp at which the change happened.</p>
+</li>
+<li class="">
+<p><strong>increment</strong>: Differentiates operations that happen within the same second, ensuring unique identification. Here, increment is 1</p>
+</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Static ID with Moving Position</strong>: The cursor doesn’t itself increment as a single value. Instead, Debezium updates the cursor position to the <strong>timestamp of the last processed oplog entry</strong> as it processes each change, continually updating it to move forward through the oplog.</p>
+</li>
+</ul>
+<p>Here's how a cursor object looks like:</p>
+<div class="language-json codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#bfc7d5;--prism-background-color:#292d3e><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-json codeBlock_bY9V thin-scrollbar" style=color:#bfc7d5;background-color:#292d3e><code class=codeBlockLines_e6Vv><span class=token-line style=color:#bfc7d5><span class="token property">"cursor"</span><span class="token operator" style="color:rgb(137, 221, 255)">:</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(199, 146, 234)">{</span><span class="token plain"></span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">    </span><span class="token property">"nextBatch"</span><span class="token operator" style="color:rgb(137, 221, 255)">:</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(199, 146, 234)">[</span><span class="token punctuation" style="color:rgb(199, 146, 234)">]</span><span class="token punctuation" style="color:rgb(199, 146, 234)">,</span><span class="token plain"></span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">    </span><span class="token property">"postBatchResumeToken"</span><span class="token operator" style="color:rgb(137, 221, 255)">:</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(199, 146, 234)">{</span><span class="token plain"></span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">        </span><span class="token property">"_data"</span><span class="token operator" style="color:rgb(137, 221, 255)">:</span><span class="token plain"> </span><span class="token string" style="color:rgb(195, 232, 141)">"8263515979000000022B0429296E1404"</span><span class="token plain"></span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">    </span><span class="token punctuation" style="color:rgb(199, 146, 234)">}</span><span class="token punctuation" style="color:rgb(199, 146, 234)">,</span><span class="token plain"></span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">    </span><span class="token property">"id"</span><span class="token operator" style="color:rgb(137, 221, 255)">:</span><span class="token plain"> Long(</span><span class="token string" style="color:rgb(195, 232, 141)">"7049907285270685005"</span><span class="token plain">)</span><span class="token punctuation" style="color:rgb(199, 146, 234)">,</span><span class="token plain"></span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">    </span><span class="token property">"ns"</span><span class="token operator" style="color:rgb(137, 221, 255)">:</span><span class="token plain"> </span><span class="token string" style="color:rgb(195, 232, 141)">"test.names"</span><span class="token plain"></span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain"></span><span class="token punctuation" style="color:rgb(199, 146, 234)">}</span><span class="token punctuation" style="color:rgb(199, 146, 234)">,</span><br/></span></code></pre></div></div>
+<p>In this example, <code>nextBatch[]</code> is empty, indicating that there are no immediate documents to process. Typically, this array contains the change events fetched in the current batch. It holds the next set of documents (change events) retrieved from the change stream.</p>
+<p>Below is a summary of the default oplog sizes:</p>
+<table><thead><tr><th><strong>Operating System</strong><th><strong>Storage Engine</strong><th><strong>Default Oplog Size Constraints</strong><tbody><tr><td>Unix/Windows<td>WiredTiger<td>- Minimum: 990 MB<tr><td>Unix/Windows<td>In-Memory (Self-Managed Deployments)<td>- Minimum: 990 MB</table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=streaming-data-to-data-warehouses-and-lakehouses>Streaming Data to Data Warehouses and Lakehouses<a href=#streaming-data-to-data-warehouses-and-lakehouses class=hash-link aria-label="Direct link to Streaming Data to Data Warehouses and Lakehouses" title="Direct link to Streaming Data to Data Warehouses and Lakehouses" translate=no>​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=how-the-data-moves>How the Data Moves<a href=#how-the-data-moves class=hash-link aria-label="Direct link to How the Data Moves" title="Direct link to How the Data Moves" translate=no>​</a></h3>
+<p>Once Debezium captures changes from MongoDB and sends them to Kafka, the next step is to move that data to your data warehouse or lakehouse. Here's how it works:</p>
+<ol>
+<li class=""><strong>Kafka Topics</strong>: Each change captured by Debezium is sent to a specific Kafka topic. Think of topics as channels where related data changes are grouped together. 1 topic = 1 collection / table.<br/>
+<strong>Format:</strong> <code>logicalName.databaseName.collectionName</code>. Where logicalName is the name you set for the connector (using <code>topic.prefix</code>).</li>
+</ol>
+<p>You can enable Kafka to automatically create topics as needed, or manually create them using Kafka tools before running the connector.</p>
+<p><strong>Note:</strong> All changes in a sharded collection (even if split across shards) go to a single Kafka topic for that collection</p>
+<ol start=2>
+<li class="">
+<p><strong>Kafka Connect Sink Connectors</strong>: These connectors take data from Kafka topics and push it to your data warehouse or lakehouse. There are different connectors available depending on where you want to send your data, such as:</p>
+<ul>
+<li class="">
+<p><strong>JDBC Sink Connector</strong>: For relational databases like PostgreSQL or MySQL.</p>
+</li>
+<li class="">
+<p><strong>S3 Sink Connector</strong>: To store data in Amazon S3.</p>
+</li>
+<li class="">
+<p><strong>HDFS Sink Connector</strong>: For Hadoop Distributed File System.</p>
+</li>
+<li class="">
+<p><strong>BigQuery Sink Connector</strong>: To send data to Google BigQuery.</p>
+</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Configuration</strong>: You need to configure the sink connector with details about your target system, such as connection strings, authentication, and the specific topics to read from Kafka.</p>
+</li>
+<li class="">
+<p><strong>Data Transformation</strong>: Sometimes, the data needs to be transformed before it fits into your warehouse. Kafka Connect offers Single Message Transforms (SMTs) to modify data on the fly, like renaming fields or filtering out unnecessary information.</p>
+</li>
+<li class="">
+<p><strong>Loading Data</strong>: The sink connector reads the data from Kafka, applies any necessary transformations, and loads it into your data warehouse or lakehouse. This process can happen in real-time or near real-time, depending on your configuration.</p>
+</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=setting-up-the-sink-connector>Setting Up the Sink Connector<a href=#setting-up-the-sink-connector class=hash-link aria-label="Direct link to Setting Up the Sink Connector" title="Direct link to Setting Up the Sink Connector" translate=no>​</a></h3>
+<p>Here's a simple example of configuring a Kafka Connect sink connector to send data to PostgreSQL:</p>
+<div class="language-json codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#bfc7d5;--prism-background-color:#292d3e><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-json codeBlock_bY9V thin-scrollbar" style=color:#bfc7d5;background-color:#292d3e><code class=codeBlockLines_e6Vv><span class=token-line style=color:#bfc7d5><span class="token punctuation" style="color:rgb(199, 146, 234)">{</span><span class="token plain"></span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">  </span><span class="token property">"name"</span><span class="token operator" style="color:rgb(137, 221, 255)">:</span><span class="token plain"> </span><span class="token string" style="color:rgb(195, 232, 141)">"postgres-sink-connector"</span><span class="token punctuation" style="color:rgb(199, 146, 234)">,</span><span class="token plain"></span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">  </span><span class="token property">"config"</span><span class="token operator" style="color:rgb(137, 221, 255)">:</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(199, 146, 234)">{</span><span class="token plain"></span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">    </span><span class="token property">"connector.class"</span><span class="token operator" style="color:rgb(137, 221, 255)">:</span><span class="token plain"> </span><span class="token string" style="color:rgb(195, 232, 141)">"io.confluent.connect.jdbc.JdbcSinkConnector"</span><span class="token punctuation" style="color:rgb(199, 146, 234)">,</span><span class="token plain"></span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">    </span><span class="token property">"tasks.max"</span><span class="token operator" style="color:rgb(137, 221, 255)">:</span><span class="token plain"> </span><span class="token string" style="color:rgb(195, 232, 141)">"1"</span><span class="token punctuation" style="color:rgb(199, 146, 234)">,</span><span class="token plain"></span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">    </span><span class="token property">"topics"</span><span class="token operator" style="color:rgb(137, 221, 255)">:</span><span class="token plain"> </span><span class="token string" style="color:rgb(195, 232, 141)">"dbserver1.mydb.mycollection"</span><span class="token punctuation" style="color:rgb(199, 146, 234)">,</span><span class="token plain"></span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">    </span><span class="token property">"connection.url"</span><span class="token operator" style="color:rgb(137, 221, 255)">:</span><span class="token plain"> </span><span class="token string" style="color:rgb(195, 232, 141)">"jdbc:postgresql://localhost:5432/mywarehouse"</span><span class="token punctuation" style="color:rgb(199, 146, 234)">,</span><span class="token plain"></span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">    </span><span class="token property">"connection.user"</span><span class="token operator" style="color:rgb(137, 221, 255)">:</span><span class="token plain"> </span><span class="token string" style="color:rgb(195, 232, 141)">"postgres"</span><span class="token punctuation" style="color:rgb(199, 146, 234)">,</span><span class="token plain"></span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">    </span><span class="token property">"connection.password"</span><span class="token operator" style="color:rgb(137, 221, 255)">:</span><span class="token plain"> </span><span class="token string" style="color:rgb(195, 232, 141)">"password"</span><span class="token punctuation" style="color:rgb(199, 146, 234)">,</span><span class="token plain"></span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">    </span><span class="token property">"auto.create"</span><span class="token operator" style="color:rgb(137, 221, 255)">:</span><span class="token plain"> </span><span class="token string" style="color:rgb(195, 232, 141)">"true"</span><span class="token punctuation" style="color:rgb(199, 146, 234)">,</span><span class="token plain"></span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">    </span><span class="token property">"insert.mode"</span><span class="token operator" style="color:rgb(137, 221, 255)">:</span><span class="token plain"> </span><span class="token string" style="color:rgb(195, 232, 141)">"upsert"</span><span class="token punctuation" style="color:rgb(199, 146, 234)">,</span><span class="token plain"></span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">    </span><span class="token property">"pk.mode"</span><span class="token operator" style="color:rgb(137, 221, 255)">:</span><span class="token plain"> </span><span class="token string" style="color:rgb(195, 232, 141)">"record_key"</span><span class="token punctuation" style="color:rgb(199, 146, 234)">,</span><span class="token plain"></span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">    </span><span class="token property">"pk.fields"</span><span class="token operator" style="color:rgb(137, 221, 255)">:</span><span class="token plain"> </span><span class="token string" style="color:rgb(195, 232, 141)">"id"</span><span class="token plain"></span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">  </span><span class="token punctuation" style="color:rgb(199, 146, 234)">}</span><span class="token plain"></span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain"></span><span class="token punctuation" style="color:rgb(199, 146, 234)">}</span><br/></span></code></pre></div></div>
+<p>To deploy this connector, you would use the Kafka Connect REST API similar to how you set up the Debezium connector.</p>
+<p><strong>Tip:</strong> One of the actual benefits of sending data to Kafka in streaming mode is, cursor is always near end, so probability of losing it reduces (compared to batch based environment)</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=pros-and-cons-of-this-method>Pros and Cons of This Method<a href=#pros-and-cons-of-this-method class=hash-link aria-label="Direct link to Pros and Cons of This Method" title="Direct link to Pros and Cons of This Method" translate=no>​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=advantages>Advantages<a href=#advantages class=hash-link aria-label="Direct link to Advantages" title="Direct link to Advantages" translate=no>​</a></h3>
+<p>Other than what we discussed above, these are the advantages:</p>
+<ol>
+<li class="">
+<p><strong>Decoupled Systems</strong></p>
+<ul>
+<li class="">
+<p><strong>Independent Scaling</strong>: Kafka acts as a buffer between MongoDB and your data warehouse, allowing each system to scale independently.</p>
+</li>
+<li class="">
+<p><strong>Flexible Integrations</strong>: Easily connect to multiple downstream systems without impacting the source database.</p>
+</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Ease of Use with Kafka Connect</strong></p>
+<ul>
+<li class="">
+<p><strong>Simplified Integration</strong>: Kafka Connect provides a framework for connecting Kafka with external systems, reducing the amount of custom code you need to write.</p>
+</li>
+<li class="">
+<p><strong>Pre-Built Connectors</strong>: Use existing connectors for popular databases and data stores, speeding up the setup process.</p>
+</li>
+</ul>
+</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=disadvantages>Disadvantages<a href=#disadvantages class=hash-link aria-label="Direct link to Disadvantages" title="Direct link to Disadvantages" translate=no>​</a></h3>
+<ol>
+<li class="">
+<p><strong>Complexity of Setup</strong></p>
+<ul>
+<li class="">
+<p><strong>Multiple Components</strong>: Setting up and maintaining Kafka, Kafka Connect, Debezium, Zookeeper (if you are managing kafka internally) and your data warehouse involves managing several moving parts.</p>
+</li>
+<li class="">
+<p><strong>Configuration Management</strong>: Requires careful configuration to ensure all components work seamlessly together.</p>
+</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Resource Intensive</strong></p>
+<ul>
+<li class="">
+<p><strong>Infrastructure Requirements</strong>: Running Kafka and Debezium can consume significant system resources, especially for large-scale deployments.</p>
+</li>
+<li class="">
+<p><strong>Operational Overhead</strong>: Requires monitoring, maintenance, and potential troubleshooting to keep the data pipeline running smoothly.</p>
+</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Latency</strong></p>
+<ul>
+<li class="">Debezium is JVM based so it's a bit slow in decoding and putting the data in Kafka. Also its slow because it doesn't parallelise the CDC for multiple collections / tables and parallel full load for initial snapshot of single collection.</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Learning Curve</strong></p>
+<ul>
+<li class="">
+<p><strong>Technical Expertise Needed</strong>: Understanding how Kafka, Kafka Connect, and Debezium work together requires a good grasp of these technologies.</p>
+</li>
+<li class="">
+<p><strong>Debugging Challenges</strong>: Troubleshooting issues in a distributed system can be more complex compared to simpler data transfer methods.</p>
+</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Data Consistency and Ordering</strong></p>
+<ul>
+<li class="">
+<p><strong>Complex Scenarios</strong>: Ensuring data consistency and correct ordering of events can be challenging, especially in distributed environments with multiple consumers.</p>
+</li>
+<li class="">
+<p><strong>Handling Failures</strong>: Properly managing failures and ensuring no data is lost or duplicated requires careful planning and configuration.</p>
+</li>
+</ul>
+</li>
+</ol>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=best-practices-for-configuration>Best Practices for Configuration<a href=#best-practices-for-configuration class=hash-link aria-label="Direct link to Best Practices for Configuration" title="Direct link to Best Practices for Configuration" translate=no>​</a></h2>
+<p>Configuring Debezium and Kafka correctly is crucial to ensure a smooth and efficient data streaming process. Here are some best practices to follow:</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=1-optimize-mongodb-oplog-size>1. Optimize MongoDB Oplog Size<a href=#1-optimize-mongodb-oplog-size class=hash-link aria-label="Direct link to 1. Optimize MongoDB Oplog Size" title="Direct link to 1. Optimize MongoDB Oplog Size" translate=no>​</a></h3>
+<p>When using Debezium’s MongoDB connector, it's important to properly configure the oplog</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=why-oplog-size-matters>Why Oplog Size Matters?<a href=#why-oplog-size-matters class=hash-link aria-label="Direct link to Why Oplog Size Matters?" title="Direct link to Why Oplog Size Matters?" translate=no>​</a></h3>
+<p>As we already know that debezium reads from the oplog to capture changes. If Debezium stops and restarts, it needs to find where it left off using the last recorded position in the oplog.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=what-are-the-problems-with-small-oplog>What are the problems with Small Oplog?<a href=#what-are-the-problems-with-small-oplog class=hash-link aria-label="Direct link to What are the problems with Small Oplog?" title="Direct link to What are the problems with Small Oplog?" translate=no>​</a></h3>
+<ul>
+<li class="">
+<p><strong>Missing Data</strong>: If Debezium is offline for too long, the oplog might delete the old changes it needs to resume, and if oplog is full already, it will start overwriting existing data causing Debezium to fail with an "invalid resume token" error (when it resumes back).</p>
+</li>
+<li class="">
+<p><strong>Manual Fixes</strong>: If this happens, you may need to set up a new connector and re-sync data manually to capture records from the database, which can be time-consuming.</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=how-to-prevent-oplog-issues>How to Prevent Oplog Issues<a href=#how-to-prevent-oplog-issues class=hash-link aria-label="Direct link to How to Prevent Oplog Issues" title="Direct link to How to Prevent Oplog Issues" translate=no>​</a></h3>
+<ol>
+<li class="">
+<p><strong>Increase Oplog Size</strong></p>
+<ul>
+<li class="">
+<p><strong>How</strong>: Make the oplog larger than the maximum number of changes you expect in your busiest hour.</p>
+</li>
+<li class="">
+<p><strong>Example</strong>: If your database changes by 3 GB every hour (say) and you want Debezium to recover from a 2-hour outage, set your oplog size to at least 6 GB (3 GB/hour × 2 hours).</p>
+</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Set Minimum Retention Time (MongoDB 4.4+)</strong></p>
+<ul>
+<li class="">
+<p><strong>How</strong>: Configure MongoDB to keep oplog entries for a certain number of hours, regardless of the oplog size.</p>
+</li>
+<li class="">
+<p><strong>Why</strong>: This makes sure that even if the oplog reaches its size limit, it won’t delete entries within the set time frame.</p>
+</li>
+</ul>
+</li>
+</ol>
+<p>Check the current oplog size using the MongoDB shell:</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#bfc7d5;--prism-background-color:#292d3e><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style=color:#bfc7d5;background-color:#292d3e><code class=codeBlockLines_e6Vv><span class=token-line style=color:#bfc7d5><span class="token plain">mongo</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">use local</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">db.oplog.rs.stats()</span><br/></span></code></pre></div></div>
+<p>Adjust the oplog size by restarting MongoDB with a larger <code>--oplogSize</code> parameter if needed.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=can-debezium-lose-events>Can Debezium Lose Events?<a href=#can-debezium-lose-events class=hash-link aria-label="Direct link to Can Debezium Lose Events?" title="Direct link to Can Debezium Lose Events?" translate=no>​</a></h3>
+<p>Debezium, by design, should capture every change (insert, update, delete) from your database and send it downstream. It operates on an <strong>“at-least-once”</strong> basis, meaning duplicate events can happen if the connector shuts down improperly, but missing events would be a serious issue, marked as a bug to fix ASAP.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=when-might-event-loss-happen>When Might Event Loss Happen?<a href=#when-might-event-loss-happen class=hash-link aria-label="Direct link to When Might Event Loss Happen?" title="Direct link to When Might Event Loss Happen?" translate=no>​</a></h3>
+<p>Event loss can occur if part of the database’s transaction log gets deleted before Debezium captures it. This usually happens in two cases:</p>
+<ol>
+<li class="">
+<p><strong>Connector Downtime</strong>: If Debezium isn’t running for a while, and the transaction log reaches its max retention time, parts of it may get discarded. For example, in MySQL, the log retention can be set with <code>binlog_expire_logs_seconds</code>, and in SQL Server, it's managed with the CDC job.</p>
+</li>
+<li class="">
+<p><strong>Disk Space Limit in Postgres</strong>: Postgres handles things differently using <strong>replication slots</strong> to retain logs until Debezium reads them. But if the connector is down for too long, these logs pile up, using more disk space. In extreme cases, this could lead to a full disk.</p>
+</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=preventing-event-loss>Preventing Event Loss<a href=#preventing-event-loss class=hash-link aria-label="Direct link to Preventing Event Loss" title="Direct link to Preventing Event Loss" translate=no>​</a></h3>
+<ol>
+<li class="">
+<p><strong>Log Retention Configuration</strong>: Adjust transaction log retention times if you expect any downtime for your Debezium connectors.</p>
+</li>
+<li class="">
+<p><strong>Replication Slot Control</strong> (Postgres): Set a max size for WAL retention to prevent disk space issues.</p>
+</li>
+<li class="">
+<p><strong>Monitoring</strong>: Set up alerts (like from the Kafka Connect REST API) to notify you if Debezium is down for too long.</p>
+</li>
+</ol>
+<p>By managing these configurations and monitoring your connector’s activity, you can avoid potential event loss with Debezium.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=monitoring-is-essential>Monitoring is Essential<a href=#monitoring-is-essential class=hash-link aria-label="Direct link to Monitoring is Essential" title="Direct link to Monitoring is Essential" translate=no>​</a></h3>
+<ul>
+<li class="">
+<p><strong>Metrics to Watch</strong>:</p>
+<ul>
+<li class="">
+<p><strong>Oplog GB/Hour</strong>: How much data does your oplog record each hour?</p>
+</li>
+<li class="">
+<p><strong>Replication Oplog Window</strong>: The time span your current oplog size covers.</p>
+</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Why Monitor?</strong>: To make sure your oplog is big enough to handle any downtime Debezium might face. If Debezium is offline longer than your oplog can cover, it might miss some changes.</p>
+</li>
+</ul>
+<p><strong>Example:</strong></p>
+<ul>
+<li class="">
+<p><strong>Oplog Growth Rate</strong>: 3 GB per hour</p>
+</li>
+<li class="">
+<p><strong>Expected Downtime</strong>: 2 hours</p>
+</li>
+<li class="">
+<p><strong>Needed Oplog Size</strong> = 3 GB/hour × 2 hours = 6 GB</p>
+</li>
+</ul>
+<p>So, set your oplog size to at least 6 GB to ensure Debezium can resume without issues even after 2 hours of downtime.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=2-secure-connections>2. Secure Connections<a href=#2-secure-connections class=hash-link aria-label="Direct link to 2. Secure Connections" title="Direct link to 2. Secure Connections" translate=no>​</a></h3>
+<ul>
+<li class="">
+<p><strong>Use SSL/TLS</strong>: Encrypt data in transit between MongoDB, Kafka, and Kafka Connect to protect sensitive information.</p>
+</li>
+<li class="">
+<p><strong>Authentication</strong>: Ensure that all services use strong authentication mechanisms. For MongoDB, create a dedicated user with only the necessary permissions for Debezium.</p>
+</li>
+<li class="">
+<p><strong>Example Configuration</strong>:</p>
+</li>
+</ul>
+<div class="language-json codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#bfc7d5;--prism-background-color:#292d3e><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-json codeBlock_bY9V thin-scrollbar" style=color:#bfc7d5;background-color:#292d3e><code class=codeBlockLines_e6Vv><span class=token-line style=color:#bfc7d5><span class="token punctuation" style="color:rgb(199, 146, 234)">{</span><span class="token plain"></span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">  </span><span class="token property">"mongodb.ssl.mode"</span><span class="token operator" style="color:rgb(137, 221, 255)">:</span><span class="token plain"> </span><span class="token string" style="color:rgb(195, 232, 141)">"requireSSL"</span><span class="token punctuation" style="color:rgb(199, 146, 234)">,</span><span class="token plain"></span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">  </span><span class="token property">"mongodb.ssl.invalid.hostname.allowed"</span><span class="token operator" style="color:rgb(137, 221, 255)">:</span><span class="token plain"> </span><span class="token string" style="color:rgb(195, 232, 141)">"false"</span><span class="token punctuation" style="color:rgb(199, 146, 234)">,</span><span class="token plain"></span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">  </span><span class="token property">"mongodb.auth.mechanism"</span><span class="token operator" style="color:rgb(137, 221, 255)">:</span><span class="token plain"> </span><span class="token string" style="color:rgb(195, 232, 141)">"SCRAM-SHA-1"</span><span class="token plain"></span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain"></span><span class="token punctuation" style="color:rgb(199, 146, 234)">}</span><br/></span></code></pre></div></div>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=3-configure-kafka-for-high-availability>3. Configure Kafka for High Availability<a href=#3-configure-kafka-for-high-availability class=hash-link aria-label="Direct link to 3. Configure Kafka for High Availability" title="Direct link to 3. Configure Kafka for High Availability" translate=no>​</a></h3>
+<ul>
+<li class=""><strong>Replication Factor</strong>: Set a replication factor greater than 1 for Kafka topics to ensure data is not lost if a broker fails.</li>
+</ul>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#bfc7d5;--prism-background-color:#292d3e><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style=color:#bfc7d5;background-color:#292d3e><code class=codeBlockLines_e6Vv><span class=token-line style=color:#bfc7d5><span class="token plain">kafka-topics --create --topic your_topic --replication-factor 3 --partitions 10 --bootstrap-server localhost:9092</span><br/></span></code></pre></div></div>
+<ul>
+<li class=""><strong>Multiple Brokers</strong>: Deploy multiple Kafka brokers across different machines or availability zones to distribute the load and provide redundancy.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=4-tune-kafka-connect-settings>4. Tune Kafka Connect Settings<a href=#4-tune-kafka-connect-settings class=hash-link aria-label="Direct link to 4. Tune Kafka Connect Settings" title="Direct link to 4. Tune Kafka Connect Settings" translate=no>​</a></h3>
+<ul>
+<li class=""><strong>Increase Task Parallelism</strong>: Adjust the number of tasks in Kafka Connect to handle higher throughput.</li>
+</ul>
+<div class="language-json codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#bfc7d5;--prism-background-color:#292d3e><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-json codeBlock_bY9V thin-scrollbar" style=color:#bfc7d5;background-color:#292d3e><code class=codeBlockLines_e6Vv><span class=token-line style=color:#bfc7d5><span class="token punctuation" style="color:rgb(199, 146, 234)">{</span><span class="token plain"></span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">  </span><span class="token property">"tasks.max"</span><span class="token operator" style="color:rgb(137, 221, 255)">:</span><span class="token plain"> </span><span class="token string" style="color:rgb(195, 232, 141)">"5"</span><span class="token plain"></span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain"></span><span class="token punctuation" style="color:rgb(199, 146, 234)">}</span><br/></span></code></pre></div></div>
+<ul>
+<li class=""><strong>Batch Size</strong>: Configure the batch size for connectors to optimize performance.</li>
+</ul>
+<div class="language-json codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#bfc7d5;--prism-background-color:#292d3e><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-json codeBlock_bY9V thin-scrollbar" style=color:#bfc7d5;background-color:#292d3e><code class=codeBlockLines_e6Vv><span class=token-line style=color:#bfc7d5><span class="token punctuation" style="color:rgb(199, 146, 234)">{</span><span class="token plain"></span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">  </span><span class="token property">"batch.size"</span><span class="token operator" style="color:rgb(137, 221, 255)">:</span><span class="token plain"> </span><span class="token string" style="color:rgb(195, 232, 141)">"1000"</span><span class="token plain"></span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain"></span><span class="token punctuation" style="color:rgb(199, 146, 234)">}</span><br/></span></code></pre></div></div>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=5-implement-monitoring-and-alerting>5. Implement Monitoring and Alerting<a href=#5-implement-monitoring-and-alerting class=hash-link aria-label="Direct link to 5. Implement Monitoring and Alerting" title="Direct link to 5. Implement Monitoring and Alerting" translate=no>​</a></h3>
+<ul>
+<li class="">
+<p><strong>Use Monitoring Tools</strong>: Tools like Prometheus and Grafana can help monitor Kafka, Debezium, and Kafka Connect metrics.</p>
+</li>
+<li class="">
+<p><strong>Set Up Alerts</strong>: Configure alerts for critical metrics such as lag, error rates, and resource usage to respond quickly to issues.</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=6-handle-schema-changes-gracefully>6. Handle Schema Changes Gracefully<a href=#6-handle-schema-changes-gracefully class=hash-link aria-label="Direct link to 6. Handle Schema Changes Gracefully" title="Direct link to 6. Handle Schema Changes Gracefully" translate=no>​</a></h3>
+<ul>
+<li class="">
+<p><strong>Schema Registry</strong>: Use a schema registry to manage and version your data schemas, ensuring compatibility between producers and consumers.</p>
+</li>
+<li class="">
+<p><strong>Automatic Schema Evolution</strong>: Configure Debezium to handle schema changes without manual intervention.</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=7-manage-offsets-properly>7. Manage Offsets Properly<a href=#7-manage-offsets-properly class=hash-link aria-label="Direct link to 7. Manage Offsets Properly" title="Direct link to 7. Manage Offsets Properly" translate=no>​</a></h3>
+<ul>
+<li class="">
+<p><strong>Enable Offset Storage</strong>: Ensure that Kafka Connect stores offsets in a durable storage to resume processing after failures.</p>
+</li>
+<li class="">
+<p><strong>Regular Backups</strong>: Regularly back up your offset storage topics to prevent data loss.</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=8-use-proper-resource-allocation>8. Use Proper Resource Allocation<a href=#8-use-proper-resource-allocation class=hash-link aria-label="Direct link to 8. Use Proper Resource Allocation" title="Direct link to 8. Use Proper Resource Allocation" translate=no>​</a></h3>
+<ul>
+<li class="">
+<p><strong>Allocate Sufficient Resources</strong>: Ensure that your Kafka brokers, Kafka Connect workers, and Debezium connectors have enough CPU, memory, and storage to handle the data load.</p>
+</li>
+<li class="">
+<p><strong>Scale Horizontally</strong>: Add more instances of Kafka Connect workers or Debezium connectors if you need to handle increased traffic.</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=9-test-your-configuration>9. Test Your Configuration<a href=#9-test-your-configuration class=hash-link aria-label="Direct link to 9. Test Your Configuration" title="Direct link to 9. Test Your Configuration" translate=no>​</a></h3>
+<ul>
+<li class="">
+<p><strong>Staging Environment</strong>: Always test your setup in a staging environment before deploying to production.</p>
+</li>
+<li class="">
+<p><strong>Simulate Load</strong>: Use tools to simulate data changes and ensure that your pipeline can handle the expected load without issues.</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=10-document-your-setup>10. Document Your Setup<a href=#10-document-your-setup class=hash-link aria-label="Direct link to 10. Document Your Setup" title="Direct link to 10. Document Your Setup" translate=no>​</a></h3>
+<ul>
+<li class="">
+<p><strong>Configuration Files</strong>: Keep detailed records of all configuration settings for Kafka, Kafka Connect, and Debezium.</p>
+</li>
+<li class="">
+<p><strong>Operational Procedures</strong>: Document procedures for common tasks like restarting connectors, scaling services, and recovering from failures.</p>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=deployment-options-self-hosted-vs-managed>Deployment Options: Self-Hosted vs. Managed<a href=#deployment-options-self-hosted-vs-managed class=hash-link aria-label="Direct link to Deployment Options: Self-Hosted vs. Managed" title="Direct link to Deployment Options: Self-Hosted vs. Managed" translate=no>​</a></h2>
+<p>When setting up Debezium and Kafka for streaming data from MongoDB, you have two main options for deployment: <strong>self-hosted</strong> or <strong>managed services</strong>.</p>
+<p>Each approach has its own set of advantages and trade-offs. Let’s break them down so you can decide which one fits your needs best.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=self-hosted-deployment>Self-Hosted Deployment<a href=#self-hosted-deployment class=hash-link aria-label="Direct link to Self-Hosted Deployment" title="Direct link to Self-Hosted Deployment" translate=no>​</a></h3>
+<p><strong>Self-hosted</strong> means you’re responsible for installing, configuring, and maintaining Kafka, Debezium, and any other components on your own servers or infrastructure.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id=pros>Pros:<a href=#pros class=hash-link aria-label="Direct link to Pros:" title="Direct link to Pros:" translate=no>​</a></h4>
+<ol>
+<li class="">
+<p><strong>Full Control:</strong></p>
+<ul>
+<li class="">
+<p>You have complete control over the configuration and customization of Kafka and Debezium.</p>
+</li>
+<li class="">
+<p>Can optimize settings specifically for your workload and environment.</p>
+</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Cost Efficiency:</strong></p>
+<ul>
+<li class="">
+<p>Potentially lower costs if you have existing infrastructure and the expertise to manage it.</p>
+</li>
+<li class="">
+<p>No additional charges from cloud providers for managed services.</p>
+</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Flexibility:</strong></p>
+<ul>
+<li class="">
+<p>Easier to integrate with on-premises systems or other custom setups.</p>
+</li>
+<li class="">
+<p>Freedom to choose specific versions and configurations that suit your needs.</p>
+</li>
+</ul>
+</li>
+</ol>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id=cons>Cons:<a href=#cons class=hash-link aria-label="Direct link to Cons:" title="Direct link to Cons:" translate=no>​</a></h4>
+<ol>
+<li class="">
+<p><strong>Operational Overhead:</strong></p>
+<ul>
+<li class="">
+<p>Requires significant time and effort to set up, monitor, and maintain.</p>
+</li>
+<li class="">
+<p>You need to handle updates, scaling, and troubleshooting on your own.</p>
+</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Scalability Challenges:</strong></p>
+<ul>
+<li class="">
+<p>Scaling Kafka and Debezium can be complex and may require expertise.</p>
+</li>
+<li class="">
+<p>Ensuring high availability and fault tolerance is your responsibility.</p>
+</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Resource Intensive:</strong></p>
+<ul>
+<li class="">
+<p>Demands robust infrastructure and skilled personnel to manage the systems effectively.</p>
+</li>
+<li class="">
+<p>Potential for higher indirect costs due to maintenance and management efforts.</p>
+</li>
+</ul>
+</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=managed-services>Managed Services<a href=#managed-services class=hash-link aria-label="Direct link to Managed Services" title="Direct link to Managed Services" translate=no>​</a></h3>
+<p><strong>Managed services</strong> involve using cloud providers or specialized vendors to handle the setup, maintenance, and scaling of Kafka and Debezium. Examples include <strong>Confluent Cloud</strong>, <strong>AWS Managed Streaming for Apache Kafka (MSK)</strong>, or other similar offerings.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id=pros-1>Pros:<a href=#pros-1 class=hash-link aria-label="Direct link to Pros:" title="Direct link to Pros:" translate=no>​</a></h4>
+<ol>
+<li class="">
+<p><strong>Ease of Use:</strong></p>
+<ul>
+<li class="">
+<p>Simplifies the deployment process with pre-configured setups.</p>
+</li>
+<li class="">
+<p>Reduces the time and effort needed to get Kafka and Debezium up and running.</p>
+</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Scalability:</strong></p>
+<ul>
+<li class="">
+<p>Easily scale your Kafka clusters based on demand without manual intervention.</p>
+</li>
+<li class="">
+<p>Managed services typically offer automatic scaling and load balancing.</p>
+</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Maintenance and Upgrades:</strong></p>
+<ul>
+<li class="">
+<p>Providers handle updates, security patches, and maintenance tasks.</p>
+</li>
+<li class="">
+<p>Ensures that your systems are always up-to-date with the latest features and security improvements.</p>
+</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Reliability and Availability:</strong></p>
+<ul>
+<li class="">
+<p>Built-in high availability and disaster recovery options.</p>
+</li>
+<li class="">
+<p>Providers often offer Service Level Agreements (SLAs) to guarantee uptime.</p>
+</li>
+</ul>
+</li>
+</ol>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id=cons-1>Cons:<a href=#cons-1 class=hash-link aria-label="Direct link to Cons:" title="Direct link to Cons:" translate=no>​</a></h4>
+<ol>
+<li class="">
+<p><strong>Cost:</strong></p>
+<ul>
+<li class="">
+<p>Managed services can be more expensive, especially at scale.</p>
+</li>
+<li class="">
+<p>Ongoing subscription or usage fees might add up over time.</p>
+</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Less Control:</strong></p>
+<ul>
+<li class="">
+<p>Limited ability to customize configurations beyond what the provider allows.</p>
+</li>
+<li class="">
+<p>May not support all features or integrations you need.</p>
+</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Vendor Lock-In:</strong></p>
+<ul>
+<li class="">
+<p>Dependence on a specific provider’s ecosystem and pricing model.</p>
+</li>
+<li class="">
+<p>Migrating to another provider or back to self-hosting can be challenging.</p>
+</li>
+</ul>
+</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=hybrid-approach>Hybrid Approach<a href=#hybrid-approach class=hash-link aria-label="Direct link to Hybrid Approach" title="Direct link to Hybrid Approach" translate=no>​</a></h3>
+<p>Some organizations opt for a <strong>hybrid approach</strong>, where critical components are self-hosted for maximum control, while other parts leverage managed services for ease and scalability. This can provide a balance between control and operational simplicity.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=configurations-and-examples>Configurations and Examples<a href=#configurations-and-examples class=hash-link aria-label="Direct link to Configurations and Examples" title="Direct link to Configurations and Examples" translate=no>​</a></h2>
+<p>Setting up Debezium with Kafka involves configuring several components to work together seamlessly. In this section, we’ll go through some configuration examples and provide sample setups to help you get started.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=docker-compose-example-sample>Docker Compose Example [SAMPLE]<a href=#docker-compose-example-sample class=hash-link aria-label="Direct link to Docker Compose Example [SAMPLE]" title="Direct link to Docker Compose Example [SAMPLE]" translate=no>​</a></h3>
+<p>Using Docker Compose can simplify the setup process by containerizing Kafka, Zookeeper, and Kafka Connect with Debezium. Here’s an example docker-compose.yml:</p>
+<div class="language-yaml codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#bfc7d5;--prism-background-color:#292d3e><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-yaml codeBlock_bY9V thin-scrollbar" style=color:#bfc7d5;background-color:#292d3e><code class=codeBlockLines_e6Vv><span class=token-line style=color:#bfc7d5><span class="token key atrule">version</span><span class="token punctuation" style="color:rgb(199, 146, 234)">:</span><span class="token plain"> </span><span class="token string" style="color:rgb(195, 232, 141)">'3'</span><span class="token plain"></span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain"></span><span class="token key atrule">services</span><span class="token punctuation" style="color:rgb(199, 146, 234)">:</span><span class="token plain"></span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">  zookeeper</span><span class="token punctuation" style="color:rgb(199, 146, 234)">:</span><span class="token plain"></span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">    image</span><span class="token punctuation" style="color:rgb(199, 146, 234)">:</span><span class="token plain"> confluentinc/cp</span><span class="token punctuation" style="color:rgb(199, 146, 234)">-</span><span class="token plain">zookeeper</span><span class="token punctuation" style="color:rgb(199, 146, 234)">:</span><span class="token plain">latest</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">    environment</span><span class="token punctuation" style="color:rgb(199, 146, 234)">:</span><span class="token plain"></span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">      ZOOKEEPER_CLIENT_PORT</span><span class="token punctuation" style="color:rgb(199, 146, 234)">:</span><span class="token plain"> </span><span class="token number" style="color:rgb(247, 140, 108)">2181</span><span class="token plain"></span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain" style=display:inline-block></span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">    ports</span><span class="token punctuation" style="color:rgb(199, 146, 234)">:</span><span class="token plain"></span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">      </span><span class="token punctuation" style="color:rgb(199, 146, 234)">-</span><span class="token plain"> </span><span class="token string" style="color:rgb(195, 232, 141)">"2181:2181"</span><span class="token plain"></span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain" style=display:inline-block></span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">  kafka</span><span class="token punctuation" style="color:rgb(199, 146, 234)">:</span><span class="token plain"></span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">    image</span><span class="token punctuation" style="color:rgb(199, 146, 234)">:</span><span class="token plain"> confluentinc/cp</span><span class="token punctuation" style="color:rgb(199, 146, 234)">-</span><span class="token plain">kafka</span><span class="token punctuation" style="color:rgb(199, 146, 234)">:</span><span class="token plain">latest</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">    depends_on</span><span class="token punctuation" style="color:rgb(199, 146, 234)">:</span><span class="token plain"></span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">      </span><span class="token punctuation" style="color:rgb(199, 146, 234)">-</span><span class="token plain"> zookeeper</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain" style=display:inline-block></span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">    environment</span><span class="token punctuation" style="color:rgb(199, 146, 234)">:</span><span class="token plain"></span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">      KAFKA_BROKER_ID</span><span class="token punctuation" style="color:rgb(199, 146, 234)">:</span><span class="token plain"> </span><span class="token number" style="color:rgb(247, 140, 108)">1</span><span class="token plain"></span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">      KAFKA_ZOOKEEPER_CONNECT</span><span class="token punctuation" style="color:rgb(199, 146, 234)">:</span><span class="token plain"> zookeeper</span><span class="token punctuation" style="color:rgb(199, 146, 234)">:</span><span class="token number" style="color:rgb(247, 140, 108)">2181</span><span class="token plain"></span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">      KAFKA_ADVERTISED_LISTENERS</span><span class="token punctuation" style="color:rgb(199, 146, 234)">:</span><span class="token plain"> PLAINTEXT</span><span class="token punctuation" style="color:rgb(199, 146, 234)">:</span><span class="token plain">//localhost</span><span class="token punctuation" style="color:rgb(199, 146, 234)">:</span><span class="token number" style="color:rgb(247, 140, 108)">9092</span><span class="token plain"></span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR</span><span class="token punctuation" style="color:rgb(199, 146, 234)">:</span><span class="token plain"> </span><span class="token number" style="color:rgb(247, 140, 108)">1</span><span class="token plain"></span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain" style=display:inline-block></span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">    ports</span><span class="token punctuation" style="color:rgb(199, 146, 234)">:</span><span class="token plain"></span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">      </span><span class="token punctuation" style="color:rgb(199, 146, 234)">-</span><span class="token plain"> </span><span class="token string" style="color:rgb(195, 232, 141)">"9092:9092"</span><span class="token plain"></span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain" style=display:inline-block></span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">  connect</span><span class="token punctuation" style="color:rgb(199, 146, 234)">:</span><span class="token plain"></span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">    image</span><span class="token punctuation" style="color:rgb(199, 146, 234)">:</span><span class="token plain"> debezium/connect</span><span class="token punctuation" style="color:rgb(199, 146, 234)">:</span><span class="token plain">latest</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain" style=display:inline-block></span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">    depends_on</span><span class="token punctuation" style="color:rgb(199, 146, 234)">:</span><span class="token plain"></span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">      </span><span class="token punctuation" style="color:rgb(199, 146, 234)">-</span><span class="token plain"> kafka</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain" style=display:inline-block></span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">    environment</span><span class="token punctuation" style="color:rgb(199, 146, 234)">:</span><span class="token plain"></span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">      BOOTSTRAP_SERVERS</span><span class="token punctuation" style="color:rgb(199, 146, 234)">:</span><span class="token plain"> kafka</span><span class="token punctuation" style="color:rgb(199, 146, 234)">:</span><span class="token number" style="color:rgb(247, 140, 108)">9092</span><span class="token plain"></span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">      GROUP_ID</span><span class="token punctuation" style="color:rgb(199, 146, 234)">:</span><span class="token plain"> </span><span class="token number" style="color:rgb(247, 140, 108)">1</span><span class="token plain"></span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">      CONFIG_STORAGE_TOPIC</span><span class="token punctuation" style="color:rgb(199, 146, 234)">:</span><span class="token plain"> my_connect_configs</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">      OFFSET_STORAGE_TOPIC</span><span class="token punctuation" style="color:rgb(199, 146, 234)">:</span><span class="token plain"> my_connect_offsets</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">      STATUS_STORAGE_TOPIC</span><span class="token punctuation" style="color:rgb(199, 146, 234)">:</span><span class="token plain"> my_connect_statuses</span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">      KEY_CONVERTER_SCHEMAS_ENABLE</span><span class="token punctuation" style="color:rgb(199, 146, 234)">:</span><span class="token plain"> </span><span class="token string" style="color:rgb(195, 232, 141)">"false"</span><span class="token plain"></span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">      VALUE_CONVERTER_SCHEMAS_ENABLE</span><span class="token punctuation" style="color:rgb(199, 146, 234)">:</span><span class="token plain"> </span><span class="token string" style="color:rgb(195, 232, 141)">"false"</span><span class="token plain"></span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">      KEY_CONVERTER</span><span class="token punctuation" style="color:rgb(199, 146, 234)">:</span><span class="token plain"> </span><span class="token string" style="color:rgb(195, 232, 141)">"org.apache.kafka.connect.json.JsonConverter"</span><span class="token plain"></span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">      VALUE_CONVERTER</span><span class="token punctuation" style="color:rgb(199, 146, 234)">:</span><span class="token plain"> </span><span class="token string" style="color:rgb(195, 232, 141)">"org.apache.kafka.connect.json.JsonConverter"</span><span class="token plain"></span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">      CONNECT_PLUGIN_PATH</span><span class="token punctuation" style="color:rgb(199, 146, 234)">:</span><span class="token plain"> </span><span class="token string" style="color:rgb(195, 232, 141)">"/kafka/connect"</span><span class="token plain"></span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain" style=display:inline-block></span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">    ports</span><span class="token punctuation" style="color:rgb(199, 146, 234)">:</span><span class="token plain"></span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">      </span><span class="token punctuation" style="color:rgb(199, 146, 234)">-</span><span class="token plain"> </span><span class="token string" style="color:rgb(195, 232, 141)">"8083:8083"</span><span class="token plain"></span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain" style=display:inline-block></span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">    volumes</span><span class="token punctuation" style="color:rgb(199, 146, 234)">:</span><span class="token plain"></span><br/></span><span class=token-line style=color:#bfc7d5><span class="token plain">      </span><span class="token punctuation" style="color:rgb(199, 146, 234)">-</span><span class="token plain"> ./connectors</span><span class="token punctuation" style="color:rgb(199, 146, 234)">:</span><span class="token plain">/kafka/connect</span><br/></span></code></pre></div></div>
+<p><strong>How to Use:</strong></p>
+<ol>
+<li class="">
+<p><strong>Save the File:</strong> Save the above YAML content to a file named <code>docker-compose.yml.</code></p>
+</li>
+<li class="">
+<p><strong>Run Docker Compose:</strong></p>
+</li>
+</ol>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#bfc7d5;--prism-background-color:#292d3e><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style=color:#bfc7d5;background-color:#292d3e><code class=codeBlockLines_e6Vv><span class=token-line style=color:#bfc7d5><span class="token plain">docker-compose up -d</span><br/></span></code></pre></div></div>
+<p><strong>Verify Services:</strong> Ensure that Zookeeper, Kafka, and Kafka Connect are running by checking the Docker containers.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=tips-for-configuration>Tips for Configuration<a href=#tips-for-configuration class=hash-link aria-label="Direct link to Tips for Configuration" title="Direct link to Tips for Configuration" translate=no>​</a></h3>
+<ul>
+<li class="">
+<p><strong>Consistent Naming:</strong> Use clear and consistent naming conventions for connectors and topics to avoid confusion.</p>
+</li>
+<li class="">
+<p><strong>Secure Credentials:</strong> Store sensitive information like passwords securely, using environment variables or secret management tools.</p>
+</li>
+<li class="">
+<p><strong>Monitor Performance:</strong> Regularly check the performance of your connectors and Kafka cluster to identify and address bottlenecks.</p>
+</li>
+<li class="">
+<p><strong>Backup Configurations:</strong> Keep backups of your configuration files to quickly recover from accidental changes or failures.</p>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=setting-up-in-a-cloud-environment>Setting Up in a Cloud Environment<a href=#setting-up-in-a-cloud-environment class=hash-link aria-label="Direct link to Setting Up in a Cloud Environment" title="Direct link to Setting Up in a Cloud Environment" translate=no>​</a></h2>
+<p>Deploying Debezium and Kafka in a cloud environment means you get scalability, reliability, and ease of management.</p>
+<p><strong>AWS (Amazon Web Services)</strong></p>
+<ol>
+<li class="">
+<p><strong>Use Amazon MSK for Kafka:</strong></p>
+<ul>
+<li class="">
+<p><strong>Provision MSK Cluster:</strong> Go to the AWS Management Console, navigate to Amazon MSK, and create a new Kafka cluster.</p>
+</li>
+<li class="">
+<p><strong>Configure Networking:</strong> Ensure the cluster is in the right VPC and has the necessary security groups.</p>
+</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Deploy Debezium on AWS ECS or EKS:</strong></p>
+<ul>
+<li class="">
+<p><strong>ECS (Elastic Container Service):</strong> Use ECS to run Debezium as Docker containers.</p>
+</li>
+<li class="">
+<p><strong>EKS (Elastic Kubernetes Service):</strong> For Kubernetes-based deployments, use EKS to manage Debezium pods.</p>
+</li>
+<li class="">
+<p>OR - User <strong>AWS Kafka Connect</strong>, their managed offering.</p>
+</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Set Up MongoDB:</strong></p>
+<ul>
+<li class="">
+<p><strong>MongoDB Atlas:</strong> Use MongoDB Atlas, a managed MongoDB service, for easy setup and scaling.</p>
+</li>
+<li class="">
+<p><strong>Configure Replication:</strong> Ensure that your MongoDB instance has replication enabled to access the oplog.</p>
+</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Connect Debezium to MSK:</strong></p>
+<ul>
+<li class="">
+<p><strong>Network Configuration:</strong> Ensure Debezium can communicate with your MSK cluster.</p>
+</li>
+<li class="">
+<p><strong>Configure Debezium:</strong> Update Debezium’s configuration to point to the MSK brokers.</p>
+</li>
+</ul>
+</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=azure>Azure<a href=#azure class=hash-link aria-label="Direct link to Azure" title="Direct link to Azure" translate=no>​</a></h3>
+<ol>
+<li class="">
+<p><strong>Use Azure Event Hubs for Kafka:</strong></p>
+<ul>
+<li class="">
+<p><strong>Provision Event Hubs:</strong> Create an Event Hubs namespace and configure Kafka-compatible endpoints.</p>
+</li>
+<li class="">
+<p><strong>Configure Networking:</strong> Set up necessary networking and security configurations.</p>
+</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Deploy Debezium on Azure Kubernetes Service (AKS):</strong></p>
+<ul>
+<li class="">
+<p><strong>AKS Cluster:</strong> Set up an AKS cluster to run Debezium containers.</p>
+</li>
+<li class="">
+<p><strong>Configure Debezium:</strong> Update Debezium’s configuration to connect to Azure Event Hubs.</p>
+</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Set Up MongoDB:</strong></p>
+<ul>
+<li class="">
+<p><strong>Azure Cosmos DB:</strong> Use Azure Cosmos DB with MongoDB API for a managed MongoDB experience.</p>
+</li>
+<li class="">
+<p><strong>Enable Replication:</strong> Ensure replication is enabled for oplog access.</p>
+</li>
+</ul>
+</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=google-cloud-platform-gcp>Google Cloud Platform (GCP)<a href=#google-cloud-platform-gcp class=hash-link aria-label="Direct link to Google Cloud Platform (GCP)" title="Direct link to Google Cloud Platform (GCP)" translate=no>​</a></h3>
+<ol>
+<li class="">
+<p><strong>Use Confluent Cloud or Google Cloud Pub/Sub with Kafka Compatibility:</strong></p>
+<ul>
+<li class="">
+<p><strong>Confluent Cloud:</strong> A fully managed Kafka service available on GCP.</p>
+</li>
+<li class="">
+<p><strong>Google Cloud Pub/Sub:</strong> Use Pub/Sub with Kafka connectors for compatibility.</p>
+</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Deploy Debezium on Google Kubernetes Engine (GKE):</strong></p>
+<ul>
+<li class="">
+<p><strong>GKE Cluster:</strong> Create a GKE cluster to manage Debezium containers.</p>
+</li>
+<li class="">
+<p><strong>Configure Debezium:</strong> Point Debezium to the Kafka brokers provided by Confluent Cloud or Pub/Sub.</p>
+</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Set Up MongoDB:</strong></p>
+<ul>
+<li class="">
+<p><strong>MongoDB Atlas:</strong> Deploy MongoDB Atlas on GCP for a managed MongoDB solution.</p>
+</li>
+<li class="">
+<p><strong>Enable Replication:</strong> Ensure your MongoDB instance has replication enabled.</p>
+</li>
+</ul>
+</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=general-steps-for-cloud-deployment>General Steps for Cloud Deployment<a href=#general-steps-for-cloud-deployment class=hash-link aria-label="Direct link to General Steps for Cloud Deployment" title="Direct link to General Steps for Cloud Deployment" translate=no>​</a></h3>
+<p>Regardless of the cloud provider, the general steps to set up Debezium and Kafka are:</p>
+<ol>
+<li class="">
+<p><strong>Provision Managed Kafka Service:</strong></p>
+<ul>
+<li class="">Use the cloud provider’s managed Kafka service or a third-party provider like Confluent Cloud.</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Set Up MongoDB with Replication:</strong></p>
+<ul>
+<li class="">Use a managed MongoDB service or set up MongoDB on cloud VMs with replication enabled.</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Deploy Debezium:</strong></p>
+<ul>
+<li class="">
+<p>Use container orchestration services (like ECS, EKS, AKS, or GKE) to run Debezium.</p>
+</li>
+<li class="">
+<p>Ensure Debezium has network access to both MongoDB and Kafka brokers.</p>
+</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Configure Networking and Security:</strong></p>
+<ul>
+<li class="">
+<p>Set up VPCs, subnets, security groups, and firewall rules to allow necessary traffic.</p>
+</li>
+<li class="">
+<p>Implement encryption in transit and at rest for data security.</p>
+</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Monitor and Scale:</strong></p>
+<ul>
+<li class="">
+<p>Use cloud monitoring tools to keep an eye on the performance and health of your Kafka cluster and Debezium connectors.</p>
+</li>
+<li class="">
+<p>Scale your services based on load and performance requirements.</p>
+</li>
+</ul>
+</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=benefits-of-cloud-deployment>Benefits of Cloud Deployment<a href=#benefits-of-cloud-deployment class=hash-link aria-label="Direct link to Benefits of Cloud Deployment" title="Direct link to Benefits of Cloud Deployment" translate=no>​</a></h3>
+<ul>
+<li class="">
+<p><strong>Scalability:</strong> Easily scale your Kafka cluster and Debezium connectors based on demand.</p>
+</li>
+<li class="">
+<p><strong>Reliability:</strong> Leverage the cloud provider’s infrastructure for high availability and disaster recovery.</p>
+</li>
+<li class="">
+<p><strong>Managed Services:</strong> Reduce operational overhead by using managed services for Kafka and MongoDB.</p>
+</li>
+<li class="">
+<p><strong>Security:</strong> Utilize advanced security features provided by the cloud platform, such as IAM, encryption, and network security.</p>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=conclusion>Conclusion<a href=#conclusion class=hash-link aria-label="Direct link to Conclusion" title="Direct link to Conclusion" translate=no>​</a></h2>
+<p>Setting up a real-time data streaming pipeline using <strong>Debezium</strong> and <strong>Apache Kafka</strong> with <strong>MongoDB</strong> as the source can significantly enhance your data architecture. This setup enables you to capture and stream data changes instantly, ensuring that your data warehouse or lakehouse always has the most up-to-date information.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=key-takeaways>Key Takeaways:<a href=#key-takeaways class=hash-link aria-label="Direct link to Key Takeaways:" title="Direct link to Key Takeaways:" translate=no>​</a></h3>
+<ul>
+<li class="">
+<p><strong>Change Data Capture (CDC)</strong> is essential for real-time data integration, and Debezium excels at this by leveraging MongoDB’s oplog.</p>
+</li>
+<li class="">
+<p><strong>Apache Kafka</strong> serves as a robust and scalable platform for handling the streamed data, making it accessible to various downstream systems.</p>
+</li>
+<li class="">
+<p><strong>Configuration and Setup</strong> require careful attention to details such as MongoDB replication, Kafka Connect settings, and secure connections.</p>
+</li>
+<li class="">
+<p><strong>Deployment Options</strong> offer flexibility, whether you prefer the control of self-hosting or the convenience of managed services.</p>
+</li>
+<li class="">
+<p><strong>Best Practices</strong> ensure that your data pipeline is reliable, secure, and performs well under load.</p>
+</li>
+<li class="">
+<p><strong>Manual Implementation</strong> is challenging and time-consuming, making Debezium and Kafka a more efficient choice for most scenarios.</p>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=faqs>FAQs<a href=#faqs class=hash-link aria-label="Direct link to FAQs" title="Direct link to FAQs" translate=no>​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=1-does-debezium-use-kafka-connect>1. Does Debezium use Kafka Connect?<a href=#1-does-debezium-use-kafka-connect class=hash-link aria-label="Direct link to 1. Does Debezium use Kafka Connect?" title="Direct link to 1. Does Debezium use Kafka Connect?" translate=no>​</a></h3>
+<p><strong>Yes, Debezium uses Kafka Connect.</strong></p>
+<p>Debezium operates as a <strong>Kafka Connect connector</strong>. Kafka Connect is a framework that simplifies the integration of Apache Kafka with other data systems like databases, key-value stores, and more. By using Kafka Connect, Debezium can easily capture changes from your databases and stream them into Kafka topics without requiring you to write custom code.</p>
+<p><strong>Example:</strong></p>
+<ul>
+<li class="">
+<p><strong>Debezium Connector:</strong> Acts as a bridge between your MongoDB database and Kafka.</p>
+</li>
+<li class="">
+<p><strong>Kafka Connect Framework:</strong> Manages the connector, handling tasks like starting, stopping, and scaling the Debezium connector as needed.</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=2-is-kafka-and-kafka-connect-different>2. Is Kafka and Kafka Connect different?<a href=#2-is-kafka-and-kafka-connect-different class=hash-link aria-label="Direct link to 2. Is Kafka and Kafka Connect different?" title="Direct link to 2. Is Kafka and Kafka Connect different?" translate=no>​</a></h3>
+<p><strong>Yes, Kafka and Kafka Connect are different components, but they work together.</strong></p>
+<ul>
+<li class="">
+<p><strong>Apache Kafka:</strong></p>
+<ul>
+<li class="">
+<p><strong>What It Is:</strong> A powerful distributed streaming platform.</p>
+</li>
+<li class="">
+<p><strong>Main Functions:</strong> It handles publishing and subscribing to streams of records, storing them, and processing them in real-time.</p>
+</li>
+<li class="">
+<p><strong>Use Cases:</strong> Messaging system, real-time analytics, log aggregation, event sourcing, and more.</p>
+</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Kafka Connect:</strong></p>
+<ul>
+<li class="">
+<p><strong>What It Is:</strong> A tool within the Kafka ecosystem.</p>
+</li>
+<li class="">
+<p><strong>Main Functions:</strong> Simplifies the process of connecting Kafka with external systems like databases, file systems, or other data sources and sinks.</p>
+</li>
+<li class="">
+<p><strong>Use Cases:</strong> Importing data into Kafka from a database (source connector) or exporting data from Kafka to another system (sink connector).</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>How They Work Together:</strong></p>
+<ul>
+<li class="">
+<p><strong>Kafka:</strong> Manages the data streams.</p>
+</li>
+<li class="">
+<p><strong>Kafka Connect:</strong> Facilitates the movement of data between Kafka and other systems using connectors like Debezium.</p>
+</li>
+</ul>
+<p><strong>Example:</strong></p>
+<ul>
+<li class="">
+<p><strong>Without Kafka Connect:</strong></p>
+<ul>
+<li class="">You would need to write custom code to move data from MongoDB to Kafka.</li>
+</ul>
+</li>
+<li class="">
+<p><strong>With Kafka Connect:</strong></p>
+<ul>
+<li class="">Use Debezium as a Kafka Connect connector to automatically capture and stream changes from MongoDB to Kafka without writing additional code.</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=additional-resources>Additional Resources<a href=#additional-resources class=hash-link aria-label="Direct link to Additional Resources" title="Direct link to Additional Resources" translate=no>​</a></h2>
+<p>To further explore Debezium, Kafka, and their integrations with MongoDB, here are some valuable resources:</p>
+<ul>
+<li class="">
+<p><strong>Debezium Documentation:</strong> <a href=https://debezium.io/documentation/ target=_blank rel="noopener noreferrer" class="">https://debezium.io/documentation/</a></p>
+</li>
+<li class="">
+<p><strong>Apache Kafka Documentation:</strong> <a href=https://kafka.apache.org/documentation/ target=_blank rel="noopener noreferrer" class="">https://kafka.apache.org/documentation/</a></p>
+</li>
+<li class="">
+<p><strong>MongoDB Oplog Documentation:</strong> <a href=https://docs.mongodb.com/manual/core/replica-set-oplog/ target=_blank rel="noopener noreferrer" class="">https://docs.mongodb.com/manual/core/replica-set-oplog/</a></p>
+</li>
+<li class="">
+<p><strong>Kafka Connect Documentation:</strong> <a href=https://kafka.apache.org/documentation/#connect target=_blank rel="noopener noreferrer" class="">https://kafka.apache.org/documentation/#connect</a></p>
+</li>
+<li class="">
+<p><strong>Debezium MongoDB Connector GitHub:</strong> <a href=https://github.com/debezium/debezium/tree/main/debezium-connector-mongodb target=_blank rel="noopener noreferrer" class="">https://github.com/debezium/debezium/tree/main/debezium-connector-mongodb</a></p>
+</li>
+<li class="">
+<p><strong>Tutorial: Getting Started with Debezium and Kafka:</strong> <a href=https://debezium.io/documentation/reference/3.1/tutorial.html target=_blank rel="noopener noreferrer" class="">https://debezium.io/documentation/reference/3.1/tutorial.html</a></p>
+</li>
+<li class="">
+<p><strong>Monitoring Kafka with Prometheus and Grafana:</strong> <a href=https://grafana.com/docs/grafana/latest/datasources/prometheus/ target=_blank rel="noopener noreferrer" class="">https://grafana.com/docs/grafana/latest/datasources/prometheus/</a></p>
+</li>
+</ul>
+<div class="bg-white dark:bg-black/70 rounded-2xl p-8 max-w-3xl w-full shadow-lg text-center transition-colors"><h2 class="text-4xl font-bold mb-4 text-gray-800 dark:text-white">OLake</h2><p class="text-lg font-light text-gray-700 dark:text-gray-300 mb-8">Achieve 5x speed data replication to Lakehouse format with OLake, our open source platform for efficient, quick and scalable big data ingestion for real-time analytics.<div class="flex flex-col md:flex-row justify-center gap-4"><a href=https://calendly.com/d/ckr6-g82-p9y/olake_discussion target=_blank rel="noopener noreferrer" class="inline-flex items-center justify-center text-lg font-medium text-white bg-black dark:bg-white dark:text-black rounded-full px-6 py-3 transition transform hover:-translate-y-1 hover:opacity-90 min-w-[150px]"><svg stroke=currentColor fill=currentColor stroke-width=0 viewBox="0 0 512 512" class="mr-2 text-white dark:text-black" height=1em width=1em xmlns=http://www.w3.org/2000/svg><path d=M432,320H400a16,16,0,0,0-16,16V448H64V128H208a16,16,0,0,0,16-16V80a16,16,0,0,0-16-16H48A48,48,0,0,0,0,112V464a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V336A16,16,0,0,0,432,320ZM488,0h-128c-21.37,0-32.05,25.91-17,41l35.73,35.73L135,320.37a24,24,0,0,0,0,34L157.67,377a24,24,0,0,0,34,0L435.28,133.32,471,169c15,15,41,4.5,41-17V24A24,24,0,0,0,488,0Z /></svg><span class="text-white text-xs dark:text-black">Schedule a meet</span></a><a href=https://olake.io/#olake-form-product target=_blank rel="noopener noreferrer" class="inline-flex items-center justify-center text-lg font-medium text-white bg-black dark:bg-white dark:text-black rounded-full px-6 py-3 transition transform hover:-translate-y-1 hover:opacity-90 min-w-[150px]"><svg stroke=currentColor fill=currentColor stroke-width=0 viewBox="0 0 512 512" class="mr-2 text-white dark:text-black" height=1em width=1em xmlns=http://www.w3.org/2000/svg><path d=M432,320H400a16,16,0,0,0-16,16V448H64V128H208a16,16,0,0,0,16-16V80a16,16,0,0,0-16-16H48A48,48,0,0,0,0,112V464a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V336A16,16,0,0,0,432,320ZM488,0h-128c-21.37,0-32.05,25.91-17,41l35.73,35.73L135,320.37a24,24,0,0,0,0,34L157.67,377a24,24,0,0,0,34,0L435.28,133.32,471,169c15,15,41,4.5,41-17V24A24,24,0,0,0,488,0Z /></svg><span class="text-white text-xs  dark:text-black">Signup</span></a><a href=https://github.com/datazip-inc/olake target=_blank rel="noopener noreferrer" class="inline-flex items-center justify-center text-lg font-medium text-white bg-black dark:bg-white dark:text-black rounded-full px-6 py-3 transition transform hover:-translate-y-1 hover:opacity-90 min-w-[150px]"><svg stroke=currentColor fill=currentColor stroke-width=0 viewBox="0 0 496 512" class="mr-2 text-white dark:text-black" height=1em width=1em xmlns=http://www.w3.org/2000/svg><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg><span class="text-white text-xs dark:text-black">Explore OLake GitHub</span></a></div><div class="mt-6 text-sm text-gray-600 dark:text-gray-400">Contact us at <strong>hello@olake.io</strong></div></div></div><footer class=docusaurus-mt-lg><div class="row margin-top--sm theme-blog-footer-edit-meta-row"><div class=col><b>Tags:</b><ul class="tags_jXut padding--none margin-left--sm"><li class=tag_QGVx><a rel=tag title="Blogs on the topic MongoDB" class="tag_zVej tagRegular_sFm0" href=/blog/tags/mongodb/>MongoDB</a><li class=tag_QGVx><a rel=tag title="Blogs on the topic Debezium" class="tag_zVej tagRegular_sFm0" href=/blog/tags/debezium/>Debezium</a><li class=tag_QGVx><a rel=tag title="Blogs on the topic Kafka" class="tag_zVej tagRegular_sFm0" href=/blog/tags/kafka/>Kafka</a></ul></div></div><div class="row margin-top--sm theme-blog-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href=https://github.com/datazip-inc/olake-docs/tree/master/blog/2024-11-11-mongodb-cdc-using-debezium-and-kafka.mdx target=_blank rel="noopener noreferrer" class=theme-edit-this-page><svg fill=currentColor height=20 width=20 viewBox="0 0 40 40" class=iconEdit_Z9Sw aria-hidden=true><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"/></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Blog post page navigation"><a class="pagination-nav__link pagination-nav__link--prev" href=/blog/issues-debezium-kafka/><div class=pagination-nav__sublabel>Newer post</div><div class=pagination-nav__label>Debezium Kafka Challenges & How OLake Solves Them: Explained</div></a><a class="pagination-nav__link pagination-nav__link--next" href=/blog/mongodb-synchronization-strategies/><div class=pagination-nav__sublabel>Older post</div><div class=pagination-nav__label>MongoDB Sync Strategies | Real-Time Data Replication & Challenges</div></a></nav></div></article><aside class="hidden lg:block w-72 flex-shrink-0"><div class="sticky top-24 space-y-6"><div class="bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-800 shadow-sm"><div class="px-5 py-4 border-b border-gray-100 dark:border-gray-800"><h3 class="text-sm font-semibold text-gray-900 dark:text-gray-100 flex items-center"><svg class="w-4 h-4 mr-2 text-gray-400" fill=none stroke=currentColor viewBox="0 0 24 24"><path stroke-linecap=round stroke-linejoin=round stroke-width=2 d="M4 6h16M4 10h16M4 14h16M4 18h16"/></svg>Contents</h3></div><div class="px-3 py-4 max-h-96 overflow-y-auto"><nav><div><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href=#understanding-change-data-capture-cdc class="table-of-contents__link toc-highlight">Understanding Change Data Capture (CDC)</a><ul><li><a href=#what-is-cdc class="table-of-contents__link toc-highlight">What is CDC?</a><li><a href=#why-should-you-care-about-cdc class="table-of-contents__link toc-highlight">Why Should You Care About CDC?</a><li><a href=#different-flavours-of-cdc class="table-of-contents__link toc-highlight">Different Flavours of CDC</a><li><a href=#real-world-applications class="table-of-contents__link toc-highlight">Real-World Applications</a></ul><li><a href=#introduction-to-debezium-and-kafka class="table-of-contents__link toc-highlight">Introduction to Debezium and Kafka</a><ul><li><a href=#what-is-debezium class="table-of-contents__link toc-highlight">What is Debezium?</a><li><a href=#what-is-kafka class="table-of-contents__link toc-highlight">What is Kafka?</a><li><a href=#how-debezium-and-kafka-work-together class="table-of-contents__link toc-highlight">How Debezium and Kafka work Together</a><li><a href=#why-use-debezium-and-kafka-together class="table-of-contents__link toc-highlight">Why Use Debezium and Kafka Together?</a></ul><li><a href=#how-debezium-captures-changes-from-mongodb class="table-of-contents__link toc-highlight">How Debezium Captures Changes from MongoDB</a><ul><li><a href=#1-directly-oplogs class="table-of-contents__link toc-highlight">1. Directly oplogs</a><li><a href=#2-via-change-streams-based-on-oplogs-only class="table-of-contents__link toc-highlight">2. Via Change streams (based on oplogs only)</a><li><a href=#how-debezium-uses-the-oplog class="table-of-contents__link toc-highlight">How Debezium Uses the Oplog?</a><li><a href=#things-to-note-about-oplog-configuration class="table-of-contents__link toc-highlight">Things to note about <code>oplog</code> configuration:</a><li><a href=#the-role-of-change-streams class="table-of-contents__link toc-highlight">The Role of Change Streams</a><li><a href=#mongodb-replication-basics class="table-of-contents__link toc-highlight">MongoDB Replication Basics</a><li><a href=#will-debezium-sync-my-new-collection--table class="table-of-contents__link toc-highlight">Will Debezium sync my new collection / table?</a><li><a href=#how-change-streams-work-with-debezium class="table-of-contents__link toc-highlight">How Change Streams work with Debezium?</a><li><a href=#handling-connector-operations class="table-of-contents__link toc-highlight">Handling Connector Operations</a></ul><li><a href=#types-of-cdc-involved---log-based-cdc-is-the-way-to-go class="table-of-contents__link toc-highlight">Types of CDC Involved - Log-Based CDC is the way to go!</a><ul><li><a href=#how-cursors-keep-everything-in-sync class="table-of-contents__link toc-highlight">How Cursors Keep Everything in Sync</a><li><a href=#nature-and-structure-of-the-mongodb-cursor-in-cdc class="table-of-contents__link toc-highlight">Nature and Structure of the MongoDB Cursor in CDC</a></ul><li><a href=#streaming-data-to-data-warehouses-and-lakehouses class="table-of-contents__link toc-highlight">Streaming Data to Data Warehouses and Lakehouses</a><ul><li><a href=#how-the-data-moves class="table-of-contents__link toc-highlight">How the Data Moves</a><li><a href=#setting-up-the-sink-connector class="table-of-contents__link toc-highlight">Setting Up the Sink Connector</a></ul><li><a href=#pros-and-cons-of-this-method class="table-of-contents__link toc-highlight">Pros and Cons of This Method</a><ul><li><a href=#advantages class="table-of-contents__link toc-highlight">Advantages</a><li><a href=#disadvantages class="table-of-contents__link toc-highlight">Disadvantages</a></ul><li><a href=#best-practices-for-configuration class="table-of-contents__link toc-highlight">Best Practices for Configuration</a><ul><li><a href=#1-optimize-mongodb-oplog-size class="table-of-contents__link toc-highlight">1. Optimize MongoDB Oplog Size</a><li><a href=#why-oplog-size-matters class="table-of-contents__link toc-highlight">Why Oplog Size Matters?</a><li><a href=#what-are-the-problems-with-small-oplog class="table-of-contents__link toc-highlight">What are the problems with Small Oplog?</a><li><a href=#how-to-prevent-oplog-issues class="table-of-contents__link toc-highlight">How to Prevent Oplog Issues</a><li><a href=#can-debezium-lose-events class="table-of-contents__link toc-highlight">Can Debezium Lose Events?</a><li><a href=#when-might-event-loss-happen class="table-of-contents__link toc-highlight">When Might Event Loss Happen?</a><li><a href=#preventing-event-loss class="table-of-contents__link toc-highlight">Preventing Event Loss</a><li><a href=#monitoring-is-essential class="table-of-contents__link toc-highlight">Monitoring is Essential</a><li><a href=#2-secure-connections class="table-of-contents__link toc-highlight">2. Secure Connections</a><li><a href=#3-configure-kafka-for-high-availability class="table-of-contents__link toc-highlight">3. Configure Kafka for High Availability</a><li><a href=#4-tune-kafka-connect-settings class="table-of-contents__link toc-highlight">4. Tune Kafka Connect Settings</a><li><a href=#5-implement-monitoring-and-alerting class="table-of-contents__link toc-highlight">5. Implement Monitoring and Alerting</a><li><a href=#6-handle-schema-changes-gracefully class="table-of-contents__link toc-highlight">6. Handle Schema Changes Gracefully</a><li><a href=#7-manage-offsets-properly class="table-of-contents__link toc-highlight">7. Manage Offsets Properly</a><li><a href=#8-use-proper-resource-allocation class="table-of-contents__link toc-highlight">8. Use Proper Resource Allocation</a><li><a href=#9-test-your-configuration class="table-of-contents__link toc-highlight">9. Test Your Configuration</a><li><a href=#10-document-your-setup class="table-of-contents__link toc-highlight">10. Document Your Setup</a></ul><li><a href=#deployment-options-self-hosted-vs-managed class="table-of-contents__link toc-highlight">Deployment Options: Self-Hosted vs. Managed</a><ul><li><a href=#self-hosted-deployment class="table-of-contents__link toc-highlight">Self-Hosted Deployment</a><li><a href=#managed-services class="table-of-contents__link toc-highlight">Managed Services</a><li><a href=#hybrid-approach class="table-of-contents__link toc-highlight">Hybrid Approach</a></ul><li><a href=#configurations-and-examples class="table-of-contents__link toc-highlight">Configurations and Examples</a><ul><li><a href=#docker-compose-example-sample class="table-of-contents__link toc-highlight">Docker Compose Example [SAMPLE]</a><li><a href=#tips-for-configuration class="table-of-contents__link toc-highlight">Tips for Configuration</a></ul><li><a href=#setting-up-in-a-cloud-environment class="table-of-contents__link toc-highlight">Setting Up in a Cloud Environment</a><ul><li><a href=#azure class="table-of-contents__link toc-highlight">Azure</a><li><a href=#google-cloud-platform-gcp class="table-of-contents__link toc-highlight">Google Cloud Platform (GCP)</a><li><a href=#general-steps-for-cloud-deployment class="table-of-contents__link toc-highlight">General Steps for Cloud Deployment</a><li><a href=#benefits-of-cloud-deployment class="table-of-contents__link toc-highlight">Benefits of Cloud Deployment</a></ul><li><a href=#conclusion class="table-of-contents__link toc-highlight">Conclusion</a><ul><li><a href=#key-takeaways class="table-of-contents__link toc-highlight">Key Takeaways:</a></ul><li><a href=#faqs class="table-of-contents__link toc-highlight">FAQs</a><ul><li><a href=#1-does-debezium-use-kafka-connect class="table-of-contents__link toc-highlight">1. Does Debezium use Kafka Connect?</a><li><a href=#2-is-kafka-and-kafka-connect-different class="table-of-contents__link toc-highlight">2. Is Kafka and Kafka Connect different?</a></ul><li><a href=#additional-resources class="table-of-contents__link toc-highlight">Additional Resources</a></ul></div></div></nav></div></div><div class="bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-800 shadow-sm p-5"><div class=space-y-3><div class="flex items-center justify-between"><span class="text-sm font-medium text-gray-700 dark:text-gray-300">Reading Progress</span><span class="text-sm font-mono text-gray-500 dark:text-gray-400">0<!-- -->%</span></div><div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2"><div class="bg-gradient-to-r from-[#193ae6] to-blue-500 h-2 rounded-full transition-all duration-300" style=width:0%></div></div><div class="text-xs text-gray-500 dark:text-gray-400">Just getting started...</div></div></div><div class="bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-800 shadow-sm p-5"><h4 class="font-medium text-gray-900 dark:text-gray-100 mb-4 text-sm flex items-center"><svg class="w-4 h-4 mr-2 text-gray-400" fill=none stroke=currentColor viewBox="0 0 24 24"><path stroke-linecap=round stroke-linejoin=round stroke-width=2 d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z"/></svg>Share this article</h4><div class=space-y-3><div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-3 border border-gray-200 dark:border-gray-700"><div class="text-xs text-gray-500 dark:text-gray-400 mb-1">Article URL:</div><div class="text-xs text-gray-700 dark:text-gray-300 break-all font-mono"></div></div><button class="w-full flex items-center justify-center px-4 py-2.5 rounded-lg font-medium transition-all duration-200 bg-[#193ae6] hover:bg-blue-700 text-white"><svg class="w-4 h-4 mr-2" fill=none stroke=currentColor viewBox="0 0 24 24"><path stroke-linecap=round stroke-linejoin=round stroke-width=2 d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>Copy URL</button></div></div></div></aside></div></div></div></div></div><footer class="relative h-[62vh] overflow-hidden bg-neutral-100 py-8 dark:bg-gray-900 md:h-[72vh] xl:py-12 2xl:h-[62vh]"><div aria-hidden=true class="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-[36%] select-none bg-[linear-gradient(180deg,#EAEAEA_27.62%,rgba(255,255,255,0)_70.27%)] font-space text-[clamp(133px,25vw,420px)] font-medium leading-[1.2] opacity-80 dark:bg-[linear-gradient(180deg,rgba(50,50,50,1)_27.62%,rgba(50,50,50,0)_70.27%)] xl:translate-y-[36%] xl:bg-[linear-gradient(180deg,#EAEAEA_27.62%,rgba(255,255,255,0)_70.27%)] xl:text-[clamp(200px,30vw,572px)] xl:dark:bg-[linear-gradient(180deg,rgba(50,50,50,1)_27.62%,rgba(50,50,50,0)_70.27%)]" style=-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text>OLake</div><div class="container relative z-10 mx-auto px-4 xl:px-0"><div class=xl:hidden><div class=mb-4><a class="font-space text-xs font-medium leading-tight text-blue-600 dark:text-blue-400" href=/>OLake</a><h2 class="mt-2 font-space text-3xl font-normal leading-tight text-gray-800 dark:text-white">Fastest <span class=font-medium>Data Replication</span></h2></div><div class="mb-6 flex space-x-3"><a href=https://www.linkedin.com/company/datazipio/ aria-label=LinkedIn class="flex items-center justify-center" target=_blank rel="noopener noreferrer"><svg stroke=currentColor fill=currentColor stroke-width=0 viewBox="0 0 256 256" class="my-1 size-2.5 text-gray-700 dark:text-white md:size-3" aria-hidden=true height=1em width=1em xmlns=http://www.w3.org/2000/svg><path d=M216,24H40A16,16,0,0,0,24,40V216a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V40A16,16,0,0,0,216,24Zm0,192H40V40H216V216ZM96,112v64a8,8,0,0,1-16,0V112a8,8,0,0,1,16,0Zm88,28v36a8,8,0,0,1-16,0V140a20,20,0,0,0-40,0v36a8,8,0,0,1-16,0V112a8,8,0,0,1,15.79-1.78A36,36,0,0,1,184,140ZM100,84A12,12,0,1,1,88,72,12,12,0,0,1,100,84Z /></svg></a><a href=https://www.youtube.com/@olakeio aria-label=YouTube class="flex items-center justify-center" target=_blank rel="noopener noreferrer"><svg stroke=currentColor fill=currentColor stroke-width=0 viewBox="0 0 256 256" class="my-1 size-2.5 text-gray-700 dark:text-white md:size-3" aria-hidden=true height=1em width=1em xmlns=http://www.w3.org/2000/svg><path d=M164.44,121.34l-48-32A8,8,0,0,0,104,96v64a8,8,0,0,0,12.44,6.66l48-32a8,8,0,0,0,0-13.32ZM120,145.05V111l25.58,17ZM234.33,69.52a24,24,0,0,0-14.49-16.4C185.56,39.88,131,40,128,40s-57.56-.12-91.84,13.12a24,24,0,0,0-14.49,16.4C19.08,79.5,16,97.74,16,128s3.08,48.5,5.67,58.48a24,24,0,0,0,14.49,16.41C69,215.56,120.4,216,127.34,216h1.32c6.94,0,58.37-.44,91.18-13.11a24,24,0,0,0,14.49-16.41c2.59-10,5.67-28.22,5.67-58.48S236.92,79.5,234.33,69.52Zm-15.49,113a8,8,0,0,1-4.77,5.49c-31.65,12.22-85.48,12-86,12H128c-.54,0-54.33.2-86-12a8,8,0,0,1-4.77-5.49C34.8,173.39,32,156.57,32,128s2.8-45.39,5.16-54.47A8,8,0,0,1,41.93,68c30.52-11.79,81.66-12,85.85-12h.27c.54,0,54.38-.18,86,12a8,8,0,0,1,4.77,5.49C221.2,82.61,224,99.43,224,128S221.2,173.39,218.84,182.47Z /></svg></a><a href=https://olake.io/slack aria-label=Slack class="flex items-center justify-center" target=_blank rel="noopener noreferrer"><svg stroke=currentColor fill=currentColor stroke-width=0 viewBox="0 0 256 256" class="my-1 size-2.5 text-gray-700 dark:text-white md:size-3" aria-hidden=true height=1em width=1em xmlns=http://www.w3.org/2000/svg><path d=M221.13,128A32,32,0,0,0,184,76.31V56a32,32,0,0,0-56-21.13A32,32,0,0,0,76.31,72H56a32,32,0,0,0-21.13,56A32,32,0,0,0,72,179.69V200a32,32,0,0,0,56,21.13A32,32,0,0,0,179.69,184H200a32,32,0,0,0,21.13-56ZM72,152a16,16,0,1,1-16-16H72Zm48,48a16,16,0,0,1-32,0V152a16,16,0,0,1,16-16h16Zm0-80H56a16,16,0,0,1,0-32h48a16,16,0,0,1,16,16Zm0-48H104a16,16,0,1,1,16-16Zm16-16a16,16,0,0,1,32,0v48a16,16,0,0,1-16,16H136Zm16,160a16,16,0,0,1-16-16V184h16a16,16,0,0,1,0,32Zm48-48H152a16,16,0,0,1-16-16V136h64a16,16,0,0,1,0,32Zm0-48H184V104a16,16,0,1,1,16,16Z /></svg></a><a href=https://reddit.com/r/olake aria-label=Reddit class="flex items-center justify-center" target=_blank rel="noopener noreferrer"><svg stroke=currentColor fill=currentColor stroke-width=0 viewBox="0 0 256 256" class="my-1 size-2.5 text-gray-700 dark:text-white md:size-3" aria-hidden=true height=1em width=1em xmlns=http://www.w3.org/2000/svg><path d=M248,104a32,32,0,0,0-52.94-24.19c-16.75-8.9-36.76-14.28-57.66-15.53l5.19-31.17,17.72,2.72a24,24,0,1,0,2.87-15.74l-26-4a8,8,0,0,0-9.11,6.59L121.2,64.16c-21.84.94-42.82,6.38-60.26,15.65a32,32,0,0,0-42.59,47.74A59,59,0,0,0,16,144c0,21.93,12,42.35,33.91,57.49C70.88,216,98.61,224,128,224s57.12-8,78.09-22.51C228,186.35,240,165.93,240,144a59,59,0,0,0-2.35-16.45A32.16,32.16,0,0,0,248,104ZM184,24a8,8,0,1,1-8,8A8,8,0,0,1,184,24Zm40.13,93.78a8,8,0,0,0-3.29,10A43.58,43.58,0,0,1,224,144c0,16.53-9.59,32.27-27,44.33C178.67,201,154.17,208,128,208s-50.67-7-69-19.67C41.59,176.27,32,160.53,32,144a43.75,43.75,0,0,1,3.14-16.17,8,8,0,0,0-3.27-10A16,16,0,1,1,52.94,94.59a8,8,0,0,0,10.45,2.23l.36-.22C81.45,85.9,104.25,80,128,80h0c23.73,0,46.53,5.9,64.23,16.6l.42.25a8,8,0,0,0,10.39-2.26,16,16,0,1,1,21.07,23.19ZM88,144a16,16,0,1,1,16-16A16,16,0,0,1,88,144Zm96-16a16,16,0,1,1-16-16A16,16,0,0,1,184,128Zm-16.93,44.25a8,8,0,0,1-3.32,10.82,76.18,76.18,0,0,1-71.5,0,8,8,0,1,1,7.5-14.14,60.18,60.18,0,0,0,56.5,0A8,8,0,0,1,167.07,172.25Z /></svg></a><a href=https://x.com/_olake aria-label="X (Twitter)" class="flex items-center justify-center" target=_blank rel="noopener noreferrer"><svg stroke=currentColor fill=currentColor stroke-width=0 viewBox="0 0 256 256" class="my-1 size-2.5 text-gray-700 dark:text-white md:size-3" aria-hidden=true height=1em width=1em xmlns=http://www.w3.org/2000/svg><path d=M214.75,211.71l-62.6-98.38,61.77-67.95a8,8,0,0,0-11.84-10.76L143.24,99.34,102.75,35.71A8,8,0,0,0,96,32H48a8,8,0,0,0-6.75,12.3l62.6,98.37-61.77,68a8,8,0,1,0,11.84,10.76l58.84-64.72,40.49,63.63A8,8,0,0,0,160,224h48a8,8,0,0,0,6.75-12.29ZM164.39,208,62.57,48h29L193.43,208Z /></svg></a></div><div class="grid grid-cols-3 gap-4"><div class=font-sans><h3 class="mb-2 text-[8px] font-normal uppercase leading-normal tracking-wider text-brand-black dark:text-white md:text-xs">COMPANY</h3><ul class="list-none space-y-0.5 p-0"><li><a class="font-sans text-[8px] leading-3 tracking-[0.01em] text-brand-gray-450 transition-colors hover:text-blue-500 dark:text-gray-300 md:text-xs" href=/about-us/>About us</a><li><a class="font-sans text-[8px] leading-3 tracking-[0.01em] text-brand-gray-450 transition-colors hover:text-blue-500 dark:text-gray-300 md:text-xs" href=/contact/>Contact us</a><li><a class="font-sans text-[8px] leading-3 tracking-[0.01em] text-brand-gray-450 transition-colors hover:text-blue-500 dark:text-gray-300 md:text-xs" href=/branding/>Branding</a><li><a class="font-sans text-[8px] leading-3 tracking-[0.01em] text-brand-gray-450 transition-colors hover:text-blue-500 dark:text-gray-300 md:text-xs" href=/terms-of-use/>Terms of Use</a><li><a class="font-sans text-[8px] leading-3 tracking-[0.01em] text-brand-gray-450 transition-colors hover:text-blue-500 dark:text-gray-300 md:text-xs" href=/privacy-policy/>Privacy Policy</a></ul></div><div class=font-sans><h3 class="mb-2 text-[8px] font-normal uppercase leading-normal tracking-wider text-brand-black dark:text-white md:text-xs">RESOURCES</h3><ul class="list-none space-y-0.5 p-0"><li><a class="font-sans text-[8px] leading-3 tracking-[0.01em] text-brand-gray-450 transition-colors hover:text-blue-500 dark:text-gray-300 md:text-xs" href=/blog/>Blogs</a><li><a class="font-sans text-[8px] leading-3 tracking-[0.01em] text-brand-gray-450 transition-colors hover:text-blue-500 dark:text-gray-300 md:text-xs" href=/docs/>Docs</a><li><a class="font-sans text-[8px] leading-3 tracking-[0.01em] text-brand-gray-450 transition-colors hover:text-blue-500 dark:text-gray-300 md:text-xs" href=/search/>Search</a></ul></div><div class=font-sans><h3 class="mb-2 text-[8px] font-normal uppercase leading-normal tracking-wider text-brand-black dark:text-white md:text-xs">TOP READS</h3><ul class="list-none space-y-0.5 p-0"><li><a class="font-sans text-[8px] leading-3 tracking-[0.01em] text-brand-gray-450 transition-colors hover:text-blue-500 dark:text-gray-300 md:text-xs" href=/blog/issues-debezium-kafka/>Issues with Debezium</a><li><a class="font-sans text-[8px] leading-3 tracking-[0.01em] text-brand-gray-450 transition-colors hover:text-blue-500 dark:text-gray-300 md:text-xs" href=/blog/olake-architecture/>OLake Architecture</a></ul></div></div></div><div class="hidden xl:block"><div class="grid grid-cols-2 gap-8 xl:grid-cols-10"><div class="col-span-1 xl:col-span-7"><div class=mb-6><a class="text-2xl font-medium text-blue-600 dark:text-blue-400" href=/>OLake</a><h2 class="mb-6 mt-6 text-[56px] font-extralight text-gray-800 dark:text-white">Fastest <span class=font-medium>Data Replication</span></h2></div><div class="flex space-x-4"><a href=https://www.linkedin.com/company/datazipio/ aria-label=LinkedIn class="flex h-10 w-10 items-center justify-center" target=_blank rel="noopener noreferrer"><svg stroke=currentColor fill=currentColor stroke-width=0 viewBox="0 0 256 256" class="h-5 w-5 text-gray-700 dark:text-white" aria-hidden=true height=1em width=1em xmlns=http://www.w3.org/2000/svg><path d=M216,24H40A16,16,0,0,0,24,40V216a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V40A16,16,0,0,0,216,24Zm0,192H40V40H216V216ZM96,112v64a8,8,0,0,1-16,0V112a8,8,0,0,1,16,0Zm88,28v36a8,8,0,0,1-16,0V140a20,20,0,0,0-40,0v36a8,8,0,0,1-16,0V112a8,8,0,0,1,15.79-1.78A36,36,0,0,1,184,140ZM100,84A12,12,0,1,1,88,72,12,12,0,0,1,100,84Z /></svg></a><a href=https://www.youtube.com/@olakeio aria-label=YouTube class="flex h-10 w-10 items-center justify-center" target=_blank rel="noopener noreferrer"><svg stroke=currentColor fill=currentColor stroke-width=0 viewBox="0 0 256 256" class="h-5 w-5 text-gray-700 dark:text-white" aria-hidden=true height=1em width=1em xmlns=http://www.w3.org/2000/svg><path d=M164.44,121.34l-48-32A8,8,0,0,0,104,96v64a8,8,0,0,0,12.44,6.66l48-32a8,8,0,0,0,0-13.32ZM120,145.05V111l25.58,17ZM234.33,69.52a24,24,0,0,0-14.49-16.4C185.56,39.88,131,40,128,40s-57.56-.12-91.84,13.12a24,24,0,0,0-14.49,16.4C19.08,79.5,16,97.74,16,128s3.08,48.5,5.67,58.48a24,24,0,0,0,14.49,16.41C69,215.56,120.4,216,127.34,216h1.32c6.94,0,58.37-.44,91.18-13.11a24,24,0,0,0,14.49-16.41c2.59-10,5.67-28.22,5.67-58.48S236.92,79.5,234.33,69.52Zm-15.49,113a8,8,0,0,1-4.77,5.49c-31.65,12.22-85.48,12-86,12H128c-.54,0-54.33.2-86-12a8,8,0,0,1-4.77-5.49C34.8,173.39,32,156.57,32,128s2.8-45.39,5.16-54.47A8,8,0,0,1,41.93,68c30.52-11.79,81.66-12,85.85-12h.27c.54,0,54.38-.18,86,12a8,8,0,0,1,4.77,5.49C221.2,82.61,224,99.43,224,128S221.2,173.39,218.84,182.47Z /></svg></a><a href=https://olake.io/slack aria-label=Slack class="flex h-10 w-10 items-center justify-center" target=_blank rel="noopener noreferrer"><svg stroke=currentColor fill=currentColor stroke-width=0 viewBox="0 0 256 256" class="h-5 w-5 text-gray-700 dark:text-white" aria-hidden=true height=1em width=1em xmlns=http://www.w3.org/2000/svg><path d=M221.13,128A32,32,0,0,0,184,76.31V56a32,32,0,0,0-56-21.13A32,32,0,0,0,76.31,72H56a32,32,0,0,0-21.13,56A32,32,0,0,0,72,179.69V200a32,32,0,0,0,56,21.13A32,32,0,0,0,179.69,184H200a32,32,0,0,0,21.13-56ZM72,152a16,16,0,1,1-16-16H72Zm48,48a16,16,0,0,1-32,0V152a16,16,0,0,1,16-16h16Zm0-80H56a16,16,0,0,1,0-32h48a16,16,0,0,1,16,16Zm0-48H104a16,16,0,1,1,16-16Zm16-16a16,16,0,0,1,32,0v48a16,16,0,0,1-16,16H136Zm16,160a16,16,0,0,1-16-16V184h16a16,16,0,0,1,0,32Zm48-48H152a16,16,0,0,1-16-16V136h64a16,16,0,0,1,0,32Zm0-48H184V104a16,16,0,1,1,16,16Z /></svg></a><a href=https://reddit.com/r/olake aria-label=Reddit class="flex h-10 w-10 items-center justify-center" target=_blank rel="noopener noreferrer"><svg stroke=currentColor fill=currentColor stroke-width=0 viewBox="0 0 256 256" class="h-5 w-5 text-gray-700 dark:text-white" aria-hidden=true height=1em width=1em xmlns=http://www.w3.org/2000/svg><path d=M248,104a32,32,0,0,0-52.94-24.19c-16.75-8.9-36.76-14.28-57.66-15.53l5.19-31.17,17.72,2.72a24,24,0,1,0,2.87-15.74l-26-4a8,8,0,0,0-9.11,6.59L121.2,64.16c-21.84.94-42.82,6.38-60.26,15.65a32,32,0,0,0-42.59,47.74A59,59,0,0,0,16,144c0,21.93,12,42.35,33.91,57.49C70.88,216,98.61,224,128,224s57.12-8,78.09-22.51C228,186.35,240,165.93,240,144a59,59,0,0,0-2.35-16.45A32.16,32.16,0,0,0,248,104ZM184,24a8,8,0,1,1-8,8A8,8,0,0,1,184,24Zm40.13,93.78a8,8,0,0,0-3.29,10A43.58,43.58,0,0,1,224,144c0,16.53-9.59,32.27-27,44.33C178.67,201,154.17,208,128,208s-50.67-7-69-19.67C41.59,176.27,32,160.53,32,144a43.75,43.75,0,0,1,3.14-16.17,8,8,0,0,0-3.27-10A16,16,0,1,1,52.94,94.59a8,8,0,0,0,10.45,2.23l.36-.22C81.45,85.9,104.25,80,128,80h0c23.73,0,46.53,5.9,64.23,16.6l.42.25a8,8,0,0,0,10.39-2.26,16,16,0,1,1,21.07,23.19ZM88,144a16,16,0,1,1,16-16A16,16,0,0,1,88,144Zm96-16a16,16,0,1,1-16-16A16,16,0,0,1,184,128Zm-16.93,44.25a8,8,0,0,1-3.32,10.82,76.18,76.18,0,0,1-71.5,0,8,8,0,1,1,7.5-14.14,60.18,60.18,0,0,0,56.5,0A8,8,0,0,1,167.07,172.25Z /></svg></a><a href=https://x.com/_olake aria-label="X (Twitter)" class="flex h-10 w-10 items-center justify-center" target=_blank rel="noopener noreferrer"><svg stroke=currentColor fill=currentColor stroke-width=0 viewBox="0 0 256 256" class="h-5 w-5 text-gray-700 dark:text-white" aria-hidden=true height=1em width=1em xmlns=http://www.w3.org/2000/svg><path d=M214.75,211.71l-62.6-98.38,61.77-67.95a8,8,0,0,0-11.84-10.76L143.24,99.34,102.75,35.71A8,8,0,0,0,96,32H48a8,8,0,0,0-6.75,12.3l62.6,98.37-61.77,68a8,8,0,1,0,11.84,10.76l58.84-64.72,40.49,63.63A8,8,0,0,0,160,224h48a8,8,0,0,0,6.75-12.29ZM164.39,208,62.57,48h29L193.43,208Z /></svg></a></div></div><div class="col-span-1 font-sans"><h3 class="mb-4 text-base font-normal tracking-wider text-brand-black dark:text-white">COMPANY</h3><ul class="list-none space-y-3 p-0"><li><a class="text-brand-gray-450 transition-colors hover:text-blue-500 dark:text-gray-300" href=/about-us/>About us</a><li><a class="text-brand-gray-450 transition-colors hover:text-blue-500 dark:text-gray-300" href=/contact/>Contact us</a><li><a class="text-brand-gray-450 transition-colors hover:text-blue-500 dark:text-gray-300" href=/branding/>Branding</a><li><a class="text-brand-gray-450 transition-colors hover:text-blue-500 dark:text-gray-300" href=/terms-of-use/>Terms of Use</a><li><a class="text-brand-gray-450 transition-colors hover:text-blue-500 dark:text-gray-300" href=/privacy-policy/>Privacy Policy</a></ul></div><div class="col-span-1 font-sans"><h3 class="mb-4 text-base font-normal tracking-wider text-brand-black dark:text-white">RESOURCES</h3><ul class="list-none space-y-3 p-0"><li><a class="text-brand-gray-450 transition-colors hover:text-blue-500 dark:text-gray-300" href=/blog/>Blogs</a><li><a class="text-brand-gray-450 transition-colors hover:text-blue-500 dark:text-gray-300" href=/docs/>Docs</a><li><a class="text-brand-gray-450 transition-colors hover:text-blue-500 dark:text-gray-300" href=/search/>Search</a></ul></div><div class="col-span-1 font-sans"><h3 class="mb-4 text-base font-normal tracking-wider text-brand-black dark:text-white">TOP READS</h3><ul class="list-none space-y-3 p-0"><li><a class="text-brand-gray-450 transition-colors hover:text-blue-500 dark:text-gray-300" href=/blog/issues-debezium-kafka/>Issues with Debezium</a><li><a class="text-brand-gray-450 transition-colors hover:text-blue-500 dark:text-gray-300" href=/blog/olake-architecture/>OLake Architecture</a></ul></div></div></div></div><div class="absolute bottom-8 left-12 hidden text-brand-gray-450 xl:block">By Datazip</div></footer></div></body>

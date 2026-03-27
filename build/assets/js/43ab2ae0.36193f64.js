@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkolake_docs=self.webpackChunkolake_docs||[]).push([["81162"],{95204:function(s){s.exports=JSON.parse('{"metadata":{"permalink":"/customer-stories","page":1,"postsPerPage":6,"totalPages":1,"totalCount":5,"blogDescription":"Customer success stories and case studies","blogTitle":"Customer Stories"}}')}}]);

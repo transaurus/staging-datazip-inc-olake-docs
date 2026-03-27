@@ -1,0 +1,21 @@
+---
+title: "Oracle Database Source Configuration - OLake Config"
+description: "Configure Oracle Database source connection for OLake. Setup service name, SID, port, and SSL parameters for Oracle data replication."
+---
+
+```json title="source.json"
+{
+ "host": "oracle-host",
+ "username": "oracle-user",
+ "password": "oracle-password",
+ "service_name": "oracle-service-name",
+ "sid": "oracle-sid",
+ "port": 1521,
+ "max_threads": 10,
+ "backoff_retry_count": 3,
+ "jdbc_url_params": {},
+ "ssl": {
+     "mode": "disable"
+ }
+}
+```

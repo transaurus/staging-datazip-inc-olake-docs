@@ -1,0 +1,45 @@
+rohan:
+  page: true
+  name: Rohan Khameshra
+  title: OLake Maintainer
+  image_url: /img/authors/rohan.webp
+  email: hello@olake.io
+  socials:
+    linkedin: rohan-khameshra
+
+utkarsh-srivastava:
+  page: true
+  name: Utkarsh G. Srivastava
+  title: Software Development Engineer III, PhysicsWallah
+  image_url: /img/authors/utkarsh-srivastava.webp
+  bio: Software Development Engineer III at PhysicsWallah with 7+ years of experience building Customer Data Platforms and innovative data solutions in SaaS and eCommerce.
+  socials:
+    linkedin: utkarsh2811
+
+prasanna:
+  page: true
+  name: Prasanna Kumar
+  title: Associate Director - Data Strategy & Engineering, LendingKart
+  image_url: /img/customers/lendingkart/prasanna.webp
+  bio: With 17+ years in Data Engineering and Analytics, Prasanna leads data platform transformation at LendingKart—architecting cost-optimized lakehouses and streamlining regulatory reporting pipelines, achieving 60% reduction in platform costs.
+  socials:
+    linkedin: prasanna-kumar-066b931b9
+
+ankit-lendingkart:
+  page: true
+  name: Ankit
+  title: Software Engineer, LendingKart
+  image_url: /img/customers/lendingkart/ankit.webp
+  bio: A passionate software engineer at LendingKart, Ankit thrives on exploring new technologies and crafting innovative data solutions in collaborative environments.
+  socials:
+    linkedin: ankit
+
+abhishek-sinha:
+  page: true
+  name: Abhishek Sinha
+  title: Lead Data Engineer, LendingKart
+  image_url: /img/customers/lendingkart/abhishek.webp
+  bio: Lead Data Engineer at LendingKart, designing scalable data architectures and robust pipelines with Apache Spark Streaming, GCP, and MetaBase for real-time insights.
+  socials:
+    linkedin: abhisheksinha598
+

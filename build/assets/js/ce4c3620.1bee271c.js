@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkolake_docs=self.webpackChunkolake_docs||[]).push([["77158"],{61402:function(s){s.exports=JSON.parse('{"blogBasePath":"/customer-stories","blogTitle":"Customer Stories","authorsListPath":"/customer-stories/authors"}')}}]);

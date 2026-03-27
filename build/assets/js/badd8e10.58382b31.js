@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkolake_docs=self.webpackChunkolake_docs||[]).push([["96795"],{27:function(e){e.exports=JSON.parse('{"metadata":{"permalink":"/blog/page/2","page":2,"postsPerPage":6,"totalPages":9,"totalCount":51,"previousPage":"/blog","nextPage":"/blog/page/3","blogDescription":"","blogTitle":"Blogs on OLake"}}')}}]);

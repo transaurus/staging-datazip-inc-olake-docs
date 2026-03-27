@@ -1,0 +1,32 @@
+---
+title: "MySQL Source Configuration - OLake Config"
+description: "Configure MySQL source connection for OLake. Setup binlog CDC, SSH tunneling, TLS, and connection parameters for MySQL replication."
+---
+
+````json title="source.json"
+    {
+        "hosts": "mysql-host",
+        "username": "mysql-user",
+        "password": "mysqlpwd",
+        "database": "my-db",
+        "port": 3306,
+        "tls_skip_verify": true,
+        "update_method": {
+          "initial_wait_time": 10
+        },
+        "max_threads": 5,
+        "backoff_retry_count": 4,
+        "ssh_config": {
+          "host": "my-tunnel-host",
+          "port": 22,
+          "username": "my-tunnel-user",
+          "password": "tunnel-password"
+        },
+        "ssl": {
+          "mode": "disable"
+        },
+        "jdbc_url_params": {
+          "connectTimeout": "10000"
+        }
+    }
+    ```

@@ -1,0 +1,723 @@
+---
+title: Playground
+description: A self-contained playground to try OLake with Iceberg and Presto locally
+sidebar_position: 3
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# OLake Playground
+
+OLake Playground is a self-contained environment for exploring lakehouse architecture using [Apache Iceberg](/iceberg/why-iceberg). It comes preconfigured with all the required components, allowing you to experience the complete workflow without manual setup.
+
+<!-- ## Key Highlights
+
+    - **CDC from MySQL to Iceberg** – Seamless change data capture for near real-time data updates  
+    - **Schema Discovery & Ingestion via OLake UI** – Automatically detect and ingest schemas with an intuitive interface  
+    - **Iceberg Table Creation** – Tables are automatically created in Iceberg format, ready for use  
+    - **Presto Query Ready** – Query Iceberg tables instantly, with no manual registration required  
+    - **Visual Workflow Orchestration** – Manage ingestion workflows through the Temporal UI  
+    - **Simple 2-Step Setup** – Get started quickly using Docker Compose   -->
+
+## Objective
+
+Enable developers to experiment with an end-to-end, Iceberg-native lakehouse in minutes. Simply run a single [Docker Compose](/docs/getting-started/quickstart) `docker-compose up` command to launch the full stack — no service stitching, no configuration files required.  
+
+## Included Components
+
+- **MySQL**    – Source database  
+- **OLake**    – Schema discovery and CDC ingestion via an intuitive UI  
+- **MinIO**    – Object store for data storage  
+- **Temporal** – Workflow orchestration for ingestion processes  
+- [**Presto**](/iceberg/query-engine/presto/)   – Query engine for Iceberg tables 
+- [**Trino**](/iceberg/query-engine/trino/)   – Query engine for Iceberg tables 
+- [**Spark**](/iceberg/query-engine/spark/)   – Query engine for Iceberg tables 
+
+<Tabs>
+  <TabItem value="trino" label="Trino" default>
+    ## Architecture:
+
+    <div style={{ display: 'flex', justifyContent: 'center', margin: '20px 0' }}>
+      <pre style={{ 
+        background: '#f6f8fa', 
+        border: '1px solid #e1e4e8', 
+        borderRadius: '6px', 
+        padding: '16px', 
+        overflow: 'auto',
+        display: 'inline-block',
+        margin: 0,
+        fontSize: '13px',
+        lineHeight: '1.45',
+        fontFamily: 'Monaco, Menlo, "Ubuntu Mono", Consolas, "source-code-pro", monospace'
+      }}>
+{`┌─────────────┐    ┌─────────────┐    ┌─────────────┐
+│    MySQL    │───▶│    OLake    │───▶│   MinIO     │
+│  (Source)   │    │ (Pipeline)  │    │ (Storage)   │
+└─────────────┘    └─────────────┘    └─────────────┘
+                      │                  │
+                      ▼                  │
+              ┌─────────────┐            │
+              │ Iceberg     │◀───────────┘
+              │ REST Catalog│
+              └─────────────┘
+                      │
+                      ▼
+              ┌─────────────┐
+              │   Trino     │
+              │ (Query UI)  │
+              └─────────────┘`}
+      </pre>
+    </div>
+
+    ## Prerequisites
+
+    - **Docker**: Latest version installed and running  
+    - **Docker Compose**: Latest version installed (usually included with Docker Desktop)  
+    - **Resources**: Allocate sufficient memory and CPU to Docker (e.g., 8GB+ RAM recommended)  
+    - **Port Availability:** The following ports must be available on your system:
+      - **8000** - OLake UI
+      - **8088** - Trino query engine UI
+      - **3000** - SQLPad UI
+      - **3306** - MySQL database
+      - **8181** - Iceberg REST catalog API  
+      - **8443** - MinIO console UI
+      - **9090** - MinIO server API
+
+      **Note:** If any of these ports are in use, stop the conflicting services or modify the port mappings in the docker-compose-v1.yml file.
+    
+    ---
+
+    ## Configuration & Set Up  
+
+    ### 1. Start the demo stack
+
+    **Step 1: Start base Olake stack**
+
+    <Tabs>
+      <TabItem value="new" label="New (after 30th Jan, 2026)" default>
+        ```bash
+        curl -sSL https://raw.githubusercontent.com/datazip-inc/olake-ui/master/docker-compose-v1.yml | docker compose -f - up -d
+        ```
+      </TabItem>
+      <TabItem value="legacy" label="Legacy (with ES)">
+        ```bash
+        curl -sSL https://raw.githubusercontent.com/datazip-inc/olake-ui/master/docker-compose.yml | docker compose -f - up -d
+        ```
+      </TabItem>
+    </Tabs>
+
+    **Step 2: Navigate and start services**
+
+    ```bash
+    cd examples/trino-tablurarest-minio-mysql
+    docker compose up -d
+    ```
+
+    ### 2. Accessing Services
+
+    1. Log in to the Olake UI at [http://localhost:8000](http://localhost:8000) with credentials `admin`/`password`.
+    
+    2. Verify Source Data:
+      - Access the MySQL CLI:
+        ```bash
+        docker exec -it primary_mysql mysql -u root -ppassword
+        ```
+      - Select the `weather` database and query the table:
+        ```sql
+        USE weather;
+        SELECT * FROM weather LIMIT 10;
+        ```
+
+        This will display the first 10 rows of the `weather` table.
+    3. Create and Configure a Job:
+
+        Create a Job to define and run the data pipeline:
+        - On the main page, click on the **"Create your first Job"** button. Please make sure to set the job name as `job` and select a replication frequency.
+
+        - Set up the Source:
+          - **Connector:** `MySQL`
+          - **Version:** choose the latest available version
+          - **Name of your source:** `olake_mysql`
+          - **Host:** `host.docker.internal`
+          - **Port:** `3306`
+          - **Database:** `weather`
+          - **Username:** `root`
+          - **Password:** `password`
+          - **SSH Config:** `No Tunnel`
+          - **Update Method:** `Standalone`
+          ![Setting up Source Configuration](/img/docs/getting-started/playground/source-config.webp)
+        - Set up the Destination:
+          - **Connector:** `Apache Iceberg`
+          - **Catalog:** `REST Catalog`
+          - **Name of your destination:** `olake_iceberg`
+          - **Version:** choose the latest available version
+          - **Iceberg REST Catalog URL:** `http://host.docker.internal:8181`
+          - **Iceberg S3 Path:** `s3://warehouse/weather/`
+          - **S3 Endpoint (for Iceberg data files written by Olake workers):** `http://host.docker.internal:9090`
+          - **AWS Region:** `us-east-1`
+          - **S3 Access Key:** `minio`
+          - **S3 Secret Key:** `minio123`
+          ![Setting up Destination Configuration](/img/docs/getting-started/playground/destination-config.webp)
+        - Select Streams to sync:
+          - Make sure that the weather table has been selected for the sync.
+          - Click on the weather table and make sure that the Normalisation is set to `true` using the toggle button.
+        - Save and Run the Job:
+          - Save the job configuration.
+          - Run the job manually from the UI to initiate the data pipeline from MySQL to Iceberg by clicking **Sync now**.
+
+    ### 3. Query in Trino
+
+    1. Access Trino UI: `http://localhost:3000` using credentials `admin/password`
+    2. Run Queries via SQLPad UI:
+      - On the top left, select `OLake Demo` as the database
+      - Click on the **refresh button** to reload the database schemas
+      - Click on `job_weather` schema and the `weather` table under it will be listed
+      - Query example:
+        ```sql
+        SELECT station_state, AVG(temperature_avg) as avg_temp
+        FROM job_weather.weather 
+        GROUP BY station_state 
+        ORDER BY avg_temp DESC 
+        LIMIT 10;
+        ```
+        ![Trino UI](/img/docs/getting-started/playground/trino-query.webp)
+      - (Optional) Run Queries via Trino CLI:
+        ```sql
+        docker exec -it olake-trino-coordinator trino \
+        --catalog iceberg --schema job_weather \
+        --execute "SELECT * from weather LIMIT 10;"
+        ```
+    
+    ---
+
+    ## Service Validation
+
+    ### 1. View Logs
+    
+    ```bash
+    # All services
+    docker compose logs -f
+
+    # Specific service
+    docker compose logs -f trino
+    ```
+
+    ### 2. Check Service Status
+
+    ```bash
+    # Make sure all services are running
+    docker compose ps
+    ```
+
+    ### 3. Verify Data Load
+
+    ```bash
+    # Connect to MySQL
+    docker exec -it primary_mysql mysql -u root -ppassword weather
+
+    # Check weather table
+    SELECT COUNT(*) FROM weather;
+    SELECT * FROM weather LIMIT 5;
+    ```
+
+    ### 4. Test Trino Connection
+
+    ```bash
+    # Check if Trino can see Iceberg tables
+    docker exec -it olake-trino-coordinator trino \
+      --catalog iceberg --schema job_weather \
+      --execute "SHOW TABLES;"
+    ```
+    
+    ---
+
+    ## Troubleshooting
+
+    ### 1. Trino can't connect to Iceberg:
+    - Ensure the data pipeline in OLake has run successfully
+    - Check that MinIO bucket contains data: `http://localhost:8443`
+    - Verify Iceberg REST catalog is responding: `http://localhost:8181/v1/namespaces`
+
+    ### 2. MySQL connection issues:
+    - Wait for `init-mysql-tasks` to complete data loading
+    - Check MySQL logs: `docker compose logs primary_mysql`
+
+    ### 3. MinIO access issues:
+    - Check MinIO credentials in docker-compose-v1.yml match OLake destination config
+    - Verify bucket permissions in MinIO console
+
+    ---
+    
+    ## Cleanup
+
+    **Step 1: Stop this example**
+    ```bash
+    docker compose down
+    ```
+
+    **Step 2: Stop base OLake stack**
+    <Tabs>
+      <TabItem value="new" label="New (after 30th Jan, 2026)" default>
+        ```bash
+        curl -sSL https://raw.githubusercontent.com/datazip-inc/olake-ui/master/docker-compose-v1.yml | docker compose -f - down
+        ```
+      </TabItem>
+      <TabItem value="legacy" label="Legacy (with ES)">
+        ```bash
+        curl -sSL https://raw.githubusercontent.com/datazip-inc/olake-ui/master/docker-compose.yml | docker compose -f - down
+        ```
+      </TabItem>
+    </Tabs>
+
+  </TabItem>
+  <TabItem value="presto" label="Presto">
+
+    ## Architecture:
+
+    <div style={{ display: 'flex', justifyContent: 'center', margin: '20px 0' }}>
+      <pre style={{ 
+        background: '#f6f8fa', 
+        border: '1px solid #e1e4e8', 
+        borderRadius: '6px', 
+        padding: '16px', 
+        overflow: 'auto',
+        display: 'inline-block',
+        margin: 0,
+        fontSize: '13px',
+        lineHeight: '1.45',
+        fontFamily: 'Monaco, Menlo, "Ubuntu Mono", Consolas, "source-code-pro", monospace'
+      }}>
+{`┌─────────────┐    ┌─────────────┐    ┌─────────────┐
+│    MySQL    │───▶│    OLake    │───▶│   MinIO     │
+│  (Source)   │    │ (Pipeline)  │    │ (Storage)   │
+└─────────────┘    └─────────────┘    └─────────────┘
+                      │                  │
+                      ▼                  │
+              ┌─────────────┐            │
+              │ Iceberg     │◀───────────┘
+              │ REST Catalog│
+              └─────────────┘
+                      │
+                      ▼
+              ┌─────────────┐
+              │   Presto    │
+              │ (Query UI)  │
+              └─────────────┘`}
+      </pre>
+    </div>
+
+    ## Prerequisites
+
+    - **Docker**: Latest version installed and running  
+    - **Docker Compose**: Latest version installed (usually included with Docker Desktop)  
+    - **Resources**: Allocate sufficient memory and CPU to Docker (e.g., 8GB+ RAM recommended)  
+    - **Port Availability:** The following ports must be available on your system:
+      - **8000** - OLake UI
+      - **8088** - Presto query engine UI
+      - **3306** - MySQL database
+      - **8181** - Iceberg REST catalog API  
+      - **8443** - MinIO console UI
+      - **9090** - MinIO server API
+
+      **Note:** If any of these ports are in use, stop the conflicting services or modify the port mappings in the docker-compose-v1.yml file.
+    
+    ---
+
+    ## Configuration & Set Up  
+
+    ### 1. Start the demo stack
+
+    **Step 1: Start base Olake stack**
+
+    <Tabs>
+      <TabItem value="new" label="New (after 30th Jan, 2026)" default>
+        ```bash
+        curl -sSL https://raw.githubusercontent.com/datazip-inc/olake-ui/master/docker-compose-v1.yml | docker compose -f - up -d
+        ```
+      </TabItem>
+      <TabItem value="legacy" label="Legacy (with ES)">
+        ```bash
+        curl -sSL https://raw.githubusercontent.com/datazip-inc/olake-ui/master/docker-compose.yml | docker compose -f - up -d
+        ```
+      </TabItem>
+    </Tabs>
+
+    **Step 2: Navigate and start services**
+
+    ```bash
+    cd examples/presto-tabularest-minio-mysql
+    docker compose up -d
+    ```
+
+    ### 2. Accessing Services
+
+    1. Log in to the Olake UI at [http://localhost:8000](http://localhost:8000) with credentials `admin`/`password`.
+    
+    2. Verify Source Data:
+      - Access the MySQL CLI:
+        ```bash
+        docker exec -it primary_mysql mysql -u root -ppassword
+        ```
+      - Select the `weather` database and query the table:
+        ```sql
+        USE weather;
+        SELECT * FROM weather LIMIT 10;
+        ```
+
+        This will display the first 10 rows of the `weather` table.
+    3. Create and Configure a Job:
+
+        Create a Job to define and run the data pipeline:
+        - On the main page, click on the **"Create your first Job"** button. Set job name and replication frequency.
+        - Set up the Source:
+          - **Connector:** `MySQL`
+          - **Version:** choose the latest available version
+          - **Name of your source:** `olake_mysql`
+          - **Host:** `host.docker.internal`
+          - **Port:** `3306`
+          - **Database:** `weather`
+          - **Username:** `root`
+          - **Password:** `password`
+          - **SSH Config:** `No Tunnel`
+          - **Update Method:** `Standalone`
+          ![Setting up Source Configuration](/img/docs/getting-started/playground/source-config.webp)
+        - Set up the Destination:
+          - **Connector:** `Apache Iceberg`
+          - **Catalog:** `REST Catalog`
+          - **Name of your destination:** `olake_iceberg`
+          - **Version:** choose the latest available version
+          - **Iceberg REST Catalog URL:** `http://host.docker.internal:8181`
+          - **Iceberg S3 Path:** `s3://warehouse/weather/`
+          - **S3 Endpoint (for Iceberg data files written by Olake workers):** `http://host.docker.internal:9090`
+          - **AWS Region:** `us-east-1`
+          - **S3 Access Key:** `minio`
+          - **S3 Secret Key:** `minio123`
+          ![Setting up Destination Configuration](/img/docs/getting-started/playground/destination-config.webp)
+        - Select Streams to sync:
+          - Make sure that the weather table has been selected for the sync.
+          - Click on the weather table and make sure that the Normalisation is set to `true` using the toggle button.
+        - Save and Run the Job:
+          - Save the job configuration.
+          - Run the job manually from the UI to initiate the data pipeline from MySQL to Iceberg by clicking **Sync now**.
+
+    ### 3. Query in Presto
+
+    1. Access Presto UI: `http://localhost:8088`
+       ![Presto UI](/img/docs/getting-started/playground/pressto-ui.webp)
+    2. Run Queries:
+      - Click on **SQL CLIENT** at the top
+      - Select **Catalog**: `iceberg`, **Schema**: `{job_name}_weather`
+      - Query example:
+        ```sql
+        SELECT station_state, AVG(temperature_avg) as avg_temp
+        FROM iceberg.{job_name}_weather.weather 
+        GROUP BY station_state 
+        ORDER BY avg_temp DESC 
+        LIMIT 10;
+        ```
+        ![Presto Query](/img/docs/getting-started/playground/presto-query.webp)
+    ---
+
+    ## Service Validation
+
+    ### 1. View Logs
+
+    ```bash
+    # All services
+    docker compose logs -f
+
+    # Specific service
+    docker compose logs -f presto
+    ```
+
+    ### 2. Verify Data Load
+
+    ```bash
+    # Connect to MySQL
+    docker exec -it primary_mysql mysql -u root -ppassword weather
+
+    # Check weather table
+    SELECT COUNT(*) FROM weather;
+    SELECT * FROM weather LIMIT 5;
+    ```
+
+    ### 3.Test Presto Connection
+
+    ```bash
+    # Check if Presto can see Iceberg tables
+    # Make sure to replace {job_name} with your actual job name.
+    docker exec -it olake-presto-coordinator presto-cli --catalog iceberg --schema {job_name}_weather --execute "SHOW TABLES;"
+    ```
+
+    ---
+
+    ## Troubleshooting
+
+    ### 1. Presto can't connect to Iceberg:
+    - Ensure the data pipeline in Olake has run successfully
+    - Check that MinIO bucket contains data: `http://localhost:8443`
+    - Verify Iceberg REST catalog is responding: `http://localhost:8181/v1/namespaces`
+
+    ### 2. MySQL connection issues:
+    - Wait for `init-mysql-tasks` to complete data loading
+    - Check MySQL logs: `docker compose logs primary_mysql`
+
+    ### 3. MinIO access issues:
+    - Check MinIO credentials in docker-compose-v1.yml match OLake destination config
+    - Verify bucket permissions in MinIO console
+    
+    ---
+
+    ## Cleanup
+
+    **Step 1: Stop this example**
+    ```bash
+    docker compose down
+    ```
+
+    **Step 2: Stop base Olake stack**
+    <Tabs>
+      <TabItem value="new" label="New (after 30th Jan, 2026)" default>
+        ```bash
+        curl -sSL https://raw.githubusercontent.com/datazip-inc/olake-ui/master/docker-compose-v1.yml | docker compose -f - down
+        ```
+      </TabItem>
+      <TabItem value="legacy" label="Legacy (with ES)">
+        ```bash
+        curl -sSL https://raw.githubusercontent.com/datazip-inc/olake-ui/master/docker-compose.yml | docker compose -f - down
+        ```
+      </TabItem>
+    </Tabs>
+
+  </TabItem>
+  <TabItem value="spark" label="Spark">
+    
+    ## Architecture:
+
+    <div style={{ display: 'flex', justifyContent: 'center', margin: '20px 0' }}>
+      <pre style={{ 
+        background: '#f6f8fa', 
+        border: '1px solid #e1e4e8', 
+        borderRadius: '6px', 
+        padding: '16px', 
+        overflow: 'auto',
+        display: 'inline-block',
+        margin: 0,
+        fontSize: '13px',
+        lineHeight: '1.45',
+        fontFamily: 'Monaco, Menlo, "Ubuntu Mono", Consolas, "source-code-pro", monospace'
+      }}>
+{`┌─────────────┐    ┌─────────────┐    ┌─────────────┐
+│    MySQL    │───▶│    OLake    │───▶│   MinIO     │
+│  (Source)   │    │ (Pipeline)  │    │ (Storage)   │
+└─────────────┘    └─────────────┘    └─────────────┘
+                      │                  │
+                      ▼                  │
+              ┌─────────────┐            │
+              │ Iceberg     │◀───────────┘
+              │ REST Catalog│
+              └─────────────┘
+                      │
+                      ▼
+              ┌─────────────┐
+              │   Spark     │
+              │ (Query UI)  │
+              └─────────────┘`}
+      </pre>
+    </div>
+
+        ## Prerequisites
+
+    - **Docker**: Latest version installed and running  
+    - **Docker Compose**: Latest version installed (usually included with Docker Desktop)  
+    - **Resources**: Allocate sufficient memory and CPU to Docker (e.g., 8GB+ RAM recommended)  
+    - **Port Availability:** The following ports must be available on your system:
+      - **8000** - OLake UI
+      - **8888** - Jupyter Notebook (Spark)
+      - **3306** - MySQL database
+      - **8181** - Iceberg REST catalog API  
+      - **9091** - MinIO console UI
+      - **9000** - MinIO server API
+
+      **Note:** If any of these ports are in use, stop the conflicting services or modify the port mappings in the docker-compose-v1.yml file.
+    
+    ---
+
+    ## Configuration & Set Up  
+
+    ### 1. Start the demo stack
+
+    **Step 1: Start base Olake stack**
+
+    <Tabs>
+      <TabItem value="new" label="New (after 30th Jan, 2026)" default>
+        ```bash
+        curl -sSL https://raw.githubusercontent.com/datazip-inc/olake-ui/master/docker-compose-v1.yml | docker compose -f - up -d
+        ```
+      </TabItem>
+      <TabItem value="legacy" label="Legacy (with ES)">
+        ```bash
+        curl -sSL https://raw.githubusercontent.com/datazip-inc/olake-ui/master/docker-compose.yml | docker compose -f - up -d
+        ```
+      </TabItem>
+    </Tabs>
+
+    **Step 2: Navigate and start services**
+
+    ```bash
+    cd examples/spark-tablurarest-minio-mysql
+    docker compose up -d
+    ```
+
+    ### 2. Accessing Services
+
+    1. Log in to the Olake UI at [http://localhost:8000](http://localhost:8000) with credentials `admin`/`password`.
+    
+    2. Verify Source Data:
+      - Access the MySQL CLI:
+        ```bash
+        docker exec -it primary_mysql mysql -u root -ppassword
+        ```
+      - Select the `weather` database and query the table:
+        ```sql
+        USE weather;
+        SELECT * FROM weather LIMIT 10;
+        ```
+
+        This will display the first 10 rows of the `weather` table.
+    3. Create and Configure a Job:
+
+        Create a Job to define and run the data pipeline:
+        - On the main page, click on the **"Create your first Job"** button. Set job name and replication frequency.
+        - Set up the Source:
+          - **Connector:** `MySQL`
+          - **Version:** choose the latest available version
+          - **Name of your source:** `olake_mysql`
+          - **Host:** `host.docker.internal`
+          - **Port:** `3306`
+          - **Database:** `weather`
+          - **Username:** `root`
+          - **Password:** `password`
+          - **SSH Config:** `No Tunnel`
+          - **Update Method:** `Standalone`
+          ![Setting up Source Configuration](/img/docs/getting-started/playground/source-config.webp)
+        - Set up the Destination:
+          - **Connector:** `Apache Iceberg`
+          - **Catalog:** `REST Catalog`
+          - **Name of your destination:** `olake_iceberg`
+          - **Version:** choose the latest available version
+          - **Iceberg REST Catalog URL:** `http://host.docker.internal:8181`
+          - **Iceberg S3 Path:** `s3://warehouse/weather/`
+          - **S3 Endpoint (for Iceberg data files written by Olake workers):** `http://host.docker.internal:9000`
+          - **AWS Region:** `us-east-1`
+          - **S3 Access Key:** `minio`
+          - **S3 Secret Key:** `minio123`
+          ![Setting up Destination Configuration](/img/docs/getting-started/playground/destination-config.webp)
+        - Select Streams to sync:
+          - Make sure that the weather table has been selected for the sync.
+          - Click on the weather table and make sure that the Normalisation is set to `true` using the toggle button.
+        - Save and Run the Job:
+          - Save the job configuration.
+          - Run the job manually from the UI to initiate the data pipeline from MySQL to Iceberg by clicking **Sync now**.
+
+    ### 3. Query Data with Spark
+
+    #### Option 1: Using Spark SQL Shell
+
+    1. Access Spark SQL:
+
+        ```bash
+        docker exec -it olake-spark /opt/spark/bin/spark-sql
+        ```
+    
+    2. Run Queries:
+
+        ```sql
+        SHOW CATALOGS;
+        ```
+
+        You will see the `olake_iceberg` catalog available.
+
+        ```sql
+        SHOW NAMESPACES IN olake_iceberg;
+        ```
+
+        You will be able to see the namespace created for your table as `{job_name}_weather`
+
+        Now check the tables available in the namespace:
+
+       ```sql
+       SHOW TABLES IN {job_name}_weather;
+       ```
+
+       Now, query the iceberg table
+
+       ```sql
+       SELECT * FROM olake_iceberg.{job_name}_weather.weather LIMIT 10;
+       ```
+
+    #### Option 2: Using Jupyter Notebook
+
+    1. Access Jupyter: http://localhost:8888 (no password required)
+    2. Create a new python notebook and run these commands in cells:
+        ```python
+        %%sql
+        SHOW CATALOGS;
+        ```
+
+        ```sql
+        %%sql
+        SHOW NAMESPACES IN olake_iceberg;
+        ```
+
+        ```sql
+        %%sql
+        SHOW TABLES IN {job_name}_weather;
+        ```
+
+        ```sql
+        %%sql
+        SELECT * FROM olake_iceberg.{job_name}_weather.weather LIMIT 10;
+        ```
+
+        ![Spark Query](/img/docs/getting-started/playground/spark-query.webp)
+
+    ---
+
+    ## Troubleshooting
+
+    ### 1. Spark can't connect to Iceberg:
+    - Ensure the data pipeline in OLake has run successfully
+    - Check that MinIO bucket contains data: `http://localhost:9091` (credentials: minio/minio123)
+    - Verify Iceberg REST catalog is responding: `http://localhost:8181/v1/namespaces`
+  
+    ### 2. MinIO access issues:
+    - Check MinIO credentials in docker-compose-v1.yml match OLake destination config
+    - Verify bucket permissions in MinIO console
+
+    ---
+    
+    ## Cleanup
+
+    **Step 1: Stop this example**
+    ```bash
+    docker compose down
+    ```
+
+    **Step 2: Stop base OLake stack**
+    <Tabs>
+      <TabItem value="new" label="New (after 30th Jan, 2026)" default>
+        ```bash
+        curl -sSL https://raw.githubusercontent.com/datazip-inc/olake-ui/master/docker-compose-v1.yml | docker compose -f - down
+        ```
+      </TabItem>
+      <TabItem value="legacy" label="Legacy (with ES)">
+        ```bash
+        curl -sSL https://raw.githubusercontent.com/datazip-inc/olake-ui/master/docker-compose.yml | docker compose -f - down
+        ```
+      </TabItem>
+    </Tabs>
+
+  </TabItem>
+</Tabs>
