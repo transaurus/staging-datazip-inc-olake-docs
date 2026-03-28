@@ -3,7 +3,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://olake.io/</loc>
-    <lastmod>2026-03-27</lastmod>
+    <lastmod>2026-03-28</lastmod>
     <image:image>
       <image:loc>https://olake.io/img/authors/aakash.webp</image:loc>
       <image:title>Aakash</image:title>
@@ -547,7 +547,7 @@
   </url>
   <url>
     <loc>https://olake.io/blog</loc>
-    <lastmod>2026-03-27</lastmod>
+    <lastmod>2026-03-28</lastmod>
     <image:image>
       <image:loc>https://olake.io/img/blog/2023/03/troubleshooting-common-issues-and-solutions-to-mongodb-etl-errors-1.webp</image:loc>
       <image:title>Troubleshooting Common Issues And Solutions To Mongodb Etl Errors 1</image:title>
@@ -2496,7 +2496,7 @@
   </url>
   <url>
     <loc>https://olake.io/docs</loc>
-    <lastmod>2026-03-27</lastmod>
+    <lastmod>2026-03-28</lastmod>
     <image:image>
       <image:loc>https://olake.io/img/docs/adls/azure_dest.png</image:loc>
       <image:title>Azure Dest</image:title>

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkolake_docs=self.webpackChunkolake_docs||[]).push([["78606"],{27540:function(s){s.exports=JSON.parse('{"name":"docusaurus-plugin-content-blog","id":"customer-stories-blog"}')}}]);

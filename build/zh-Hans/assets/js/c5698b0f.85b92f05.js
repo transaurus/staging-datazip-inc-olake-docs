@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkolake_docs=self.webpackChunkolake_docs||[]).push([["34749"],{49771:function(s){s.exports=JSON.parse('{"metadata":{"permalink":"/zh-Hans/customer-stories","page":1,"postsPerPage":6,"totalPages":1,"totalCount":5,"blogDescription":"Customer success stories and case studies","blogTitle":"Customer Stories"}}')}}]);

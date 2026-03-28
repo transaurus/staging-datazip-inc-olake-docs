@@ -1,0 +1,62 @@
+{
+  "logo.alt": {
+    "message": "OLake Logo",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.Docs": {
+    "message": "Docs",
+    "description": "Navbar item with label Docs"
+  },
+  "item.label.Pricing": {
+    "message": "Pricing",
+    "description": "Navbar item with label Pricing"
+  },
+  "item.label.Blogs": {
+    "message": "Blogs",
+    "description": "Navbar item with label Blogs"
+  },
+  "item.label.Iceberg": {
+    "message": "Iceberg",
+    "description": "Navbar item with label Iceberg"
+  },
+  "item.label.Community": {
+    "message": "Community",
+    "description": "Navbar item with label Community"
+  },
+  "item.label.Customer Stories": {
+    "message": "Customer Stories",
+    "description": "Navbar item with label Customer Stories"
+  },
+  "item.label.Talk to us": {
+    "message": "Talk to us",
+    "description": "Navbar item with label Talk to us"
+  },
+  "item.label.Iceberg Blogs": {
+    "message": "Iceberg Blogs",
+    "description": "Navbar item with label Iceberg Blogs"
+  },
+  "item.label.Query Engine": {
+    "message": "Query Engine",
+    "description": "Navbar item with label Query Engine"
+  },
+  "item.label.Webinars & Events": {
+    "message": "Webinars & Events",
+    "description": "Navbar item with label Webinars & Events"
+  },
+  "item.label.OLake Community": {
+    "message": "OLake Community",
+    "description": "Navbar item with label OLake Community"
+  },
+  "item.label.Top Contributors": {
+    "message": "Top Contributors",
+    "description": "Navbar item with label Top Contributors"
+  },
+  "item.label.Contributor's Program": {
+    "message": "Contributor's Program",
+    "description": "Navbar item with label Contributor's Program"
+  },
+  "item.label.GSoC": {
+    "message": "GSoC",
+    "description": "Navbar item with label GSoC"
+  }
+}

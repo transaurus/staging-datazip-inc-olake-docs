@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkolake_docs=self.webpackChunkolake_docs||[]).push([["98247"],{14798:function(e){e.exports=JSON.parse('{"metadata":{"permalink":"/zh-Hans/iceberg","page":1,"postsPerPage":6,"totalPages":2,"totalCount":12,"nextPage":"/zh-Hans/iceberg/page/2","blogDescription":"","blogTitle":"Blogs on Apache Iceberg"}}')}}]);

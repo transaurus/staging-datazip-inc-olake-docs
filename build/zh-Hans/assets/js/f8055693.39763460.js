@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkolake_docs=self.webpackChunkolake_docs||[]).push([["68626"],{79262:function(s){s.exports=JSON.parse('{"blogBasePath":"/zh-Hans/blog","blogTitle":"Blogs on OLake","authorsListPath":"/zh-Hans/blog/authors"}')}}]);
